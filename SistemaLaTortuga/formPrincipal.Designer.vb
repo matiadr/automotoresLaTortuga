@@ -25,6 +25,9 @@ Partial Class formPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VehiculosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbBSD = New System.Windows.Forms.TextBox()
+        Me.tbUsuario = New System.Windows.Forms.TextBox()
+        Me.tbClave = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,11 +52,41 @@ Partial Class formPrincipal
         Me.VehiculosToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.VehiculosToolStripMenuItem.Text = "&Vehiculos"
         '
+        'tbBSD
+        '
+        Me.tbBSD.Location = New System.Drawing.Point(436, 136)
+        Me.tbBSD.Name = "tbBSD"
+        Me.tbBSD.Size = New System.Drawing.Size(100, 20)
+        Me.tbBSD.TabIndex = 1
+        Me.tbBSD.Text = "nombreBSD"
+        Me.tbBSD.Visible = False
+        '
+        'tbUsuario
+        '
+        Me.tbUsuario.Location = New System.Drawing.Point(436, 188)
+        Me.tbUsuario.Name = "tbUsuario"
+        Me.tbUsuario.Size = New System.Drawing.Size(100, 20)
+        Me.tbUsuario.TabIndex = 2
+        Me.tbUsuario.Text = "usuario"
+        Me.tbUsuario.Visible = False
+        '
+        'tbClave
+        '
+        Me.tbClave.Location = New System.Drawing.Point(436, 239)
+        Me.tbClave.Name = "tbClave"
+        Me.tbClave.Size = New System.Drawing.Size(100, 20)
+        Me.tbClave.TabIndex = 3
+        Me.tbClave.Text = "clave"
+        Me.tbClave.Visible = False
+        '
         'formPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(675, 369)
+        Me.Controls.Add(Me.tbClave)
+        Me.Controls.Add(Me.tbUsuario)
+        Me.Controls.Add(Me.tbBSD)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "formPrincipal"
@@ -68,5 +101,8 @@ Partial Class formPrincipal
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VehiculosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tbBSD As System.Windows.Forms.TextBox
+    Friend WithEvents tbUsuario As System.Windows.Forms.TextBox
+    Friend WithEvents tbClave As System.Windows.Forms.TextBox
 
 End Class
