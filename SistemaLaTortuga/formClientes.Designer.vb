@@ -26,7 +26,14 @@ Partial Class formClientes
         Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgClientes = New System.Windows.Forms.DataGridView()
-        Me.gbDatosCliente = New System.Windows.Forms.GroupBox()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bNuevaProvincia = New System.Windows.Forms.GroupBox()
+        Me.tbFechaNac = New System.Windows.Forms.MaskedTextBox()
         Me.tbOcupacion = New System.Windows.Forms.TextBox()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.tbDomicilio = New System.Windows.Forms.TextBox()
@@ -51,16 +58,11 @@ Partial Class formClientes
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.tbFechaNac = New System.Windows.Forms.MaskedTextBox()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bNuevaLocalidad = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbDatosCliente.SuspendLayout()
+        Me.bNuevaProvincia.SuspendLayout()
         Me.bSalir.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -106,34 +108,82 @@ Partial Class formClientes
         Me.dgClientes.Size = New System.Drawing.Size(652, 252)
         Me.dgClientes.TabIndex = 0
         '
-        'gbDatosCliente
+        'Nombre
         '
-        Me.gbDatosCliente.Controls.Add(Me.tbFechaNac)
-        Me.gbDatosCliente.Controls.Add(Me.tbOcupacion)
-        Me.gbDatosCliente.Controls.Add(Me.tbTelefono)
-        Me.gbDatosCliente.Controls.Add(Me.tbDomicilio)
-        Me.gbDatosCliente.Controls.Add(Me.tbDocumento)
-        Me.gbDatosCliente.Controls.Add(Me.tbNombre)
-        Me.gbDatosCliente.Controls.Add(Me.tbCuit)
-        Me.gbDatosCliente.Controls.Add(Me.cbRespIVA)
-        Me.gbDatosCliente.Controls.Add(Me.cbLocalidad)
-        Me.gbDatosCliente.Controls.Add(Me.cbProvincia)
-        Me.gbDatosCliente.Controls.Add(Me.Label11)
-        Me.gbDatosCliente.Controls.Add(Me.Label10)
-        Me.gbDatosCliente.Controls.Add(Me.Label9)
-        Me.gbDatosCliente.Controls.Add(Me.Label4)
-        Me.gbDatosCliente.Controls.Add(Me.Label8)
-        Me.gbDatosCliente.Controls.Add(Me.Label7)
-        Me.gbDatosCliente.Controls.Add(Me.Label6)
-        Me.gbDatosCliente.Controls.Add(Me.Label5)
-        Me.gbDatosCliente.Controls.Add(Me.Label3)
-        Me.gbDatosCliente.Controls.Add(Me.Label2)
-        Me.gbDatosCliente.Location = New System.Drawing.Point(12, 360)
-        Me.gbDatosCliente.Name = "gbDatosCliente"
-        Me.gbDatosCliente.Size = New System.Drawing.Size(684, 316)
-        Me.gbDatosCliente.TabIndex = 1
-        Me.gbDatosCliente.TabStop = False
-        Me.gbDatosCliente.Text = "Datos Cliente"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'idCliente
+        '
+        Me.idCliente.HeaderText = "idCliente"
+        Me.idCliente.Name = "idCliente"
+        Me.idCliente.ReadOnly = True
+        Me.idCliente.Visible = False
+        '
+        'Documento
+        '
+        Me.Documento.HeaderText = "Documento"
+        Me.Documento.Name = "Documento"
+        Me.Documento.ReadOnly = True
+        '
+        'Domicilio
+        '
+        Me.Domicilio.HeaderText = "Domicilio"
+        Me.Domicilio.Name = "Domicilio"
+        Me.Domicilio.ReadOnly = True
+        '
+        'Provincia
+        '
+        Me.Provincia.HeaderText = "Provincia"
+        Me.Provincia.Name = "Provincia"
+        Me.Provincia.ReadOnly = True
+        '
+        'Localidad
+        '
+        Me.Localidad.HeaderText = "Localidad"
+        Me.Localidad.Name = "Localidad"
+        Me.Localidad.ReadOnly = True
+        '
+        'bNuevaProvincia
+        '
+        Me.bNuevaProvincia.Controls.Add(Me.bNuevaLocalidad)
+        Me.bNuevaProvincia.Controls.Add(Me.Button2)
+        Me.bNuevaProvincia.Controls.Add(Me.tbFechaNac)
+        Me.bNuevaProvincia.Controls.Add(Me.tbOcupacion)
+        Me.bNuevaProvincia.Controls.Add(Me.tbTelefono)
+        Me.bNuevaProvincia.Controls.Add(Me.tbDomicilio)
+        Me.bNuevaProvincia.Controls.Add(Me.tbDocumento)
+        Me.bNuevaProvincia.Controls.Add(Me.tbNombre)
+        Me.bNuevaProvincia.Controls.Add(Me.tbCuit)
+        Me.bNuevaProvincia.Controls.Add(Me.cbRespIVA)
+        Me.bNuevaProvincia.Controls.Add(Me.cbLocalidad)
+        Me.bNuevaProvincia.Controls.Add(Me.cbProvincia)
+        Me.bNuevaProvincia.Controls.Add(Me.Label11)
+        Me.bNuevaProvincia.Controls.Add(Me.Label10)
+        Me.bNuevaProvincia.Controls.Add(Me.Label9)
+        Me.bNuevaProvincia.Controls.Add(Me.Label4)
+        Me.bNuevaProvincia.Controls.Add(Me.Label8)
+        Me.bNuevaProvincia.Controls.Add(Me.Label7)
+        Me.bNuevaProvincia.Controls.Add(Me.Label6)
+        Me.bNuevaProvincia.Controls.Add(Me.Label5)
+        Me.bNuevaProvincia.Controls.Add(Me.Label3)
+        Me.bNuevaProvincia.Controls.Add(Me.Label2)
+        Me.bNuevaProvincia.Location = New System.Drawing.Point(12, 360)
+        Me.bNuevaProvincia.Name = "bNuevaProvincia"
+        Me.bNuevaProvincia.Size = New System.Drawing.Size(684, 316)
+        Me.bNuevaProvincia.TabIndex = 1
+        Me.bNuevaProvincia.TabStop = False
+        Me.bNuevaProvincia.Text = "Datos Cliente"
+        '
+        'tbFechaNac
+        '
+        Me.tbFechaNac.Location = New System.Drawing.Point(111, 93)
+        Me.tbFechaNac.Mask = "00/00/0000"
+        Me.tbFechaNac.Name = "tbFechaNac"
+        Me.tbFechaNac.Size = New System.Drawing.Size(84, 20)
+        Me.tbFechaNac.TabIndex = 4
+        Me.tbFechaNac.ValidatingType = GetType(Date)
         '
         'tbOcupacion
         '
@@ -190,7 +240,7 @@ Partial Class formClientes
         'cbLocalidad
         '
         Me.cbLocalidad.FormattingEnabled = True
-        Me.cbLocalidad.Location = New System.Drawing.Point(363, 155)
+        Me.cbLocalidad.Location = New System.Drawing.Point(382, 155)
         Me.cbLocalidad.Name = "cbLocalidad"
         Me.cbLocalidad.Size = New System.Drawing.Size(149, 21)
         Me.cbLocalidad.TabIndex = 7
@@ -242,7 +292,7 @@ Partial Class formClientes
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(304, 155)
+        Me.Label8.Location = New System.Drawing.Point(323, 158)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(53, 13)
         Me.Label8.TabIndex = 6
@@ -352,51 +402,27 @@ Partial Class formClientes
         Me.Button1.Text = "Nuevo"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'tbFechaNac
+        'bNuevaLocalidad
         '
-        Me.tbFechaNac.Location = New System.Drawing.Point(111, 93)
-        Me.tbFechaNac.Mask = "00/00/0000"
-        Me.tbFechaNac.Name = "tbFechaNac"
-        Me.tbFechaNac.Size = New System.Drawing.Size(84, 20)
-        Me.tbFechaNac.TabIndex = 4
-        Me.tbFechaNac.ValidatingType = GetType(Date)
+        Me.bNuevaLocalidad.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.bNuevaLocalidad.Location = New System.Drawing.Point(538, 154)
+        Me.bNuevaLocalidad.Name = "bNuevaLocalidad"
+        Me.bNuevaLocalidad.Size = New System.Drawing.Size(30, 23)
+        Me.bNuevaLocalidad.TabIndex = 13
+        Me.bNuevaLocalidad.TabStop = False
+        Me.bNuevaLocalidad.Text = "..."
+        Me.bNuevaLocalidad.UseVisualStyleBackColor = True
         '
-        'Nombre
+        'Button2
         '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'idCliente
-        '
-        Me.idCliente.HeaderText = "idCliente"
-        Me.idCliente.Name = "idCliente"
-        Me.idCliente.ReadOnly = True
-        Me.idCliente.Visible = False
-        '
-        'Documento
-        '
-        Me.Documento.HeaderText = "Documento"
-        Me.Documento.Name = "Documento"
-        Me.Documento.ReadOnly = True
-        '
-        'Domicilio
-        '
-        Me.Domicilio.HeaderText = "Domicilio"
-        Me.Domicilio.Name = "Domicilio"
-        Me.Domicilio.ReadOnly = True
-        '
-        'Provincia
-        '
-        Me.Provincia.HeaderText = "Provincia"
-        Me.Provincia.Name = "Provincia"
-        Me.Provincia.ReadOnly = True
-        '
-        'Localidad
-        '
-        Me.Localidad.HeaderText = "Localidad"
-        Me.Localidad.Name = "Localidad"
-        Me.Localidad.ReadOnly = True
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.Button2.Location = New System.Drawing.Point(278, 155)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(27, 23)
+        Me.Button2.TabIndex = 12
+        Me.Button2.TabStop = False
+        Me.Button2.Text = "..."
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'formClientes
         '
@@ -404,7 +430,7 @@ Partial Class formClientes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(944, 686)
         Me.Controls.Add(Me.bSalir)
-        Me.Controls.Add(Me.gbDatosCliente)
+        Me.Controls.Add(Me.bNuevaProvincia)
         Me.Controls.Add(Me.gbClientes)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "formClientes"
@@ -413,8 +439,8 @@ Partial Class formClientes
         Me.gbClientes.ResumeLayout(False)
         Me.gbClientes.PerformLayout()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbDatosCliente.ResumeLayout(False)
-        Me.gbDatosCliente.PerformLayout()
+        Me.bNuevaProvincia.ResumeLayout(False)
+        Me.bNuevaProvincia.PerformLayout()
         Me.bSalir.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -423,7 +449,7 @@ Partial Class formClientes
     Friend WithEvents tbBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgClientes As System.Windows.Forms.DataGridView
-    Friend WithEvents gbDatosCliente As System.Windows.Forms.GroupBox
+    Friend WithEvents bNuevaProvincia As System.Windows.Forms.GroupBox
     Friend WithEvents bSalir As System.Windows.Forms.GroupBox
     Friend WithEvents b As System.Windows.Forms.Button
     Friend WithEvents bEliminar As System.Windows.Forms.Button
@@ -455,4 +481,6 @@ Partial Class formClientes
     Friend WithEvents Domicilio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Provincia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Localidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents bNuevaLocalidad As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

@@ -45,6 +45,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>la-tortuga-colon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -80,6 +83,30 @@
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
     <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoModelo.Designer.vb">
+      <DependentUpon>formNuevoModelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoModelo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevaMarca.Designer.vb">
+      <DependentUpon>formNuevaMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevaMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevaCiudad.Designer.vb">
+      <DependentUpon>formNuevaCiudad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevaCiudad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevaProvincia.Designer.vb">
+      <DependentUpon>formNuevaProvincia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevaProvincia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formVehiculos.Designer.vb">
@@ -127,6 +154,18 @@
     <EmbeddedResource Include="formClientes.resx">
       <DependentUpon>formClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formNuevaCiudad.resx">
+      <DependentUpon>formNuevaCiudad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevaMarca.resx">
+      <DependentUpon>formNuevaMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevaProvincia.resx">
+      <DependentUpon>formNuevaProvincia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoModelo.resx">
+      <DependentUpon>formNuevoModelo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formPrincipal.resx">
       <DependentUpon>formPrincipal.vb</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +202,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filenew.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="la-tortuga-colon.ico" />
+    <None Include="Resources\la-tortuga-colon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
