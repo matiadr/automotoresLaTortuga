@@ -57,7 +57,7 @@ Partial Class formClientes
         Me.b = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.bNuevo = New System.Windows.Forms.Button()
         Me.bNuevaLocalidad = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.gbClientes.SuspendLayout()
@@ -187,6 +187,7 @@ Partial Class formClientes
         '
         'tbOcupacion
         '
+        Me.tbOcupacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbOcupacion.Location = New System.Drawing.Point(110, 234)
         Me.tbOcupacion.Name = "tbOcupacion"
         Me.tbOcupacion.Size = New System.Drawing.Size(222, 20)
@@ -201,6 +202,7 @@ Partial Class formClientes
         '
         'tbDomicilio
         '
+        Me.tbDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbDomicilio.Location = New System.Drawing.Point(108, 121)
         Me.tbDomicilio.Name = "tbDomicilio"
         Me.tbDomicilio.Size = New System.Drawing.Size(224, 20)
@@ -208,6 +210,7 @@ Partial Class formClientes
         '
         'tbDocumento
         '
+        Me.tbDocumento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbDocumento.Location = New System.Drawing.Point(108, 58)
         Me.tbDocumento.Name = "tbDocumento"
         Me.tbDocumento.Size = New System.Drawing.Size(117, 20)
@@ -215,6 +218,7 @@ Partial Class formClientes
         '
         'tbNombre
         '
+        Me.tbNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbNombre.Location = New System.Drawing.Point(108, 26)
         Me.tbNombre.Name = "tbNombre"
         Me.tbNombre.Size = New System.Drawing.Size(224, 20)
@@ -348,7 +352,7 @@ Partial Class formClientes
         Me.bSalir.Controls.Add(Me.b)
         Me.bSalir.Controls.Add(Me.bEliminar)
         Me.bSalir.Controls.Add(Me.bModificar)
-        Me.bSalir.Controls.Add(Me.Button1)
+        Me.bSalir.Controls.Add(Me.bNuevo)
         Me.bSalir.Location = New System.Drawing.Point(726, 24)
         Me.bSalir.Name = "bSalir"
         Me.bSalir.Size = New System.Drawing.Size(184, 336)
@@ -391,16 +395,16 @@ Partial Class formClientes
         Me.bModificar.Text = "Modificar"
         Me.bModificar.UseVisualStyleBackColor = True
         '
-        'Button1
+        'bNuevo
         '
-        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(17, 36)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 54)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Nuevo"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bNuevo.Location = New System.Drawing.Point(17, 36)
+        Me.bNuevo.Name = "bNuevo"
+        Me.bNuevo.Size = New System.Drawing.Size(110, 54)
+        Me.bNuevo.TabIndex = 12
+        Me.bNuevo.Text = "Nuevo"
+        Me.bNuevo.UseVisualStyleBackColor = True
         '
         'bNuevaLocalidad
         '
@@ -454,7 +458,7 @@ Partial Class formClientes
     Friend WithEvents b As System.Windows.Forms.Button
     Friend WithEvents bEliminar As System.Windows.Forms.Button
     Friend WithEvents bModificar As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents bNuevo As System.Windows.Forms.Button
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label

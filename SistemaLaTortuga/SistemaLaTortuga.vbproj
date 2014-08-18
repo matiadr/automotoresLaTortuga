@@ -46,7 +46,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>la-tortuga-colon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\la-tortuga-colon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -83,6 +83,12 @@
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
     <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCuentas.Designer.vb">
+      <DependentUpon>formCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formNuevoModelo.Designer.vb">
@@ -154,6 +160,9 @@
     <EmbeddedResource Include="formClientes.resx">
       <DependentUpon>formClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formCuentas.resx">
+      <DependentUpon>formCuentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formNuevaCiudad.resx">
       <DependentUpon>formNuevaCiudad.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,7 +216,7 @@
     <None Include="Resources\filenew.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="la-tortuga-colon.ico" />
+    <Content Include="Resources\la-tortuga-colon.ico" />
     <None Include="Resources\la-tortuga-colon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
