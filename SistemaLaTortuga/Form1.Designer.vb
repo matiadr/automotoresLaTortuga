@@ -23,8 +23,8 @@ Partial Class FormVenta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,13 +38,6 @@ Partial Class FormVenta
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(18, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(228, 20)
-        Me.TextBox1.TabIndex = 0
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(254, 23)
@@ -54,6 +47,13 @@ Partial Class FormVenta
         Me.Button1.Text = "+"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(18, 22)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(228, 20)
+        Me.TextBox1.TabIndex = 0
         '
         'FormVenta
         '

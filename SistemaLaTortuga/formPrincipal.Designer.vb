@@ -32,13 +32,14 @@ Partial Class formPrincipal
         Me.tbClave = New System.Windows.Forms.TextBox()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.CuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.VehiculosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.VehiculosToolStripMenuItem, Me.CuentasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1370, 24)
@@ -100,6 +101,12 @@ Partial Class formPrincipal
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
+        'CuentasToolStripMenuItem
+        '
+        Me.CuentasToolStripMenuItem.Name = "CuentasToolStripMenuItem"
+        Me.CuentasToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.CuentasToolStripMenuItem.Text = "C&uentas"
+        '
         'formPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -130,5 +137,6 @@ Partial Class formPrincipal
     Friend WithEvents tbClave As System.Windows.Forms.TextBox
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents CuentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

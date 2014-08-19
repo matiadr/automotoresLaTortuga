@@ -10,6 +10,6 @@
     End Sub
 
     Private Sub bNuevaLocalidad_Click(sender As Object, e As EventArgs) Handles bNuevaLocalidad.Click
-        formNuevaCiudad.Show()
+        dgLocalidades.Show()
     End Sub
 End Class

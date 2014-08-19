@@ -7,10 +7,10 @@
     End Sub
 
     Private Sub bNuevaMarca_Click(sender As Object, e As EventArgs) Handles bNuevaMarca.Click
-        formNuevaMarca.Show()
+        formABMMarca.Show()
     End Sub
 
     Private Sub bNuevoModelo_Click(sender As Object, e As EventArgs) Handles bNuevoModelo.Click
-        formNuevoModelo.Show()
+        formABMModelos.Show()
     End Sub
 End Class

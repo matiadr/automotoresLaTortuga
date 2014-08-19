@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -85,34 +86,40 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formABMRubros.Designer.vb">
+      <DependentUpon>formABMRubros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formABMRubros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formCuentas.Designer.vb">
       <DependentUpon>formCuentas.vb</DependentUpon>
     </Compile>
     <Compile Include="formCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formNuevoModelo.Designer.vb">
-      <DependentUpon>formNuevoModelo.vb</DependentUpon>
+    <Compile Include="formABMModelos.Designer.vb">
+      <DependentUpon>formABMModelos.vb</DependentUpon>
     </Compile>
-    <Compile Include="formNuevoModelo.vb">
+    <Compile Include="formABMModelos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formNuevaMarca.Designer.vb">
-      <DependentUpon>formNuevaMarca.vb</DependentUpon>
+    <Compile Include="formABMMarca.Designer.vb">
+      <DependentUpon>formABMMarca.vb</DependentUpon>
     </Compile>
-    <Compile Include="formNuevaMarca.vb">
+    <Compile Include="formABMMarca.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formNuevaCiudad.Designer.vb">
-      <DependentUpon>formNuevaCiudad.vb</DependentUpon>
+    <Compile Include="formABMLocalidad.Designer.vb">
+      <DependentUpon>formABMLocalidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="formNuevaCiudad.vb">
+    <Compile Include="formABMLocalidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formNuevaProvincia.Designer.vb">
-      <DependentUpon>formNuevaProvincia.vb</DependentUpon>
+    <Compile Include="formABMProvincias.Designer.vb">
+      <DependentUpon>formABMProvincias.vb</DependentUpon>
     </Compile>
-    <Compile Include="formNuevaProvincia.vb">
+    <Compile Include="formABMProvincias.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formVehiculos.Designer.vb">
@@ -157,23 +164,26 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formABMRubros.resx">
+      <DependentUpon>formABMRubros.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formClientes.resx">
       <DependentUpon>formClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formCuentas.resx">
       <DependentUpon>formCuentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formNuevaCiudad.resx">
-      <DependentUpon>formNuevaCiudad.vb</DependentUpon>
+    <EmbeddedResource Include="formABMLocalidad.resx">
+      <DependentUpon>formABMLocalidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formNuevaMarca.resx">
-      <DependentUpon>formNuevaMarca.vb</DependentUpon>
+    <EmbeddedResource Include="formABMMarca.resx">
+      <DependentUpon>formABMMarca.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formNuevaProvincia.resx">
-      <DependentUpon>formNuevaProvincia.vb</DependentUpon>
+    <EmbeddedResource Include="formABMProvincias.resx">
+      <DependentUpon>formABMProvincias.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formNuevoModelo.resx">
-      <DependentUpon>formNuevoModelo.vb</DependentUpon>
+    <EmbeddedResource Include="formABMModelos.resx">
+      <DependentUpon>formABMModelos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formPrincipal.resx">
       <DependentUpon>formPrincipal.vb</DependentUpon>
