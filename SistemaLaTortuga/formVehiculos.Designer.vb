@@ -23,6 +23,10 @@ Partial Class formVehiculos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
+        Me.bSalir = New System.Windows.Forms.Button()
+        Me.bEliminar = New System.Windows.Forms.Button()
+        Me.bModificar = New System.Windows.Forms.Button()
+        Me.bNuevo = New System.Windows.Forms.Button()
         Me.gbClientes = New System.Windows.Forms.GroupBox()
         Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,18 +38,21 @@ Partial Class formVehiculos
         Me.dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.año = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbDatosVehiculo = New System.Windows.Forms.GroupBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.bNuevoModelo = New System.Windows.Forms.Button()
+        Me.bNuevaMarca = New System.Windows.Forms.Button()
         Me.tbRetiroPapeles = New System.Windows.Forms.DateTimePicker()
         Me.tbAdeuda = New System.Windows.Forms.TextBox()
         Me.tbTransferencia = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.tbVenta = New System.Windows.Forms.TextBox()
+        Me.tbGastos = New System.Windows.Forms.TextBox()
+        Me.tbCosto = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.tbUbicacion = New System.Windows.Forms.TextBox()
+        Me.tbAño = New System.Windows.Forms.TextBox()
         Me.cbTipoMotor = New System.Windows.Forms.ComboBox()
         Me.tbColor = New System.Windows.Forms.TextBox()
         Me.cbModelo = New System.Windows.Forms.ComboBox()
@@ -53,8 +60,8 @@ Partial Class formVehiculos
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cbMarca = New System.Windows.Forms.ComboBox()
         Me.tbNroMotor = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.tbNroChasis = New System.Windows.Forms.TextBox()
+        Me.tbDominio = New System.Windows.Forms.TextBox()
         Me.tbTipoVehiculo = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -66,12 +73,6 @@ Partial Class formVehiculos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.bNuevoModelo = New System.Windows.Forms.Button()
-        Me.bNuevaMarca = New System.Windows.Forms.Button()
-        Me.bSalir = New System.Windows.Forms.Button()
-        Me.bEliminar = New System.Windows.Forms.Button()
-        Me.bModificar = New System.Windows.Forms.Button()
-        Me.bNuevo = New System.Windows.Forms.Button()
         Me.gbAcciones.SuspendLayout()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgVehiculos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +92,53 @@ Partial Class formVehiculos
         Me.gbAcciones.TabStop = False
         Me.gbAcciones.Text = "Acciones"
         '
+        'bSalir
+        '
+        Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bSalir.Location = New System.Drawing.Point(17, 253)
+        Me.bSalir.Name = "bSalir"
+        Me.bSalir.Size = New System.Drawing.Size(110, 50)
+        Me.bSalir.TabIndex = 4
+        Me.bSalir.Text = "Salir"
+        Me.bSalir.UseVisualStyleBackColor = True
+        '
+        'bEliminar
+        '
+        Me.bEliminar.Enabled = False
+        Me.bEliminar.Image = Global.SistemaLaTortuga.My.Resources.Resources.cancel
+        Me.bEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bEliminar.Location = New System.Drawing.Point(17, 183)
+        Me.bEliminar.Name = "bEliminar"
+        Me.bEliminar.Size = New System.Drawing.Size(110, 50)
+        Me.bEliminar.TabIndex = 3
+        Me.bEliminar.Text = "Eliminar"
+        Me.bEliminar.UseVisualStyleBackColor = True
+        '
+        'bModificar
+        '
+        Me.bModificar.Enabled = False
+        Me.bModificar.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
+        Me.bModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bModificar.Location = New System.Drawing.Point(17, 113)
+        Me.bModificar.Name = "bModificar"
+        Me.bModificar.Size = New System.Drawing.Size(110, 54)
+        Me.bModificar.TabIndex = 2
+        Me.bModificar.Text = "Modificar"
+        Me.bModificar.UseVisualStyleBackColor = True
+        '
+        'bNuevo
+        '
+        Me.bNuevo.Enabled = False
+        Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bNuevo.Location = New System.Drawing.Point(17, 36)
+        Me.bNuevo.Name = "bNuevo"
+        Me.bNuevo.Size = New System.Drawing.Size(110, 54)
+        Me.bNuevo.TabIndex = 1
+        Me.bNuevo.Text = "Nuevo"
+        Me.bNuevo.UseVisualStyleBackColor = True
+        '
         'gbClientes
         '
         Me.gbClientes.Controls.Add(Me.tbBusqueda)
@@ -105,6 +153,7 @@ Partial Class formVehiculos
         '
         'tbBusqueda
         '
+        Me.tbBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbBusqueda.Location = New System.Drawing.Point(73, 26)
         Me.tbBusqueda.Name = "tbBusqueda"
         Me.tbBusqueda.Size = New System.Drawing.Size(141, 20)
@@ -173,20 +222,21 @@ Partial Class formVehiculos
         '
         'gbDatosVehiculo
         '
+        Me.gbDatosVehiculo.Controls.Add(Me.Label18)
         Me.gbDatosVehiculo.Controls.Add(Me.bNuevoModelo)
         Me.gbDatosVehiculo.Controls.Add(Me.bNuevaMarca)
         Me.gbDatosVehiculo.Controls.Add(Me.tbRetiroPapeles)
         Me.gbDatosVehiculo.Controls.Add(Me.tbAdeuda)
         Me.gbDatosVehiculo.Controls.Add(Me.tbTransferencia)
-        Me.gbDatosVehiculo.Controls.Add(Me.TextBox9)
-        Me.gbDatosVehiculo.Controls.Add(Me.TextBox8)
-        Me.gbDatosVehiculo.Controls.Add(Me.TextBox7)
+        Me.gbDatosVehiculo.Controls.Add(Me.tbVenta)
+        Me.gbDatosVehiculo.Controls.Add(Me.tbGastos)
+        Me.gbDatosVehiculo.Controls.Add(Me.tbCosto)
         Me.gbDatosVehiculo.Controls.Add(Me.Label17)
         Me.gbDatosVehiculo.Controls.Add(Me.Label16)
         Me.gbDatosVehiculo.Controls.Add(Me.Label15)
         Me.gbDatosVehiculo.Controls.Add(Me.Label14)
-        Me.gbDatosVehiculo.Controls.Add(Me.TextBox5)
-        Me.gbDatosVehiculo.Controls.Add(Me.TextBox2)
+        Me.gbDatosVehiculo.Controls.Add(Me.tbUbicacion)
+        Me.gbDatosVehiculo.Controls.Add(Me.tbAño)
         Me.gbDatosVehiculo.Controls.Add(Me.cbTipoMotor)
         Me.gbDatosVehiculo.Controls.Add(Me.tbColor)
         Me.gbDatosVehiculo.Controls.Add(Me.cbModelo)
@@ -194,8 +244,8 @@ Partial Class formVehiculos
         Me.gbDatosVehiculo.Controls.Add(Me.Label12)
         Me.gbDatosVehiculo.Controls.Add(Me.cbMarca)
         Me.gbDatosVehiculo.Controls.Add(Me.tbNroMotor)
-        Me.gbDatosVehiculo.Controls.Add(Me.TextBox4)
-        Me.gbDatosVehiculo.Controls.Add(Me.TextBox3)
+        Me.gbDatosVehiculo.Controls.Add(Me.tbNroChasis)
+        Me.gbDatosVehiculo.Controls.Add(Me.tbDominio)
         Me.gbDatosVehiculo.Controls.Add(Me.tbTipoVehiculo)
         Me.gbDatosVehiculo.Controls.Add(Me.Label11)
         Me.gbDatosVehiculo.Controls.Add(Me.Label10)
@@ -213,6 +263,37 @@ Partial Class formVehiculos
         Me.gbDatosVehiculo.TabIndex = 2
         Me.gbDatosVehiculo.TabStop = False
         Me.gbDatosVehiculo.Text = "Datos Vehiculo"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(10, 298)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(110, 13)
+        Me.Label18.TabIndex = 34
+        Me.Label18.Text = "* Campos Obligatorios"
+        '
+        'bNuevoModelo
+        '
+        Me.bNuevoModelo.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.bNuevoModelo.Location = New System.Drawing.Point(220, 88)
+        Me.bNuevoModelo.Name = "bNuevoModelo"
+        Me.bNuevoModelo.Size = New System.Drawing.Size(32, 23)
+        Me.bNuevoModelo.TabIndex = 33
+        Me.bNuevoModelo.TabStop = False
+        Me.bNuevoModelo.Text = "..."
+        Me.bNuevoModelo.UseVisualStyleBackColor = True
+        '
+        'bNuevaMarca
+        '
+        Me.bNuevaMarca.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.bNuevaMarca.Location = New System.Drawing.Point(220, 56)
+        Me.bNuevaMarca.Name = "bNuevaMarca"
+        Me.bNuevaMarca.Size = New System.Drawing.Size(32, 23)
+        Me.bNuevaMarca.TabIndex = 32
+        Me.bNuevaMarca.TabStop = False
+        Me.bNuevaMarca.Text = "..."
+        Me.bNuevaMarca.UseVisualStyleBackColor = True
         '
         'tbRetiroPapeles
         '
@@ -236,26 +317,26 @@ Partial Class formVehiculos
         Me.tbTransferencia.Size = New System.Drawing.Size(100, 20)
         Me.tbTransferencia.TabIndex = 13
         '
-        'TextBox9
+        'tbVenta
         '
-        Me.TextBox9.Location = New System.Drawing.Point(405, 269)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox9.TabIndex = 17
+        Me.tbVenta.Location = New System.Drawing.Point(405, 269)
+        Me.tbVenta.Name = "tbVenta"
+        Me.tbVenta.Size = New System.Drawing.Size(100, 20)
+        Me.tbVenta.TabIndex = 17
         '
-        'TextBox8
+        'tbGastos
         '
-        Me.TextBox8.Location = New System.Drawing.Point(565, 234)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 16
+        Me.tbGastos.Location = New System.Drawing.Point(565, 234)
+        Me.tbGastos.Name = "tbGastos"
+        Me.tbGastos.Size = New System.Drawing.Size(100, 20)
+        Me.tbGastos.TabIndex = 16
         '
-        'TextBox7
+        'tbCosto
         '
-        Me.TextBox7.Location = New System.Drawing.Point(405, 234)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 15
+        Me.tbCosto.Location = New System.Drawing.Point(405, 234)
+        Me.tbCosto.Name = "tbCosto"
+        Me.tbCosto.Size = New System.Drawing.Size(100, 20)
+        Me.tbCosto.TabIndex = 15
         '
         'Label17
         '
@@ -293,25 +374,25 @@ Partial Class formVehiculos
         Me.Label14.TabIndex = 28
         Me.Label14.Text = "Retiro Papeles"
         '
-        'TextBox5
+        'tbUbicacion
         '
-        Me.TextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox5.Location = New System.Drawing.Point(405, 155)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(224, 20)
-        Me.TextBox5.TabIndex = 11
+        Me.tbUbicacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbUbicacion.Location = New System.Drawing.Point(405, 155)
+        Me.tbUbicacion.Name = "tbUbicacion"
+        Me.tbUbicacion.Size = New System.Drawing.Size(224, 20)
+        Me.tbUbicacion.TabIndex = 11
         '
-        'TextBox2
+        'tbAño
         '
-        Me.TextBox2.Location = New System.Drawing.Point(405, 90)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(93, 20)
-        Me.TextBox2.TabIndex = 7
+        Me.tbAño.Location = New System.Drawing.Point(405, 90)
+        Me.tbAño.Name = "tbAño"
+        Me.tbAño.Size = New System.Drawing.Size(93, 20)
+        Me.tbAño.TabIndex = 7
         '
         'cbTipoMotor
         '
         Me.cbTipoMotor.FormattingEnabled = True
-        Me.cbTipoMotor.Items.AddRange(New Object() {"NAFTA ", "DIESEL"})
+        Me.cbTipoMotor.Items.AddRange(New Object() {"NAFTA ", "DIESEL", "GNC"})
         Me.cbTipoMotor.Location = New System.Drawing.Point(405, 26)
         Me.cbTipoMotor.Name = "cbTipoMotor"
         Me.cbTipoMotor.Size = New System.Drawing.Size(93, 21)
@@ -328,6 +409,7 @@ Partial Class formVehiculos
         'cbModelo
         '
         Me.cbModelo.FormattingEnabled = True
+        Me.cbModelo.Items.AddRange(New Object() {"12", "FIESTA"})
         Me.cbModelo.Location = New System.Drawing.Point(94, 90)
         Me.cbModelo.Name = "cbModelo"
         Me.cbModelo.Size = New System.Drawing.Size(121, 21)
@@ -354,10 +436,12 @@ Partial Class formVehiculos
         'cbMarca
         '
         Me.cbMarca.FormattingEnabled = True
+        Me.cbMarca.Items.AddRange(New Object() {"FORD", "RENAULT"})
         Me.cbMarca.Location = New System.Drawing.Point(93, 58)
         Me.cbMarca.Name = "cbMarca"
         Me.cbMarca.Size = New System.Drawing.Size(121, 21)
         Me.cbMarca.TabIndex = 3
+        Me.cbMarca.Tag = ""
         '
         'tbNroMotor
         '
@@ -367,21 +451,21 @@ Partial Class formVehiculos
         Me.tbNroMotor.Size = New System.Drawing.Size(222, 20)
         Me.tbNroMotor.TabIndex = 8
         '
-        'TextBox4
+        'tbNroChasis
         '
-        Me.TextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox4.Location = New System.Drawing.Point(405, 122)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(224, 20)
-        Me.TextBox4.TabIndex = 9
+        Me.tbNroChasis.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbNroChasis.Location = New System.Drawing.Point(405, 122)
+        Me.tbNroChasis.Name = "tbNroChasis"
+        Me.tbNroChasis.Size = New System.Drawing.Size(224, 20)
+        Me.tbNroChasis.TabIndex = 9
         '
-        'TextBox3
+        'tbDominio
         '
-        Me.TextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox3.Location = New System.Drawing.Point(405, 58)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(93, 20)
-        Me.TextBox3.TabIndex = 6
+        Me.tbDominio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbDominio.Location = New System.Drawing.Point(405, 58)
+        Me.tbDominio.Name = "tbDominio"
+        Me.tbDominio.Size = New System.Drawing.Size(93, 20)
+        Me.tbDominio.TabIndex = 6
         '
         'tbTipoVehiculo
         '
@@ -414,9 +498,9 @@ Partial Class formVehiculos
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(45, 90)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(42, 13)
+        Me.Label9.Size = New System.Drawing.Size(49, 13)
         Me.Label9.TabIndex = 7
-        Me.Label9.Text = "Modelo"
+        Me.Label9.Text = "Modelo *"
         '
         'Label4
         '
@@ -432,9 +516,9 @@ Partial Class formVehiculos
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(354, 61)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(45, 13)
+        Me.Label8.Size = New System.Drawing.Size(52, 13)
         Me.Label8.TabIndex = 6
-        Me.Label8.Text = "Dominio"
+        Me.Label8.Text = "Dominio *"
         '
         'Label7
         '
@@ -468,86 +552,18 @@ Partial Class formVehiculos
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(51, 58)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 13)
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Marca"
+        Me.Label3.Text = "Marca *"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 26)
+        Me.Label2.Location = New System.Drawing.Point(15, 26)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Tipo Vehiculo"
-        '
-        'bNuevoModelo
-        '
-        Me.bNuevoModelo.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
-        Me.bNuevoModelo.Location = New System.Drawing.Point(222, 90)
-        Me.bNuevoModelo.Name = "bNuevoModelo"
-        Me.bNuevoModelo.Size = New System.Drawing.Size(32, 23)
-        Me.bNuevoModelo.TabIndex = 33
-        Me.bNuevoModelo.TabStop = False
-        Me.bNuevoModelo.Text = "..."
-        Me.bNuevoModelo.UseVisualStyleBackColor = True
-        '
-        'bNuevaMarca
-        '
-        Me.bNuevaMarca.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
-        Me.bNuevaMarca.Location = New System.Drawing.Point(222, 61)
-        Me.bNuevaMarca.Name = "bNuevaMarca"
-        Me.bNuevaMarca.Size = New System.Drawing.Size(32, 23)
-        Me.bNuevaMarca.TabIndex = 32
-        Me.bNuevaMarca.TabStop = False
-        Me.bNuevaMarca.Text = "..."
-        Me.bNuevaMarca.UseVisualStyleBackColor = True
-        '
-        'bSalir
-        '
-        Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
-        Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bSalir.Location = New System.Drawing.Point(17, 253)
-        Me.bSalir.Name = "bSalir"
-        Me.bSalir.Size = New System.Drawing.Size(110, 50)
-        Me.bSalir.TabIndex = 4
-        Me.bSalir.Text = "Salir"
-        Me.bSalir.UseVisualStyleBackColor = True
-        '
-        'bEliminar
-        '
-        Me.bEliminar.Enabled = False
-        Me.bEliminar.Image = Global.SistemaLaTortuga.My.Resources.Resources.cancel
-        Me.bEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bEliminar.Location = New System.Drawing.Point(17, 183)
-        Me.bEliminar.Name = "bEliminar"
-        Me.bEliminar.Size = New System.Drawing.Size(110, 50)
-        Me.bEliminar.TabIndex = 3
-        Me.bEliminar.Text = "Eliminar"
-        Me.bEliminar.UseVisualStyleBackColor = True
-        '
-        'bModificar
-        '
-        Me.bModificar.Enabled = False
-        Me.bModificar.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
-        Me.bModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bModificar.Location = New System.Drawing.Point(17, 113)
-        Me.bModificar.Name = "bModificar"
-        Me.bModificar.Size = New System.Drawing.Size(110, 54)
-        Me.bModificar.TabIndex = 2
-        Me.bModificar.Text = "Modificar"
-        Me.bModificar.UseVisualStyleBackColor = True
-        '
-        'bNuevo
-        '
-        Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
-        Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bNuevo.Location = New System.Drawing.Point(17, 36)
-        Me.bNuevo.Name = "bNuevo"
-        Me.bNuevo.Size = New System.Drawing.Size(110, 54)
-        Me.bNuevo.TabIndex = 1
-        Me.bNuevo.Text = "Nuevo"
-        Me.bNuevo.UseVisualStyleBackColor = True
+        Me.Label2.Text = "Tipo Vehiculo *"
         '
         'formVehiculos
         '
@@ -581,8 +597,8 @@ Partial Class formVehiculos
     Friend WithEvents dgVehiculos As System.Windows.Forms.DataGridView
     Friend WithEvents gbDatosVehiculo As System.Windows.Forms.GroupBox
     Friend WithEvents tbNroMotor As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents tbNroChasis As System.Windows.Forms.TextBox
+    Friend WithEvents tbDominio As System.Windows.Forms.TextBox
     Friend WithEvents tbTipoVehiculo As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
@@ -600,15 +616,15 @@ Partial Class formVehiculos
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents cbMarca As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents tbVenta As System.Windows.Forms.TextBox
+    Friend WithEvents tbGastos As System.Windows.Forms.TextBox
+    Friend WithEvents tbCosto As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents tbUbicacion As System.Windows.Forms.TextBox
+    Friend WithEvents tbAño As System.Windows.Forms.TextBox
     Friend WithEvents tbRetiroPapeles As System.Windows.Forms.DateTimePicker
     Friend WithEvents tbAdeuda As System.Windows.Forms.TextBox
     Friend WithEvents tbTransferencia As System.Windows.Forms.TextBox
@@ -620,4 +636,5 @@ Partial Class formVehiculos
     Friend WithEvents año As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents bNuevaMarca As System.Windows.Forms.Button
     Friend WithEvents bNuevoModelo As System.Windows.Forms.Button
+    Friend WithEvents Label18 As System.Windows.Forms.Label
 End Class

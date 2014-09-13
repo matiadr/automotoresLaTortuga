@@ -12,4 +12,12 @@
     Private Sub bNuevaLocalidad_Click(sender As Object, e As EventArgs) Handles bNuevaLocalidad.Click
         dgLocalidades.Show()
     End Sub
+
+    Private Sub tbNombre_TextChanged(sender As Object, e As EventArgs) Handles tbNombre.TextChanged, tbDocumento.TextChanged
+        If tbNombre.Text.Length > 0 And tbDocumento.Text.Length > 0 Then
+            bNuevo.Enabled = True
+        Else
+            bNuevo.Enabled = False
+        End If
+    End Sub
 End Class

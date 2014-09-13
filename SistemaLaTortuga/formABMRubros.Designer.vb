@@ -24,6 +24,8 @@ Partial Class formABMRubros
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgProvincias = New System.Windows.Forms.DataGridView()
+        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
@@ -31,8 +33,6 @@ Partial Class formABMRubros
         Me.bNuevo = New System.Windows.Forms.Button()
         Me.tbRubro = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgProvincias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
@@ -62,6 +62,19 @@ Partial Class formABMRubros
         Me.dgProvincias.Size = New System.Drawing.Size(204, 111)
         Me.dgProvincias.TabIndex = 4
         Me.dgProvincias.TabStop = False
+        '
+        'idRubro
+        '
+        Me.idRubro.HeaderText = "idRubro"
+        Me.idRubro.Name = "idRubro"
+        Me.idRubro.ReadOnly = True
+        Me.idRubro.Visible = False
+        '
+        'rubro
+        '
+        Me.rubro.HeaderText = "Rubro"
+        Me.rubro.Name = "rubro"
+        Me.rubro.ReadOnly = True
         '
         'gbAcciones
         '
@@ -113,6 +126,7 @@ Partial Class formABMRubros
         '
         'bNuevo
         '
+        Me.bNuevo.Enabled = False
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bNuevo.Location = New System.Drawing.Point(17, 36)
@@ -138,19 +152,6 @@ Partial Class formABMRubros
         Me.Label1.Size = New System.Drawing.Size(36, 13)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Rubro"
-        '
-        'idRubro
-        '
-        Me.idRubro.HeaderText = "idRubro"
-        Me.idRubro.Name = "idRubro"
-        Me.idRubro.ReadOnly = True
-        Me.idRubro.Visible = False
-        '
-        'rubro
-        '
-        Me.rubro.HeaderText = "Rubro"
-        Me.rubro.Name = "rubro"
-        Me.rubro.ReadOnly = True
         '
         'formABMRubros
         '

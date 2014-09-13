@@ -126,6 +126,7 @@ Partial Class formABMMarca
         '
         'bNuevo
         '
+        Me.bNuevo.Enabled = False
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bNuevo.Location = New System.Drawing.Point(17, 36)

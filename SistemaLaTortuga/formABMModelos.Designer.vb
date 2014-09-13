@@ -28,15 +28,15 @@ Partial Class formABMModelos
         Me.tbModelo = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
-        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
@@ -101,6 +101,32 @@ Partial Class formABMModelos
         Me.DataGridView1.TabIndex = 7
         Me.DataGridView1.TabStop = False
         '
+        'idMarca
+        '
+        Me.idMarca.HeaderText = "idMarca"
+        Me.idMarca.Name = "idMarca"
+        Me.idMarca.ReadOnly = True
+        Me.idMarca.Visible = False
+        '
+        'idModelo
+        '
+        Me.idModelo.HeaderText = "idModelo"
+        Me.idModelo.Name = "idModelo"
+        Me.idModelo.ReadOnly = True
+        Me.idModelo.Visible = False
+        '
+        'marca
+        '
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        Me.marca.ReadOnly = True
+        '
+        'modelo
+        '
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        Me.modelo.ReadOnly = True
+        '
         'gbAcciones
         '
         Me.gbAcciones.Controls.Add(Me.bSalir)
@@ -151,6 +177,7 @@ Partial Class formABMModelos
         '
         'bNuevo
         '
+        Me.bNuevo.Enabled = False
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bNuevo.Location = New System.Drawing.Point(17, 36)
@@ -159,32 +186,6 @@ Partial Class formABMModelos
         Me.bNuevo.TabIndex = 3
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
-        '
-        'idMarca
-        '
-        Me.idMarca.HeaderText = "idMarca"
-        Me.idMarca.Name = "idMarca"
-        Me.idMarca.ReadOnly = True
-        Me.idMarca.Visible = False
-        '
-        'idModelo
-        '
-        Me.idModelo.HeaderText = "idModelo"
-        Me.idModelo.Name = "idModelo"
-        Me.idModelo.ReadOnly = True
-        Me.idModelo.Visible = False
-        '
-        'marca
-        '
-        Me.marca.HeaderText = "Marca"
-        Me.marca.Name = "marca"
-        Me.marca.ReadOnly = True
-        '
-        'modelo
-        '
-        Me.modelo.HeaderText = "Modelo"
-        Me.modelo.Name = "modelo"
-        Me.modelo.ReadOnly = True
         '
         'formABMModelos
         '

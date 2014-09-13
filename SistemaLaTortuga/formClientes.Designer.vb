@@ -33,6 +33,8 @@ Partial Class formClientes
         Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bNuevaProvincia = New System.Windows.Forms.GroupBox()
+        Me.bNuevaLocalidad = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.tbFechaNac = New System.Windows.Forms.MaskedTextBox()
         Me.tbOcupacion = New System.Windows.Forms.TextBox()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
@@ -58,8 +60,7 @@ Partial Class formClientes
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
-        Me.bNuevaLocalidad = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.bNuevaProvincia.SuspendLayout()
@@ -80,10 +81,14 @@ Partial Class formClientes
         '
         'tbBusqueda
         '
+        Me.tbBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbBusqueda.ForeColor = System.Drawing.Color.Black
         Me.tbBusqueda.Location = New System.Drawing.Point(73, 26)
         Me.tbBusqueda.Name = "tbBusqueda"
         Me.tbBusqueda.Size = New System.Drawing.Size(141, 20)
         Me.tbBusqueda.TabIndex = 1
+        Me.tbBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -147,6 +152,7 @@ Partial Class formClientes
         '
         'bNuevaProvincia
         '
+        Me.bNuevaProvincia.Controls.Add(Me.Label12)
         Me.bNuevaProvincia.Controls.Add(Me.bNuevaLocalidad)
         Me.bNuevaProvincia.Controls.Add(Me.Button2)
         Me.bNuevaProvincia.Controls.Add(Me.tbFechaNac)
@@ -175,6 +181,28 @@ Partial Class formClientes
         Me.bNuevaProvincia.TabIndex = 1
         Me.bNuevaProvincia.TabStop = False
         Me.bNuevaProvincia.Text = "Datos Cliente"
+        '
+        'bNuevaLocalidad
+        '
+        Me.bNuevaLocalidad.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.bNuevaLocalidad.Location = New System.Drawing.Point(538, 154)
+        Me.bNuevaLocalidad.Name = "bNuevaLocalidad"
+        Me.bNuevaLocalidad.Size = New System.Drawing.Size(30, 23)
+        Me.bNuevaLocalidad.TabIndex = 13
+        Me.bNuevaLocalidad.TabStop = False
+        Me.bNuevaLocalidad.Text = "..."
+        Me.bNuevaLocalidad.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.Button2.Location = New System.Drawing.Point(278, 155)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(27, 23)
+        Me.Button2.TabIndex = 12
+        Me.Button2.TabStop = False
+        Me.Button2.Text = "..."
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'tbFechaNac
         '
@@ -334,18 +362,18 @@ Partial Class formClientes
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(20, 58)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 13)
+        Me.Label3.Size = New System.Drawing.Size(89, 13)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nro Documento"
+        Me.Label3.Text = "Nro Documento *"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(56, 26)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(51, 13)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Nombre"
+        Me.Label2.Text = "Nombre *"
         '
         'bSalir
         '
@@ -355,7 +383,7 @@ Partial Class formClientes
         Me.bSalir.Controls.Add(Me.bNuevo)
         Me.bSalir.Location = New System.Drawing.Point(726, 24)
         Me.bSalir.Name = "bSalir"
-        Me.bSalir.Size = New System.Drawing.Size(184, 336)
+        Me.bSalir.Size = New System.Drawing.Size(184, 324)
         Me.bSalir.TabIndex = 2
         Me.bSalir.TabStop = False
         Me.bSalir.Text = "Acciones"
@@ -397,6 +425,7 @@ Partial Class formClientes
         '
         'bNuevo
         '
+        Me.bNuevo.Enabled = False
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bNuevo.Location = New System.Drawing.Point(17, 36)
@@ -406,27 +435,14 @@ Partial Class formClientes
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
         '
-        'bNuevaLocalidad
+        'Label12
         '
-        Me.bNuevaLocalidad.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
-        Me.bNuevaLocalidad.Location = New System.Drawing.Point(538, 154)
-        Me.bNuevaLocalidad.Name = "bNuevaLocalidad"
-        Me.bNuevaLocalidad.Size = New System.Drawing.Size(30, 23)
-        Me.bNuevaLocalidad.TabIndex = 13
-        Me.bNuevaLocalidad.TabStop = False
-        Me.bNuevaLocalidad.Text = "..."
-        Me.bNuevaLocalidad.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
-        Me.Button2.Location = New System.Drawing.Point(278, 155)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(27, 23)
-        Me.Button2.TabIndex = 12
-        Me.Button2.TabStop = False
-        Me.Button2.Text = "..."
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(556, 291)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(110, 13)
+        Me.Label12.TabIndex = 14
+        Me.Label12.Text = "* Campos Obligatorios"
         '
         'formClientes
         '
@@ -487,4 +503,5 @@ Partial Class formClientes
     Friend WithEvents Localidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents bNuevaLocalidad As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class
