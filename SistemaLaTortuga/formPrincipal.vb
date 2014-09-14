@@ -8,7 +8,7 @@
         formVehiculos.Show()
     End Sub
 
-    Private Sub CuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuentasToolStripMenuItem.Click
+    Private Sub CuentasToolStripMenuItem_Click(sender As Object, e As EventArgs)
         formCuentas.Show()
     End Sub
 End Class

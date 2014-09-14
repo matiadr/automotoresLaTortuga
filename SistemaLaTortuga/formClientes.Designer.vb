@@ -33,6 +33,7 @@ Partial Class formClientes
         Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bNuevaProvincia = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.bNuevaLocalidad = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.tbFechaNac = New System.Windows.Forms.MaskedTextBox()
@@ -60,7 +61,6 @@ Partial Class formClientes
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.bNuevaProvincia.SuspendLayout()
@@ -181,6 +181,15 @@ Partial Class formClientes
         Me.bNuevaProvincia.TabIndex = 1
         Me.bNuevaProvincia.TabStop = False
         Me.bNuevaProvincia.Text = "Datos Cliente"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(556, 291)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(110, 13)
+        Me.Label12.TabIndex = 14
+        Me.Label12.Text = "* Campos Obligatorios"
         '
         'bNuevaLocalidad
         '
@@ -426,6 +435,7 @@ Partial Class formClientes
         'bNuevo
         '
         Me.bNuevo.Enabled = False
+        Me.bNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bNuevo.Location = New System.Drawing.Point(17, 36)
@@ -434,15 +444,6 @@ Partial Class formClientes
         Me.bNuevo.TabIndex = 12
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(556, 291)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(110, 13)
-        Me.Label12.TabIndex = 14
-        Me.Label12.Text = "* Campos Obligatorios"
         '
         'formClientes
         '
