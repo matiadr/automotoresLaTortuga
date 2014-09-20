@@ -46,7 +46,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\la-tortuga-colon.ico</ApplicationIcon>
+    <ApplicationIcon>la-tortuga-colon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -74,16 +77,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="formABMBancos.Designer.vb">
+      <DependentUpon>formABMBancos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="formABMBancos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="formABMSucursales.Designer.vb">
+      <DependentUpon>formABMSucursales.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="formABMSucursales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormVentas.Designer.vb">
@@ -164,11 +167,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="formABMBancos.resx">
+      <DependentUpon>formABMBancos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="formABMSucursales.resx">
+      <DependentUpon>formABMSucursales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.vb</DependentUpon>
@@ -202,12 +205,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -235,6 +239,16 @@
     <None Include="Resources\filenew.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Ventas.ico" />
+    <None Include="Resources\search.ico" />
+    <None Include="Resources\Salir.ico" />
+    <None Include="Resources\Report.ico" />
+    <None Include="Resources\Money_Calculator.ico" />
+    <None Include="Resources\Cliente.ico" />
+    <None Include="Resources\cars.ico" />
+    <None Include="Resources\bank-icon.ico" />
+    <None Include="Resources\Administrar_converted.ico" />
+    <Content Include="la-tortuga-colon %281%29.ico" />
     <Content Include="Resources\la-tortuga-colon.ico" />
     <None Include="Resources\la-tortuga-colon.jpg" />
   </ItemGroup>

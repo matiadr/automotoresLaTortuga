@@ -1,68 +1,70 @@
 ﻿Imports System.Data.SqlClient
-Public Class formABMMarca
+Public Class formABMBancos
 
     Private Sub bSalir_Click(sender As Object, e As EventArgs) Handles bSalir.Click
         Me.Close()
     End Sub
 
-    Private Sub tbMarca_TextChanged(sender As Object, e As EventArgs) Handles tbMarca.TextChanged
-        If tbMarca.Text.Length > 0 Then
+    Private Sub tbBanco_TextChanged(sender As Object, e As EventArgs) Handles tbBanco.TextChanged
+        If tbBanco.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
             bNuevo.Enabled = False
+            bModificar.Enabled = False
         End If
     End Sub
 
 
-    Private Sub formABMMarca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarDGMarcas()
-    End Sub
-
-    Private Sub cargarDGMarcas()
+    Private Sub cargarDGBancos()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("select * from Marcas order by NombreMarca", CN)
+        Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
         Dim lista As SqlDataReader = cmd.ExecuteReader
         Dim dt As New DataTable()
         dt.Load(lista)
-        dgMarcas.DataSource = dt
+        dgBancos.DataSource = dt
         CN.Close()
-    End Sub
-
-
-    Private Sub dgMarcas_Click(sender As Object, e As EventArgs) Handles dgMarcas.Click, dgMarcas.KeyDown, dgMarcas.KeyUp
-        If dgMarcas.RowCount > 0 Then
-            tbMarca.Text = dgMarcas.Item("marca", dgMarcas.SelectedRows(0).Index).Value()
-            tbIdMarca.Text = dgMarcas.Item("idMarca", dgMarcas.SelectedRows(0).Index).Value()
-            bModificar.Enabled = True
-        End If
     End Sub
 
     Private Sub bNuevo_Click(sender As Object, e As EventArgs) Handles bNuevo.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("insert into Marcas values ('" & tbMarca.Text & "')", CN)
+        Dim cmd As New SqlCommand("insert into Bancos values ('" & tbCodigo.Text & "','" & tbBanco.Text & "')", CN)
         cmd.ExecuteNonQuery()
-        MessageBox.Show("Marca Agregada")
-        cargarDGMarcas()
+        CN.Close()
+        MessageBox.Show("Banco Agregado")
+        cargarDGBancos()
         bNuevo.Enabled = False
         bModificar.Enabled = False
-        tbMarca.Text = ""
-        CN.Close()
-        formVehiculos.cargarCBMarcas()
+        tbBanco.Text = ""
+        tbCodigo.Text = ""
+    End Sub
+
+
+    Private Sub dgBancos_Click(sender As Object, e As EventArgs) Handles dgBancos.Click, dgBancos.KeyUp
+        If dgBancos.RowCount > 0 Then
+            tbBanco.Text = dgBancos.Item("banco", dgBancos.SelectedRows(0).Index).Value()
+            tbIdBanco.Text = dgBancos.Item("idBanco", dgBancos.SelectedRows(0).Index).Value()
+            tbCodigo.Text = dgBancos.Item("codigoBanco", dgBancos.SelectedRows(0).Index).Value()
+            bModificar.Enabled = True
+        End If
     End Sub
 
     Private Sub bModificar_Click(sender As Object, e As EventArgs) Handles bModificar.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("update Marcas set NombreMarca='" & tbMarca.Text & "' where IdMarca= '" & tbIdMarca.Text & "'", CN)
+        Dim cmd As New SqlCommand("update Bancos set NombreBanco='" & tbBanco.Text & "',CodigoBanco='" & tbCodigo.Text & "' where IdBanco = '" & tbIdBanco.Text & "'", CN)
         cmd.ExecuteNonQuery()
-        MessageBox.Show("Modificacion Efectuada")
         CN.Close()
-        cargarDGMarcas()
+        MessageBox.Show("Modificacion Efectuada")
+        cargarDGBancos()
         bModificar.Enabled = False
-        tbMarca.Text = ""
-        tbIdMarca.Text = ""
-        formVehiculos.cargarCBMarcas()
+        tbBanco.Text = ""
+        tbIdBanco.Text = ""
+        tbCodigo.Text = ""
+    End Sub
+
+    Private Sub formABMBancos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarDGBancos()
     End Sub
 End Class

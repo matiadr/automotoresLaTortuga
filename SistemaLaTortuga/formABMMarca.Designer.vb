@@ -33,6 +33,7 @@ Partial Class formABMMarca
         Me.bNuevo = New System.Windows.Forms.Button()
         Me.tbMarca = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.tbIdMarca = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgMarcas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class formABMMarca
         '
         'idMarca
         '
+        Me.idMarca.DataPropertyName = "IdMarca"
         Me.idMarca.HeaderText = "idMarca"
         Me.idMarca.Name = "idMarca"
         Me.idMarca.ReadOnly = True
@@ -72,6 +74,7 @@ Partial Class formABMMarca
         '
         'marca
         '
+        Me.marca.DataPropertyName = "NombreMarca"
         Me.marca.HeaderText = "Marca"
         Me.marca.Name = "marca"
         Me.marca.ReadOnly = True
@@ -153,16 +156,26 @@ Partial Class formABMMarca
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Marca"
         '
+        'tbIdMarca
+        '
+        Me.tbIdMarca.Location = New System.Drawing.Point(70, 254)
+        Me.tbIdMarca.Name = "tbIdMarca"
+        Me.tbIdMarca.Size = New System.Drawing.Size(43, 20)
+        Me.tbIdMarca.TabIndex = 11
+        Me.tbIdMarca.Visible = False
+        '
         'formABMMarca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(428, 291)
+        Me.Controls.Add(Me.tbIdMarca)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbAcciones)
         Me.Controls.Add(Me.tbMarca)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "formABMMarca"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrar Marcas"
@@ -175,8 +188,6 @@ Partial Class formABMMarca
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgMarcas As System.Windows.Forms.DataGridView
-    Friend WithEvents idMarca As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents marca As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents gbAcciones As System.Windows.Forms.GroupBox
     Friend WithEvents bSalir As System.Windows.Forms.Button
     Friend WithEvents bEliminar As System.Windows.Forms.Button
@@ -184,4 +195,7 @@ Partial Class formABMMarca
     Friend WithEvents bNuevo As System.Windows.Forms.Button
     Friend WithEvents tbMarca As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents tbIdMarca As System.Windows.Forms.TextBox
+    Friend WithEvents idMarca As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents marca As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

@@ -39,6 +39,9 @@ Partial Class Venta
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -55,6 +58,8 @@ Partial Class Venta
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.TextBox34 = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.TextBox23 = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -75,41 +80,36 @@ Partial Class Venta
         Me.Label20 = New System.Windows.Forms.Label()
         Me.TextBox21 = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.TextBox32 = New System.Windows.Forms.TextBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.TextBox33 = New System.Windows.Forms.TextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.TextBox32 = New System.Windows.Forms.TextBox()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.TextBox31 = New System.Windows.Forms.TextBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.TextBox24 = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.TextBox34 = New System.Windows.Forms.TextBox()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -297,6 +297,32 @@ Partial Class Venta
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Vehículo Venta"
         '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(462, 19)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(34, 24)
+        Me.Button10.TabIndex = 17
+        Me.Button10.Text = "Button10"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(196, 16)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(68, 13)
+        Me.Label27.TabIndex = 16
+        Me.Label27.Text = "Precio Venta"
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Enabled = False
+        Me.TextBox28.Location = New System.Drawing.Point(193, 29)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(94, 20)
+        Me.TextBox28.TabIndex = 15
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -454,6 +480,23 @@ Partial Class Venta
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Vehículo Entrega"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(190, 18)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(77, 13)
+        Me.Label34.TabIndex = 20
+        Me.Label34.Text = "Precio Entrega"
+        '
+        'TextBox34
+        '
+        Me.TextBox34.Enabled = False
+        Me.TextBox34.Location = New System.Drawing.Point(187, 31)
+        Me.TextBox34.Name = "TextBox34"
+        Me.TextBox34.Size = New System.Drawing.Size(94, 20)
+        Me.TextBox34.TabIndex = 19
         '
         'Label22
         '
@@ -633,75 +676,6 @@ Partial Class Venta
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Pagos"
         '
-        'TextBox24
-        '
-        Me.TextBox24.Enabled = False
-        Me.TextBox24.Location = New System.Drawing.Point(16, 34)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(89, 20)
-        Me.TextBox24.TabIndex = 0
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(13, 19)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(44, 13)
-        Me.Label23.TabIndex = 1
-        Me.Label23.Text = "Entrega"
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(110, 33)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(37, 21)
-        Me.Button4.TabIndex = 2
-        Me.Button4.Text = "..."
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'TextBox25
-        '
-        Me.TextBox25.Enabled = False
-        Me.TextBox25.Location = New System.Drawing.Point(16, 92)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(83, 20)
-        Me.TextBox25.TabIndex = 3
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(13, 76)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(84, 13)
-        Me.Label24.TabIndex = 4
-        Me.Label24.Text = "Doc. Especiales"
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(110, 88)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(37, 21)
-        Me.Button5.TabIndex = 5
-        Me.Button5.Text = "..."
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(15, 136)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(89, 13)
-        Me.Label25.TabIndex = 7
-        Me.Label25.Text = "Saldo Financiado"
-        '
-        'TextBox26
-        '
-        Me.TextBox26.Enabled = False
-        Me.TextBox26.Location = New System.Drawing.Point(18, 152)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(83, 20)
-        Me.TextBox26.TabIndex = 6
-        '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.Label35)
@@ -728,55 +702,98 @@ Partial Class Venta
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Plan de Pago "
         '
-        'TextBox27
+        'Label35
         '
-        Me.TextBox27.Location = New System.Drawing.Point(6, 48)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(303, 20)
-        Me.TextBox27.TabIndex = 0
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(92, 99)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(15, 13)
+        Me.Label35.TabIndex = 22
+        Me.Label35.Text = "%"
         '
-        'Label26
+        'CheckBox1
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(6, 32)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(43, 13)
-        Me.Label26.TabIndex = 1
-        Me.Label26.Text = "Detalle "
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(106, 228)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(101, 17)
+        Me.CheckBox1.TabIndex = 21
+        Me.CheckBox1.Text = "Plan Cancelado"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'Label27
+        'Button6
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(196, 16)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(68, 13)
-        Me.Label27.TabIndex = 16
-        Me.Label27.Text = "Precio Venta"
+        Me.Button6.Location = New System.Drawing.Point(240, 167)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(69, 37)
+        Me.Button6.TabIndex = 20
+        Me.Button6.Text = "Generar Plan"
+        Me.Button6.UseVisualStyleBackColor = True
         '
-        'TextBox28
+        'Label33
         '
-        Me.TextBox28.Enabled = False
-        Me.TextBox28.Location = New System.Drawing.Point(193, 29)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(94, 20)
-        Me.TextBox28.TabIndex = 15
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(122, 170)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(69, 13)
+        Me.Label33.TabIndex = 19
+        Me.Label33.Text = "Importe Total"
         '
-        'Label28
+        'TextBox33
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(3, 80)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(40, 13)
-        Me.Label28.TabIndex = 9
-        Me.Label28.Text = "Cuotas"
+        Me.TextBox33.Location = New System.Drawing.Point(122, 186)
+        Me.TextBox33.Name = "TextBox33"
+        Me.TextBox33.Size = New System.Drawing.Size(101, 20)
+        Me.TextBox33.TabIndex = 18
         '
-        'TextBox29
+        'Label32
         '
-        Me.TextBox29.Enabled = False
-        Me.TextBox29.Location = New System.Drawing.Point(6, 96)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(37, 20)
-        Me.TextBox29.TabIndex = 8
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(6, 170)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(62, 13)
+        Me.Label32.TabIndex = 17
+        Me.Label32.Text = "Valor Cuota"
+        '
+        'TextBox32
+        '
+        Me.TextBox32.Location = New System.Drawing.Point(6, 186)
+        Me.TextBox32.Name = "TextBox32"
+        Me.TextBox32.Size = New System.Drawing.Size(101, 20)
+        Me.TextBox32.TabIndex = 16
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(121, 128)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(73, 13)
+        Me.Label31.TabIndex = 15
+        Me.Label31.Text = "Primera Cuota"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(122, 141)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(87, 20)
+        Me.DateTimePicker1.TabIndex = 14
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(6, 127)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(101, 13)
+        Me.Label30.TabIndex = 13
+        Me.Label30.Text = "Meses entre Cuotas"
+        '
+        'TextBox31
+        '
+        Me.TextBox31.Location = New System.Drawing.Point(6, 143)
+        Me.TextBox31.Name = "TextBox31"
+        Me.TextBox31.Size = New System.Drawing.Size(101, 20)
+        Me.TextBox31.TabIndex = 12
         '
         'Label29
         '
@@ -795,89 +812,107 @@ Partial Class Venta
         Me.TextBox30.Size = New System.Drawing.Size(37, 20)
         Me.TextBox30.TabIndex = 10
         '
-        'Label30
+        'Label28
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(6, 127)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(101, 13)
-        Me.Label30.TabIndex = 13
-        Me.Label30.Text = "Meses entre Cuotas"
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(3, 80)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(40, 13)
+        Me.Label28.TabIndex = 9
+        Me.Label28.Text = "Cuotas"
         '
-        'TextBox31
+        'TextBox29
         '
-        Me.TextBox31.Location = New System.Drawing.Point(6, 143)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox31.TabIndex = 12
+        Me.TextBox29.Enabled = False
+        Me.TextBox29.Location = New System.Drawing.Point(6, 96)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(37, 20)
+        Me.TextBox29.TabIndex = 8
         '
-        'DateTimePicker1
+        'Label26
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(122, 141)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(87, 20)
-        Me.DateTimePicker1.TabIndex = 14
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(6, 32)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(43, 13)
+        Me.Label26.TabIndex = 1
+        Me.Label26.Text = "Detalle "
         '
-        'Label31
+        'TextBox27
         '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(121, 128)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(73, 13)
-        Me.Label31.TabIndex = 15
-        Me.Label31.Text = "Primera Cuota"
+        Me.TextBox27.Location = New System.Drawing.Point(6, 48)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Size = New System.Drawing.Size(303, 20)
+        Me.TextBox27.TabIndex = 0
         '
-        'Label32
+        'Label25
         '
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(6, 170)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(62, 13)
-        Me.Label32.TabIndex = 17
-        Me.Label32.Text = "Valor Cuota"
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(15, 136)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(89, 13)
+        Me.Label25.TabIndex = 7
+        Me.Label25.Text = "Saldo Financiado"
         '
-        'TextBox32
+        'TextBox26
         '
-        Me.TextBox32.Location = New System.Drawing.Point(6, 186)
-        Me.TextBox32.Name = "TextBox32"
-        Me.TextBox32.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox32.TabIndex = 16
+        Me.TextBox26.Enabled = False
+        Me.TextBox26.Location = New System.Drawing.Point(18, 152)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(83, 20)
+        Me.TextBox26.TabIndex = 6
         '
-        'Label33
+        'Button5
         '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(122, 170)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(69, 13)
-        Me.Label33.TabIndex = 19
-        Me.Label33.Text = "Importe Total"
+        Me.Button5.Location = New System.Drawing.Point(110, 88)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(37, 21)
+        Me.Button5.TabIndex = 5
+        Me.Button5.Text = "..."
+        Me.Button5.UseVisualStyleBackColor = True
         '
-        'TextBox33
+        'Label24
         '
-        Me.TextBox33.Location = New System.Drawing.Point(122, 186)
-        Me.TextBox33.Name = "TextBox33"
-        Me.TextBox33.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox33.TabIndex = 18
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(13, 76)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(84, 13)
+        Me.Label24.TabIndex = 4
+        Me.Label24.Text = "Doc. Especiales"
         '
-        'Button6
+        'TextBox25
         '
-        Me.Button6.Location = New System.Drawing.Point(240, 167)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(69, 37)
-        Me.Button6.TabIndex = 20
-        Me.Button6.Text = "Generar Plan"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.TextBox25.Enabled = False
+        Me.TextBox25.Location = New System.Drawing.Point(16, 92)
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(83, 20)
+        Me.TextBox25.TabIndex = 3
         '
-        'CheckBox1
+        'Button4
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(106, 228)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(101, 17)
-        Me.CheckBox1.TabIndex = 21
-        Me.CheckBox1.Text = "Plan Cancelado"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.Button4.Location = New System.Drawing.Point(110, 33)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(37, 21)
+        Me.Button4.TabIndex = 2
+        Me.Button4.Text = "..."
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(13, 19)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(44, 13)
+        Me.Label23.TabIndex = 1
+        Me.Label23.Text = "Entrega"
+        '
+        'TextBox24
+        '
+        Me.TextBox24.Enabled = False
+        Me.TextBox24.Location = New System.Drawing.Point(16, 34)
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.Size = New System.Drawing.Size(89, 20)
+        Me.TextBox24.TabIndex = 0
         '
         'GroupBox6
         '
@@ -890,14 +925,14 @@ Partial Class Venta
         Me.GroupBox6.TabIndex = 4
         Me.GroupBox6.TabStop = False
         '
-        'Button7
+        'Button9
         '
-        Me.Button7.Location = New System.Drawing.Point(17, 112)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(111, 51)
-        Me.Button7.TabIndex = 0
-        Me.Button7.Text = "Imprimir Boleto"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.Button9.Location = New System.Drawing.Point(17, 194)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(111, 51)
+        Me.Button9.TabIndex = 2
+        Me.Button9.Text = "Salir"
+        Me.Button9.UseVisualStyleBackColor = True
         '
         'Button8
         '
@@ -908,49 +943,14 @@ Partial Class Venta
         Me.Button8.Text = "Guardar"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Button9
+        'Button7
         '
-        Me.Button9.Location = New System.Drawing.Point(17, 194)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(111, 51)
-        Me.Button9.TabIndex = 2
-        Me.Button9.Text = "Salir"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(190, 18)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(77, 13)
-        Me.Label34.TabIndex = 20
-        Me.Label34.Text = "Precio Entrega"
-        '
-        'TextBox34
-        '
-        Me.TextBox34.Enabled = False
-        Me.TextBox34.Location = New System.Drawing.Point(187, 31)
-        Me.TextBox34.Name = "TextBox34"
-        Me.TextBox34.Size = New System.Drawing.Size(94, 20)
-        Me.TextBox34.TabIndex = 19
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(92, 99)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(15, 13)
-        Me.Label35.TabIndex = 22
-        Me.Label35.Text = "%"
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(462, 19)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(34, 24)
-        Me.Button10.TabIndex = 17
-        Me.Button10.Text = "Button10"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.Button7.Location = New System.Drawing.Point(17, 112)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(111, 51)
+        Me.Button7.TabIndex = 0
+        Me.Button7.Text = "Imprimir Boleto"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'Venta
         '
@@ -962,6 +962,7 @@ Partial Class Venta
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Venta"
         Me.Text = "Venta "
         Me.GroupBox1.ResumeLayout(False)

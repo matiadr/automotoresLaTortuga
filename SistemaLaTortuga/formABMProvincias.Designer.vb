@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class formNuevaProvincia
+Partial Class formABMProvincia
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -33,6 +33,7 @@ Partial Class formNuevaProvincia
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.tbIdProvincia = New System.Windows.Forms.TextBox()
         CType(Me.dgProvincias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -72,6 +73,7 @@ Partial Class formNuevaProvincia
         '
         'idProvincia
         '
+        Me.idProvincia.DataPropertyName = "IdProvincia"
         Me.idProvincia.HeaderText = "idProvincia"
         Me.idProvincia.Name = "idProvincia"
         Me.idProvincia.ReadOnly = True
@@ -79,6 +81,7 @@ Partial Class formNuevaProvincia
         '
         'provincia
         '
+        Me.provincia.DataPropertyName = "NombreProvincia"
         Me.provincia.HeaderText = "Provincia"
         Me.provincia.Name = "provincia"
         Me.provincia.ReadOnly = True
@@ -153,17 +156,27 @@ Partial Class formNuevaProvincia
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Provincias"
         '
-        'formNuevaProvincia
+        'tbIdProvincia
+        '
+        Me.tbIdProvincia.Location = New System.Drawing.Point(86, 235)
+        Me.tbIdProvincia.Name = "tbIdProvincia"
+        Me.tbIdProvincia.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProvincia.TabIndex = 7
+        Me.tbIdProvincia.Visible = False
+        '
+        'formABMProvincia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(427, 286)
+        Me.Controls.Add(Me.tbIdProvincia)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbAcciones)
         Me.Controls.Add(Me.tbProvincia)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Name = "formNuevaProvincia"
+        Me.MaximizeBox = False
+        Me.Name = "formABMProvincia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrar Provincias"
         CType(Me.dgProvincias, System.ComponentModel.ISupportInitialize).EndInit()
@@ -176,12 +189,13 @@ Partial Class formNuevaProvincia
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents tbProvincia As System.Windows.Forms.TextBox
     Friend WithEvents dgProvincias As System.Windows.Forms.DataGridView
-    Friend WithEvents idProvincia As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents provincia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents gbAcciones As System.Windows.Forms.GroupBox
     Friend WithEvents bSalir As System.Windows.Forms.Button
     Friend WithEvents bEliminar As System.Windows.Forms.Button
     Friend WithEvents bModificar As System.Windows.Forms.Button
     Friend WithEvents bNuevo As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents idProvincia As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents provincia As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tbIdProvincia As System.Windows.Forms.TextBox
 End Class
