@@ -48,12 +48,13 @@ Partial Class formClientes
         Me.tipoIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cuit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bNuevaProvincia = New System.Windows.Forms.GroupBox()
+        Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.tbDocumentoConyuge = New System.Windows.Forms.MaskedTextBox()
+        Me.tbDocumento = New System.Windows.Forms.MaskedTextBox()
         Me.cbTipoDocConyuge = New System.Windows.Forms.ComboBox()
         Me.tbNombreConyuge = New System.Windows.Forms.TextBox()
         Me.lTipoDocConyuge = New System.Windows.Forms.Label()
         Me.lNombreConyuge = New System.Windows.Forms.Label()
-        Me.tbDocumentoConyuge = New System.Windows.Forms.TextBox()
         Me.lNroDocConyuge = New System.Windows.Forms.Label()
         Me.bLimpiar = New System.Windows.Forms.Button()
         Me.tbIdProvincia = New System.Windows.Forms.TextBox()
@@ -72,7 +73,6 @@ Partial Class formClientes
         Me.tbOcupacion = New System.Windows.Forms.TextBox()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.tbDomicilio = New System.Windows.Forms.TextBox()
-        Me.tbDocumento = New System.Windows.Forms.TextBox()
         Me.tbNombre = New System.Windows.Forms.TextBox()
         Me.tbCuit = New System.Windows.Forms.MaskedTextBox()
         Me.cbTipoIva = New System.Windows.Forms.ComboBox()
@@ -95,7 +95,7 @@ Partial Class formClientes
         Me.bNuevo = New System.Windows.Forms.Button()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.bNuevaProvincia.SuspendLayout()
+        Me.groupBox1.SuspendLayout()
         Me.gbAcciones.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -144,6 +144,7 @@ Partial Class formClientes
         Me.dgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgClientes.Size = New System.Drawing.Size(652, 252)
         Me.dgClientes.TabIndex = 0
+        Me.dgClientes.TabStop = False
         '
         'idCliente
         '
@@ -307,52 +308,68 @@ Partial Class formClientes
         Me.email.ReadOnly = True
         Me.email.Visible = False
         '
-        'bNuevaProvincia
+        'groupBox1
         '
-        Me.bNuevaProvincia.Controls.Add(Me.cbTipoDocConyuge)
-        Me.bNuevaProvincia.Controls.Add(Me.tbNombreConyuge)
-        Me.bNuevaProvincia.Controls.Add(Me.lTipoDocConyuge)
-        Me.bNuevaProvincia.Controls.Add(Me.lNombreConyuge)
-        Me.bNuevaProvincia.Controls.Add(Me.tbDocumentoConyuge)
-        Me.bNuevaProvincia.Controls.Add(Me.lNroDocConyuge)
-        Me.bNuevaProvincia.Controls.Add(Me.bLimpiar)
-        Me.bNuevaProvincia.Controls.Add(Me.tbIdProvincia)
-        Me.bNuevaProvincia.Controls.Add(Me.tbIdCliente)
-        Me.bNuevaProvincia.Controls.Add(Me.tbIdLocalidad)
-        Me.bNuevaProvincia.Controls.Add(Me.cbTipoDoc)
-        Me.bNuevaProvincia.Controls.Add(Me.cbEstadoCivil)
-        Me.bNuevaProvincia.Controls.Add(Me.tbEmail)
-        Me.bNuevaProvincia.Controls.Add(Me.Label15)
-        Me.bNuevaProvincia.Controls.Add(Me.Label14)
-        Me.bNuevaProvincia.Controls.Add(Me.Label13)
-        Me.bNuevaProvincia.Controls.Add(Me.Label12)
-        Me.bNuevaProvincia.Controls.Add(Me.bNuevaLocalidad)
-        Me.bNuevaProvincia.Controls.Add(Me.bABMProvincia)
-        Me.bNuevaProvincia.Controls.Add(Me.tbFechaNac)
-        Me.bNuevaProvincia.Controls.Add(Me.tbOcupacion)
-        Me.bNuevaProvincia.Controls.Add(Me.tbTelefono)
-        Me.bNuevaProvincia.Controls.Add(Me.tbDomicilio)
-        Me.bNuevaProvincia.Controls.Add(Me.tbDocumento)
-        Me.bNuevaProvincia.Controls.Add(Me.tbNombre)
-        Me.bNuevaProvincia.Controls.Add(Me.tbCuit)
-        Me.bNuevaProvincia.Controls.Add(Me.cbTipoIva)
-        Me.bNuevaProvincia.Controls.Add(Me.cbLocalidad)
-        Me.bNuevaProvincia.Controls.Add(Me.cbProvincia)
-        Me.bNuevaProvincia.Controls.Add(Me.Label11)
-        Me.bNuevaProvincia.Controls.Add(Me.Label10)
-        Me.bNuevaProvincia.Controls.Add(Me.Label9)
-        Me.bNuevaProvincia.Controls.Add(Me.Label4)
-        Me.bNuevaProvincia.Controls.Add(Me.Label8)
-        Me.bNuevaProvincia.Controls.Add(Me.Label7)
-        Me.bNuevaProvincia.Controls.Add(Me.Label6)
-        Me.bNuevaProvincia.Controls.Add(Me.Label5)
-        Me.bNuevaProvincia.Controls.Add(Me.Label3)
-        Me.bNuevaProvincia.Controls.Add(Me.Label2)
-        Me.bNuevaProvincia.Location = New System.Drawing.Point(13, 338)
-        Me.bNuevaProvincia.Name = "bNuevaProvincia"
-        Me.bNuevaProvincia.Size = New System.Drawing.Size(684, 343)
-        Me.bNuevaProvincia.TabIndex = 1
-        Me.bNuevaProvincia.TabStop = False
+        Me.groupBox1.Controls.Add(Me.tbDocumentoConyuge)
+        Me.groupBox1.Controls.Add(Me.tbDocumento)
+        Me.groupBox1.Controls.Add(Me.cbTipoDocConyuge)
+        Me.groupBox1.Controls.Add(Me.tbNombreConyuge)
+        Me.groupBox1.Controls.Add(Me.lTipoDocConyuge)
+        Me.groupBox1.Controls.Add(Me.lNombreConyuge)
+        Me.groupBox1.Controls.Add(Me.lNroDocConyuge)
+        Me.groupBox1.Controls.Add(Me.bLimpiar)
+        Me.groupBox1.Controls.Add(Me.tbIdProvincia)
+        Me.groupBox1.Controls.Add(Me.tbIdCliente)
+        Me.groupBox1.Controls.Add(Me.tbIdLocalidad)
+        Me.groupBox1.Controls.Add(Me.cbTipoDoc)
+        Me.groupBox1.Controls.Add(Me.cbEstadoCivil)
+        Me.groupBox1.Controls.Add(Me.tbEmail)
+        Me.groupBox1.Controls.Add(Me.Label15)
+        Me.groupBox1.Controls.Add(Me.Label14)
+        Me.groupBox1.Controls.Add(Me.Label13)
+        Me.groupBox1.Controls.Add(Me.Label12)
+        Me.groupBox1.Controls.Add(Me.bNuevaLocalidad)
+        Me.groupBox1.Controls.Add(Me.bABMProvincia)
+        Me.groupBox1.Controls.Add(Me.tbFechaNac)
+        Me.groupBox1.Controls.Add(Me.tbOcupacion)
+        Me.groupBox1.Controls.Add(Me.tbTelefono)
+        Me.groupBox1.Controls.Add(Me.tbDomicilio)
+        Me.groupBox1.Controls.Add(Me.tbNombre)
+        Me.groupBox1.Controls.Add(Me.tbCuit)
+        Me.groupBox1.Controls.Add(Me.cbTipoIva)
+        Me.groupBox1.Controls.Add(Me.cbLocalidad)
+        Me.groupBox1.Controls.Add(Me.cbProvincia)
+        Me.groupBox1.Controls.Add(Me.Label11)
+        Me.groupBox1.Controls.Add(Me.Label10)
+        Me.groupBox1.Controls.Add(Me.Label9)
+        Me.groupBox1.Controls.Add(Me.Label4)
+        Me.groupBox1.Controls.Add(Me.Label8)
+        Me.groupBox1.Controls.Add(Me.Label7)
+        Me.groupBox1.Controls.Add(Me.Label6)
+        Me.groupBox1.Controls.Add(Me.Label5)
+        Me.groupBox1.Controls.Add(Me.Label3)
+        Me.groupBox1.Controls.Add(Me.Label2)
+        Me.groupBox1.Location = New System.Drawing.Point(13, 338)
+        Me.groupBox1.Name = "groupBox1"
+        Me.groupBox1.Size = New System.Drawing.Size(684, 343)
+        Me.groupBox1.TabIndex = 1
+        Me.groupBox1.TabStop = False
+        '
+        'tbDocumentoConyuge
+        '
+        Me.tbDocumentoConyuge.Location = New System.Drawing.Point(537, 83)
+        Me.tbDocumentoConyuge.Mask = "99999999"
+        Me.tbDocumentoConyuge.Name = "tbDocumentoConyuge"
+        Me.tbDocumentoConyuge.Size = New System.Drawing.Size(108, 20)
+        Me.tbDocumentoConyuge.TabIndex = 8
+        '
+        'tbDocumento
+        '
+        Me.tbDocumento.Location = New System.Drawing.Point(298, 51)
+        Me.tbDocumento.Mask = "99999999"
+        Me.tbDocumento.Name = "tbDocumento"
+        Me.tbDocumento.Size = New System.Drawing.Size(95, 20)
+        Me.tbDocumento.TabIndex = 4
         '
         'cbTipoDocConyuge
         '
@@ -393,14 +410,6 @@ Partial Class formClientes
         Me.lNombreConyuge.Text = "Nombre Conyuge"
         Me.lNombreConyuge.Visible = False
         '
-        'tbDocumentoConyuge
-        '
-        Me.tbDocumentoConyuge.Location = New System.Drawing.Point(537, 87)
-        Me.tbDocumentoConyuge.Name = "tbDocumentoConyuge"
-        Me.tbDocumentoConyuge.Size = New System.Drawing.Size(105, 20)
-        Me.tbDocumentoConyuge.TabIndex = 8
-        Me.tbDocumentoConyuge.Visible = False
-        '
         'lNroDocConyuge
         '
         Me.lNroDocConyuge.AutoSize = True
@@ -426,6 +435,7 @@ Partial Class formClientes
         Me.tbIdProvincia.Name = "tbIdProvincia"
         Me.tbIdProvincia.Size = New System.Drawing.Size(20, 20)
         Me.tbIdProvincia.TabIndex = 23
+        Me.tbIdProvincia.TabStop = False
         Me.tbIdProvincia.Visible = False
         '
         'tbIdCliente
@@ -434,6 +444,7 @@ Partial Class formClientes
         Me.tbIdCliente.Name = "tbIdCliente"
         Me.tbIdCliente.Size = New System.Drawing.Size(39, 20)
         Me.tbIdCliente.TabIndex = 22
+        Me.tbIdCliente.TabStop = False
         Me.tbIdCliente.Visible = False
         '
         'tbIdLocalidad
@@ -442,6 +453,7 @@ Partial Class formClientes
         Me.tbIdLocalidad.Name = "tbIdLocalidad"
         Me.tbIdLocalidad.Size = New System.Drawing.Size(14, 20)
         Me.tbIdLocalidad.TabIndex = 21
+        Me.tbIdLocalidad.TabStop = False
         Me.tbIdLocalidad.Visible = False
         '
         'cbTipoDoc
@@ -558,14 +570,6 @@ Partial Class formClientes
         Me.tbDomicilio.Name = "tbDomicilio"
         Me.tbDomicilio.Size = New System.Drawing.Size(224, 20)
         Me.tbDomicilio.TabIndex = 10
-        '
-        'tbDocumento
-        '
-        Me.tbDocumento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbDocumento.Location = New System.Drawing.Point(297, 52)
-        Me.tbDocumento.Name = "tbDocumento"
-        Me.tbDocumento.Size = New System.Drawing.Size(117, 20)
-        Me.tbDocumento.TabIndex = 4
         '
         'tbNombre
         '
@@ -770,7 +774,7 @@ Partial Class formClientes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(944, 689)
         Me.Controls.Add(Me.gbAcciones)
-        Me.Controls.Add(Me.bNuevaProvincia)
+        Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.gbClientes)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -780,8 +784,8 @@ Partial Class formClientes
         Me.gbClientes.ResumeLayout(False)
         Me.gbClientes.PerformLayout()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.bNuevaProvincia.ResumeLayout(False)
-        Me.bNuevaProvincia.PerformLayout()
+        Me.groupBox1.ResumeLayout(False)
+        Me.groupBox1.PerformLayout()
         Me.gbAcciones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -790,7 +794,7 @@ Partial Class formClientes
     Friend WithEvents tbBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgClientes As System.Windows.Forms.DataGridView
-    Friend WithEvents bNuevaProvincia As System.Windows.Forms.GroupBox
+    Friend WithEvents groupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents gbAcciones As System.Windows.Forms.GroupBox
     Friend WithEvents bSalir As System.Windows.Forms.Button
     Friend WithEvents bEliminar As System.Windows.Forms.Button
@@ -808,7 +812,6 @@ Partial Class formClientes
     Friend WithEvents tbOcupacion As System.Windows.Forms.TextBox
     Friend WithEvents tbTelefono As System.Windows.Forms.TextBox
     Friend WithEvents tbDomicilio As System.Windows.Forms.TextBox
-    Friend WithEvents tbDocumento As System.Windows.Forms.TextBox
     Friend WithEvents tbNombre As System.Windows.Forms.TextBox
     Friend WithEvents tbCuit As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cbTipoIva As System.Windows.Forms.ComboBox
@@ -831,7 +834,6 @@ Partial Class formClientes
     Friend WithEvents bLimpiar As System.Windows.Forms.Button
     Friend WithEvents lTipoDocConyuge As System.Windows.Forms.Label
     Friend WithEvents lNombreConyuge As System.Windows.Forms.Label
-    Friend WithEvents tbDocumentoConyuge As System.Windows.Forms.TextBox
     Friend WithEvents lNroDocConyuge As System.Windows.Forms.Label
     Friend WithEvents cbTipoDocConyuge As System.Windows.Forms.ComboBox
     Friend WithEvents tbNombreConyuge As System.Windows.Forms.TextBox
@@ -856,4 +858,6 @@ Partial Class formClientes
     Friend WithEvents tipoIva As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cuit As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents email As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tbDocumento As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents tbDocumentoConyuge As System.Windows.Forms.MaskedTextBox
 End Class

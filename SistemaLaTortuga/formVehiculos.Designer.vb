@@ -39,6 +39,9 @@ Partial Class formVehiculos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgVehiculos = New System.Windows.Forms.DataGridView()
         Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precioGastos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipoMotor = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,6 +56,7 @@ Partial Class formVehiculos
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbDatosVehiculo = New System.Windows.Forms.GroupBox()
+        Me.tbAño = New System.Windows.Forms.MaskedTextBox()
         Me.bLimpiar = New System.Windows.Forms.Button()
         Me.tbObservacion = New System.Windows.Forms.RichTextBox()
         Me.tbIdModelo = New System.Windows.Forms.TextBox()
@@ -71,7 +75,6 @@ Partial Class formVehiculos
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.tbAño = New System.Windows.Forms.TextBox()
         Me.cbTipoMotor = New System.Windows.Forms.ComboBox()
         Me.tbColor = New System.Windows.Forms.TextBox()
         Me.cbModelo = New System.Windows.Forms.ComboBox()
@@ -106,57 +109,65 @@ Partial Class formVehiculos
         Me.gbAcciones.Controls.Add(Me.bNuevo)
         Me.gbAcciones.Location = New System.Drawing.Point(717, 12)
         Me.gbAcciones.Name = "gbAcciones"
-        Me.gbAcciones.Size = New System.Drawing.Size(184, 336)
+        Me.gbAcciones.Size = New System.Drawing.Size(161, 336)
         Me.gbAcciones.TabIndex = 3
         Me.gbAcciones.TabStop = False
         Me.gbAcciones.Text = "Acciones"
         '
         'bSalir
         '
+        Me.bSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
         Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bSalir.Location = New System.Drawing.Point(17, 253)
         Me.bSalir.Name = "bSalir"
         Me.bSalir.Size = New System.Drawing.Size(110, 50)
-        Me.bSalir.TabIndex = 4
+        Me.bSalir.TabIndex = 21
         Me.bSalir.Text = "Salir"
         Me.bSalir.UseVisualStyleBackColor = True
         '
         'bEliminar
         '
         Me.bEliminar.Enabled = False
+        Me.bEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bEliminar.Image = Global.SistemaLaTortuga.My.Resources.Resources.cancel
         Me.bEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bEliminar.Location = New System.Drawing.Point(17, 183)
         Me.bEliminar.Name = "bEliminar"
         Me.bEliminar.Size = New System.Drawing.Size(110, 50)
-        Me.bEliminar.TabIndex = 3
+        Me.bEliminar.TabIndex = 20
         Me.bEliminar.Text = "Eliminar"
         Me.bEliminar.UseVisualStyleBackColor = True
         '
         'bModificar
         '
         Me.bModificar.Enabled = False
+        Me.bModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bModificar.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
         Me.bModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bModificar.Location = New System.Drawing.Point(17, 113)
         Me.bModificar.Name = "bModificar"
         Me.bModificar.Size = New System.Drawing.Size(110, 54)
-        Me.bModificar.TabIndex = 2
+        Me.bModificar.TabIndex = 19
         Me.bModificar.Text = "Modificar"
         Me.bModificar.UseVisualStyleBackColor = True
         '
         'bNuevo
         '
+        Me.bNuevo.BackColor = System.Drawing.SystemColors.Control
+        Me.bNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.bNuevo.Cursor = System.Windows.Forms.Cursors.Cross
         Me.bNuevo.Enabled = False
+        Me.bNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bNuevo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bNuevo.Location = New System.Drawing.Point(17, 36)
         Me.bNuevo.Name = "bNuevo"
         Me.bNuevo.Size = New System.Drawing.Size(110, 54)
-        Me.bNuevo.TabIndex = 1
+        Me.bNuevo.TabIndex = 18
         Me.bNuevo.Text = "Nuevo"
-        Me.bNuevo.UseVisualStyleBackColor = True
+        Me.bNuevo.UseVisualStyleBackColor = False
         '
         'gbClientes
         '
@@ -260,7 +271,7 @@ Partial Class formVehiculos
         Me.dgVehiculos.AllowUserToDeleteRows = False
         Me.dgVehiculos.AllowUserToResizeRows = False
         Me.dgVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgVehiculos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.marca, Me.modelo, Me.tipoVehiculo, Me.tipoMotor, Me.año, Me.dominio, Me.idVehiculo, Me.idModelo, Me.idMarca, Me.observaciones, Me.motor, Me.chasis, Me.color, Me.fechaAlta})
+        Me.dgVehiculos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.marca, Me.precioVenta, Me.precioCosto, Me.precioGastos, Me.modelo, Me.tipoVehiculo, Me.tipoMotor, Me.año, Me.dominio, Me.idVehiculo, Me.idModelo, Me.idMarca, Me.observaciones, Me.motor, Me.chasis, Me.color, Me.fechaAlta})
         Me.dgVehiculos.Location = New System.Drawing.Point(13, 78)
         Me.dgVehiculos.Name = "dgVehiculos"
         Me.dgVehiculos.ReadOnly = True
@@ -275,6 +286,30 @@ Partial Class formVehiculos
         Me.marca.HeaderText = "Marca"
         Me.marca.Name = "marca"
         Me.marca.ReadOnly = True
+        '
+        'precioVenta
+        '
+        Me.precioVenta.DataPropertyName = "PrecioVenta"
+        Me.precioVenta.HeaderText = "precioVenta"
+        Me.precioVenta.Name = "precioVenta"
+        Me.precioVenta.ReadOnly = True
+        Me.precioVenta.Visible = False
+        '
+        'precioCosto
+        '
+        Me.precioCosto.DataPropertyName = "PrecioCosto"
+        Me.precioCosto.HeaderText = "precioCosto"
+        Me.precioCosto.Name = "precioCosto"
+        Me.precioCosto.ReadOnly = True
+        Me.precioCosto.Visible = False
+        '
+        'precioGastos
+        '
+        Me.precioGastos.DataPropertyName = "PrecioGastos"
+        Me.precioGastos.HeaderText = "precioGastos"
+        Me.precioGastos.Name = "precioGastos"
+        Me.precioGastos.ReadOnly = True
+        Me.precioGastos.Visible = False
         '
         'modelo
         '
@@ -377,6 +412,7 @@ Partial Class formVehiculos
         '
         'gbDatosVehiculo
         '
+        Me.gbDatosVehiculo.Controls.Add(Me.tbAño)
         Me.gbDatosVehiculo.Controls.Add(Me.bLimpiar)
         Me.gbDatosVehiculo.Controls.Add(Me.tbObservacion)
         Me.gbDatosVehiculo.Controls.Add(Me.tbIdModelo)
@@ -395,7 +431,6 @@ Partial Class formVehiculos
         Me.gbDatosVehiculo.Controls.Add(Me.Label16)
         Me.gbDatosVehiculo.Controls.Add(Me.Label15)
         Me.gbDatosVehiculo.Controls.Add(Me.Label14)
-        Me.gbDatosVehiculo.Controls.Add(Me.tbAño)
         Me.gbDatosVehiculo.Controls.Add(Me.cbTipoMotor)
         Me.gbDatosVehiculo.Controls.Add(Me.tbColor)
         Me.gbDatosVehiculo.Controls.Add(Me.cbModelo)
@@ -423,12 +458,21 @@ Partial Class formVehiculos
         Me.gbDatosVehiculo.TabStop = False
         Me.gbDatosVehiculo.Text = "Datos Vehiculo"
         '
+        'tbAño
+        '
+        Me.tbAño.Location = New System.Drawing.Point(405, 84)
+        Me.tbAño.Mask = "9999"
+        Me.tbAño.Name = "tbAño"
+        Me.tbAño.Size = New System.Drawing.Size(93, 20)
+        Me.tbAño.TabIndex = 7
+        '
         'bLimpiar
         '
         Me.bLimpiar.Location = New System.Drawing.Point(588, 27)
         Me.bLimpiar.Name = "bLimpiar"
         Me.bLimpiar.Size = New System.Drawing.Size(77, 23)
         Me.bLimpiar.TabIndex = 39
+        Me.bLimpiar.TabStop = False
         Me.bLimpiar.Text = "Limpiar"
         Me.bLimpiar.UseVisualStyleBackColor = True
         '
@@ -437,7 +481,7 @@ Partial Class formVehiculos
         Me.tbObservacion.Location = New System.Drawing.Point(405, 153)
         Me.tbObservacion.Name = "tbObservacion"
         Me.tbObservacion.Size = New System.Drawing.Size(224, 58)
-        Me.tbObservacion.TabIndex = 38
+        Me.tbObservacion.TabIndex = 14
         Me.tbObservacion.Text = ""
         '
         'tbIdModelo
@@ -446,6 +490,7 @@ Partial Class formVehiculos
         Me.tbIdModelo.Name = "tbIdModelo"
         Me.tbIdModelo.Size = New System.Drawing.Size(32, 20)
         Me.tbIdModelo.TabIndex = 37
+        Me.tbIdModelo.TabStop = False
         Me.tbIdModelo.Visible = False
         '
         'tbIdMarca
@@ -454,6 +499,7 @@ Partial Class formVehiculos
         Me.tbIdMarca.Name = "tbIdMarca"
         Me.tbIdMarca.Size = New System.Drawing.Size(23, 20)
         Me.tbIdMarca.TabIndex = 36
+        Me.tbIdMarca.TabStop = False
         Me.tbIdMarca.Visible = False
         '
         'tbIdVehiculo
@@ -462,6 +508,7 @@ Partial Class formVehiculos
         Me.tbIdVehiculo.Name = "tbIdVehiculo"
         Me.tbIdVehiculo.Size = New System.Drawing.Size(35, 20)
         Me.tbIdVehiculo.TabIndex = 35
+        Me.tbIdVehiculo.TabStop = False
         Me.tbIdVehiculo.Visible = False
         '
         'Label18
@@ -501,21 +548,21 @@ Partial Class formVehiculos
         Me.tbFechaAlta.Location = New System.Drawing.Point(93, 198)
         Me.tbFechaAlta.Name = "tbFechaAlta"
         Me.tbFechaAlta.Size = New System.Drawing.Size(121, 20)
-        Me.tbFechaAlta.TabIndex = 12
+        Me.tbFechaAlta.TabIndex = 11
         '
         'tbAdeuda
         '
         Me.tbAdeuda.Location = New System.Drawing.Point(94, 272)
         Me.tbAdeuda.Name = "tbAdeuda"
         Me.tbAdeuda.Size = New System.Drawing.Size(100, 20)
-        Me.tbAdeuda.TabIndex = 14
+        Me.tbAdeuda.TabIndex = 13
         '
         'tbTransferencia
         '
         Me.tbTransferencia.Location = New System.Drawing.Point(94, 234)
         Me.tbTransferencia.Name = "tbTransferencia"
         Me.tbTransferencia.Size = New System.Drawing.Size(100, 20)
-        Me.tbTransferencia.TabIndex = 13
+        Me.tbTransferencia.TabIndex = 12
         '
         'tbVenta
         '
@@ -568,18 +615,11 @@ Partial Class formVehiculos
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(12, 198)
+        Me.Label14.Location = New System.Drawing.Point(24, 198)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(58, 13)
         Me.Label14.TabIndex = 28
         Me.Label14.Text = "Fecha Alta"
-        '
-        'tbAño
-        '
-        Me.tbAño.Location = New System.Drawing.Point(405, 90)
-        Me.tbAño.Name = "tbAño"
-        Me.tbAño.Size = New System.Drawing.Size(93, 20)
-        Me.tbAño.TabIndex = 7
         '
         'cbTipoMotor
         '
@@ -817,7 +857,6 @@ Partial Class formVehiculos
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents tbAño As System.Windows.Forms.TextBox
     Friend WithEvents tbFechaAlta As System.Windows.Forms.DateTimePicker
     Friend WithEvents tbAdeuda As System.Windows.Forms.TextBox
     Friend WithEvents tbTransferencia As System.Windows.Forms.TextBox
@@ -829,7 +868,16 @@ Partial Class formVehiculos
     Friend WithEvents tbIdVehiculo As System.Windows.Forms.TextBox
     Friend WithEvents tbObservacion As System.Windows.Forms.RichTextBox
     Friend WithEvents bLimpiar As System.Windows.Forms.Button
+    Friend WithEvents rbAño As System.Windows.Forms.RadioButton
+    Friend WithEvents rbMarca As System.Windows.Forms.RadioButton
+    Friend WithEvents rbDominio As System.Windows.Forms.RadioButton
+    Friend WithEvents rbModelo As System.Windows.Forms.RadioButton
+    Friend WithEvents rbTipoVehiculo As System.Windows.Forms.RadioButton
+    Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents marca As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precioVenta As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precioCosto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precioGastos As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents modelo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipoVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipoMotor As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -843,10 +891,5 @@ Partial Class formVehiculos
     Friend WithEvents chasis As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents color As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents fechaAlta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents rbAño As System.Windows.Forms.RadioButton
-    Friend WithEvents rbMarca As System.Windows.Forms.RadioButton
-    Friend WithEvents rbDominio As System.Windows.Forms.RadioButton
-    Friend WithEvents rbModelo As System.Windows.Forms.RadioButton
-    Friend WithEvents rbTipoVehiculo As System.Windows.Forms.RadioButton
-    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents tbAño As System.Windows.Forms.MaskedTextBox
 End Class

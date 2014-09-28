@@ -89,6 +89,18 @@
     <Compile Include="formABMSucursales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formBuscarCliente.Designer.vb">
+      <DependentUpon>formBuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formBuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formBuscarVehiculo.Designer.vb">
+      <DependentUpon>formBuscarVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formBuscarVehiculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormVentas.Designer.vb">
       <DependentUpon>FormVentas.vb</DependentUpon>
     </Compile>
@@ -173,6 +185,12 @@
     <EmbeddedResource Include="formABMSucursales.resx">
       <DependentUpon>formABMSucursales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formBuscarCliente.resx">
+      <DependentUpon>formBuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formBuscarVehiculo.resx">
+      <DependentUpon>formBuscarVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.vb</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +257,7 @@
     <None Include="Resources\filenew.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\reload3.ico" />
     <None Include="Resources\Ventas.ico" />
     <None Include="Resources\search.ico" />
     <None Include="Resources\Salir.ico" />
@@ -249,6 +268,8 @@
     <None Include="Resources\bank-icon.ico" />
     <None Include="Resources\Administrar_converted.ico" />
     <Content Include="la-tortuga-colon %281%29.ico" />
+    <None Include="Resources\fileprint.ico" />
+    <None Include="Resources\filesave.ico" />
     <Content Include="Resources\la-tortuga-colon.ico" />
     <None Include="Resources\la-tortuga-colon.jpg" />
   </ItemGroup>

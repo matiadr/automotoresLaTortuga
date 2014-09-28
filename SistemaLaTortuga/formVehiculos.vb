@@ -17,7 +17,7 @@ Public Class formVehiculos
 
 
 
-    Private Sub tbTipoVehiculo_TextChanged(sender As Object, e As EventArgs) Handles tbTipoVehiculo.TextChanged, tbAño.TextChanged
+    Private Sub tbTipoVehiculo_TextChanged(sender As Object, e As EventArgs) Handles tbTipoVehiculo.TextChanged
         If tbTipoVehiculo.Text.Length > 0 And tbAño.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -44,7 +44,7 @@ Public Class formVehiculos
     Private Sub cargarDGVehiculos()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' order by Tipo", CN)
+        Dim cmd As New SqlCommand("select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' order by Tipo", CN)
         Dim lista As SqlDataReader = cmd.ExecuteReader
         Dim dt As New DataTable()
         dt.Load(lista)
@@ -55,7 +55,7 @@ Public Class formVehiculos
     Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
         Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
         Dim miConexion As New SqlConnection(CN)
-        Dim seleccion As String = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and Tipo like '" & tbBusqueda.Text & "%' order by Tipo" 'Busco por Nombre
+        Dim seleccion As String = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and Tipo like '" & tbBusqueda.Text & "%' order by Tipo" 'Busco por Nombre
         miConexion.Open()
         Dim tabla2 As DataTable
         Dim da As SqlDataAdapter
@@ -123,22 +123,25 @@ Public Class formVehiculos
             tbFechaAlta.Text = dgVehiculos.Item("fechaAlta", dgVehiculos.SelectedRows(0).Index).Value()
             cbTipoMotor.SelectedValue = dgVehiculos.Item("tipoMotor", dgVehiculos.SelectedRows(0).Index).Value()
             tbDominio.Text = dgVehiculos.Item("dominio", dgVehiculos.SelectedRows(0).Index).Value()
+            tbVenta.Text = dgVehiculos.Item("precioVenta", dgVehiculos.SelectedRows(0).Index).Value()
+            tbCosto.Text = dgVehiculos.Item("precioCosto", dgVehiculos.SelectedRows(0).Index).Value()
+            tbGastos.Text = dgVehiculos.Item("precioGastos", dgVehiculos.SelectedRows(0).Index).Value()
             bModificar.Enabled = True
         End If
     End Sub
 
     Private Sub bNuevo_Click(sender As Object, e As EventArgs) Handles bNuevo.Click
-        ' Try
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("insert into Vehiculos (IdModelo,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,TipoMotor,Vendido) values ('" & tbIdModelo.Text & "','" & tbAño.Text & "','" & tbTipoVehiculo.Text & "','" & tbNroMotor.Text & "','" & tbNroChasis.Text & "','" & tbDominio.Text & "','" & tbColor.Text & "','" & tbObservacion.Text & "','" & tbFechaAlta.Text & "','" & cbTipoMotor.SelectedValue & "','N')", CN)
-        cmd.ExecuteNonQuery()
-        MessageBox.Show("Vehiculo Agregado")
-        cargarDGVehiculos()
-        LimpiarPantalla()
-        ' Catch ex As SqlException
-        ' MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
-        'End Try
+        Try
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
+            Dim cmd As New SqlCommand("insert into Vehiculos (IdModelo,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,TipoMotor,Vendido,PrecioVenta,PrecioCosto,PrecioGastos) values ('" & tbIdModelo.Text & "','" & tbAño.Text & "','" & tbTipoVehiculo.Text & "','" & tbNroMotor.Text & "','" & tbNroChasis.Text & "','" & tbDominio.Text & "','" & tbColor.Text & "','" & tbObservacion.Text & "','" & tbFechaAlta.Text & "','" & cbTipoMotor.SelectedValue & "','N','" & tbVenta.Text & "','" & tbCosto.Text & "','" & tbGastos.Text & "')", CN)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Vehiculo Agregado")
+            cargarDGVehiculos()
+            LimpiarPantalla()
+        Catch ex As SqlException
+            MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
+        End Try
     End Sub
 
     Private Sub LimpiarPantalla()
@@ -151,6 +154,9 @@ Public Class formVehiculos
         tbAño.Text = ""
         tbFechaAlta.Text = Date.Today
         tbDominio.Text = ""
+        tbVenta.Text = ""
+        tbCosto.Text = ""
+        tbGastos.Text = ""
     End Sub
 
     Private Sub bLimpiar_Click(sender As Object, e As EventArgs) Handles bLimpiar.Click
@@ -159,4 +165,18 @@ Public Class formVehiculos
     End Sub
 
 
+    Private Sub bModificar_Click(sender As Object, e As EventArgs) Handles bModificar.Click
+        Try
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
+            Dim cmd As New SqlCommand("update Vehiculos set Año= '" & tbAño.Text & "',Tipo='" & tbTipoVehiculo.Text & "',Motor='" & tbNroMotor.Text & "',Chasis='" & tbNroChasis.Text & "',Dominio='" & tbDominio.Text & "',IdModelo='" & tbIdModelo.Text & "',Color='" & tbColor.Text & "',Observaciones='" & tbObservacion.Text & "',FechaAlta='" & tbFechaAlta.Text & "',TipoMotor='" & cbTipoMotor.SelectedValue & "',PrecioVenta='" & tbVenta.Text & "',PrecioCosto='" & tbCosto.Text & "',PrecioGastos= '" & tbGastos.Text & "' where IdVehiculo= '" & tbIdVehiculo.Text & "'", CN)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Modificacion Efectuada")
+            cargarDGVehiculos()
+            LimpiarPantalla()
+            bModificar.Enabled = False
+        Catch ex As SqlException
+            MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
+        End Try
+    End Sub
 End Class
