@@ -44,7 +44,6 @@ Partial Class formVentas
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbTipoVehVenta = New System.Windows.Forms.TextBox()
         Me.tbIdVehVenta = New System.Windows.Forms.TextBox()
-        Me.tbIdVehEntrega = New System.Windows.Forms.TextBox()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.tbPrecioVentaVehVenta = New System.Windows.Forms.TextBox()
@@ -63,33 +62,13 @@ Partial Class formVentas
         Me.bVehVenta = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.tbMarcaVehVenta = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.bLimpiar = New System.Windows.Forms.Button()
-        Me.tbTipoVehEntrega = New System.Windows.Forms.TextBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.tbPrecioCostoVehEntrega = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.tbChasisVehEntrega = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.tbAñoVehEntrega = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.tbDominioVehEntrega = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.tbMotorVehEntrega = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.tbTipoMotorVehEntrega = New System.Windows.Forms.TextBox()
-        Me.tbModeloVehEntrega = New System.Windows.Forms.TextBox()
-        Me.bVehEntrega = New System.Windows.Forms.Button()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.tbMarcaVehEntrega = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.groupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -119,16 +98,38 @@ Partial Class formVentas
         Me.bSalir = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TbPrecioCostoVehVenta = New System.Windows.Forms.TextBox()
+        Me.textidventa = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.tbidvendedor = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.tbtransferencia = New System.Windows.Forms.TextBox()
+        Me.dtfecha = New System.Windows.Forms.DateTimePicker()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.groupBox7.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label21)
+        Me.GroupBox1.Controls.Add(Me.dtfecha)
+        Me.GroupBox1.Controls.Add(Me.textidventa)
         Me.GroupBox1.Controls.Add(Me.bActualizar)
         Me.GroupBox1.Controls.Add(Me.tbIdCliente)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -151,7 +152,7 @@ Partial Class formVentas
         Me.GroupBox1.Size = New System.Drawing.Size(510, 139)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Cliente"
+        Me.GroupBox1.Text = "Comprador"
         '
         'bActualizar
         '
@@ -165,7 +166,7 @@ Partial Class formVentas
         '
         'tbIdCliente
         '
-        Me.tbIdCliente.Location = New System.Drawing.Point(328, 19)
+        Me.tbIdCliente.Location = New System.Drawing.Point(472, 45)
         Me.tbIdCliente.Name = "tbIdCliente"
         Me.tbIdCliente.Size = New System.Drawing.Size(39, 20)
         Me.tbIdCliente.TabIndex = 15
@@ -308,9 +309,18 @@ Partial Class formVentas
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label20)
+        Me.GroupBox2.Controls.Add(Me.tbtransferencia)
+        Me.GroupBox2.Controls.Add(Me.tbidvendedor)
+        Me.GroupBox2.Controls.Add(Me.Label18)
+        Me.GroupBox2.Controls.Add(Me.Label19)
+        Me.GroupBox2.Controls.Add(Me.TextBox5)
+        Me.GroupBox2.Controls.Add(Me.TextBox6)
+        Me.GroupBox2.Controls.Add(Me.Label17)
+        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.TbPrecioCostoVehVenta)
         Me.GroupBox2.Controls.Add(Me.tbTipoVehVenta)
         Me.GroupBox2.Controls.Add(Me.tbIdVehVenta)
-        Me.GroupBox2.Controls.Add(Me.tbIdVehEntrega)
         Me.GroupBox2.Controls.Add(Me.Label37)
         Me.GroupBox2.Controls.Add(Me.Label27)
         Me.GroupBox2.Controls.Add(Me.tbPrecioVentaVehVenta)
@@ -331,7 +341,7 @@ Partial Class formVentas
         Me.GroupBox2.Controls.Add(Me.tbMarcaVehVenta)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 158)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(510, 145)
+        Me.GroupBox2.Size = New System.Drawing.Size(510, 215)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Vehículo Venta"
@@ -352,14 +362,6 @@ Partial Class formVentas
         Me.tbIdVehVenta.Size = New System.Drawing.Size(35, 20)
         Me.tbIdVehVenta.TabIndex = 21
         Me.tbIdVehVenta.Visible = False
-        '
-        'tbIdVehEntrega
-        '
-        Me.tbIdVehEntrega.Location = New System.Drawing.Point(449, 132)
-        Me.tbIdVehEntrega.Name = "tbIdVehEntrega"
-        Me.tbIdVehEntrega.Size = New System.Drawing.Size(36, 20)
-        Me.tbIdVehEntrega.TabIndex = 21
-        Me.tbIdVehEntrega.Visible = False
         '
         'Label37
         '
@@ -524,255 +526,12 @@ Partial Class formVentas
         Me.tbMarcaVehVenta.Size = New System.Drawing.Size(125, 20)
         Me.tbMarcaVehVenta.TabIndex = 0
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.bLimpiar)
-        Me.GroupBox3.Controls.Add(Me.tbTipoVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.Label34)
-        Me.GroupBox3.Controls.Add(Me.Label36)
-        Me.GroupBox3.Controls.Add(Me.tbPrecioCostoVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.Label22)
-        Me.GroupBox3.Controls.Add(Me.TextBox23)
-        Me.GroupBox3.Controls.Add(Me.Label21)
-        Me.GroupBox3.Controls.Add(Me.TextBox22)
-        Me.GroupBox3.Controls.Add(Me.Label14)
-        Me.GroupBox3.Controls.Add(Me.tbChasisVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.Label15)
-        Me.GroupBox3.Controls.Add(Me.tbAñoVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.tbDominioVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Controls.Add(Me.tbMotorVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.Label19)
-        Me.GroupBox3.Controls.Add(Me.tbTipoMotorVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.tbModeloVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.bVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.Label20)
-        Me.GroupBox3.Controls.Add(Me.tbMarcaVehEntrega)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 309)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(510, 174)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Vehículo Entrega"
-        '
-        'bLimpiar
-        '
-        Me.bLimpiar.Location = New System.Drawing.Point(488, 14)
-        Me.bLimpiar.Name = "bLimpiar"
-        Me.bLimpiar.Size = New System.Drawing.Size(16, 18)
-        Me.bLimpiar.TabIndex = 23
-        Me.bLimpiar.Text = "X"
-        Me.bLimpiar.UseVisualStyleBackColor = True
-        '
-        'tbTipoVehEntrega
-        '
-        Me.tbTipoVehEntrega.Enabled = False
-        Me.tbTipoVehEntrega.Location = New System.Drawing.Point(156, 32)
-        Me.tbTipoVehEntrega.Name = "tbTipoVehEntrega"
-        Me.tbTipoVehEntrega.ReadOnly = True
-        Me.tbTipoVehEntrega.Size = New System.Drawing.Size(107, 20)
-        Me.tbTipoVehEntrega.TabIndex = 23
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(290, 14)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(77, 13)
-        Me.Label34.TabIndex = 20
-        Me.Label34.Text = "Precio Entrega"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(153, 18)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(72, 13)
-        Me.Label36.TabIndex = 17
-        Me.Label36.Text = "Tipo Vehiculo"
-        '
-        'tbPrecioCostoVehEntrega
-        '
-        Me.tbPrecioCostoVehEntrega.Enabled = False
-        Me.tbPrecioCostoVehEntrega.Location = New System.Drawing.Point(293, 30)
-        Me.tbPrecioCostoVehEntrega.Name = "tbPrecioCostoVehEntrega"
-        Me.tbPrecioCostoVehEntrega.ReadOnly = True
-        Me.tbPrecioCostoVehEntrega.Size = New System.Drawing.Size(94, 20)
-        Me.tbPrecioCostoVehEntrega.TabIndex = 19
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(104, 129)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(40, 13)
-        Me.Label22.TabIndex = 18
-        Me.Label22.Text = "Detalle"
-        '
-        'TextBox23
-        '
-        Me.TextBox23.Location = New System.Drawing.Point(103, 142)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.ReadOnly = True
-        Me.TextBox23.Size = New System.Drawing.Size(393, 20)
-        Me.TextBox23.TabIndex = 17
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(9, 127)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(39, 13)
-        Me.Label21.TabIndex = 16
-        Me.Label21.Text = "Deuda"
-        '
-        'TextBox22
-        '
-        Me.TextBox22.Location = New System.Drawing.Point(8, 142)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.ReadOnly = True
-        Me.TextBox22.Size = New System.Drawing.Size(80, 20)
-        Me.TextBox22.TabIndex = 15
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(269, 91)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(38, 13)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "Chasis"
-        '
-        'tbChasisVehEntrega
-        '
-        Me.tbChasisVehEntrega.Enabled = False
-        Me.tbChasisVehEntrega.Location = New System.Drawing.Point(269, 105)
-        Me.tbChasisVehEntrega.Name = "tbChasisVehEntrega"
-        Me.tbChasisVehEntrega.ReadOnly = True
-        Me.tbChasisVehEntrega.Size = New System.Drawing.Size(227, 20)
-        Me.tbChasisVehEntrega.TabIndex = 13
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(390, 51)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(26, 13)
-        Me.Label15.TabIndex = 12
-        Me.Label15.Text = "Año"
-        '
-        'tbAñoVehEntrega
-        '
-        Me.tbAñoVehEntrega.Enabled = False
-        Me.tbAñoVehEntrega.Location = New System.Drawing.Point(391, 68)
-        Me.tbAñoVehEntrega.Name = "tbAñoVehEntrega"
-        Me.tbAñoVehEntrega.ReadOnly = True
-        Me.tbAñoVehEntrega.Size = New System.Drawing.Size(105, 20)
-        Me.tbAñoVehEntrega.TabIndex = 11
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(290, 51)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(45, 13)
-        Me.Label16.TabIndex = 10
-        Me.Label16.Text = "Dominio"
-        '
-        'tbDominioVehEntrega
-        '
-        Me.tbDominioVehEntrega.Enabled = False
-        Me.tbDominioVehEntrega.Location = New System.Drawing.Point(293, 68)
-        Me.tbDominioVehEntrega.Name = "tbDominioVehEntrega"
-        Me.tbDominioVehEntrega.ReadOnly = True
-        Me.tbDominioVehEntrega.Size = New System.Drawing.Size(92, 20)
-        Me.tbDominioVehEntrega.TabIndex = 9
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(62, 91)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(34, 13)
-        Me.Label17.TabIndex = 8
-        Me.Label17.Text = "Motor"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(9, 91)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(28, 13)
-        Me.Label18.TabIndex = 7
-        Me.Label18.Text = "Tipo"
-        '
-        'tbMotorVehEntrega
-        '
-        Me.tbMotorVehEntrega.Enabled = False
-        Me.tbMotorVehEntrega.Location = New System.Drawing.Point(65, 105)
-        Me.tbMotorVehEntrega.Name = "tbMotorVehEntrega"
-        Me.tbMotorVehEntrega.ReadOnly = True
-        Me.tbMotorVehEntrega.Size = New System.Drawing.Size(198, 20)
-        Me.tbMotorVehEntrega.TabIndex = 6
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(10, 51)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(42, 13)
-        Me.Label19.TabIndex = 5
-        Me.Label19.Text = "Modelo"
-        '
-        'tbTipoMotorVehEntrega
-        '
-        Me.tbTipoMotorVehEntrega.Enabled = False
-        Me.tbTipoMotorVehEntrega.Location = New System.Drawing.Point(6, 105)
-        Me.tbTipoMotorVehEntrega.Name = "tbTipoMotorVehEntrega"
-        Me.tbTipoMotorVehEntrega.ReadOnly = True
-        Me.tbTipoMotorVehEntrega.Size = New System.Drawing.Size(53, 20)
-        Me.tbTipoMotorVehEntrega.TabIndex = 4
-        '
-        'tbModeloVehEntrega
-        '
-        Me.tbModeloVehEntrega.Enabled = False
-        Me.tbModeloVehEntrega.Location = New System.Drawing.Point(6, 68)
-        Me.tbModeloVehEntrega.Name = "tbModeloVehEntrega"
-        Me.tbModeloVehEntrega.ReadOnly = True
-        Me.tbModeloVehEntrega.Size = New System.Drawing.Size(281, 20)
-        Me.tbModeloVehEntrega.TabIndex = 3
-        '
-        'bVehEntrega
-        '
-        Me.bVehEntrega.Location = New System.Drawing.Point(393, 26)
-        Me.bVehEntrega.Name = "bVehEntrega"
-        Me.bVehEntrega.Size = New System.Drawing.Size(35, 19)
-        Me.bVehEntrega.TabIndex = 2
-        Me.bVehEntrega.Text = "..."
-        Me.bVehEntrega.UseVisualStyleBackColor = True
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(9, 18)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(37, 13)
-        Me.Label20.TabIndex = 1
-        Me.Label20.Text = "Marca"
-        '
-        'tbMarcaVehEntrega
-        '
-        Me.tbMarcaVehEntrega.Enabled = False
-        Me.tbMarcaVehEntrega.Location = New System.Drawing.Point(6, 31)
-        Me.tbMarcaVehEntrega.Name = "tbMarcaVehEntrega"
-        Me.tbMarcaVehEntrega.ReadOnly = True
-        Me.tbMarcaVehEntrega.Size = New System.Drawing.Size(125, 20)
-        Me.tbMarcaVehEntrega.TabIndex = 0
-        '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label15)
+        Me.GroupBox4.Controls.Add(Me.TextBox2)
+        Me.GroupBox4.Controls.Add(Me.Label14)
+        Me.GroupBox4.Controls.Add(Me.TextBox1)
         Me.GroupBox4.Controls.Add(Me.groupBox7)
         Me.GroupBox4.Controls.Add(Me.Label25)
         Me.GroupBox4.Controls.Add(Me.TextBox26)
@@ -789,8 +548,41 @@ Partial Class formVentas
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Pagos"
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(227, 136)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(28, 13)
+        Me.Label15.TabIndex = 12
+        Me.Label15.Text = "Plan"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(230, 152)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(93, 20)
+        Me.TextBox2.TabIndex = 11
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(126, 136)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(70, 13)
+        Me.Label14.TabIndex = 10
+        Me.Label14.Text = "Administrador"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(129, 152)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(93, 20)
+        Me.TextBox1.TabIndex = 9
+        '
         'groupBox7
         '
+        Me.groupBox7.Controls.Add(Me.Button2)
         Me.groupBox7.Controls.Add(Me.Label35)
         Me.groupBox7.Controls.Add(Me.CheckBox1)
         Me.groupBox7.Controls.Add(Me.Button6)
@@ -815,6 +607,15 @@ Partial Class formVentas
         Me.groupBox7.TabStop = False
         Me.groupBox7.Text = "Plan de Pago "
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(240, 208)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(69, 37)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Borrar Plan"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Label35
         '
         Me.Label35.AutoSize = True
@@ -836,7 +637,7 @@ Partial Class formVentas
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(240, 167)
+        Me.Button6.Location = New System.Drawing.Point(240, 165)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(69, 37)
         Me.Button6.TabIndex = 20
@@ -1074,14 +875,173 @@ Partial Class formVentas
         Me.Button7.Text = "Imprimir Boleto"
         Me.Button7.UseVisualStyleBackColor = True
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.TextBox3)
+        Me.GroupBox3.Controls.Add(Me.Button1)
+        Me.GroupBox3.Controls.Add(Me.DataGridView1)
+        Me.GroupBox3.Location = New System.Drawing.Point(14, 391)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(509, 91)
+        Me.GroupBox3.TabIndex = 5
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Vehículo/s Entrega"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(24, 72)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(71, 13)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "Valor Entrega"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Location = New System.Drawing.Point(101, 69)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(82, 20)
+        Me.TextBox3.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(446, 37)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(48, 39)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 20)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(427, 43)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'TbPrecioCostoVehVenta
+        '
+        Me.TbPrecioCostoVehVenta.Location = New System.Drawing.Point(186, -5)
+        Me.TbPrecioCostoVehVenta.Name = "TbPrecioCostoVehVenta"
+        Me.TbPrecioCostoVehVenta.Size = New System.Drawing.Size(121, 20)
+        Me.TbPrecioCostoVehVenta.TabIndex = 6
+        Me.TbPrecioCostoVehVenta.Visible = False
+        '
+        'textidventa
+        '
+        Me.textidventa.Location = New System.Drawing.Point(426, 45)
+        Me.textidventa.Name = "textidventa"
+        Me.textidventa.Size = New System.Drawing.Size(40, 20)
+        Me.textidventa.TabIndex = 25
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(9, 135)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(141, 13)
+        Me.Label17.TabIndex = 24
+        Me.Label17.Text = "Apellido y Nombre Vendedor"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Enabled = False
+        Me.TextBox4.Location = New System.Drawing.Point(6, 148)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
+        Me.TextBox4.Size = New System.Drawing.Size(257, 20)
+        Me.TextBox4.TabIndex = 23
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(318, 134)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(77, 13)
+        Me.Label18.TabIndex = 28
+        Me.Label18.Text = "N° Documento"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(273, 134)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(28, 13)
+        Me.Label19.TabIndex = 27
+        Me.Label19.Text = "Tipo"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Location = New System.Drawing.Point(318, 148)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        Me.TextBox5.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox5.TabIndex = 26
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Enabled = False
+        Me.TextBox6.Location = New System.Drawing.Point(270, 148)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(42, 20)
+        Me.TextBox6.TabIndex = 25
+        '
+        'tbidvendedor
+        '
+        Me.tbidvendedor.Location = New System.Drawing.Point(460, 31)
+        Me.tbidvendedor.Name = "tbidvendedor"
+        Me.tbidvendedor.Size = New System.Drawing.Size(35, 20)
+        Me.tbidvendedor.TabIndex = 29
+        Me.tbidvendedor.Visible = False
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(3, 175)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(115, 13)
+        Me.Label20.TabIndex = 31
+        Me.Label20.Text = "Transferencia Cobrada"
+        '
+        'tbtransferencia
+        '
+        Me.tbtransferencia.Enabled = False
+        Me.tbtransferencia.Location = New System.Drawing.Point(6, 189)
+        Me.tbtransferencia.Name = "tbtransferencia"
+        Me.tbtransferencia.ReadOnly = True
+        Me.tbtransferencia.Size = New System.Drawing.Size(112, 20)
+        Me.tbtransferencia.TabIndex = 30
+        '
+        'dtfecha
+        '
+        Me.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtfecha.Location = New System.Drawing.Point(315, 31)
+        Me.dtfecha.Name = "dtfecha"
+        Me.dtfecha.Size = New System.Drawing.Size(79, 20)
+        Me.dtfecha.TabIndex = 26
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(315, 15)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(37, 13)
+        Me.Label21.TabIndex = 27
+        Me.Label21.Text = "Fecha"
+        '
         'formVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1038, 498)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -1093,13 +1053,14 @@ Partial Class formVentas
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.groupBox7.ResumeLayout(False)
         Me.groupBox7.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1135,31 +1096,9 @@ Partial Class formVentas
     Friend WithEvents bVehVenta As System.Windows.Forms.Button
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents tbMarcaVehVenta As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents tbChasisVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents tbAñoVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents tbDominioVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents tbMotorVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents tbTipoMotorVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents tbModeloVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents bVehEntrega As System.Windows.Forms.Button
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents tbMarcaVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents tbPrecioVentaVehVenta As System.Windows.Forms.TextBox
-    Friend WithEvents Label34 As System.Windows.Forms.Label
-    Friend WithEvents tbPrecioCostoVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents groupBox7 As System.Windows.Forms.GroupBox
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
@@ -1191,12 +1130,31 @@ Partial Class formVentas
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label37 As System.Windows.Forms.Label
-    Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents tbIdCliente As System.Windows.Forms.TextBox
     Friend WithEvents tbIdVehVenta As System.Windows.Forms.TextBox
-    Friend WithEvents tbIdVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents tbTipoVehVenta As System.Windows.Forms.TextBox
-    Friend WithEvents tbTipoVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents bLimpiar As System.Windows.Forms.Button
     Friend WithEvents bActualizar As System.Windows.Forms.Button
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents TbPrecioCostoVehVenta As System.Windows.Forms.TextBox
+    Friend WithEvents textidventa As System.Windows.Forms.TextBox
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents dtfecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents tbtransferencia As System.Windows.Forms.TextBox
+    Friend WithEvents tbidvendedor As System.Windows.Forms.TextBox
 End Class

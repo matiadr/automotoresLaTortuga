@@ -38,4 +38,8 @@ Public Class formBuscarCliente
         formVentas.tbIdCliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
         Me.Close()
     End Sub
+
+    Private Sub dgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgClientes.CellContentClick
+
+    End Sub
 End Class

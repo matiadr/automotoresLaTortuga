@@ -77,6 +77,42 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormVehiculoEntrega.Designer.vb">
+      <DependentUpon>FormVehiculoEntrega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormVehiculoEntrega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntregasEfectivo.Designer.vb">
+      <DependentUpon>FormEntregasEfectivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEntregasEfectivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDocumentos.Designer.vb">
+      <DependentUpon>FormDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoPlanes.Designer.vb">
+      <DependentUpon>FormPagoPlanes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagoPlanes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.vb">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaja.Designer.vb">
+      <DependentUpon>FormCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formABMBancos.Designer.vb">
       <DependentUpon>formABMBancos.vb</DependentUpon>
     </Compile>
@@ -179,6 +215,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormVehiculoEntrega.resx">
+      <DependentUpon>FormVehiculoEntrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntregasEfectivo.resx">
+      <DependentUpon>FormEntregasEfectivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDocumentos.resx">
+      <DependentUpon>FormDocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoPlanes.resx">
+      <DependentUpon>FormPagoPlanes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCaja.resx">
+      <DependentUpon>FormCaja.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formABMBancos.resx">
       <DependentUpon>formABMBancos.vb</DependentUpon>
     </EmbeddedResource>

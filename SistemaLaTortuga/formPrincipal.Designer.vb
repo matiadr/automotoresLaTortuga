@@ -205,7 +205,7 @@ Partial Class formPrincipal
         Me.tbClave.Name = "tbClave"
         Me.tbClave.Size = New System.Drawing.Size(180, 29)
         Me.tbClave.TabIndex = 3
-        Me.tbClave.Text = "06qiad"
+        Me.tbClave.Text = "Ccp846"
         Me.tbClave.Visible = False
         '
         'tbEquipo
@@ -215,7 +215,7 @@ Partial Class formPrincipal
         Me.tbEquipo.Name = "tbEquipo"
         Me.tbEquipo.Size = New System.Drawing.Size(221, 29)
         Me.tbEquipo.TabIndex = 5
-        Me.tbEquipo.Text = "MATI-D"
+        Me.tbEquipo.Text = "SRVPROD"
         Me.tbEquipo.Visible = False
         '
         'PictureBox1

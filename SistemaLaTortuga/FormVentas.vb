@@ -39,7 +39,7 @@ Public Class formVentas
         formBuscarVehiculo.tipoBoton = 1
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles bVehEntrega.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         formBuscarVehiculo.Show()
         formBuscarVehiculo.tipoBoton = 2
     End Sub
@@ -87,38 +87,27 @@ Public Class formVentas
             da = New SqlDataAdapter(seleccion, CN)
             tabla2 = New DataTable
             da.Fill(tabla2)
-            tbMarcaVehEntrega.Text = tabla2.Rows.Item(0).Item("NombreMarca")
-            tbModeloVehEntrega.Text = tabla2.Rows.Item(0).Item("NombreModelo")
-            tbTipoVehEntrega.Text = tabla2.Rows.Item(0).Item("Tipo")
-            tbDominioVehEntrega.Text = tabla2.Rows.Item(0).Item("Dominio")
-            tbAñoVehEntrega.Text = tabla2.Rows.Item(0).Item("Año")
-            tbTipoMotorVehEntrega.Text = tabla2.Rows.Item(0).Item("TipoMotor")
-            tbChasisVehEntrega.Text = tabla2.Rows.Item(0).Item("Chasis")
-            tbMotorVehEntrega.Text = tabla2.Rows.Item(0).Item("Motor")
-            tbPrecioCostoVehEntrega.Text = tabla2.Rows.Item(0).Item("PrecioCosto")
+            tbMarcaVehVenta.Text = tabla2.Rows.Item(0).Item("NombreMarca")
+            tbModeloVehVenta.Text = tabla2.Rows.Item(0).Item("NombreModelo")
+            tbTipoVehVenta.Text = tabla2.Rows.Item(0).Item("Tipo")
+            tbDominioVehVenta.Text = tabla2.Rows.Item(0).Item("Dominio")
+            tbAñoVehVenta.Text = tabla2.Rows.Item(0).Item("Año")
+            tbTipoMotorVehVenta.Text = tabla2.Rows.Item(0).Item("TipoMotor")
+            tbChasisVehVenta.Text = tabla2.Rows.Item(0).Item("Chasis")
+            tbMotorVehVenta.Text = tabla2.Rows.Item(0).Item("Motor")
+            tbpreciocostoVehVenta.Text = tabla2.Rows.Item(0).Item("PrecioCosto")
         Catch ex As SqlException
             MessageBox.Show("No se pudo completar la operacion,Error en la base de datos")
         End Try
     End Sub
-    Private Sub tbIdVehEntrega_TextChanged(sender As Object, e As EventArgs) Handles tbIdVehEntrega.TextChanged
+    Private Sub tbIdVehEntrega_TextChanged(sender As Object, e As EventArgs)
         If tbIdVehEntrega.Text.Length > 0 Then
             BuscarAutoEntrega(tbIdVehEntrega.Text)
         End If
     End Sub
 
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles bLimpiar.Click
-        tbIdVehEntrega.Text = ""
-        tbMarcaVehEntrega.Text = ""
-        tbModeloVehEntrega.Text = ""
-        tbTipoVehEntrega.Text = ""
-        tbDominioVehEntrega.Text = ""
-        tbAñoVehEntrega.Text = ""
-        tbTipoMotorVehEntrega.Text = ""
-        tbChasisVehEntrega.Text = ""
-        tbMotorVehEntrega.Text = ""
-        tbPrecioCostoVehEntrega.Text = ""
-    End Sub
+    
 
     Private Sub bActualizar_Click(sender As Object, e As EventArgs) Handles bActualizar.Click
         If tbIdCliente.Text.Length > 0 Then
@@ -132,4 +121,48 @@ Public Class formVentas
         End If
     End Sub
 
+    Private Sub GroupBox4_Enter(sender As Object, e As EventArgs) Handles GroupBox4.Enter
+
+    End Sub
+
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+
+        formvehiculoentrega.Show()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        FormEntregasEfectivo.Show()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        FormDocumentos.Show()
+    End Sub
+
+    Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Dim cmd As New SqlCommand("insert into Ventas values ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & TbPrecioCostoVehVenta.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & tbtransferencia.Text & "','" & dtfecha.Value & "')", CN)
+        cmd.ExecuteNonQuery()
+        CN.Close()
+
+        'busco el codigo de esta venta...o sea el maximo de la tabla ventas
+        Dim venta As New SqlCommand("Select max(idventa) from ventas", CN)
+        Dim codigo As String = venta.ExecuteScalar
+        textidventa.Text = codigo
+
+
+
+            MessageBox.Show("Venta Ingresada")
+
+
+
+            'habilito los groupbox para poder cargar los vehiculos entregados, y otros medios de pagos
+            GroupBox3.Enabled = True
+            GroupBox4.Enabled = True
+    End Sub
 End Class
