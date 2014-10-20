@@ -69,7 +69,7 @@ Public Class formCuentas
         If dgCuentas.RowCount > 0 Then
             tbIdCuenta.Text = dgCuentas.Item("idCuenta", dgCuentas.SelectedRows(0).Index).Value()
             tbNombre.Text = dgCuentas.Item("nombre", dgCuentas.SelectedRows(0).Index).Value()
-            tbSaldo.Text = dgCuentas.Item("saldo", dgCuentas.SelectedRows(0).Index).Value()
+            tbSaldo.Text = Replace(dgCuentas.Item("saldo", dgCuentas.SelectedRows(0).Index).Value(), ",", ".")
             tbDetalleCuenta.Text = dgCuentas.Item("detalleCuenta", dgCuentas.SelectedRows(0).Index).Value()
             cbRubro.SelectedValue = dgCuentas.Item("idRubro", dgCuentas.SelectedRows(0).Index).Value()
             If dgCuentas.Item("tipoCuenta", dgCuentas.SelectedRows(0).Index).Value() = 1 Then
@@ -125,6 +125,7 @@ Public Class formCuentas
         miConexion.Close()
     End Sub
 
+
     Private Sub tbSalgo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSaldo.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
@@ -132,13 +133,19 @@ Public Class formCuentas
             e.Handled = False
         ElseIf Char.IsSeparator(e.KeyChar) Then
             e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
         Else
             e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
         End If
     End Sub
 
     Private Sub tbNombre_TextChanged(sender As Object, e As EventArgs) Handles tbNombre.TextChanged, tbSaldo.TextChanged
-        If tbNombre.Text.Length > 0 And tbSaldo.Text.Length > 0 Then
+        If tbNombre.Text.Length > 0 And tbSaldo.Text.Length > 0 And tbIdCuenta.Text = "" Then
             bNuevo.Enabled = True
         Else
             bNuevo.Enabled = False

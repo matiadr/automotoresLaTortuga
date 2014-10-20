@@ -29,6 +29,7 @@ Partial Class formBuscarCliente
         Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.bNuevoCliente = New System.Windows.Forms.Button()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -98,11 +99,23 @@ Partial Class formBuscarCliente
         Me.Button1.Text = "Salir"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'bNuevoCliente
+        '
+        Me.bNuevoCliente.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.bNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bNuevoCliente.Location = New System.Drawing.Point(294, 13)
+        Me.bNuevoCliente.Name = "bNuevoCliente"
+        Me.bNuevoCliente.Size = New System.Drawing.Size(110, 23)
+        Me.bNuevoCliente.TabIndex = 4
+        Me.bNuevoCliente.Text = "Nuevo Cliente"
+        Me.bNuevoCliente.UseVisualStyleBackColor = True
+        '
         'formBuscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(405, 376)
+        Me.ClientSize = New System.Drawing.Size(416, 376)
+        Me.Controls.Add(Me.bNuevoCliente)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.label1)
         Me.Controls.Add(Me.tbBusqueda)
@@ -124,4 +137,5 @@ Partial Class formBuscarCliente
     Friend WithEvents idCliente As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dni As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents bNuevoCliente As System.Windows.Forms.Button
 End Class

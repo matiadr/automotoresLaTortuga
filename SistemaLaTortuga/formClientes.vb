@@ -13,7 +13,7 @@ Public Class formClientes
 
 
     Private Sub tbNombre_TextChanged(sender As Object, e As EventArgs) Handles tbNombre.TextChanged, tbDomicilio.TextChanged, tbDocumento.TextChanged
-        If tbNombre.Text.Length > 0 And tbDocumento.Text.Length > 0 And tbDomicilio.Text.Length > 0 Then
+        If tbNombre.Text.Length > 0 And tbDocumento.Text.Length > 0 And tbDomicilio.Text.Length > 0 And tbIdCliente.Text = "" Then
             bNuevo.Enabled = True
         Else
             bNuevo.Enabled = False
@@ -103,11 +103,12 @@ Public Class formClientes
         Try
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CN.Open()
-            Dim cmd As New SqlCommand("insert into Clientes (NombreC,TipoDni,NumeroDni,Domicilio,FechaNacimiento,IdLocalidad,Cuit,EstadoCivil,Telefono,Email,TipoIva,Ocupacion,NombreCConyuge,DniConyuge,TipoDniConyuge) values ('" & tbNombre.Text & "','" & cbTipoDoc.SelectedValue & "','" & groupBox1.Text & "','" & tbDomicilio.Text & "','" & tbFechaNac.Text & "','" & tbIdLocalidad.Text & "','" & tbCuit.Text & "','" & cbEstadoCivil.SelectedValue & "','" & tbTelefono.Text & "','" & tbEmail.Text & "','" & cbTipoIva.SelectedValue & "','" & tbOcupacion.Text & "','" & tbNombreConyuge.Text & "','" & tbDocumentoConyuge.Text & "','" & cbTipoDocConyuge.SelectedValue & "')", CN)
+            Dim cmd As New SqlCommand("insert into Clientes (NombreC,TipoDni,NumeroDni,Domicilio,FechaNacimiento,IdLocalidad,Cuit,EstadoCivil,Telefono,Email,TipoIva,Ocupacion,NombreCConyuge,DniConyuge,TipoDniConyuge) values ('" & tbNombre.Text & "','" & cbTipoDoc.SelectedValue & "','" & tbDocumento.Text & "','" & tbDomicilio.Text & "','" & tbFechaNac.Text & "','" & tbIdLocalidad.Text & "','" & tbCuit.Text & "','" & cbEstadoCivil.SelectedValue & "','" & tbTelefono.Text & "','" & tbEmail.Text & "','" & cbTipoIva.SelectedValue & "','" & tbOcupacion.Text & "','" & tbNombreConyuge.Text & "','" & tbDocumentoConyuge.Text & "','" & cbTipoDocConyuge.SelectedValue & "')", CN)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Cliente Agregado")
             cargarDGClientes()
             limpiarPantalla()
+            formBuscarCliente.cargarDGClientes()
         Catch ex As SqlException
             MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
         End Try
@@ -214,7 +215,7 @@ Public Class formClientes
         Try
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CN.Open()
-            Dim cmd As New SqlCommand("update Clientes set NombreC= '" & tbNombre.Text & "',TipoDni='" & cbTipoDoc.SelectedValue & "',NumeroDni='" & groupBox1.Text & "',Domicilio='" & tbDomicilio.Text & "',FechaNacimiento='" & tbFechaNac.Text & "',IdLocalidad='" & tbIdLocalidad.Text & "',Cuit='" & tbCuit.Text & "',EstadoCivil='" & cbEstadoCivil.SelectedValue & "',Telefono='" & tbTelefono.Text & "',Email='" & tbEmail.Text & "',TipoIva='" & cbTipoIva.SelectedValue & "',Ocupacion='" & tbOcupacion.Text & "',NombreCConyuge= '" & tbNombreConyuge.Text & "',TipoDniConyuge= '" & cbTipoDocConyuge.SelectedValue & "', DniConyuge= '" & tbDocumentoConyuge.Text & "' where IdCliente= '" & tbIdCliente.Text & "'", CN)
+            Dim cmd As New SqlCommand("update Clientes set NombreC= '" & tbNombre.Text & "',TipoDni='" & cbTipoDoc.SelectedValue & "',NumeroDni='" & tbDocumento.Text & "',Domicilio='" & tbDomicilio.Text & "',FechaNacimiento='" & tbFechaNac.Text & "',IdLocalidad='" & tbIdLocalidad.Text & "',Cuit='" & tbCuit.Text & "',EstadoCivil='" & cbEstadoCivil.SelectedValue & "',Telefono='" & tbTelefono.Text & "',Email='" & tbEmail.Text & "',TipoIva='" & cbTipoIva.SelectedValue & "',Ocupacion='" & tbOcupacion.Text & "',NombreCConyuge= '" & tbNombreConyuge.Text & "',TipoDniConyuge= '" & cbTipoDocConyuge.SelectedValue & "', DniConyuge= '" & tbDocumentoConyuge.Text & "' where IdCliente= '" & tbIdCliente.Text & "'", CN)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Modificacion Efectuada")
             cargarDGClientes()

@@ -111,6 +111,7 @@ Partial Class formCuentas
         '
         'tbBusqueda
         '
+        Me.tbBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbBusqueda.Location = New System.Drawing.Point(68, 26)
         Me.tbBusqueda.Name = "tbBusqueda"
         Me.tbBusqueda.Size = New System.Drawing.Size(141, 20)
@@ -136,7 +137,7 @@ Partial Class formCuentas
         Me.dgCuentas.Name = "dgCuentas"
         Me.dgCuentas.ReadOnly = True
         Me.dgCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgCuentas.Size = New System.Drawing.Size(531, 304)
+        Me.dgCuentas.Size = New System.Drawing.Size(522, 298)
         Me.dgCuentas.TabIndex = 0
         Me.dgCuentas.TabStop = False
         '

@@ -9,7 +9,7 @@ Public Class formBuscarCliente
         cargarDGClientes()
     End Sub
 
-    Private Sub cargarDGClientes()
+    Public Sub cargarDGClientes()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
         Dim cmd As New SqlCommand("select IdCliente,NombreC,NumeroDni from Clientes order by NombreC", CN)
@@ -37,5 +37,9 @@ Public Class formBuscarCliente
     Private Sub dgClientes_DoubleClick(sender As Object, e As EventArgs) Handles dgClientes.DoubleClick
         formVentas.tbIdCliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
         Me.Close()
+    End Sub
+
+    Private Sub bNuevoCliente_Click(sender As Object, e As EventArgs) Handles bNuevoCliente.Click
+        formClientes.Show()
     End Sub
 End Class

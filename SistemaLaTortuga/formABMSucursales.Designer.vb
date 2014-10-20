@@ -27,6 +27,12 @@ Partial Class formABMSucursales
         Me.tbIdBanco = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgModelos = New System.Windows.Forms.DataGridView()
+        Me.codigoBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idSucursal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sucursal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigoSucursal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
@@ -39,12 +45,6 @@ Partial Class formABMSucursales
         Me.tbSucursal = New System.Windows.Forms.TextBox()
         Me.tbCodigoSucursal = New System.Windows.Forms.TextBox()
         Me.bLimpiar = New System.Windows.Forms.Button()
-        Me.codigoBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idSucursal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sucursal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigoSucursal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgModelos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
@@ -90,6 +90,52 @@ Partial Class formABMSucursales
         Me.dgModelos.Size = New System.Drawing.Size(296, 159)
         Me.dgModelos.TabIndex = 7
         Me.dgModelos.TabStop = False
+        '
+        'codigoBanco
+        '
+        Me.codigoBanco.DataPropertyName = "CodigoBanco"
+        Me.codigoBanco.HeaderText = "Codigo Banco"
+        Me.codigoBanco.Name = "codigoBanco"
+        Me.codigoBanco.ReadOnly = True
+        Me.codigoBanco.Width = 80
+        '
+        'banco
+        '
+        Me.banco.DataPropertyName = "NombreBanco"
+        Me.banco.HeaderText = "Banco"
+        Me.banco.Name = "banco"
+        Me.banco.ReadOnly = True
+        '
+        'idBanco
+        '
+        Me.idBanco.DataPropertyName = "IdBanco"
+        Me.idBanco.HeaderText = "idBanco"
+        Me.idBanco.Name = "idBanco"
+        Me.idBanco.ReadOnly = True
+        Me.idBanco.Visible = False
+        '
+        'idSucursal
+        '
+        Me.idSucursal.DataPropertyName = "IdSucursal"
+        Me.idSucursal.HeaderText = "idSucursal"
+        Me.idSucursal.Name = "idSucursal"
+        Me.idSucursal.ReadOnly = True
+        Me.idSucursal.Visible = False
+        '
+        'sucursal
+        '
+        Me.sucursal.DataPropertyName = "NombreSucursal"
+        Me.sucursal.HeaderText = "Sucursal"
+        Me.sucursal.Name = "sucursal"
+        Me.sucursal.ReadOnly = True
+        '
+        'codigoSucursal
+        '
+        Me.codigoSucursal.DataPropertyName = "CodigoSucursal"
+        Me.codigoSucursal.HeaderText = "codigoSucursal"
+        Me.codigoSucursal.Name = "codigoSucursal"
+        Me.codigoSucursal.ReadOnly = True
+        Me.codigoSucursal.Visible = False
         '
         'gbAcciones
         '
@@ -211,52 +257,6 @@ Partial Class formABMSucursales
         Me.bLimpiar.TabIndex = 25
         Me.bLimpiar.Text = "Limpiar"
         Me.bLimpiar.UseVisualStyleBackColor = True
-        '
-        'codigoBanco
-        '
-        Me.codigoBanco.DataPropertyName = "CodigoBanco"
-        Me.codigoBanco.HeaderText = "Codigo Banco"
-        Me.codigoBanco.Name = "codigoBanco"
-        Me.codigoBanco.ReadOnly = True
-        Me.codigoBanco.Width = 80
-        '
-        'banco
-        '
-        Me.banco.DataPropertyName = "NombreBanco"
-        Me.banco.HeaderText = "Banco"
-        Me.banco.Name = "banco"
-        Me.banco.ReadOnly = True
-        '
-        'idBanco
-        '
-        Me.idBanco.DataPropertyName = "IdBanco"
-        Me.idBanco.HeaderText = "idBanco"
-        Me.idBanco.Name = "idBanco"
-        Me.idBanco.ReadOnly = True
-        Me.idBanco.Visible = False
-        '
-        'idSucursal
-        '
-        Me.idSucursal.DataPropertyName = "IdSucursal"
-        Me.idSucursal.HeaderText = "idSucursal"
-        Me.idSucursal.Name = "idSucursal"
-        Me.idSucursal.ReadOnly = True
-        Me.idSucursal.Visible = False
-        '
-        'sucursal
-        '
-        Me.sucursal.DataPropertyName = "NombreSucursal"
-        Me.sucursal.HeaderText = "Sucursal"
-        Me.sucursal.Name = "sucursal"
-        Me.sucursal.ReadOnly = True
-        '
-        'codigoSucursal
-        '
-        Me.codigoSucursal.DataPropertyName = "CodigoSucursal"
-        Me.codigoSucursal.HeaderText = "codigoSucursal"
-        Me.codigoSucursal.Name = "codigoSucursal"
-        Me.codigoSucursal.ReadOnly = True
-        Me.codigoSucursal.Visible = False
         '
         'formABMSucursales
         '

@@ -18,7 +18,7 @@ Public Class formVehiculos
 
 
     Private Sub tbTipoVehiculo_TextChanged(sender As Object, e As EventArgs) Handles tbTipoVehiculo.TextChanged
-        If tbTipoVehiculo.Text.Length > 0 And tbAño.Text.Length > 0 Then
+        If tbTipoVehiculo.Text.Length > 0 And tbIdVehiculo.Text = "" Then
             bNuevo.Enabled = True
         Else
             bNuevo.Enabled = False
@@ -55,7 +55,26 @@ Public Class formVehiculos
     Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
         Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
         Dim miConexion As New SqlConnection(CN)
-        Dim seleccion As String = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and Tipo like '" & tbBusqueda.Text & "%' order by Tipo" 'Busco por Nombre
+        Dim seleccion As String
+        If rbTipoVehiculo.Checked = True Then
+            seleccion = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and Tipo like '" & tbBusqueda.Text & "%' order by Tipo" 'Busco por tipo
+        Else
+            If rbMarca.Checked = True Then
+                seleccion = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and NombreMarca like '" & tbBusqueda.Text & "%' order by NombreMarca" 'Busco por marca
+            Else
+                If rbDominio.Checked = True Then
+                    seleccion = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and Dominio like '" & tbBusqueda.Text & "%' order by Dominio" 'Busco por Dominio
+                Else
+                    If rbModelo.Checked = True Then
+                        seleccion = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and NombreModelo like '" & tbBusqueda.Text & "%' order by NombreModelo" 'Busco por Modelo
+                    Else
+                        If rbAño.Checked = True Then
+                            seleccion = "select IdVehiculo,mo.IdModelo,NombreModelo,m.IdMarca,NombreMarca,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,tipoMotor,PrecioVenta,PrecioCosto,PrecioGastos from Vehiculos v,Marcas m,Modelos mo where v.IdModelo=mo.IdModelo and mo.IdMarca=m.IdMarca and Vendido= 'N' and Año like '" & tbBusqueda.Text & "%' order by Año" 'Busco por Año
+                        End If
+                    End If
+                End If
+            End If
+        End If
         miConexion.Open()
         Dim tabla2 As DataTable
         Dim da As SqlDataAdapter
@@ -123,9 +142,9 @@ Public Class formVehiculos
             tbFechaAlta.Text = dgVehiculos.Item("fechaAlta", dgVehiculos.SelectedRows(0).Index).Value()
             cbTipoMotor.SelectedValue = dgVehiculos.Item("tipoMotor", dgVehiculos.SelectedRows(0).Index).Value()
             tbDominio.Text = dgVehiculos.Item("dominio", dgVehiculos.SelectedRows(0).Index).Value()
-            tbVenta.Text = dgVehiculos.Item("precioVenta", dgVehiculos.SelectedRows(0).Index).Value()
-            tbCosto.Text = dgVehiculos.Item("precioCosto", dgVehiculos.SelectedRows(0).Index).Value()
-            tbGastos.Text = dgVehiculos.Item("precioGastos", dgVehiculos.SelectedRows(0).Index).Value()
+            tbVenta.Text = Replace(dgVehiculos.Item("precioVenta", dgVehiculos.SelectedRows(0).Index).Value(), ",", ".")
+            tbCosto.Text = Replace(dgVehiculos.Item("precioCosto", dgVehiculos.SelectedRows(0).Index).Value(), ",", ".")
+            tbGastos.Text = Replace(dgVehiculos.Item("precioGastos", dgVehiculos.SelectedRows(0).Index).Value(), ",", ".")
             bModificar.Enabled = True
         End If
     End Sub
@@ -134,7 +153,7 @@ Public Class formVehiculos
         Try
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CN.Open()
-            Dim cmd As New SqlCommand("insert into Vehiculos (IdModelo,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,TipoMotor,Vendido,PrecioVenta,PrecioCosto,PrecioGastos) values ('" & tbIdModelo.Text & "','" & tbAño.Text & "','" & tbTipoVehiculo.Text & "','" & tbNroMotor.Text & "','" & tbNroChasis.Text & "','" & tbDominio.Text & "','" & tbColor.Text & "','" & tbObservacion.Text & "','" & tbFechaAlta.Text & "','" & cbTipoMotor.SelectedValue & "','N','" & tbVenta.Text & "','" & tbCosto.Text & "','" & tbGastos.Text & "')", CN)
+            Dim cmd As New SqlCommand("insert into Vehiculos (IdModelo,Año,Tipo,Motor,Chasis,Dominio,Color,Observaciones,FechaAlta,TipoMotor,Vendido,PrecioVenta,PrecioCosto,PrecioGastos) values ('" & tbIdModelo.Text & "','" & tbAño.Text & "','" & tbTipoVehiculo.Text & "','" & tbNroMotor.Text & "','" & tbNroChasis.Text & "','" & tbDominio.Text & "','" & tbColor.Text & "','" & tbObservacion.Text & "','" & tbFechaAlta.Text & "','" & cbTipoMotor.SelectedValue & "','N','" & Conversion.Val(tbVenta.Text) & "','" & Conversion.Val(tbCosto.Text) & "','" & Conversion.Val(tbGastos.Text) & "')", CN)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Vehiculo Agregado")
             cargarDGVehiculos()
@@ -179,4 +198,59 @@ Public Class formVehiculos
             MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
         End Try
     End Sub
+
+    Private Sub tbCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbCosto.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub tbGastos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbGastos.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub tbVenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbVenta.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
 End Class
