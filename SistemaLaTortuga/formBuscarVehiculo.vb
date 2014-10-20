@@ -46,4 +46,8 @@ Public Class formBuscarVehiculo
         End If
         Me.Close()
     End Sub
+
+    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
+
+    End Sub
 End Class

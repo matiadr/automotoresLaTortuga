@@ -51,5 +51,7 @@
 
     Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
         formVentas.Show()
+        formVentas.GroupBox3.Enabled = False
+        formVentas.GroupBox4.Enabled = False
     End Sub
 End Class
