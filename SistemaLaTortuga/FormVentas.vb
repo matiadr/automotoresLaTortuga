@@ -100,14 +100,6 @@ Public Class formVentas
             MessageBox.Show("No se pudo completar la operacion,Error en la base de datos")
         End Try
     End Sub
-    Private Sub tbIdVehEntrega_TextChanged(sender As Object, e As EventArgs)
-        If tbIdVehEntrega.Text.Length > 0 Then
-            BuscarAutoEntrega(tbIdVehEntrega.Text)
-        End If
-    End Sub
-
-
-    
 
     Private Sub bActualizar_Click(sender As Object, e As EventArgs) Handles bActualizar.Click
         If tbIdCliente.Text.Length > 0 Then
@@ -115,9 +107,6 @@ Public Class formVentas
         End If
         If tbIdVehVenta.Text.Length > 0 Then
             BuscarAutoVenta(tbIdVehVenta.Text)
-        End If
-        If tbIdVehEntrega.Text.Length > 0 Then
-            BuscarAutoEntrega(tbIdVehEntrega.Text)
         End If
     End Sub
 
@@ -127,15 +116,15 @@ Public Class formVentas
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
 
-        formvehiculoentrega.Show()
+        '  formvehiculoentrega.Show()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        FormEntregasEfectivo.Show()
+        '   FormEntregasEfectivo.Show()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        FormDocumentos.Show()
+        '  FormDocumentos.Show()
     End Sub
 
     Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load

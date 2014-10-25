@@ -49,6 +49,7 @@ Public Class formABMSucursales
             tbIdSucursal.Text = dgModelos.Item("idSucursal", dgModelos.SelectedRows(0).Index).Value()
             cbBancos.SelectedValue = dgModelos.Item("idBanco", dgModelos.SelectedRows(0).Index).Value()
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If
     End Sub
 
@@ -62,6 +63,7 @@ Public Class formABMSucursales
         cargarDGSucursales()
         bNuevo.Enabled = False
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         LimpiarPantalla()
     End Sub
 
@@ -84,6 +86,7 @@ Public Class formABMSucursales
         CN.Close()
         cargarDGSucursales()
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         LimpiarPantalla()
     End Sub
 
@@ -91,4 +94,25 @@ Public Class formABMSucursales
         Me.Close()
     End Sub
 
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Sucursales where IdSucursal ='" & tbIdSucursal.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGSucursales()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                tbSucursal.Text = ""
+                tbIdSucursal.Text = ""
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicha sucursal esta siendo usada", "Advertencia")
+        End Try
+    End Sub
 End Class

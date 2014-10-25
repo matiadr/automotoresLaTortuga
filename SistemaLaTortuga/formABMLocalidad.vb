@@ -56,6 +56,7 @@ Public Class formABMLocalidad
         cargarDGLocalidades()
         bNuevo.Enabled = False
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         tbLocalidad.Text = ""
         formClientes.cargarCBLocalidades(formClientes.tbIdProvincia.Text)
     End Sub
@@ -68,6 +69,7 @@ Public Class formABMLocalidad
             cbProvincia.SelectedValue = tbIdProvincia.Text
             tbIdLocalidad.Text = dgLocalidades.Item("idLocalidad", dgLocalidades.SelectedRows(0).Index).Value()
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If
     End Sub
 
@@ -84,4 +86,28 @@ Public Class formABMLocalidad
         tbIdLocalidad.Text = ""
         formClientes.cargarCBLocalidades(formClientes.tbIdProvincia.Text)
     End Sub
+
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Localidades where IdLocalidad ='" & tbIdLocalidad.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGLocalidades()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                tbLocalidad.Text = ""
+                tbIdLocalidad.Text = ""
+                formClientes.cargarCBLocalidades(formClientes.tbIdProvincia.Text)
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicha localidad esta siendo usada", "Advertencia")
+        End Try
+    End Sub
+
 End Class

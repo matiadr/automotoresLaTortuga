@@ -36,6 +36,7 @@ Public Class formABMBancos
         cargarDGBancos()
         bNuevo.Enabled = False
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         tbBanco.Text = ""
         tbCodigo.Text = ""
     End Sub
@@ -47,6 +48,7 @@ Public Class formABMBancos
             tbIdBanco.Text = dgBancos.Item("idBanco", dgBancos.SelectedRows(0).Index).Value()
             tbCodigo.Text = dgBancos.Item("codigoBanco", dgBancos.SelectedRows(0).Index).Value()
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If
     End Sub
 
@@ -59,6 +61,7 @@ Public Class formABMBancos
         MessageBox.Show("Modificacion Efectuada")
         cargarDGBancos()
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         tbBanco.Text = ""
         tbIdBanco.Text = ""
         tbCodigo.Text = ""
@@ -66,5 +69,27 @@ Public Class formABMBancos
 
     Private Sub formABMBancos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDGBancos()
+    End Sub
+
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Bancos where IdBanco ='" & tbIdBanco.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGBancos()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                tbBanco.Text = ""
+                tbIdBanco.Text = ""
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicho banco esta siendo usado", "Advertencia")
+        End Try
     End Sub
 End Class

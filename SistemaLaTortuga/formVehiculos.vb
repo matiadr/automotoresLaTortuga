@@ -16,7 +16,6 @@ Public Class formVehiculos
     End Sub
 
 
-
     Private Sub tbTipoVehiculo_TextChanged(sender As Object, e As EventArgs) Handles tbTipoVehiculo.TextChanged
         If tbTipoVehiculo.Text.Length > 0 And tbIdVehiculo.Text = "" Then
             bNuevo.Enabled = True
@@ -146,6 +145,7 @@ Public Class formVehiculos
             tbCosto.Text = Replace(dgVehiculos.Item("precioCosto", dgVehiculos.SelectedRows(0).Index).Value(), ",", ".")
             tbGastos.Text = Replace(dgVehiculos.Item("precioGastos", dgVehiculos.SelectedRows(0).Index).Value(), ",", ".")
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If
     End Sub
 
@@ -159,7 +159,7 @@ Public Class formVehiculos
             cargarDGVehiculos()
             LimpiarPantalla()
         Catch ex As SqlException
-            MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
+            MessageBox.Show("No se pudo realizar la operacion,intente mas tarde", "Advertencia-Error en la base de datos,")
         End Try
     End Sub
 
@@ -181,6 +181,7 @@ Public Class formVehiculos
     Private Sub bLimpiar_Click(sender As Object, e As EventArgs) Handles bLimpiar.Click
         LimpiarPantalla()
         bModificar.Enabled = False
+        bEliminar.Enabled = False
     End Sub
 
 
@@ -194,6 +195,7 @@ Public Class formVehiculos
             cargarDGVehiculos()
             LimpiarPantalla()
             bModificar.Enabled = False
+            bEliminar.Enabled = False
         Catch ex As SqlException
             MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
         End Try
@@ -253,4 +255,24 @@ Public Class formVehiculos
         End If
     End Sub
 
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Vehiculos where IdVehiculo ='" & tbIdVehiculo.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGVehiculos()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                LimpiarPantalla()
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicho vehiculo esta siendo usado", "Advertencia")
+        End Try
+    End Sub
 End Class

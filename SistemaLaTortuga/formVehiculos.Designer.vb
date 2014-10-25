@@ -465,6 +465,7 @@ Partial Class formVehiculos
         Me.tbAño.Name = "tbAño"
         Me.tbAño.Size = New System.Drawing.Size(93, 20)
         Me.tbAño.TabIndex = 7
+        Me.tbAño.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'bLimpiar
         '

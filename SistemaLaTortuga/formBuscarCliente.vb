@@ -38,4 +38,8 @@ Public Class formBuscarCliente
         formVentas.tbIdCliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
         Me.Close()
     End Sub
+
+    Private Sub bNuevoCliente_Click(sender As Object, e As EventArgs) Handles bNuevoCliente.Click
+        formClientes.Show()
+    End Sub
 End Class

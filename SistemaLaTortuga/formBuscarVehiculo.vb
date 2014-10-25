@@ -1,9 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class formBuscarVehiculo
 
-    'Va a guardar 1 si el click se hizo en el boton de buscar vehiculo para la venta,
-    'sino sera 2 si fue en el vehiculo de entrega, esto lo hago para saber en que textBox 
-    'guardar el IdVehiculo
+
     Public tipoBoton As Integer
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
@@ -39,15 +37,7 @@ Public Class formBuscarVehiculo
     End Sub
 
     Private Sub dgClientes_DoubleClick(sender As Object, e As EventArgs) Handles dgVehiculos.DoubleClick
-        If tipoBoton = 1 Then
             formVentas.tbIdVehVenta.Text = dgVehiculos.Item("idVehiculo", dgVehiculos.SelectedRows(0).Index).Value()
-        Else
-            formVentas.tbIdVehEntrega.Text = dgVehiculos.Item("idVehiculo", dgVehiculos.SelectedRows(0).Index).Value()
-        End If
-        Me.Close()
-    End Sub
-
-    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
-
+            Me.Close()
     End Sub
 End Class

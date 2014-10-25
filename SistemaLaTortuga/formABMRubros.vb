@@ -40,6 +40,7 @@ Public Class formABMRubros
             cargarDGRubros()
             bNuevo.Enabled = False
             bModificar.Enabled = False
+            bEliminar.Enabled = False
             tbRubro.Text = ""
             formCuentas.cargarCBRubros()
         Catch ex As SqlException
@@ -53,6 +54,7 @@ Public Class formABMRubros
             tbRubro.Text = dgRubro.Item("rubro", dgRubro.SelectedRows(0).Index).Value()
             tbIdRubro.Text = dgRubro.Item("idRubro", dgRubro.SelectedRows(0).Index).Value()
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If
     End Sub
 
@@ -66,11 +68,34 @@ Public Class formABMRubros
             MessageBox.Show("Modificacion Efectuada")
             cargarDGRubros()
             bModificar.Enabled = False
+            bEliminar.Enabled = False
             tbRubro.Text = ""
             tbIdRubro.Text = ""
             formCuentas.cargarCBRubros()
         Catch ex As SqlException
             MessageBox.Show("Ocurrio un error en la actualizacion, intente mas tarde")
+        End Try
+    End Sub
+
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Rubros where IdRubro ='" & tbIdRubro.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGRubros()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                tbRubro.Text = ""
+                tbIdRubro.Text = ""
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicho rubro esta siendo usado", "Advertencia")
         End Try
     End Sub
 End Class

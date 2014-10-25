@@ -110,7 +110,7 @@ Public Class formClientes
             limpiarPantalla()
             formBuscarCliente.cargarDGClientes()
         Catch ex As SqlException
-            MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
+            MessageBox.Show("No se pudo realizar la operacion,intente mas tarde", "Advertencia-Error en la base de datos,")
         End Try
     End Sub
 
@@ -189,6 +189,7 @@ Public Class formClientes
             tbNombreConyuge.Text = dgClientes.Item("nombreConyuge", dgClientes.SelectedRows(0).Index).Value().ToString
             tbDocumentoConyuge.Text = dgClientes.Item("dniConyuge", dgClientes.SelectedRows(0).Index).Value().ToString
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If
     End Sub
 
@@ -209,6 +210,7 @@ Public Class formClientes
     Private Sub bLimpiar_Click(sender As Object, e As EventArgs) Handles bLimpiar.Click
         limpiarPantalla()
         bModificar.Enabled = False
+        bEliminar.Enabled = False
     End Sub
 
     Private Sub bModificar_Click(sender As Object, e As EventArgs) Handles bModificar.Click
@@ -221,6 +223,7 @@ Public Class formClientes
             cargarDGClientes()
             limpiarPantalla()
             bModificar.Enabled = False
+            bEliminar.Enabled = False
         Catch ex As SqlException
             MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
         End Try
@@ -246,4 +249,24 @@ Public Class formClientes
         End If
     End Sub
 
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Clientes where IdCliente ='" & tbIdCliente.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGClientes()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                limpiarPantalla()
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicho cliente esta siendo usado", "Advertencia")
+        End Try
+    End Sub
 End Class

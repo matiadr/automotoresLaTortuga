@@ -38,6 +38,7 @@ Public Class formABMProvincia
         cargarDGProvincias()
         bNuevo.Enabled = False
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         tbProvincia.Text = ""
         formClientes.cargarCBProvincias()
     End Sub
@@ -48,6 +49,7 @@ Public Class formABMProvincia
             tbProvincia.Text = dgProvincias.Item("provincia", dgProvincias.SelectedRows(0).Index).Value()
             tbIdProvincia.Text = dgProvincias.Item("idProvincia", dgProvincias.SelectedRows(0).Index).Value()
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If     
     End Sub
 
@@ -60,8 +62,31 @@ Public Class formABMProvincia
         MessageBox.Show("Modificacion Efectuada")
         cargarDGProvincias()
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         tbProvincia.Text = ""
         tbIdProvincia.Text = ""
         formClientes.cargarCBProvincias()
+    End Sub
+
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Provincias where IdProvincia ='" & tbIdProvincia.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGProvincias()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                tbProvincia.Text = ""
+                tbIdProvincia.Text = ""
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicha provincia esta siendo usada", "Advertencia")
+        End Try
     End Sub
 End Class

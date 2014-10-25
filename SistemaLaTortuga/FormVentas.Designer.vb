@@ -24,6 +24,9 @@ Partial Class formVentas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formVentas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.dtfecha = New System.Windows.Forms.DateTimePicker()
+        Me.textidventa = New System.Windows.Forms.TextBox()
         Me.bActualizar = New System.Windows.Forms.Button()
         Me.tbIdCliente = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -42,6 +45,16 @@ Partial Class formVentas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbNombre = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.tbtransferencia = New System.Windows.Forms.TextBox()
+        Me.tbidvendedor = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TbPrecioCostoVehVenta = New System.Windows.Forms.TextBox()
         Me.tbTipoVehVenta = New System.Windows.Forms.TextBox()
         Me.tbIdVehVenta = New System.Windows.Forms.TextBox()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -103,19 +116,6 @@ Partial Class formVentas
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TbPrecioCostoVehVenta = New System.Windows.Forms.TextBox()
-        Me.textidventa = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.tbidvendedor = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.tbtransferencia = New System.Windows.Forms.TextBox()
-        Me.dtfecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label21 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -153,6 +153,31 @@ Partial Class formVentas
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Comprador"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(315, 15)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(37, 13)
+        Me.Label21.TabIndex = 27
+        Me.Label21.Text = "Fecha"
+        '
+        'dtfecha
+        '
+        Me.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtfecha.Location = New System.Drawing.Point(315, 31)
+        Me.dtfecha.Name = "dtfecha"
+        Me.dtfecha.Size = New System.Drawing.Size(79, 20)
+        Me.dtfecha.TabIndex = 26
+        '
+        'textidventa
+        '
+        Me.textidventa.Location = New System.Drawing.Point(426, 45)
+        Me.textidventa.Name = "textidventa"
+        Me.textidventa.Size = New System.Drawing.Size(40, 20)
+        Me.textidventa.TabIndex = 25
+        Me.textidventa.Visible = False
         '
         'bActualizar
         '
@@ -345,6 +370,94 @@ Partial Class formVentas
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Vehículo Venta"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(3, 175)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(115, 13)
+        Me.Label20.TabIndex = 31
+        Me.Label20.Text = "Transferencia Cobrada"
+        '
+        'tbtransferencia
+        '
+        Me.tbtransferencia.Enabled = False
+        Me.tbtransferencia.Location = New System.Drawing.Point(6, 189)
+        Me.tbtransferencia.Name = "tbtransferencia"
+        Me.tbtransferencia.ReadOnly = True
+        Me.tbtransferencia.Size = New System.Drawing.Size(112, 20)
+        Me.tbtransferencia.TabIndex = 30
+        '
+        'tbidvendedor
+        '
+        Me.tbidvendedor.Location = New System.Drawing.Point(460, 31)
+        Me.tbidvendedor.Name = "tbidvendedor"
+        Me.tbidvendedor.Size = New System.Drawing.Size(35, 20)
+        Me.tbidvendedor.TabIndex = 29
+        Me.tbidvendedor.Visible = False
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(318, 134)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(77, 13)
+        Me.Label18.TabIndex = 28
+        Me.Label18.Text = "N° Documento"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(273, 134)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(28, 13)
+        Me.Label19.TabIndex = 27
+        Me.Label19.Text = "Tipo"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Location = New System.Drawing.Point(318, 148)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        Me.TextBox5.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox5.TabIndex = 26
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Enabled = False
+        Me.TextBox6.Location = New System.Drawing.Point(270, 148)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(42, 20)
+        Me.TextBox6.TabIndex = 25
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(9, 135)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(141, 13)
+        Me.Label17.TabIndex = 24
+        Me.Label17.Text = "Apellido y Nombre Vendedor"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Enabled = False
+        Me.TextBox4.Location = New System.Drawing.Point(6, 148)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
+        Me.TextBox4.Size = New System.Drawing.Size(257, 20)
+        Me.TextBox4.TabIndex = 23
+        '
+        'TbPrecioCostoVehVenta
+        '
+        Me.TbPrecioCostoVehVenta.Location = New System.Drawing.Point(186, -5)
+        Me.TbPrecioCostoVehVenta.Name = "TbPrecioCostoVehVenta"
+        Me.TbPrecioCostoVehVenta.Size = New System.Drawing.Size(121, 20)
+        Me.TbPrecioCostoVehVenta.TabIndex = 6
+        Me.TbPrecioCostoVehVenta.Visible = False
         '
         'tbTipoVehVenta
         '
@@ -921,118 +1034,6 @@ Partial Class formVentas
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(427, 43)
         Me.DataGridView1.TabIndex = 0
-        '
-        'TbPrecioCostoVehVenta
-        '
-        Me.TbPrecioCostoVehVenta.Location = New System.Drawing.Point(186, -5)
-        Me.TbPrecioCostoVehVenta.Name = "TbPrecioCostoVehVenta"
-        Me.TbPrecioCostoVehVenta.Size = New System.Drawing.Size(121, 20)
-        Me.TbPrecioCostoVehVenta.TabIndex = 6
-        Me.TbPrecioCostoVehVenta.Visible = False
-        '
-        'textidventa
-        '
-        Me.textidventa.Location = New System.Drawing.Point(426, 45)
-        Me.textidventa.Name = "textidventa"
-        Me.textidventa.Size = New System.Drawing.Size(40, 20)
-        Me.textidventa.TabIndex = 25
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(9, 135)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(141, 13)
-        Me.Label17.TabIndex = 24
-        Me.Label17.Text = "Apellido y Nombre Vendedor"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(6, 148)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(257, 20)
-        Me.TextBox4.TabIndex = 23
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(318, 134)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(77, 13)
-        Me.Label18.TabIndex = 28
-        Me.Label18.Text = "N° Documento"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(273, 134)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(28, 13)
-        Me.Label19.TabIndex = 27
-        Me.Label19.Text = "Tipo"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(318, 148)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(178, 20)
-        Me.TextBox5.TabIndex = 26
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(270, 148)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox6.TabIndex = 25
-        '
-        'tbidvendedor
-        '
-        Me.tbidvendedor.Location = New System.Drawing.Point(460, 31)
-        Me.tbidvendedor.Name = "tbidvendedor"
-        Me.tbidvendedor.Size = New System.Drawing.Size(35, 20)
-        Me.tbidvendedor.TabIndex = 29
-        Me.tbidvendedor.Visible = False
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(3, 175)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(115, 13)
-        Me.Label20.TabIndex = 31
-        Me.Label20.Text = "Transferencia Cobrada"
-        '
-        'tbtransferencia
-        '
-        Me.tbtransferencia.Enabled = False
-        Me.tbtransferencia.Location = New System.Drawing.Point(6, 189)
-        Me.tbtransferencia.Name = "tbtransferencia"
-        Me.tbtransferencia.ReadOnly = True
-        Me.tbtransferencia.Size = New System.Drawing.Size(112, 20)
-        Me.tbtransferencia.TabIndex = 30
-        '
-        'dtfecha
-        '
-        Me.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtfecha.Location = New System.Drawing.Point(315, 31)
-        Me.dtfecha.Name = "dtfecha"
-        Me.dtfecha.Size = New System.Drawing.Size(79, 20)
-        Me.dtfecha.TabIndex = 26
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(315, 15)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(37, 13)
-        Me.Label21.TabIndex = 27
-        Me.Label21.Text = "Fecha"
         '
         'formVentas
         '

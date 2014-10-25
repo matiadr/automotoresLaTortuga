@@ -37,6 +37,7 @@ Public Class formABMModelos
             tbModelo.Text = dgModelos.Item("modelo", dgModelos.SelectedRows(0).Index).Value()
             cbMarca.SelectedValue = tbIdMarca.Text
             bModificar.Enabled = True
+            bEliminar.Enabled = True
         End If
     End Sub
 
@@ -49,6 +50,7 @@ Public Class formABMModelos
         cargarDGModelos()
         bNuevo.Enabled = False
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         tbModelo.Text = ""
         CN.Close()
         formVehiculos.cargarCBModelos(formVehiculos.tbIdMarca.Text)
@@ -63,6 +65,7 @@ Public Class formABMModelos
         CN.Close()
         cargarDGModelos()
         bModificar.Enabled = False
+        bEliminar.Enabled = False
         tbModelo.Text = ""
         tbIdModelo.Text = ""
         formVehiculos.cargarCBModelos(formVehiculos.tbIdMarca.Text)
@@ -83,5 +86,27 @@ Public Class formABMModelos
         cbMarca.DataSource = ds.Tables(0)
         cbMarca.ValueMember = "IdMarca"
         cbMarca.DisplayMember = "NombreMarca"
+    End Sub
+
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
+                Dim cmd As New SqlCommand("delete Modelos where IdModelo ='" & tbIdModelo.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGModelos()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                tbModelo.Text = ""
+                tbIdModelo.Text = ""
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicho Modelo esta siendo usado", "Advertencia")
+        End Try
     End Sub
 End Class
