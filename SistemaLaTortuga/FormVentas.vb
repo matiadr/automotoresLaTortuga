@@ -110,26 +110,21 @@ Public Class formVentas
         End If
     End Sub
 
-    Private Sub GroupBox4_Enter(sender As Object, e As EventArgs) Handles GroupBox4.Enter
 
-    End Sub
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
 
-        '  formvehiculoentrega.Show()
+        formvehiculoentrega.Show()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        '   FormEntregasEfectivo.Show()
+        FormEntregasEfectivo.Show()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        '  FormDocumentos.Show()
+        FormDocumentos.Show()
     End Sub
 
-    Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
 

@@ -12,6 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Adriana\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +67,18 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D388B717CA3985FA06874034CDC10E3A766DC536</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SistemaLaTortuga_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -77,6 +105,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form5.Designer.vb">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formABMBancos.Designer.vb">
       <DependentUpon>formABMBancos.vb</DependentUpon>
     </Compile>
@@ -99,6 +133,36 @@
       <DependentUpon>formBuscarVehiculo.vb</DependentUpon>
     </Compile>
     <Compile Include="formBuscarVehiculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaja.Designer.vb">
+      <DependentUpon>FormCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDocumentos.Designer.vb">
+      <DependentUpon>FormDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntregasEfectivo.Designer.vb">
+      <DependentUpon>FormEntregasEfectivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEntregasEfectivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoPlanes.Designer.vb">
+      <DependentUpon>FormPagoPlanes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagoPlanes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVehiculoEntrega.Designer.vb">
+      <DependentUpon>FormVehiculoEntrega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormVehiculoEntrega.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormVentas.Designer.vb">
@@ -179,6 +243,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formABMBancos.resx">
       <DependentUpon>formABMBancos.vb</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +257,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formBuscarVehiculo.resx">
       <DependentUpon>formBuscarVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCaja.resx">
+      <DependentUpon>FormCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntregasEfectivo.resx">
+      <DependentUpon>FormEntregasEfectivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoPlanes.resx">
+      <DependentUpon>FormPagoPlanes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVehiculoEntrega.resx">
+      <DependentUpon>FormVehiculoEntrega.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.vb</DependentUpon>
@@ -240,6 +319,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="SistemaLaTortuga_ClaveTemporal.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\apply.ico" />
@@ -272,6 +352,23 @@
     <None Include="Resources\filesave.ico" />
     <Content Include="Resources\la-tortuga-colon.ico" />
     <None Include="Resources\la-tortuga-colon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
