@@ -23,14 +23,15 @@ Partial Class formvehiculoentrega
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.textidvehiculo = New System.Windows.Forms.TextBox()
         Me.tbTipoVehEntrega = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.tbPrecioCostoVehEntrega = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
+        Me.textdetalle = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.textdeuda = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.tbChasisVehEntrega = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -47,6 +48,7 @@ Partial Class formvehiculoentrega
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tbMarcaVehEntrega = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -54,14 +56,15 @@ Partial Class formvehiculoentrega
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.textidvehiculo)
         Me.GroupBox3.Controls.Add(Me.tbTipoVehEntrega)
         Me.GroupBox3.Controls.Add(Me.Label34)
         Me.GroupBox3.Controls.Add(Me.Label36)
         Me.GroupBox3.Controls.Add(Me.tbPrecioCostoVehEntrega)
         Me.GroupBox3.Controls.Add(Me.Label22)
-        Me.GroupBox3.Controls.Add(Me.TextBox23)
+        Me.GroupBox3.Controls.Add(Me.textdetalle)
         Me.GroupBox3.Controls.Add(Me.Label21)
-        Me.GroupBox3.Controls.Add(Me.TextBox22)
+        Me.GroupBox3.Controls.Add(Me.textdeuda)
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Controls.Add(Me.tbChasisVehEntrega)
         Me.GroupBox3.Controls.Add(Me.Label15)
@@ -82,6 +85,14 @@ Partial Class formvehiculoentrega
         Me.GroupBox3.Size = New System.Drawing.Size(515, 174)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
+        '
+        'textidvehiculo
+        '
+        Me.textidvehiculo.Location = New System.Drawing.Point(456, 18)
+        Me.textidvehiculo.Name = "textidvehiculo"
+        Me.textidvehiculo.Size = New System.Drawing.Size(39, 20)
+        Me.textidvehiculo.TabIndex = 24
+        Me.textidvehiculo.Visible = False
         '
         'tbTipoVehEntrega
         '
@@ -112,12 +123,11 @@ Partial Class formvehiculoentrega
         '
         'tbPrecioCostoVehEntrega
         '
-        Me.tbPrecioCostoVehEntrega.Enabled = False
         Me.tbPrecioCostoVehEntrega.Location = New System.Drawing.Point(293, 30)
         Me.tbPrecioCostoVehEntrega.Name = "tbPrecioCostoVehEntrega"
-        Me.tbPrecioCostoVehEntrega.ReadOnly = True
         Me.tbPrecioCostoVehEntrega.Size = New System.Drawing.Size(94, 20)
         Me.tbPrecioCostoVehEntrega.TabIndex = 19
+        Me.tbPrecioCostoVehEntrega.Text = "0"
         '
         'Label22
         '
@@ -128,13 +138,12 @@ Partial Class formvehiculoentrega
         Me.Label22.TabIndex = 18
         Me.Label22.Text = "Detalle"
         '
-        'TextBox23
+        'textdetalle
         '
-        Me.TextBox23.Location = New System.Drawing.Point(103, 142)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.ReadOnly = True
-        Me.TextBox23.Size = New System.Drawing.Size(393, 20)
-        Me.TextBox23.TabIndex = 17
+        Me.textdetalle.Location = New System.Drawing.Point(103, 142)
+        Me.textdetalle.Name = "textdetalle"
+        Me.textdetalle.Size = New System.Drawing.Size(393, 20)
+        Me.textdetalle.TabIndex = 17
         '
         'Label21
         '
@@ -145,13 +154,13 @@ Partial Class formvehiculoentrega
         Me.Label21.TabIndex = 16
         Me.Label21.Text = "Deuda"
         '
-        'TextBox22
+        'textdeuda
         '
-        Me.TextBox22.Location = New System.Drawing.Point(8, 142)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.ReadOnly = True
-        Me.TextBox22.Size = New System.Drawing.Size(80, 20)
-        Me.TextBox22.TabIndex = 15
+        Me.textdeuda.Location = New System.Drawing.Point(8, 142)
+        Me.textdeuda.Name = "textdeuda"
+        Me.textdeuda.Size = New System.Drawing.Size(80, 20)
+        Me.textdeuda.TabIndex = 15
+        Me.textdeuda.Text = "0"
         '
         'Label14
         '
@@ -290,6 +299,7 @@ Partial Class formvehiculoentrega
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Location = New System.Drawing.Point(534, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -297,13 +307,22 @@ Partial Class formvehiculoentrega
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(22, 97)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(67, 45)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Guardar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(21, 43)
+        Me.Button1.Location = New System.Drawing.Point(22, 17)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(67, 69)
+        Me.Button1.Size = New System.Drawing.Size(67, 45)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Agregar"
+        Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'formvehiculoentrega
@@ -327,9 +346,9 @@ Partial Class formvehiculoentrega
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents tbPrecioCostoVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
+    Friend WithEvents textdetalle As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
+    Friend WithEvents textdeuda As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents tbChasisVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
@@ -347,4 +366,6 @@ Partial Class formvehiculoentrega
     Friend WithEvents tbMarcaVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents textidvehiculo As System.Windows.Forms.TextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

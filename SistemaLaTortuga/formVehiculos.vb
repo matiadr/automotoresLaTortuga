@@ -127,6 +127,10 @@ Public Class formVehiculos
     End Sub
 
     Private Sub dgVehiculos_Click(sender As Object, e As EventArgs) Handles dgVehiculos.Click, dgVehiculos.KeyDown, dgVehiculos.KeyUp
+
+        textnombre.Text = ""
+        textidcliente.Text = ""
+
         If dgVehiculos.RowCount > 0 Then
             tbIdVehiculo.Text = dgVehiculos.Item("idVehiculo", dgVehiculos.SelectedRows(0).Index).Value()
             tbTipoVehiculo.Text = dgVehiculos.Item("tipoVehiculo", dgVehiculos.SelectedRows(0).Index).Value()
@@ -147,6 +151,68 @@ Public Class formVehiculos
             bModificar.Enabled = True
             bEliminar.Enabled = True
         End If
+
+
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+
+        'busco si hay un cliente asociado a dicho vehículo en la tabla VEHICULOSXCLIENTE
+        Dim cliente As New SqlCommand("Select idcliente from VehiculosxClientes where idVehiculo = '" & tbIdVehiculo.Text & "' and Estado = 'Activo' ", CN)
+
+
+        'cliente.ExecuteReader()
+
+        '  Dim dt As New DataTable
+        ' Dim da As New SqlDataAdapter(cliente)
+
+
+        Dim reader As SqlDataReader = cliente.ExecuteReader()
+
+
+
+
+
+        If reader.Read = Nothing Then
+
+        Else
+            textidcliente.Text = reader.GetInt32(0)
+
+
+            reader.Close()
+            'busco el cliente asociado a ese vehiculo de la tabla
+            Dim nombre As New SqlCommand("Select NombreC from Clientes where idCliente = '" & textidcliente.Text & "'", CN)
+
+            Dim readern As SqlDataReader = nombre.ExecuteReader()
+
+
+            readern.Read()
+            textnombre.Text = readern.GetString(0)
+
+            readern.Close()
+
+
+             End If
+
+
+
+            CN.Close()
+
+
+
+            'deshabilito el text del nombre si es que ya esta asignado y la fecha tambien y los botones
+            If textnombre.Text <> "" Then
+                textnombre.Enabled = False
+                dtfecha.Enabled = False
+                Button1.Enabled = False
+                Button2.Enabled = False
+            Else
+                textnombre.Enabled = True
+                dtfecha.Enabled = True
+                Button1.Enabled = True
+
+            End If
+
+
     End Sub
 
     Private Sub bNuevo_Click(sender As Object, e As EventArgs) Handles bNuevo.Click
@@ -157,6 +223,7 @@ Public Class formVehiculos
             cmd.ExecuteNonQuery()
             MessageBox.Show("Vehiculo Agregado")
             cargarDGVehiculos()
+            CN.Close()
             LimpiarPantalla()
         Catch ex As SqlException
             MessageBox.Show("No se pudo realizar la operacion,intente mas tarde", "Advertencia-Error en la base de datos,")
@@ -182,6 +249,9 @@ Public Class formVehiculos
         LimpiarPantalla()
         bModificar.Enabled = False
         bEliminar.Enabled = False
+
+        textidcliente.Text = ""
+        textnombre.Text = ""
     End Sub
 
 
@@ -274,5 +344,64 @@ Public Class formVehiculos
         Catch ex As SqlException
             MessageBox.Show("No se puede eliminar ya que dicho vehiculo esta siendo usado", "Advertencia")
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        formBuscarCliente.Show()
+        formBuscarCliente.textform.Text = "v"
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+
+
+
+        'debeo crear registro en la tabla VEHICULOSXCLIENTES para saber quien me entrego ese vehiculo
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+
+
+        'primero controlo que no exista ya un registro para ese vehiculo y este activo....porque si es asi pregunto si quiero eliminar al dueño anterior
+        'y reemplazarlo
+      
+
+        Dim fecha As String = Format(tbFechaAlta.Value, "yyyy-MM-dd")
+
+        Dim cmd As New SqlCommand("insert into VehiculosxClientes(IdVehiculo, IdCliente, FechaDesde, FechaHasta, Estado) values ('" & tbIdVehiculo.Text & "','" & textidcliente.Text & "','" & fecha & "','" & fecha & "','" & "Activo" & "')", CN)
+
+        cmd.ExecuteNonQuery()
+
+        
+
+
+
+        CN.Close()
+
+        Button1.Enabled = False
+        Button2.Enabled = False
+    End Sub
+
+    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
+
+    End Sub
+
+    Private Sub textidcliente_TextChanged(sender As Object, e As EventArgs) Handles textidcliente.TextChanged
+
+
+
+   
+
+
+
+    End Sub
+
+
+    Private Sub tbIdVehiculo_TextChanged(sender As Object, e As EventArgs) Handles tbIdVehiculo.TextChanged
+
+    End Sub
+
+    Private Sub tbFechaAlta_ValueChanged(sender As Object, e As EventArgs) Handles tbFechaAlta.ValueChanged
+        dtfecha.Value = tbFechaAlta.Value
     End Sub
 End Class

@@ -50,10 +50,10 @@ Partial Class formVentas
         Me.tbidvendedor = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.textdniv = New System.Windows.Forms.TextBox()
+        Me.texttipov = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.textvendedor = New System.Windows.Forms.TextBox()
         Me.TbPrecioCostoVehVenta = New System.Windows.Forms.TextBox()
         Me.tbTipoVehVenta = New System.Windows.Forms.TextBox()
         Me.tbIdVehVenta = New System.Windows.Forms.TextBox()
@@ -76,57 +76,67 @@ Partial Class formVentas
         Me.Label13 = New System.Windows.Forms.Label()
         Me.tbMarcaVehVenta = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextPlan = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextAdministrador = New System.Windows.Forms.TextBox()
         Me.groupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ChkCancelado = New System.Windows.Forms.CheckBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.TextBox33 = New System.Windows.Forms.TextBox()
+        Me.TextImporteTotal = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.textBox50 = New System.Windows.Forms.TextBox()
+        Me.TextValorCuota = New System.Windows.Forms.TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DTprimeraCuota = New System.Windows.Forms.DateTimePicker()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
+        Me.TextMeses = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.TextIntereses = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.TextCuotas = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.TextDetallePlan = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.TextFinanciado = New System.Windows.Forms.TextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.textsumadocumentos = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.textsumaentrega = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.textsumaentregasv = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGentregas = New System.Windows.Forms.DataGridView()
+        Me.vehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.maraca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.textprovincia = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.groupBox7.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGentregas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.textprovincia)
         Me.GroupBox1.Controls.Add(Me.Label21)
         Me.GroupBox1.Controls.Add(Me.dtfecha)
         Me.GroupBox1.Controls.Add(Me.textidventa)
@@ -177,7 +187,6 @@ Partial Class formVentas
         Me.textidventa.Name = "textidventa"
         Me.textidventa.Size = New System.Drawing.Size(40, 20)
         Me.textidventa.TabIndex = 25
-        Me.textidventa.Visible = False
         '
         'bActualizar
         '
@@ -195,7 +204,6 @@ Partial Class formVentas
         Me.tbIdCliente.Name = "tbIdCliente"
         Me.tbIdCliente.Size = New System.Drawing.Size(39, 20)
         Me.tbIdCliente.TabIndex = 15
-        Me.tbIdCliente.Visible = False
         '
         'Label6
         '
@@ -339,10 +347,10 @@ Partial Class formVentas
         Me.GroupBox2.Controls.Add(Me.tbidvendedor)
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Controls.Add(Me.Label19)
-        Me.GroupBox2.Controls.Add(Me.TextBox5)
-        Me.GroupBox2.Controls.Add(Me.TextBox6)
+        Me.GroupBox2.Controls.Add(Me.textdniv)
+        Me.GroupBox2.Controls.Add(Me.texttipov)
         Me.GroupBox2.Controls.Add(Me.Label17)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.textvendedor)
         Me.GroupBox2.Controls.Add(Me.TbPrecioCostoVehVenta)
         Me.GroupBox2.Controls.Add(Me.tbTipoVehVenta)
         Me.GroupBox2.Controls.Add(Me.tbIdVehVenta)
@@ -382,12 +390,11 @@ Partial Class formVentas
         '
         'tbtransferencia
         '
-        Me.tbtransferencia.Enabled = False
         Me.tbtransferencia.Location = New System.Drawing.Point(6, 189)
         Me.tbtransferencia.Name = "tbtransferencia"
-        Me.tbtransferencia.ReadOnly = True
         Me.tbtransferencia.Size = New System.Drawing.Size(112, 20)
         Me.tbtransferencia.TabIndex = 30
+        Me.tbtransferencia.Text = "0"
         '
         'tbidvendedor
         '
@@ -395,7 +402,6 @@ Partial Class formVentas
         Me.tbidvendedor.Name = "tbidvendedor"
         Me.tbidvendedor.Size = New System.Drawing.Size(35, 20)
         Me.tbidvendedor.TabIndex = 29
-        Me.tbidvendedor.Visible = False
         '
         'Label18
         '
@@ -415,23 +421,23 @@ Partial Class formVentas
         Me.Label19.TabIndex = 27
         Me.Label19.Text = "Tipo"
         '
-        'TextBox5
+        'textdniv
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(318, 148)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(178, 20)
-        Me.TextBox5.TabIndex = 26
+        Me.textdniv.Enabled = False
+        Me.textdniv.Location = New System.Drawing.Point(318, 148)
+        Me.textdniv.Name = "textdniv"
+        Me.textdniv.ReadOnly = True
+        Me.textdniv.Size = New System.Drawing.Size(178, 20)
+        Me.textdniv.TabIndex = 26
         '
-        'TextBox6
+        'texttipov
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(270, 148)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox6.TabIndex = 25
+        Me.texttipov.Enabled = False
+        Me.texttipov.Location = New System.Drawing.Point(270, 148)
+        Me.texttipov.Name = "texttipov"
+        Me.texttipov.ReadOnly = True
+        Me.texttipov.Size = New System.Drawing.Size(42, 20)
+        Me.texttipov.TabIndex = 25
         '
         'Label17
         '
@@ -442,14 +448,14 @@ Partial Class formVentas
         Me.Label17.TabIndex = 24
         Me.Label17.Text = "Apellido y Nombre Vendedor"
         '
-        'TextBox4
+        'textvendedor
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(6, 148)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(257, 20)
-        Me.TextBox4.TabIndex = 23
+        Me.textvendedor.Enabled = False
+        Me.textvendedor.Location = New System.Drawing.Point(6, 148)
+        Me.textvendedor.Name = "textvendedor"
+        Me.textvendedor.ReadOnly = True
+        Me.textvendedor.Size = New System.Drawing.Size(257, 20)
+        Me.textvendedor.TabIndex = 23
         '
         'TbPrecioCostoVehVenta
         '
@@ -457,7 +463,6 @@ Partial Class formVentas
         Me.TbPrecioCostoVehVenta.Name = "TbPrecioCostoVehVenta"
         Me.TbPrecioCostoVehVenta.Size = New System.Drawing.Size(121, 20)
         Me.TbPrecioCostoVehVenta.TabIndex = 6
-        Me.TbPrecioCostoVehVenta.Visible = False
         '
         'tbTipoVehVenta
         '
@@ -474,7 +479,6 @@ Partial Class formVentas
         Me.tbIdVehVenta.Name = "tbIdVehVenta"
         Me.tbIdVehVenta.Size = New System.Drawing.Size(35, 20)
         Me.tbIdVehVenta.TabIndex = 21
-        Me.tbIdVehVenta.Visible = False
         '
         'Label37
         '
@@ -496,10 +500,8 @@ Partial Class formVentas
         '
         'tbPrecioVentaVehVenta
         '
-        Me.tbPrecioVentaVehVenta.Enabled = False
         Me.tbPrecioVentaVehVenta.Location = New System.Drawing.Point(293, 28)
         Me.tbPrecioVentaVehVenta.Name = "tbPrecioVentaVehVenta"
-        Me.tbPrecioVentaVehVenta.ReadOnly = True
         Me.tbPrecioVentaVehVenta.Size = New System.Drawing.Size(94, 20)
         Me.tbPrecioVentaVehVenta.TabIndex = 15
         '
@@ -641,84 +643,118 @@ Partial Class formVentas
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Button10)
+        Me.GroupBox4.Controls.Add(Me.Button11)
         Me.GroupBox4.Controls.Add(Me.Label15)
-        Me.GroupBox4.Controls.Add(Me.TextBox2)
+        Me.GroupBox4.Controls.Add(Me.TextPlan)
         Me.GroupBox4.Controls.Add(Me.Label14)
-        Me.GroupBox4.Controls.Add(Me.TextBox1)
+        Me.GroupBox4.Controls.Add(Me.TextAdministrador)
         Me.GroupBox4.Controls.Add(Me.groupBox7)
         Me.GroupBox4.Controls.Add(Me.Label25)
-        Me.GroupBox4.Controls.Add(Me.TextBox26)
+        Me.GroupBox4.Controls.Add(Me.TextFinanciado)
         Me.GroupBox4.Controls.Add(Me.Button5)
         Me.GroupBox4.Controls.Add(Me.Label24)
-        Me.GroupBox4.Controls.Add(Me.TextBox25)
+        Me.GroupBox4.Controls.Add(Me.textsumadocumentos)
         Me.GroupBox4.Controls.Add(Me.Button4)
         Me.GroupBox4.Controls.Add(Me.Label23)
-        Me.GroupBox4.Controls.Add(Me.TextBox24)
+        Me.GroupBox4.Controls.Add(Me.textsumaentrega)
         Me.GroupBox4.Location = New System.Drawing.Point(529, 12)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(359, 470)
+        Me.GroupBox4.Size = New System.Drawing.Size(359, 498)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Pagos"
         '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(231, 177)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(37, 21)
+        Me.Button10.TabIndex = 26
+        Me.Button10.Text = "..."
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
+        Me.Button11.Location = New System.Drawing.Point(311, 19)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(35, 26)
+        Me.Button11.TabIndex = 25
+        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button11.UseVisualStyleBackColor = True
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(227, 136)
+        Me.Label15.Location = New System.Drawing.Point(16, 161)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(28, 13)
         Me.Label15.TabIndex = 12
         Me.Label15.Text = "Plan"
         '
-        'TextBox2
+        'TextPlan
         '
-        Me.TextBox2.Location = New System.Drawing.Point(230, 152)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(93, 20)
-        Me.TextBox2.TabIndex = 11
+        Me.TextPlan.Location = New System.Drawing.Point(19, 177)
+        Me.TextPlan.Name = "TextPlan"
+        Me.TextPlan.Size = New System.Drawing.Size(93, 20)
+        Me.TextPlan.TabIndex = 11
+        Me.TextPlan.Text = "0"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(126, 136)
+        Me.Label14.Location = New System.Drawing.Point(135, 164)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(70, 13)
         Me.Label14.TabIndex = 10
         Me.Label14.Text = "Administrador"
         '
-        'TextBox1
+        'TextAdministrador
         '
-        Me.TextBox1.Location = New System.Drawing.Point(129, 152)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(93, 20)
-        Me.TextBox1.TabIndex = 9
+        Me.TextAdministrador.Enabled = False
+        Me.TextAdministrador.Location = New System.Drawing.Point(132, 177)
+        Me.TextAdministrador.Name = "TextAdministrador"
+        Me.TextAdministrador.Size = New System.Drawing.Size(93, 20)
+        Me.TextAdministrador.TabIndex = 9
+        Me.TextAdministrador.Text = "0"
         '
         'groupBox7
         '
+        Me.groupBox7.Controls.Add(Me.Button9)
         Me.groupBox7.Controls.Add(Me.Button2)
         Me.groupBox7.Controls.Add(Me.Label35)
-        Me.groupBox7.Controls.Add(Me.CheckBox1)
+        Me.groupBox7.Controls.Add(Me.ChkCancelado)
         Me.groupBox7.Controls.Add(Me.Button6)
         Me.groupBox7.Controls.Add(Me.Label33)
-        Me.groupBox7.Controls.Add(Me.TextBox33)
+        Me.groupBox7.Controls.Add(Me.TextImporteTotal)
         Me.groupBox7.Controls.Add(Me.Label32)
-        Me.groupBox7.Controls.Add(Me.textBox50)
+        Me.groupBox7.Controls.Add(Me.TextValorCuota)
         Me.groupBox7.Controls.Add(Me.Label31)
-        Me.groupBox7.Controls.Add(Me.DateTimePicker1)
+        Me.groupBox7.Controls.Add(Me.DTprimeraCuota)
         Me.groupBox7.Controls.Add(Me.Label30)
-        Me.groupBox7.Controls.Add(Me.TextBox31)
+        Me.groupBox7.Controls.Add(Me.TextMeses)
         Me.groupBox7.Controls.Add(Me.Label29)
-        Me.groupBox7.Controls.Add(Me.TextBox30)
+        Me.groupBox7.Controls.Add(Me.TextIntereses)
         Me.groupBox7.Controls.Add(Me.Label28)
-        Me.groupBox7.Controls.Add(Me.TextBox29)
+        Me.groupBox7.Controls.Add(Me.TextCuotas)
         Me.groupBox7.Controls.Add(Me.Label26)
-        Me.groupBox7.Controls.Add(Me.TextBox27)
-        Me.groupBox7.Location = New System.Drawing.Point(16, 198)
+        Me.groupBox7.Controls.Add(Me.TextDetallePlan)
+        Me.groupBox7.Location = New System.Drawing.Point(16, 228)
         Me.groupBox7.Name = "groupBox7"
         Me.groupBox7.Size = New System.Drawing.Size(330, 260)
         Me.groupBox7.TabIndex = 8
         Me.groupBox7.TabStop = False
         Me.groupBox7.Text = "Plan de Pago "
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(240, 165)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(69, 37)
+        Me.Button9.TabIndex = 24
+        Me.Button9.Text = "Ver Plan"
+        Me.Button9.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -738,19 +774,19 @@ Partial Class formVentas
         Me.Label35.TabIndex = 22
         Me.Label35.Text = "%"
         '
-        'CheckBox1
+        'ChkCancelado
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(106, 228)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(101, 17)
-        Me.CheckBox1.TabIndex = 21
-        Me.CheckBox1.Text = "Plan Cancelado"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.ChkCancelado.AutoSize = True
+        Me.ChkCancelado.Location = New System.Drawing.Point(9, 228)
+        Me.ChkCancelado.Name = "ChkCancelado"
+        Me.ChkCancelado.Size = New System.Drawing.Size(101, 17)
+        Me.ChkCancelado.TabIndex = 21
+        Me.ChkCancelado.Text = "Plan Cancelado"
+        Me.ChkCancelado.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(240, 165)
+        Me.Button6.Location = New System.Drawing.Point(240, 124)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(69, 37)
         Me.Button6.TabIndex = 20
@@ -766,12 +802,13 @@ Partial Class formVentas
         Me.Label33.TabIndex = 19
         Me.Label33.Text = "Importe Total"
         '
-        'TextBox33
+        'TextImporteTotal
         '
-        Me.TextBox33.Location = New System.Drawing.Point(122, 186)
-        Me.TextBox33.Name = "TextBox33"
-        Me.TextBox33.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox33.TabIndex = 18
+        Me.TextImporteTotal.Location = New System.Drawing.Point(122, 186)
+        Me.TextImporteTotal.Name = "TextImporteTotal"
+        Me.TextImporteTotal.Size = New System.Drawing.Size(101, 20)
+        Me.TextImporteTotal.TabIndex = 18
+        Me.TextImporteTotal.Text = "0"
         '
         'Label32
         '
@@ -782,12 +819,13 @@ Partial Class formVentas
         Me.Label32.TabIndex = 17
         Me.Label32.Text = "Valor Cuota"
         '
-        'textBox50
+        'TextValorCuota
         '
-        Me.textBox50.Location = New System.Drawing.Point(6, 186)
-        Me.textBox50.Name = "textBox50"
-        Me.textBox50.Size = New System.Drawing.Size(101, 20)
-        Me.textBox50.TabIndex = 16
+        Me.TextValorCuota.Location = New System.Drawing.Point(6, 186)
+        Me.TextValorCuota.Name = "TextValorCuota"
+        Me.TextValorCuota.Size = New System.Drawing.Size(101, 20)
+        Me.TextValorCuota.TabIndex = 16
+        Me.TextValorCuota.Text = "0"
         '
         'Label31
         '
@@ -798,13 +836,13 @@ Partial Class formVentas
         Me.Label31.TabIndex = 15
         Me.Label31.Text = "Primera Cuota"
         '
-        'DateTimePicker1
+        'DTprimeraCuota
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(122, 141)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(87, 20)
-        Me.DateTimePicker1.TabIndex = 14
+        Me.DTprimeraCuota.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTprimeraCuota.Location = New System.Drawing.Point(122, 141)
+        Me.DTprimeraCuota.Name = "DTprimeraCuota"
+        Me.DTprimeraCuota.Size = New System.Drawing.Size(87, 20)
+        Me.DTprimeraCuota.TabIndex = 14
         '
         'Label30
         '
@@ -815,12 +853,13 @@ Partial Class formVentas
         Me.Label30.TabIndex = 13
         Me.Label30.Text = "Meses entre Cuotas"
         '
-        'TextBox31
+        'TextMeses
         '
-        Me.TextBox31.Location = New System.Drawing.Point(6, 143)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox31.TabIndex = 12
+        Me.TextMeses.Location = New System.Drawing.Point(6, 143)
+        Me.TextMeses.Name = "TextMeses"
+        Me.TextMeses.Size = New System.Drawing.Size(101, 20)
+        Me.TextMeses.TabIndex = 12
+        Me.TextMeses.Text = "0"
         '
         'Label29
         '
@@ -831,13 +870,14 @@ Partial Class formVentas
         Me.Label29.TabIndex = 11
         Me.Label29.Text = "Interes"
         '
-        'TextBox30
+        'TextIntereses
         '
-        Me.TextBox30.Enabled = False
-        Me.TextBox30.Location = New System.Drawing.Point(52, 96)
-        Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.Size = New System.Drawing.Size(37, 20)
-        Me.TextBox30.TabIndex = 10
+        Me.TextIntereses.Enabled = False
+        Me.TextIntereses.Location = New System.Drawing.Point(52, 96)
+        Me.TextIntereses.Name = "TextIntereses"
+        Me.TextIntereses.Size = New System.Drawing.Size(37, 20)
+        Me.TextIntereses.TabIndex = 10
+        Me.TextIntereses.Text = "0"
         '
         'Label28
         '
@@ -848,13 +888,14 @@ Partial Class formVentas
         Me.Label28.TabIndex = 9
         Me.Label28.Text = "Cuotas"
         '
-        'TextBox29
+        'TextCuotas
         '
-        Me.TextBox29.Enabled = False
-        Me.TextBox29.Location = New System.Drawing.Point(6, 96)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(37, 20)
-        Me.TextBox29.TabIndex = 8
+        Me.TextCuotas.Enabled = False
+        Me.TextCuotas.Location = New System.Drawing.Point(6, 96)
+        Me.TextCuotas.Name = "TextCuotas"
+        Me.TextCuotas.Size = New System.Drawing.Size(37, 20)
+        Me.TextCuotas.TabIndex = 8
+        Me.TextCuotas.Text = "0"
         '
         'Label26
         '
@@ -865,33 +906,34 @@ Partial Class formVentas
         Me.Label26.TabIndex = 1
         Me.Label26.Text = "Detalle "
         '
-        'TextBox27
+        'TextDetallePlan
         '
-        Me.TextBox27.Location = New System.Drawing.Point(6, 48)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(303, 20)
-        Me.TextBox27.TabIndex = 0
+        Me.TextDetallePlan.Location = New System.Drawing.Point(6, 48)
+        Me.TextDetallePlan.Name = "TextDetallePlan"
+        Me.TextDetallePlan.Size = New System.Drawing.Size(303, 20)
+        Me.TextDetallePlan.TabIndex = 0
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(15, 136)
+        Me.Label25.Location = New System.Drawing.Point(16, 118)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(89, 13)
         Me.Label25.TabIndex = 7
         Me.Label25.Text = "Saldo Financiado"
         '
-        'TextBox26
+        'TextFinanciado
         '
-        Me.TextBox26.Enabled = False
-        Me.TextBox26.Location = New System.Drawing.Point(18, 152)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(83, 20)
-        Me.TextBox26.TabIndex = 6
+        Me.TextFinanciado.Enabled = False
+        Me.TextFinanciado.Location = New System.Drawing.Point(18, 134)
+        Me.TextFinanciado.Name = "TextFinanciado"
+        Me.TextFinanciado.Size = New System.Drawing.Size(83, 20)
+        Me.TextFinanciado.TabIndex = 6
+        Me.TextFinanciado.Text = "0"
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(110, 88)
+        Me.Button5.Location = New System.Drawing.Point(111, 84)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(37, 21)
         Me.Button5.TabIndex = 5
@@ -901,19 +943,20 @@ Partial Class formVentas
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(13, 76)
+        Me.Label24.Location = New System.Drawing.Point(13, 69)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(84, 13)
         Me.Label24.TabIndex = 4
         Me.Label24.Text = "Doc. Especiales"
         '
-        'TextBox25
+        'textsumadocumentos
         '
-        Me.TextBox25.Enabled = False
-        Me.TextBox25.Location = New System.Drawing.Point(16, 92)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(83, 20)
-        Me.TextBox25.TabIndex = 3
+        Me.textsumadocumentos.Enabled = False
+        Me.textsumadocumentos.Location = New System.Drawing.Point(16, 85)
+        Me.textsumadocumentos.Name = "textsumadocumentos"
+        Me.textsumadocumentos.Size = New System.Drawing.Size(83, 20)
+        Me.textsumadocumentos.TabIndex = 3
+        Me.textsumadocumentos.Text = "0"
         '
         'Button4
         '
@@ -933,24 +976,39 @@ Partial Class formVentas
         Me.Label23.TabIndex = 1
         Me.Label23.Text = "Entrega"
         '
-        'TextBox24
+        'textsumaentrega
         '
-        Me.TextBox24.Enabled = False
-        Me.TextBox24.Location = New System.Drawing.Point(16, 34)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(89, 20)
-        Me.TextBox24.TabIndex = 0
+        Me.textsumaentrega.Enabled = False
+        Me.textsumaentrega.Location = New System.Drawing.Point(16, 34)
+        Me.textsumaentrega.Name = "textsumaentrega"
+        Me.textsumaentrega.Size = New System.Drawing.Size(89, 20)
+        Me.textsumaentrega.TabIndex = 0
+        Me.textsumaentrega.Text = "0"
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.Button3)
         Me.GroupBox6.Controls.Add(Me.bSalir)
         Me.GroupBox6.Controls.Add(Me.Button8)
         Me.GroupBox6.Controls.Add(Me.Button7)
-        Me.GroupBox6.Location = New System.Drawing.Point(899, 17)
+        Me.GroupBox6.Location = New System.Drawing.Point(899, 12)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(134, 464)
+        Me.GroupBox6.Size = New System.Drawing.Size(134, 469)
         Me.GroupBox6.TabIndex = 4
         Me.GroupBox6.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Enabled = False
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.SistemaLaTortuga.My.Resources.Resources.filesave
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(16, 278)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(111, 51)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Eliminar"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'bSalir
         '
@@ -991,12 +1049,12 @@ Partial Class formVentas
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.TextBox3)
+        Me.GroupBox3.Controls.Add(Me.textsumaentregasv)
         Me.GroupBox3.Controls.Add(Me.Button1)
-        Me.GroupBox3.Controls.Add(Me.DataGridView1)
-        Me.GroupBox3.Location = New System.Drawing.Point(14, 391)
+        Me.GroupBox3.Controls.Add(Me.DGentregas)
+        Me.GroupBox3.Location = New System.Drawing.Point(14, 373)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(509, 91)
+        Me.GroupBox3.Size = New System.Drawing.Size(509, 137)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Vehículo/s Entrega"
@@ -1004,42 +1062,71 @@ Partial Class formVentas
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(24, 72)
+        Me.Label16.Location = New System.Drawing.Point(24, 114)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(71, 13)
         Me.Label16.TabIndex = 3
         Me.Label16.Text = "Valor Entrega"
         '
-        'TextBox3
+        'textsumaentregasv
         '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(101, 69)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox3.TabIndex = 2
+        Me.textsumaentregasv.Enabled = False
+        Me.textsumaentregasv.Location = New System.Drawing.Point(102, 111)
+        Me.textsumaentregasv.Name = "textsumaentregasv"
+        Me.textsumaentregasv.Size = New System.Drawing.Size(82, 20)
+        Me.textsumaentregasv.TabIndex = 2
+        Me.textsumaentregasv.Text = "0"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(446, 37)
+        Me.Button1.Location = New System.Drawing.Point(455, 43)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(48, 39)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DGentregas
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 20)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(427, 43)
-        Me.DataGridView1.TabIndex = 0
+        Me.DGentregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGentregas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.vehiculo, Me.maraca, Me.modelo, Me.valor})
+        Me.DGentregas.Location = New System.Drawing.Point(13, 20)
+        Me.DGentregas.Name = "DGentregas"
+        Me.DGentregas.Size = New System.Drawing.Size(427, 85)
+        Me.DGentregas.TabIndex = 0
+        '
+        'vehiculo
+        '
+        Me.vehiculo.HeaderText = "Vehículo"
+        Me.vehiculo.Name = "vehiculo"
+        '
+        'maraca
+        '
+        Me.maraca.HeaderText = "Marca"
+        Me.maraca.Name = "maraca"
+        '
+        'modelo
+        '
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        '
+        'valor
+        '
+        Me.valor.HeaderText = "Valor"
+        Me.valor.Name = "valor"
+        '
+        'textprovincia
+        '
+        Me.textprovincia.Location = New System.Drawing.Point(111, -1)
+        Me.textprovincia.Name = "textprovincia"
+        Me.textprovincia.Size = New System.Drawing.Size(152, 20)
+        Me.textprovincia.TabIndex = 28
         '
         'formVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1038, 498)
+        Me.ClientSize = New System.Drawing.Size(1038, 522)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox4)
@@ -1061,7 +1148,7 @@ Partial Class formVentas
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGentregas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1101,30 +1188,30 @@ Partial Class formVentas
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents tbPrecioVentaVehVenta As System.Windows.Forms.TextBox
     Friend WithEvents groupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents ChkCancelado As System.Windows.Forms.CheckBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Label33 As System.Windows.Forms.Label
-    Friend WithEvents TextBox33 As System.Windows.Forms.TextBox
+    Friend WithEvents TextImporteTotal As System.Windows.Forms.TextBox
     Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents textBox50 As System.Windows.Forms.TextBox
+    Friend WithEvents TextValorCuota As System.Windows.Forms.TextBox
     Friend WithEvents Label31 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DTprimeraCuota As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label30 As System.Windows.Forms.Label
-    Friend WithEvents TextBox31 As System.Windows.Forms.TextBox
+    Friend WithEvents TextMeses As System.Windows.Forms.TextBox
     Friend WithEvents Label29 As System.Windows.Forms.Label
-    Friend WithEvents TextBox30 As System.Windows.Forms.TextBox
+    Friend WithEvents TextIntereses As System.Windows.Forms.TextBox
     Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
+    Friend WithEvents TextCuotas As System.Windows.Forms.TextBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
+    Friend WithEvents TextDetallePlan As System.Windows.Forms.TextBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
+    Friend WithEvents TextFinanciado As System.Windows.Forms.TextBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
+    Friend WithEvents textsumadocumentos As System.Windows.Forms.TextBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
+    Friend WithEvents textsumaentrega As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents bSalir As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
@@ -1136,26 +1223,35 @@ Partial Class formVentas
     Friend WithEvents tbTipoVehVenta As System.Windows.Forms.TextBox
     Friend WithEvents bActualizar As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents DGentregas As System.Windows.Forms.DataGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextAdministrador As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TextPlan As System.Windows.Forms.TextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents textsumaentregasv As System.Windows.Forms.TextBox
     Friend WithEvents TbPrecioCostoVehVenta As System.Windows.Forms.TextBox
     Friend WithEvents textidventa As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents textdniv As System.Windows.Forms.TextBox
+    Friend WithEvents texttipov As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents textvendedor As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents dtfecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents tbtransferencia As System.Windows.Forms.TextBox
     Friend WithEvents tbidvendedor As System.Windows.Forms.TextBox
+    Friend WithEvents vehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents maraca As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents modelo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents valor As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents Button11 As System.Windows.Forms.Button
+    Friend WithEvents Button10 As System.Windows.Forms.Button
+    Friend WithEvents textprovincia As System.Windows.Forms.TextBox
 End Class

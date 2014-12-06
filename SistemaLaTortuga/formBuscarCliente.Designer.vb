@@ -30,6 +30,7 @@ Partial Class formBuscarCliente
         Me.label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.bNuevoCliente = New System.Windows.Forms.Button()
+        Me.textform = New System.Windows.Forms.TextBox()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -110,11 +111,19 @@ Partial Class formBuscarCliente
         Me.bNuevoCliente.Text = "Nuevo Cliente"
         Me.bNuevoCliente.UseVisualStyleBackColor = True
         '
+        'textform
+        '
+        Me.textform.Location = New System.Drawing.Point(280, 331)
+        Me.textform.Name = "textform"
+        Me.textform.Size = New System.Drawing.Size(68, 20)
+        Me.textform.TabIndex = 5
+        '
         'formBuscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(416, 376)
+        Me.Controls.Add(Me.textform)
         Me.Controls.Add(Me.bNuevoCliente)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.label1)
@@ -138,4 +147,5 @@ Partial Class formBuscarCliente
     Friend WithEvents dni As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents bNuevoCliente As System.Windows.Forms.Button
+    Friend WithEvents textform As System.Windows.Forms.TextBox
 End Class

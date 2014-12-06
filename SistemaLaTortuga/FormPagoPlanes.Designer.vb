@@ -192,7 +192,7 @@ Partial Class FormPagoPlanes
         Me.DateTimePicker1.Size = New System.Drawing.Size(104, 20)
         Me.DateTimePicker1.TabIndex = 0
         '
-        'Form4
+        'FormPagoPlanes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -200,7 +200,7 @@ Partial Class FormPagoPlanes
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "Form4"
+        Me.Name = "FormPagoPlanes"
         Me.Text = "Planes"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)

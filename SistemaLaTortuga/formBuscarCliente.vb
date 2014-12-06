@@ -34,12 +34,30 @@ Public Class formBuscarCliente
         miConexion.Close()
     End Sub
 
+   
+
     Private Sub dgClientes_DoubleClick(sender As Object, e As EventArgs) Handles dgClientes.DoubleClick
-        formVentas.tbIdCliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
+        If textform.Text = "v" Then
+            formVehiculos.textidcliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
+            formVehiculos.textnombre.Text = dgClientes.Item("Nombre", dgClientes.SelectedRows(0).Index).Value()
+            formVehiculos.Button2.Enabled = True
+        Else
+            formVentas.tbIdCliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
+
+        End If
         Me.Close()
+
+
+
+
     End Sub
 
     Private Sub bNuevoCliente_Click(sender As Object, e As EventArgs) Handles bNuevoCliente.Click
         formClientes.Show()
+    End Sub
+
+    
+    Private Sub dgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgClientes.CellContentClick
+
     End Sub
 End Class

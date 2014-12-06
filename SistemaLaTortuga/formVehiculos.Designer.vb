@@ -95,6 +95,13 @@ Partial Class formVehiculos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.textnombre = New System.Windows.Forms.TextBox()
+        Me.textidcliente = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.dtfecha = New System.Windows.Forms.DateTimePicker()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.gbAcciones.SuspendLayout()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgVehiculos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -799,11 +806,80 @@ Partial Class formVehiculos
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Tipo Vehiculo *"
         '
+        'Button1
+        '
+        Me.Button1.Enabled = False
+        Me.Button1.Location = New System.Drawing.Point(728, 522)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(99, 50)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Buscar Dueño"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'textnombre
+        '
+        Me.textnombre.Location = New System.Drawing.Point(728, 427)
+        Me.textnombre.Name = "textnombre"
+        Me.textnombre.Size = New System.Drawing.Size(150, 20)
+        Me.textnombre.TabIndex = 5
+        '
+        'textidcliente
+        '
+        Me.textidcliente.Location = New System.Drawing.Point(728, 492)
+        Me.textidcliente.Name = "textidcliente"
+        Me.textidcliente.Size = New System.Drawing.Size(52, 20)
+        Me.textidcliente.TabIndex = 6
+        Me.textidcliente.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.Enabled = False
+        Me.Button2.Location = New System.Drawing.Point(728, 461)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(86, 25)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "Asignar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'dtfecha
+        '
+        Me.dtfecha.Enabled = False
+        Me.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtfecha.Location = New System.Drawing.Point(727, 381)
+        Me.dtfecha.Name = "dtfecha"
+        Me.dtfecha.Size = New System.Drawing.Size(85, 20)
+        Me.dtfecha.TabIndex = 8
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(724, 365)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(77, 13)
+        Me.Label20.TabIndex = 9
+        Me.Label20.Text = "Fecha Entrega"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(725, 412)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(39, 13)
+        Me.Label21.TabIndex = 10
+        Me.Label21.Text = "Cliente"
+        '
         'formVehiculos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(890, 673)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.dtfecha)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.textidcliente)
+        Me.Controls.Add(Me.textnombre)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.gbDatosVehiculo)
         Me.Controls.Add(Me.gbClientes)
         Me.Controls.Add(Me.gbAcciones)
@@ -819,6 +895,7 @@ Partial Class formVehiculos
         Me.gbDatosVehiculo.ResumeLayout(False)
         Me.gbDatosVehiculo.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents gbAcciones As System.Windows.Forms.GroupBox
@@ -893,4 +970,11 @@ Partial Class formVehiculos
     Friend WithEvents color As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents fechaAlta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tbAño As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents textnombre As System.Windows.Forms.TextBox
+    Friend WithEvents textidcliente As System.Windows.Forms.TextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents dtfecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
 End Class

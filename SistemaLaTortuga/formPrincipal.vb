@@ -1,4 +1,5 @@
-﻿Public Class formPrincipal
+﻿
+Public Class formPrincipal
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         formClientes.Show()
@@ -54,4 +55,8 @@
         formVentas.GroupBox3.Enabled = False
         formVentas.GroupBox4.Enabled = False
     End Sub
+
+   
+   }
 End Class
+

@@ -33,6 +33,8 @@ Partial Class formBuscarVehiculo
         Me.tipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.año = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idcliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.texttipoboton = New System.Windows.Forms.TextBox()
         CType(Me.dgVehiculos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -70,7 +72,7 @@ Partial Class formBuscarVehiculo
         Me.dgVehiculos.AllowUserToDeleteRows = False
         Me.dgVehiculos.AllowUserToResizeRows = False
         Me.dgVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgVehiculos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVehiculo, Me.marca, Me.modelo, Me.tipoVehiculo, Me.año, Me.dominio})
+        Me.dgVehiculos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVehiculo, Me.marca, Me.modelo, Me.tipoVehiculo, Me.año, Me.dominio, Me.idcliente})
         Me.dgVehiculos.Location = New System.Drawing.Point(24, 46)
         Me.dgVehiculos.Name = "dgVehiculos"
         Me.dgVehiculos.ReadOnly = True
@@ -122,11 +124,27 @@ Partial Class formBuscarVehiculo
         Me.dominio.Name = "dominio"
         Me.dominio.ReadOnly = True
         '
+        'idcliente
+        '
+        Me.idcliente.DataPropertyName = "IdCliente"
+        Me.idcliente.HeaderText = "idcliente"
+        Me.idcliente.Name = "idcliente"
+        Me.idcliente.ReadOnly = True
+        Me.idcliente.Visible = False
+        '
+        'texttipoboton
+        '
+        Me.texttipoboton.Location = New System.Drawing.Point(451, 13)
+        Me.texttipoboton.Name = "texttipoboton"
+        Me.texttipoboton.Size = New System.Drawing.Size(37, 20)
+        Me.texttipoboton.TabIndex = 8
+        '
         'formBuscarVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(598, 387)
+        Me.Controls.Add(Me.texttipoboton)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.label1)
         Me.Controls.Add(Me.tbBusqueda)
@@ -152,4 +170,6 @@ Partial Class formBuscarVehiculo
     Friend WithEvents tipoVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents año As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dominio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idcliente As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents texttipoboton As System.Windows.Forms.TextBox
 End Class
