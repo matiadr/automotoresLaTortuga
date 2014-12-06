@@ -26,6 +26,8 @@ Partial Class formPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VehiculosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrarVehiculosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StockDeVehiculosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -74,12 +76,25 @@ Partial Class formPrincipal
         '
         'VehiculosToolStripMenuItem
         '
+        Me.VehiculosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarVehiculosToolStripMenuItem, Me.StockDeVehiculosToolStripMenuItem})
         Me.VehiculosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.VehiculosToolStripMenuItem.Image = Global.SistemaLaTortuga.My.Resources.Resources.cars
         Me.VehiculosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VehiculosToolStripMenuItem.Name = "VehiculosToolStripMenuItem"
         Me.VehiculosToolStripMenuItem.Size = New System.Drawing.Size(116, 36)
         Me.VehiculosToolStripMenuItem.Text = "&Vehiculos"
+        '
+        'AdministrarVehiculosToolStripMenuItem
+        '
+        Me.AdministrarVehiculosToolStripMenuItem.Name = "AdministrarVehiculosToolStripMenuItem"
+        Me.AdministrarVehiculosToolStripMenuItem.Size = New System.Drawing.Size(222, 24)
+        Me.AdministrarVehiculosToolStripMenuItem.Text = "Administrar Vehiculos"
+        '
+        'StockDeVehiculosToolStripMenuItem
+        '
+        Me.StockDeVehiculosToolStripMenuItem.Name = "StockDeVehiculosToolStripMenuItem"
+        Me.StockDeVehiculosToolStripMenuItem.Size = New System.Drawing.Size(222, 24)
+        Me.StockDeVehiculosToolStripMenuItem.Text = "Stock de Vehiculos"
         '
         'VentasToolStripMenuItem
         '
@@ -206,7 +221,7 @@ Partial Class formPrincipal
         Me.tbClave.Name = "tbClave"
         Me.tbClave.Size = New System.Drawing.Size(180, 29)
         Me.tbClave.TabIndex = 3
-        Me.tbClave.Text = "Ccp846"
+        Me.tbClave.Text = "06qiad"
         Me.tbClave.Visible = False
         '
         'tbEquipo
@@ -216,7 +231,7 @@ Partial Class formPrincipal
         Me.tbEquipo.Name = "tbEquipo"
         Me.tbEquipo.Size = New System.Drawing.Size(221, 29)
         Me.tbEquipo.TabIndex = 5
-        Me.tbEquipo.Text = "SRVPROD"
+        Me.tbEquipo.Text = "MATI-D"
         Me.tbEquipo.Visible = False
         '
         'PictureBox1
@@ -300,5 +315,7 @@ Partial Class formPrincipal
     Friend WithEvents RubrosCuentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents AdministrarVehiculosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StockDeVehiculosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
