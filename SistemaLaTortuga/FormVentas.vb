@@ -325,12 +325,25 @@ Public Class formVentas
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("update  Ventas set ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & TbPrecioCostoVehVenta.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & tbtransferencia.Text & "','" & dtfecha.Value & "' where idventa = '" & textidventa.Text & "')", CN)
-        cmd.ExecuteNonQuery()
+        Try
+            Dim res As MsgBoxResult
+            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+            If res = MsgBoxResult.Yes Then
 
 
-       
-        MessageBox.Show("Modificacion Efectuada")
+                'borro primero los datos de
+                Dim cmd As New SqlCommand("delete Vehiculos where IdVehiculo ='" & tbIdVehiculo.Text & "'", CN)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Eliminacion Efectuada")
+                CN.Close()
+                cargarDGVehiculos()
+                bModificar.Enabled = False
+                bEliminar.Enabled = False
+                LimpiarPantalla()
+            End If
+        Catch ex As SqlException
+            MessageBox.Show("No se puede eliminar ya que dicho vehiculo esta siendo usado", "Advertencia")
+        End Try
     End Sub
 
     Private Sub TextFinanciado_TextChanged(sender As Object, e As EventArgs) Handles TextFinanciado.TextChanged
@@ -528,5 +541,9 @@ Public Class formVentas
 
     Private Sub bBuscarCliente_Click(sender As Object, e As EventArgs) Handles bBuscarCliente.Click
         formBuscarCliente.Show()
+    End Sub
+
+    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
+        formadministrador.Show()
     End Sub
 End Class
