@@ -24,6 +24,7 @@ Partial Class formVentas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formVentas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textprovincia = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.dtfecha = New System.Windows.Forms.DateTimePicker()
         Me.textidventa = New System.Windows.Forms.TextBox()
@@ -124,7 +125,9 @@ Partial Class formVentas
         Me.maraca = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.textprovincia = New System.Windows.Forms.TextBox()
+        Me.Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -164,6 +167,14 @@ Partial Class formVentas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Comprador"
         '
+        'textprovincia
+        '
+        Me.textprovincia.Location = New System.Drawing.Point(111, -1)
+        Me.textprovincia.Name = "textprovincia"
+        Me.textprovincia.Size = New System.Drawing.Size(152, 20)
+        Me.textprovincia.TabIndex = 28
+        Me.textprovincia.Visible = False
+        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -187,6 +198,7 @@ Partial Class formVentas
         Me.textidventa.Name = "textidventa"
         Me.textidventa.Size = New System.Drawing.Size(40, 20)
         Me.textidventa.TabIndex = 25
+        Me.textidventa.Visible = False
         '
         'bActualizar
         '
@@ -204,6 +216,7 @@ Partial Class formVentas
         Me.tbIdCliente.Name = "tbIdCliente"
         Me.tbIdCliente.Size = New System.Drawing.Size(39, 20)
         Me.tbIdCliente.TabIndex = 15
+        Me.tbIdCliente.Visible = False
         '
         'Label6
         '
@@ -402,6 +415,7 @@ Partial Class formVentas
         Me.tbidvendedor.Name = "tbidvendedor"
         Me.tbidvendedor.Size = New System.Drawing.Size(35, 20)
         Me.tbidvendedor.TabIndex = 29
+        Me.tbidvendedor.Visible = False
         '
         'Label18
         '
@@ -463,6 +477,7 @@ Partial Class formVentas
         Me.TbPrecioCostoVehVenta.Name = "TbPrecioCostoVehVenta"
         Me.TbPrecioCostoVehVenta.Size = New System.Drawing.Size(121, 20)
         Me.TbPrecioCostoVehVenta.TabIndex = 6
+        Me.TbPrecioCostoVehVenta.Visible = False
         '
         'tbTipoVehVenta
         '
@@ -479,6 +494,7 @@ Partial Class formVentas
         Me.tbIdVehVenta.Name = "tbIdVehVenta"
         Me.tbIdVehVenta.Size = New System.Drawing.Size(35, 20)
         Me.tbIdVehVenta.TabIndex = 21
+        Me.tbIdVehVenta.Visible = False
         '
         'Label37
         '
@@ -1089,7 +1105,7 @@ Partial Class formVentas
         'DGentregas
         '
         Me.DGentregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGentregas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.vehiculo, Me.maraca, Me.modelo, Me.valor})
+        Me.DGentregas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.vehiculo, Me.maraca, Me.modelo, Me.valor, Me.Año, Me.Dominio, Me.IdVehiculo})
         Me.DGentregas.Location = New System.Drawing.Point(13, 20)
         Me.DGentregas.Name = "DGentregas"
         Me.DGentregas.Size = New System.Drawing.Size(427, 85)
@@ -1097,30 +1113,46 @@ Partial Class formVentas
         '
         'vehiculo
         '
+        Me.vehiculo.DataPropertyName = "Tipo"
         Me.vehiculo.HeaderText = "Vehículo"
         Me.vehiculo.Name = "vehiculo"
         '
         'maraca
         '
+        Me.maraca.DataPropertyName = "NombreMarca"
         Me.maraca.HeaderText = "Marca"
         Me.maraca.Name = "maraca"
         '
         'modelo
         '
+        Me.modelo.DataPropertyName = "NombreModelo"
         Me.modelo.HeaderText = "Modelo"
         Me.modelo.Name = "modelo"
         '
         'valor
         '
+        Me.valor.DataPropertyName = "precioe"
         Me.valor.HeaderText = "Valor"
         Me.valor.Name = "valor"
         '
-        'textprovincia
+        'Año
         '
-        Me.textprovincia.Location = New System.Drawing.Point(111, -1)
-        Me.textprovincia.Name = "textprovincia"
-        Me.textprovincia.Size = New System.Drawing.Size(152, 20)
-        Me.textprovincia.TabIndex = 28
+        Me.Año.DataPropertyName = "Año"
+        Me.Año.HeaderText = "Año"
+        Me.Año.Name = "Año"
+        '
+        'Dominio
+        '
+        Me.Dominio.DataPropertyName = "Dominio"
+        Me.Dominio.HeaderText = "Dominio"
+        Me.Dominio.Name = "Dominio"
+        '
+        'IdVehiculo
+        '
+        Me.IdVehiculo.DataPropertyName = "IdVehiculo"
+        Me.IdVehiculo.HeaderText = "IdVehiculo"
+        Me.IdVehiculo.Name = "IdVehiculo"
+        Me.IdVehiculo.Visible = False
         '
         'formVentas
         '
@@ -1245,13 +1277,16 @@ Partial Class formVentas
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents tbtransferencia As System.Windows.Forms.TextBox
     Friend WithEvents tbidvendedor As System.Windows.Forms.TextBox
-    Friend WithEvents vehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents maraca As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents modelo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents valor As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents textprovincia As System.Windows.Forms.TextBox
+    Friend WithEvents vehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents maraca As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents modelo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents valor As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Año As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Dominio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IdVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
