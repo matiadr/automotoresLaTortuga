@@ -5,10 +5,6 @@ Public Class formPrincipal
         formClientes.Show()
     End Sub
 
-    Private Sub VehiculosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VehiculosToolStripMenuItem.Click
-        formVehiculos.Show()
-    End Sub
-
     Private Sub CuentasToolStripMenuItem_Click(sender As Object, e As EventArgs)
         formCuentas.Show()
     End Sub
@@ -56,7 +52,12 @@ Public Class formPrincipal
         formVentas.GroupBox4.Enabled = False
     End Sub
 
-   
-   }
+    Private Sub AdministrarVehiculosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarVehiculosToolStripMenuItem.Click
+        formVehiculos.Show()
+    End Sub
+
+    Private Sub StockDeVehiculosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockDeVehiculosToolStripMenuItem.Click
+        formConsultaVehiculos.Show()
+    End Sub
 End Class
 
