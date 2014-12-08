@@ -185,6 +185,9 @@ Public Class formVentas
         'deshabilito paneles de comprador y vehiculo venta
         GroupBox1.Enabled = False
         GroupBox2.Enabled = False
+
+        'deshabilito el boton guardar
+        Button8.Enabled = False
     End Sub
 
   
@@ -276,43 +279,72 @@ Public Class formVentas
         'Dim cuotas As Integer = TextCuotas.Text
         'Dim valorcuota As Decimal = TextValorCuota.Text
 
-        '        TextValorCuota.Text = (plan + (plan * intereses) / 100) / cuotas
-        '        TextImporteTotal.Text = valorcuota * cuotas
+        'TextValorCuota.Text = (plan + (plan * intereses) / 100) / cuotas
+        'TextImporteTotal.Text = valorcuota * cuotas
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         'guardo el plan en la tabla PLANES
 
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
+        If TextPlan.Text = 0 Then
+            MsgBox("No hay importes para generar el plan", MsgBoxStyle.Exclamation)
+        Else
 
-        Dim cmd As New SqlCommand("insert into Planes values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & tbIdCliente.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & textsumaentrega.Text & "','" & textsumadocumentos.Text & "','" & TextPlan.Text & "','" & TextCuotas.Text & "','" & TextIntereses.Text & "','" & TextMeses.Text & "','" & DTprimeraCuota.Value & "','" & TextValorCuota.Text & "','" & TextImporteTotal.Text & "','" & ChkCancelado.Checked & "','" & 0 & "','" & textidventa.Text & "')", CN)
-        cmd.ExecuteNonQuery()
+            Dim a As Char = "observacion"
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
 
+            '  Dim cmd As New SqlCommand("insert into Planes values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & tbIdCliente.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & textsumaentregasv.Text & "','" & textsumaentrega.Text & "','" & textsumadocumentos.Text & "','" & TextPlan.Text & "','" & TextCuotas.Text & "','" & TextIntereses.Text & "','" & TextMeses.Text & "','" & DTprimeraCuota.Value & "','" & TextValorCuota.Text & "','" & TextImporteTotal.Text & "','" & ChkCancelado.Checked & "','" & a & "','" & textidventa.Text & "')", CN)
 
-        'obtengo el numero de plan....
-
-        'busco el codigo de esta venta...o sea el maximo de la tabla ventas
-        Dim planes As New SqlCommand("Select max(IdPlan) from Planes", CN)
-        Dim codigo As String = planes.ExecuteScalar
-
-
-
-        'genero ahora todo el plan en cuotas...en la tabla CUOTAS...
-        Dim cuotas As Integer
-        Dim primercuota As Date
-        cuotas = 1
-        primercuota = DTprimeraCuota.Value
-
-        Do While cuotas <= TextCuotas.Text
-            Dim cmde As New SqlCommand("insert into Cuotas values ('" & codigo & "','" & cuotas & "','" & TextValorCuota.Text & "','" & primercuota & "')", CN)
-            ' Dim cmde As New SqlCommand("insert into Cuotas values ('" & codigo & "')", CN)
-            cmde.ExecuteNonQuery()
+            Dim precio As Decimal = tbPrecioVentaVehVenta.Text
+            Dim entregav As Decimal = textsumaentregasv.Text
+            Dim entrega As Decimal = textsumaentrega.Text
+            Dim documentos As Decimal = textsumadocumentos.Text
+            Dim plan As Decimal = TextPlan.Text
+            Dim cuota As Integer = TextCuotas.Text
+            Dim intereses As Decimal = TextIntereses.Text
+            Dim meses As Integer = TextMeses.Text
+            Dim valorcuota As Decimal = TextValorCuota.Text
+            Dim total As Decimal = TextImporteTotal.Text
 
 
-            cuotas = cuotas + 1 ' sumo uno a la cuota
-            primercuota.Date.AddMonths(TextMeses.Text) 'sumo la cantidad de meses entre fechas para obtener la fecha de la proxima cuota
-        Loop
+
+
+
+            ' Dim cmd As New SqlCommand("insert into Planes values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & Conversion.Val(tbIdCliente.Text) & "','" & Conversion.Val(precio) & "','" & Conversion.Val(entregav) & "','" & Conversion.Val(entrega) & "','" & Conversion.Val(documentos) & "','" & Conversion.Val(plan) & "','" & Conversion.Val(cuota) & "','" & Conversion.Val(intereses) & "','" & Conversion.Val(meses) & "','" & DTprimeraCuota.Value & "','" & Conversion.Val(valorcuota) & "','" & Conversion.Val(total) & "','" & ChkCancelado.Checked & "','a','" & Conversion.Val(textidventa.Text) & "')", CN)
+
+            'Dim cmd As New SqlCommand("insert into Planes(fechaplan, Detalleplan,IdCliente, precioventa) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & tbIdCliente.Text & "','" & Conversion.Val(precio) & "')", CN)
+
+            Dim cmd As New SqlCommand("insert into Planes (fechaplan, Detalleplan,IdCliente, precioventa) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & Conversion.Val(tbIdCliente.Text) & "', '" & Conversion.Val(precio) & "' )", CN)
+
+            cmd.ExecuteNonQuery()
+            'obtengo el numero de plan....
+
+            'busco el codigo de esta venta...o sea el maximo de la tabla ventas
+            Dim planes As New SqlCommand("Select max(IdPlan) from Planes", CN)
+            Dim codigo As String = planes.ExecuteScalar
+
+            textidplan.Text = codigo
+
+
+            'genero ahora todo el plan en cuotas...en la tabla CUOTAS...
+            Dim cuotas As Integer
+            Dim primercuota As Date
+            cuotas = 1
+            primercuota = DTprimeraCuota.Value
+
+            Do While cuotas <= TextCuotas.Text
+                Dim cmde As New SqlCommand("insert into Cuotas (IdPlan, NumeroCuota, ImporteCuota, Fechacuota)values ('" & codigo & "','" & cuotas & "','" & Conversion.Val(TextValorCuota.Text) & "','" & primercuota & "')", CN)
+                ' Dim cmde As New SqlCommand("insert into Cuotas values ('" & codigo & "')", CN)
+                cmde.ExecuteNonQuery()
+
+
+                cuotas = cuotas + 1 ' sumo uno a la cuota
+                primercuota = primercuota.Date.AddMonths(TextMeses.Text) 'sumo la cantidad de meses entre fechas para obtener la fecha de la proxima cuota
+            Loop
+        End If
+
+        MsgBox("Plan Generado", MsgBoxStyle.Information)
 
     End Sub
 
@@ -322,33 +354,9 @@ Public Class formVentas
    
 
 
-    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Try
-            Dim res As MsgBoxResult
-            res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
-            If res = MsgBoxResult.Yes Then
+    
 
-
-                'borro primero los datos de
-                Dim cmd As New SqlCommand("delete Vehiculos where IdVehiculo ='" & tbIdVehiculo.Text & "'", CN)
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("Eliminacion Efectuada")
-                CN.Close()
-                cargarDGVehiculos()
-                bModificar.Enabled = False
-                bEliminar.Enabled = False
-                LimpiarPantalla()
-            End If
-        Catch ex As SqlException
-            MessageBox.Show("No se puede eliminar ya que dicho vehiculo esta siendo usado", "Advertencia")
-        End Try
-    End Sub
-
-    Private Sub TextFinanciado_TextChanged(sender As Object, e As EventArgs) Handles TextFinanciado.TextChanged
-
-    End Sub
+   
 
  
     Private Sub Button10_Click(sender As Object, e As EventArgs)
@@ -422,31 +430,31 @@ Public Class formVentas
         oRng.InsertAfter("En la ciudad de Colón, a los " & fecha.Day & " días del mes de " & fecha.Month & " de " & fecha.Year & ", entre" & _
        " MULTIMARCAS LA TORTUGA de DED S.A., con domicilio real en San Martín 1147 de la ciudad de Colón, Departamento Colón," & _
         " provincia de Entre Ríos. Actuando como mandatario de " & vendedor & " por parte vendedora " & _
-        "y por la otra," & comprador & " " & tipodni & " " & dni & ", teléfono " & telefono & ", domiciliado " & _
+        "y por la otra, " & comprador & " " & tipodni & " " & dni & ", teléfono " & telefono & ", domiciliado " & _
         "en " & domicilio & " de la ciudad de " & localidad & ", provincia de " & provincia & " como comprador, convienen en celebrar" & _
-        " el prsente boleto de compraventa, sujeto a las cláusulas que se exponen:" & _
+        " el presente boleto de compraventa, sujeto a las cláusulas que se exponen:" & _
         "1) El comprador adquiere un vehículo Marca " & tbMarcaVehVenta.Text & ", Modelo " & tbModeloVehVenta.Text & ", Año " & tbAñoVehVenta.Text & ", " & _
         "Tipo " & tbTipoVehVenta.Text & ", Motor N° " & tbMotorVehVenta.Text & ", Chasis N° " & tbChasisVehVenta.Text & ", Dominio " & tbDominioVehVenta.Text & ", " & _
-        "en el estado en que se encuentra, declarando el comprador conocer el mismo por haber inspeccionado y probado el vehículo previo a la celebración del presente," & _
+        "en el estado en que se encuentra, declarando el comprador conocer el mismo por haber inspeccionado y probado el vehículo previo a la celebración del presente, " & _
         "renunciando a todo reclamo en tal sentido." & _
         "2) La venta se realiza por la suma total de " & tbPrecioVentaVehVenta.Text & ", pagaderos de la siguiente forma: " & _
         "Entrega el/los siguiente/s auto/s:.................................  " & _
         "Contra entrega de la unidad pesos " & textsumaentrega.Text & " y el saldo de pesos pagaderos de la siguiente forma:................" & _
-        "3) La transferencia de dominio deberá realizarse dentro de los 30 días a partir de la fecha. Los gastos de transferencia son a cargo" & _
-        "del comprador. 4) La falta de pago de dos (2) cuotas hará exigible la cancelación del total de la deuda como de plazo vencido, debiendo abonar el total adeudado con más los intereses" & _
+        "3) La transferencia de dominio deberá realizarse dentro de los 30 días a partir de la fecha. Los gastos de transferencia son a cargo " & _
+        "del comprador. 4) La falta de pago de dos (2) cuotas hará exigible la cancelación del total de la deuda como de plazo vencido, debiendo abonar el total adeudado con más los intereses " & _
         "moratorios y punitorios adeudados dentro de los cinco (5) días de que fuere intimado, quedando expresamente pactada para la percepción de tales acreencias la vía ejecutiva, sirviendo el presente de título " & _
-        "ejecutivo hábil y suficiente. 5) Para el caso de mora en el pago de las sumas pactadas, el comprador deberá abonar junto con el capital adeudado y en concepto de interés punitorio el equivalente al tres" & _
-        "porciento mensual de los importes adeudados. 6) Si transcurridos los 30 días de la fecha no se hubiese realizado la transferencia de la unidad adquirida a favor del comprador, la documentaición será remitida al titular," & _
-        "quien podrá reternerla hasta que se realice la transferencia y/o denunciar la venta en el Registro Nacional de la Propiedad del Automotor, quedando el mandante exonerado de toda responsabilidad" & _
-        "por cualquier embargo y/o gravamen que puediera afectar a ese bien y/o inhibición que pudiera recaer sobre el titular registral. 7) A opción del vendedor se podrá transferir el dominio a favor del" & _
+        "ejecutivo hábil y suficiente. 5) Para el caso de mora en el pago de las sumas pactadas, el comprador deberá abonar junto con el capital adeudado y en concepto de interés punitorio el equivalente al tres " & _
+        "porciento mensual de los importes adeudados. 6) Si transcurridos los 30 días de la fecha no se hubiese realizado la transferencia de la unidad adquirida a favor del comprador, la documentación será remitida al titular," & _
+        "quien podrá retenerla hasta que se realice la transferencia y/o denunciar la venta en el Registro Nacional de la Propiedad del Automotor, quedando el mandante exonerado de toda responsabilidad " & _
+        "por cualquier embargo y/o gravamen que pudiera afectar a ese bien y/o inhibición que pudiera recaer sobre el titular registral. 7) A opción del vendedor se podrá transferir el dominio a favor del " & _
         "comprador, antes del pago total del precio. En este caso el vendedor y/o el mandatario podrán retener la documentación del rodado hasta la cancelación definitiva de la deuda y el comprador no podrá transferir a " & _
-        "tercera persona el dominio hasta el cumplimiento total de su obligación. 8) Hasta tanto se transfiera el dominio a favor del comprador, éste se obliga a contratar un seguro de responsabilidad civil por cualquier daño que puediera" & _
+        "tercera persona el dominio hasta el cumplimiento total de su obligación. 8) Hasta tanto se transfiera el dominio a favor del comprador, éste se obliga a contratar un seguro de responsabilidad civil por cualquier daño que puediera " & _
         "causar el rodado aquí vendido; pudiendo el vendedor y/o el mandatario contratarlo a costa del primero para el supuesto de que aquel no lo hiciere. 9) Para el caso de arrepentimiento del comprador, quedara a opción del vendedor la facultad " & _
-        "de rescindir o no la compra venta; para el caso de que se aceptare la rescición de la operación y la devolución del rodado, quedarán a favor del vendedor en concepto de reparación de daños por la  rescisión y sin compensación alguna para el comprador, el equivalente" & _
-        "al treinta (30) por ciento de las sumas que el comprador hubiese dado en pago; para el supuesto de que el comprador no hubiera abonado sumas por un monto superior al diez (10) por ciento del valor total de la operación, dichos importes quedarán en su totalidad a favor del" & _
-        "vendedor, sin comprensación alguna para el comprador de acuerdo con lo antes expuesto. 10) A efectos del presente boleto de Compra-Venta, las partes renuncian expresamente al fuero federal y se someten a los Tribunales Ordinarios de Colón. 11) Las partes" & _
-        "consituyen domicilio legal a todos los efectos del presente contrato en los denunciados ut supra. 12) El comprador se declara único responsable civil y criminalmente de la conducción del vehículo adquirido, como así también de cualquiero tipo de accidente que puediera ocasionar," & _
-        "además de las infracciones de tránsito a paratir de la hora......... del día........Se firman dos ejemplares de un mismo tenor y a un solo efecto en el lugar y fechas arriba indicados.")
+        "de rescindir o no la compra venta; para el caso de que se aceptare la rescisión de la operación y la devolución del rodado, quedarán a favor del vendedor en concepto de reparación de daños por la  rescisión y sin compensación alguna para el comprador, el equivalente " & _
+        "al treinta (30) por ciento de las sumas que el comprador hubiese dado en pago; para el supuesto de que el comprador no hubiera abonado sumas por un monto superior al diez (10) por ciento del valor total de la operación, dichos importes quedarán en su totalidad a favor del " & _
+        "vendedor, sin compensación alguna para el comprador de acuerdo con lo antes expuesto. 10) A efectos del presente boleto de Compra-Venta, las partes renuncian expresamente al fuero federal y se someten a los Tribunales Ordinarios de Colón. 11) Las partes " & _
+        "constituyen domicilio legal a todos los efectos del presente contrato en los denunciados ut supra. 12) El comprador se declara único responsable civil y criminalmente de la conducción del vehículo adquirido, como así también de cualquier tipo de accidente que pudiera ocasionar, " & _
+        "además de las infracciones de tránsito a partir de la hora......... del día........Se firman dos ejemplares de un mismo tenor y a un solo efecto en el lugar y fechas arriba indicados.")
         oRng.InsertParagraphAfter()
 
         'Insert a paragraph at the end of the document.
@@ -545,5 +553,25 @@ Public Class formVentas
 
     Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
         formadministrador.Show()
+    End Sub
+
+    Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
+        FormPlan.Show()
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Dim plan As Decimal = TextPlan.Text
+        Dim intereses As Decimal = TextIntereses.Text
+        Dim cuotas As Integer = TextCuotas.Text
+        Dim valorcuota As Decimal = TextValorCuota.Text
+
+        TextValorCuota.Text = (plan + (plan * intereses) / 100) / cuotas
+        TextImporteTotal.Text = valorcuota * cuotas
+    End Sub
+
+   
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        formcreditos.Show()
     End Sub
 End Class

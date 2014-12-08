@@ -28,7 +28,6 @@ Partial Class formVentas
         Me.Label21 = New System.Windows.Forms.Label()
         Me.dtfecha = New System.Windows.Forms.DateTimePicker()
         Me.textidventa = New System.Windows.Forms.TextBox()
-        Me.bActualizar = New System.Windows.Forms.Button()
         Me.tbIdCliente = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
@@ -78,7 +77,6 @@ Partial Class formVentas
         Me.tbMarcaVehVenta = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TextPlan = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -112,10 +110,6 @@ Partial Class formVentas
         Me.Label23 = New System.Windows.Forms.Label()
         Me.textsumaentrega = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.bSalir = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.textsumaentregasv = New System.Windows.Forms.TextBox()
@@ -128,6 +122,19 @@ Partial Class formVentas
         Me.Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.textidplan = New System.Windows.Forms.TextBox()
+        Me.textcredsolicitado = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.textcredotorgado = New System.Windows.Forms.TextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.bSalir = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.bActualizar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -199,16 +206,6 @@ Partial Class formVentas
         Me.textidventa.Size = New System.Drawing.Size(40, 20)
         Me.textidventa.TabIndex = 25
         Me.textidventa.Visible = False
-        '
-        'bActualizar
-        '
-        Me.bActualizar.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
-        Me.bActualizar.Location = New System.Drawing.Point(461, 13)
-        Me.bActualizar.Name = "bActualizar"
-        Me.bActualizar.Size = New System.Drawing.Size(35, 26)
-        Me.bActualizar.TabIndex = 24
-        Me.bActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bActualizar.UseVisualStyleBackColor = True
         '
         'tbIdCliente
         '
@@ -659,6 +656,11 @@ Partial Class formVentas
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label34)
+        Me.GroupBox4.Controls.Add(Me.textcredotorgado)
+        Me.GroupBox4.Controls.Add(Me.Button13)
+        Me.GroupBox4.Controls.Add(Me.Label22)
+        Me.GroupBox4.Controls.Add(Me.textcredsolicitado)
         Me.GroupBox4.Controls.Add(Me.Button10)
         Me.GroupBox4.Controls.Add(Me.Button11)
         Me.GroupBox4.Controls.Add(Me.Label15)
@@ -683,27 +685,17 @@ Partial Class formVentas
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(231, 177)
+        Me.Button10.Location = New System.Drawing.Point(228, 201)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(37, 21)
         Me.Button10.TabIndex = 26
         Me.Button10.Text = "..."
         Me.Button10.UseVisualStyleBackColor = True
         '
-        'Button11
-        '
-        Me.Button11.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
-        Me.Button11.Location = New System.Drawing.Point(311, 19)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(35, 26)
-        Me.Button11.TabIndex = 25
-        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.UseVisualStyleBackColor = True
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(16, 161)
+        Me.Label15.Location = New System.Drawing.Point(15, 186)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(28, 13)
         Me.Label15.TabIndex = 12
@@ -711,7 +703,7 @@ Partial Class formVentas
         '
         'TextPlan
         '
-        Me.TextPlan.Location = New System.Drawing.Point(19, 177)
+        Me.TextPlan.Location = New System.Drawing.Point(18, 202)
         Me.TextPlan.Name = "TextPlan"
         Me.TextPlan.Size = New System.Drawing.Size(93, 20)
         Me.TextPlan.TabIndex = 11
@@ -720,7 +712,7 @@ Partial Class formVentas
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(135, 164)
+        Me.Label14.Location = New System.Drawing.Point(132, 189)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(70, 13)
         Me.Label14.TabIndex = 10
@@ -729,7 +721,7 @@ Partial Class formVentas
         'TextAdministrador
         '
         Me.TextAdministrador.Enabled = False
-        Me.TextAdministrador.Location = New System.Drawing.Point(132, 177)
+        Me.TextAdministrador.Location = New System.Drawing.Point(129, 202)
         Me.TextAdministrador.Name = "TextAdministrador"
         Me.TextAdministrador.Size = New System.Drawing.Size(93, 20)
         Me.TextAdministrador.TabIndex = 9
@@ -737,6 +729,8 @@ Partial Class formVentas
         '
         'groupBox7
         '
+        Me.groupBox7.Controls.Add(Me.textidplan)
+        Me.groupBox7.Controls.Add(Me.Button12)
         Me.groupBox7.Controls.Add(Me.Button9)
         Me.groupBox7.Controls.Add(Me.Button2)
         Me.groupBox7.Controls.Add(Me.Label35)
@@ -888,7 +882,6 @@ Partial Class formVentas
         '
         'TextIntereses
         '
-        Me.TextIntereses.Enabled = False
         Me.TextIntereses.Location = New System.Drawing.Point(52, 96)
         Me.TextIntereses.Name = "TextIntereses"
         Me.TextIntereses.Size = New System.Drawing.Size(37, 20)
@@ -906,7 +899,6 @@ Partial Class formVentas
         '
         'TextCuotas
         '
-        Me.TextCuotas.Enabled = False
         Me.TextCuotas.Location = New System.Drawing.Point(6, 96)
         Me.TextCuotas.Name = "TextCuotas"
         Me.TextCuotas.Size = New System.Drawing.Size(37, 20)
@@ -932,7 +924,7 @@ Partial Class formVentas
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(16, 118)
+        Me.Label25.Location = New System.Drawing.Point(16, 127)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(89, 13)
         Me.Label25.TabIndex = 7
@@ -941,7 +933,7 @@ Partial Class formVentas
         'TextFinanciado
         '
         Me.TextFinanciado.Enabled = False
-        Me.TextFinanciado.Location = New System.Drawing.Point(18, 134)
+        Me.TextFinanciado.Location = New System.Drawing.Point(18, 146)
         Me.TextFinanciado.Name = "TextFinanciado"
         Me.TextFinanciado.Size = New System.Drawing.Size(83, 20)
         Me.TextFinanciado.TabIndex = 6
@@ -949,7 +941,7 @@ Partial Class formVentas
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(111, 84)
+        Me.Button5.Location = New System.Drawing.Point(270, 34)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(37, 21)
         Me.Button5.TabIndex = 5
@@ -959,7 +951,7 @@ Partial Class formVentas
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(13, 69)
+        Me.Label24.Location = New System.Drawing.Point(176, 22)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(84, 13)
         Me.Label24.TabIndex = 4
@@ -968,7 +960,7 @@ Partial Class formVentas
         'textsumadocumentos
         '
         Me.textsumadocumentos.Enabled = False
-        Me.textsumadocumentos.Location = New System.Drawing.Point(16, 85)
+        Me.textsumadocumentos.Location = New System.Drawing.Point(175, 35)
         Me.textsumadocumentos.Name = "textsumadocumentos"
         Me.textsumadocumentos.Size = New System.Drawing.Size(83, 20)
         Me.textsumadocumentos.TabIndex = 3
@@ -1009,58 +1001,9 @@ Partial Class formVentas
         Me.GroupBox6.Controls.Add(Me.Button7)
         Me.GroupBox6.Location = New System.Drawing.Point(899, 12)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(134, 469)
+        Me.GroupBox6.Size = New System.Drawing.Size(134, 498)
         Me.GroupBox6.TabIndex = 4
         Me.GroupBox6.TabStop = False
-        '
-        'Button3
-        '
-        Me.Button3.Enabled = False
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = Global.SistemaLaTortuga.My.Resources.Resources.filesave
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(16, 278)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(111, 51)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Eliminar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'bSalir
-        '
-        Me.bSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
-        Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bSalir.Location = New System.Drawing.Point(17, 194)
-        Me.bSalir.Name = "bSalir"
-        Me.bSalir.Size = New System.Drawing.Size(111, 51)
-        Me.bSalir.TabIndex = 2
-        Me.bSalir.Text = "Salir"
-        Me.bSalir.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Image = Global.SistemaLaTortuga.My.Resources.Resources.filesave
-        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(17, 27)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(111, 51)
-        Me.Button8.TabIndex = 1
-        Me.Button8.Text = "Guardar"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Image = Global.SistemaLaTortuga.My.Resources.Resources.fileprint
-        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(17, 112)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(111, 51)
-        Me.Button7.TabIndex = 0
-        Me.Button7.Text = "Imprimir Boleto"
-        Me.Button7.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -1153,6 +1096,138 @@ Partial Class formVentas
         Me.IdVehiculo.HeaderText = "IdVehiculo"
         Me.IdVehiculo.Name = "IdVehiculo"
         Me.IdVehiculo.Visible = False
+        '
+        'textidplan
+        '
+        Me.textidplan.Location = New System.Drawing.Point(204, 77)
+        Me.textidplan.Name = "textidplan"
+        Me.textidplan.Size = New System.Drawing.Size(68, 20)
+        Me.textidplan.TabIndex = 27
+        Me.textidplan.Visible = False
+        '
+        'textcredsolicitado
+        '
+        Me.textcredsolicitado.Enabled = False
+        Me.textcredsolicitado.Location = New System.Drawing.Point(17, 85)
+        Me.textcredsolicitado.Name = "textcredsolicitado"
+        Me.textcredsolicitado.Size = New System.Drawing.Size(88, 20)
+        Me.textcredsolicitado.TabIndex = 27
+        Me.textcredsolicitado.Text = "0"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(16, 69)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(89, 13)
+        Me.Label22.TabIndex = 28
+        Me.Label22.Text = "Crédito Solicitado"
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(111, 84)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(37, 21)
+        Me.Button13.TabIndex = 29
+        Me.Button13.Text = "..."
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'textcredotorgado
+        '
+        Me.textcredotorgado.Enabled = False
+        Me.textcredotorgado.Location = New System.Drawing.Point(175, 85)
+        Me.textcredotorgado.Name = "textcredotorgado"
+        Me.textcredotorgado.Size = New System.Drawing.Size(88, 20)
+        Me.textcredotorgado.TabIndex = 30
+        Me.textcredotorgado.Text = "0"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(176, 72)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(87, 13)
+        Me.Label34.TabIndex = 31
+        Me.Label34.Text = "Crédito Otorgado"
+        '
+        'Button3
+        '
+        Me.Button3.Enabled = False
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.SistemaLaTortuga.My.Resources.Resources.filesave
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(16, 278)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(111, 51)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Eliminar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'bSalir
+        '
+        Me.bSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bSalir.Location = New System.Drawing.Point(17, 194)
+        Me.bSalir.Name = "bSalir"
+        Me.bSalir.Size = New System.Drawing.Size(111, 51)
+        Me.bSalir.TabIndex = 2
+        Me.bSalir.Text = "Salir"
+        Me.bSalir.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Image = Global.SistemaLaTortuga.My.Resources.Resources.filesave
+        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button8.Location = New System.Drawing.Point(17, 27)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(111, 51)
+        Me.Button8.TabIndex = 1
+        Me.Button8.Text = "Guardar"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Image = Global.SistemaLaTortuga.My.Resources.Resources.fileprint
+        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.Location = New System.Drawing.Point(17, 112)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(111, 51)
+        Me.Button7.TabIndex = 0
+        Me.Button7.Text = "Imprimir Boleto"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
+        Me.Button11.Location = New System.Drawing.Point(318, 12)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(35, 26)
+        Me.Button11.TabIndex = 25
+        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
+        Me.Button12.Location = New System.Drawing.Point(113, 90)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(35, 26)
+        Me.Button12.TabIndex = 26
+        Me.Button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'bActualizar
+        '
+        Me.bActualizar.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
+        Me.bActualizar.Location = New System.Drawing.Point(461, 13)
+        Me.bActualizar.Name = "bActualizar"
+        Me.bActualizar.Size = New System.Drawing.Size(35, 26)
+        Me.bActualizar.TabIndex = 24
+        Me.bActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bActualizar.UseVisualStyleBackColor = True
         '
         'formVentas
         '
@@ -1289,4 +1364,11 @@ Partial Class formVentas
     Friend WithEvents Año As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Dominio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button12 As System.Windows.Forms.Button
+    Friend WithEvents textidplan As System.Windows.Forms.TextBox
+    Friend WithEvents Button13 As System.Windows.Forms.Button
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents textcredsolicitado As System.Windows.Forms.TextBox
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents textcredotorgado As System.Windows.Forms.TextBox
 End Class
