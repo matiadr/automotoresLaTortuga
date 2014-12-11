@@ -28,6 +28,7 @@ Public Class FormEntregasEfectivo
     Private Sub FormEntregasEfectivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarBancos()
         CargarCuentas()
+        CargarDGEntregas()
     End Sub
     Private Sub CargarDGEntregas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")

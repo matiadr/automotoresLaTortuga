@@ -127,6 +127,7 @@ Public Class formVentas
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         FormEntregasEfectivo.Show()
+
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -138,7 +139,7 @@ Public Class formVentas
 
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("insert into Ventas values ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & TbPrecioCostoVehVenta.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & tbtransferencia.Text & "','" & dtfecha.Value & "')", CN)
+        Dim cmd As New SqlCommand("insert into Ventas values ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & TbPrecioCostoVehVenta.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & tbtransferencia.Text & "','" & dtfecha.Value & "',' " & textreal.Text & "')", CN)
         cmd.ExecuteNonQuery()
 
 
@@ -315,7 +316,7 @@ Public Class formVentas
 
             'Dim cmd As New SqlCommand("insert into Planes(fechaplan, Detalleplan,IdCliente, precioventa) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & tbIdCliente.Text & "','" & Conversion.Val(precio) & "')", CN)
 
-            Dim cmd As New SqlCommand("insert into Planes (fechaplan, Detalleplan,IdCliente, precioventa) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & Conversion.Val(tbIdCliente.Text) & "', '" & Conversion.Val(precio) & "' )", CN)
+            Dim cmd As New SqlCommand("insert into Planes (fechaplan, Detalleplan,IdCliente, precioventa, IdVenta) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & Conversion.Val(tbIdCliente.Text) & "', '" & Conversion.Val(precio) & "', '" & Conversion.Val(textidventa.Text) & "' )", CN)
 
             cmd.ExecuteNonQuery()
             'obtengo el numero de plan....
@@ -375,14 +376,21 @@ Public Class formVentas
         Dim administrador As Decimal = TextAdministrador.Text
         Dim plan As Decimal = TextPlan.Text
         Dim financiado As Decimal
+        Dim creditosolicitado As Decimal = textcredsolicitado.Text
+        Dim creditootorgado As Decimal = textcredotorgado.Text
 
-        financiado = precioventa - documentos - entrega - entregasv - administrador - plan
+        If creditootorgado = 0 Then
+            financiado = precioventa - documentos - entrega - entregasv - administrador - plan - creditosolicitado
+        Else
+            financiado = precioventa - documentos - entrega - entregasv - administrador - plan - creditootorgado
+
+        End If
 
 
         TextFinanciado.Text = financiado
     End Sub
 
-
+   
 
 
  
@@ -399,7 +407,12 @@ Public Class formVentas
         Dim Pos As Double
 
 
-
+        ' Dim Word As Word.Application
+        ' Dim Doc As Word.Document
+        Dim Tabli As Word.Table
+        Dim Rng As Word.Range
+        Dim NCol As Integer = DGentregas.ColumnCount
+        Dim NRow As Integer = DGentregas.RowCount
 
         'Start Word and open the document template.
         oWord = CreateObject("Word.Application")
@@ -409,7 +422,7 @@ Public Class formVentas
         'Insert a paragraph at the beginning of the document.
         oPara1 = oDoc.Content.Paragraphs.Add
         oPara1.Range.Text = "BOLETO DE COMPRAVENTA POR MANDATO"
-        oPara1.Range.Font.Bold = True
+        oPara1.Range.Font.Bold = False
         oPara1.Format.SpaceAfter = 24    '24 pt spacing after paragraph.
         oPara1.Range.InsertParagraphAfter()
 
@@ -427,7 +440,7 @@ Public Class formVentas
 
         oRng = oDoc.Bookmarks.Item("\endofdoc").Range
         oRng.ParagraphFormat.SpaceAfter = 6
-        oRng.InsertAfter("En la ciudad de Colón, a los " & fecha.Day & " días del mes de " & fecha.Month & " de " & fecha.Year & ", entre" & _
+        oRng.InsertAfter("En la ciudad de Colón, a los " & fecha.Day & " días del mes de " & MonthName(fecha.Month) & " de " & fecha.Year & ", entre" & _
        " MULTIMARCAS LA TORTUGA de DED S.A., con domicilio real en San Martín 1147 de la ciudad de Colón, Departamento Colón," & _
         " provincia de Entre Ríos. Actuando como mandatario de " & vendedor & " por parte vendedora " & _
         "y por la otra, " & comprador & " " & tipodni & " " & dni & ", teléfono " & telefono & ", domiciliado " & _
@@ -438,8 +451,43 @@ Public Class formVentas
         "en el estado en que se encuentra, declarando el comprador conocer el mismo por haber inspeccionado y probado el vehículo previo a la celebración del presente, " & _
         "renunciando a todo reclamo en tal sentido." & _
         "2) La venta se realiza por la suma total de " & tbPrecioVentaVehVenta.Text & ", pagaderos de la siguiente forma: " & _
-        "Entrega el/los siguiente/s auto/s:.................................  " & _
-        "Contra entrega de la unidad pesos " & textsumaentrega.Text & " y el saldo de pesos pagaderos de la siguiente forma:................" & _
+        "Entrega el/los siguiente/s auto/s:")
+        oRng.InsertParagraphAfter()
+
+
+
+
+        Tabli = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, DGentregas.RowCount, DGentregas.ColumnCount)
+        'Agregando Los Campos De La Grilla
+        For i As Integer = 1 To NCol
+            Tabli.Cell(1, i).Range.Text = DGentregas.Columns(i - 1).Name.ToString
+        Next
+        'Agregando Los Registros A La Tabla
+        For Fila As Integer = 0 To NRow - 2
+            For Col As Integer = 0 To NCol - 1
+                If DGentregas.Rows(Fila).Cells(Col).Value IsNot DBNull.Value Then
+                    Tabli.Cell(Fila + 2, Col + 1).Range.Text = DGentregas.Rows(Fila).Cells(Col).Value
+                End If
+            Next
+            'Incremento
+            'ProgressBar1.Increment(1)
+        Next
+        'Negrita y Kursiva Para Los Nombres De Los Campos
+        Tabli.Rows.Item(1).Range.Font.Bold = True
+        Tabli.Rows.Item(1).Range.Font.Italic = True
+        'Boder De La Tabla
+        ' Table.Borders.InsideLineStyle = WdLineStyle.wdLineStyleDot
+        ' Table.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleDot
+        ' Table.Borders.InsideColor = WdColor.wdColorBlue
+        Rng = oDoc.Bookmarks.Item("\endofdoc").Range
+
+
+
+        'Insert a paragraph at the end of the document.
+        '** \endofdoc is a predefined bookmark.
+        oPara2 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
+        oPara2 = oDoc.Content.Paragraphs.Add
+        oPara2.Range.Text = ("Contra entrega de la unidad pesos " & textsumaentrega.Text & " y el saldo de pesos pagaderos de la siguiente forma:................" & _
         "3) La transferencia de dominio deberá realizarse dentro de los 30 días a partir de la fecha. Los gastos de transferencia son a cargo " & _
         "del comprador. 4) La falta de pago de dos (2) cuotas hará exigible la cancelación del total de la deuda como de plazo vencido, debiendo abonar el total adeudado con más los intereses " & _
         "moratorios y punitorios adeudados dentro de los cinco (5) días de que fuere intimado, quedando expresamente pactada para la percepción de tales acreencias la vía ejecutiva, sirviendo el presente de título " & _
@@ -454,8 +502,14 @@ Public Class formVentas
         "al treinta (30) por ciento de las sumas que el comprador hubiese dado en pago; para el supuesto de que el comprador no hubiera abonado sumas por un monto superior al diez (10) por ciento del valor total de la operación, dichos importes quedarán en su totalidad a favor del " & _
         "vendedor, sin compensación alguna para el comprador de acuerdo con lo antes expuesto. 10) A efectos del presente boleto de Compra-Venta, las partes renuncian expresamente al fuero federal y se someten a los Tribunales Ordinarios de Colón. 11) Las partes " & _
         "constituyen domicilio legal a todos los efectos del presente contrato en los denunciados ut supra. 12) El comprador se declara único responsable civil y criminalmente de la conducción del vehículo adquirido, como así también de cualquier tipo de accidente que pudiera ocasionar, " & _
-        "además de las infracciones de tránsito a partir de la hora......... del día........Se firman dos ejemplares de un mismo tenor y a un solo efecto en el lugar y fechas arriba indicados.")
-        oRng.InsertParagraphAfter()
+        "además de las infracciones de tránsito a partir del día y hora  " & Date.Now & ". Se firman dos ejemplares de un mismo tenor y a un solo efecto en el lugar y fechas arriba indicados.")
+        oPara2.Format.SpaceAfter = 6
+        oPara2.Range.InsertParagraphAfter()
+
+
+
+
+        
 
         'Insert a paragraph at the end of the document.
         '** \endofdoc is a predefined bookmark.
@@ -574,4 +628,6 @@ Public Class formVentas
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
         formcreditos.Show()
     End Sub
+
+   
 End Class

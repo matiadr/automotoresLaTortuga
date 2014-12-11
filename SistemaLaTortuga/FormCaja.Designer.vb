@@ -23,8 +23,10 @@ Partial Class FormCaja
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGcaja = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -39,9 +41,13 @@ Partial Class FormCaja
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DTfecha = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.DetalleMovimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImporteMovimientoingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImporteMovimientoegreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGcaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -49,23 +55,26 @@ Partial Class FormCaja
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DGcaja)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 65)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(713, 398)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'DataGridView1
+        'DGcaja
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 21)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(675, 361)
-        Me.DataGridView1.TabIndex = 0
+        Me.DGcaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGcaja.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetalleMovimiento, Me.ImporteMovimientoingreso, Me.ImporteMovimientoegreso})
+        Me.DGcaja.Location = New System.Drawing.Point(21, 21)
+        Me.DGcaja.Name = "DGcaja"
+        Me.DGcaja.Size = New System.Drawing.Size(675, 361)
+        Me.DGcaja.TabIndex = 0
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button5)
+        Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Button2)
@@ -75,6 +84,24 @@ Partial Class FormCaja
         Me.GroupBox2.Size = New System.Drawing.Size(188, 400)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(53, 326)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(79, 39)
+        Me.Button5.TabIndex = 5
+        Me.Button5.Text = "Otros Egresos"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(52, 266)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(80, 39)
+        Me.Button6.TabIndex = 4
+        Me.Button6.Text = "Otros Ingresos"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -109,7 +136,7 @@ Partial Class FormCaja
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(79, 39)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Gastos"
+        Me.Button1.Text = "Gastos Vehículos"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox3
@@ -194,12 +221,21 @@ Partial Class FormCaja
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.DTfecha)
         Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Location = New System.Drawing.Point(13, 8)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(712, 62)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
+        '
+        'DTfecha
+        '
+        Me.DTfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTfecha.Location = New System.Drawing.Point(299, 25)
+        Me.DTfecha.Name = "DTfecha"
+        Me.DTfecha.Size = New System.Drawing.Size(102, 20)
+        Me.DTfecha.TabIndex = 1
         '
         'Label5
         '
@@ -211,7 +247,25 @@ Partial Class FormCaja
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "FECHA"
         '
-        'Form6
+        'DetalleMovimiento
+        '
+        Me.DetalleMovimiento.DataPropertyName = "DetalleMovimiento"
+        Me.DetalleMovimiento.HeaderText = "Detalle"
+        Me.DetalleMovimiento.Name = "DetalleMovimiento"
+        '
+        'ImporteMovimientoingreso
+        '
+        Me.ImporteMovimientoingreso.DataPropertyName = "ImporteMovimientoingreso"
+        Me.ImporteMovimientoingreso.HeaderText = "Ingresos"
+        Me.ImporteMovimientoingreso.Name = "ImporteMovimientoingreso"
+        '
+        'ImporteMovimientoegreso
+        '
+        Me.ImporteMovimientoegreso.DataPropertyName = "ImporteMovimientoegreso"
+        Me.ImporteMovimientoegreso.HeaderText = "Egresos"
+        Me.ImporteMovimientoegreso.Name = "ImporteMovimientoegreso"
+        '
+        'FormCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -220,10 +274,10 @@ Partial Class FormCaja
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "Form6"
+        Me.Name = "FormCaja"
         Me.Text = "Caja"
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGcaja, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -233,7 +287,7 @@ Partial Class FormCaja
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents DGcaja As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
@@ -250,4 +304,10 @@ Partial Class FormCaja
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents DTfecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DetalleMovimiento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ImporteMovimientoingreso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ImporteMovimientoegreso As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
