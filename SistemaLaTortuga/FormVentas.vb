@@ -631,6 +631,18 @@ Public Class formVentas
 
    
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
-
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
+        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
+        CN.Open()
+        'Dim seleccion As String = "select nte and FechaCheque >= '" & tbFechaDesde.Text & "' and FechaCheque <= '" & tbFechaHasta.Text & "' order by NumeroCheque"
+        'daDatos = New SqlDataAdapter(seleccion, CN)
+        daDatos.Fill(dtDatos, "Negocio") ' aca va el nombre de la tabla del dataset
+        Dim rpt As ReporteNegocio = New ReporteNegocio
+        rpt.SetDataSource(dtDatos)
+        rpt.SetParameterValue("Cliente", tbNombre.Text)
+        rpt.SetParameterValue("FechaCompra", dtfecha.Value)
+        FormReporteNegocio.ViewerNegocio.ReportSource = rpt
+        FormReporteNegocio.Show()
     End Sub
 End Class
