@@ -24,6 +24,12 @@ Partial Class formPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formPrincipal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.tbBSD = New System.Windows.Forms.TextBox()
+        Me.tbUsuario = New System.Windows.Forms.TextBox()
+        Me.tbClave = New System.Windows.Forms.TextBox()
+        Me.tbEquipo = New System.Windows.Forms.TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VehiculosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarVehiculosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,18 +47,16 @@ Partial Class formPrincipal
         Me.ModelosVehículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProvinciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocalidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tbBSD = New System.Windows.Forms.TextBox()
-        Me.tbUsuario = New System.Windows.Forms.TextBox()
-        Me.tbClave = New System.Windows.Forms.TextBox()
-        Me.tbEquipo = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StockDeVehiculosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VehiculosVendidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadoDeChequesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -63,9 +67,68 @@ Partial Class formPrincipal
         Me.MenuStrip1.Location = New System.Drawing.Point(0, -1)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(11, 4, 0, 4)
-        Me.MenuStrip1.Size = New System.Drawing.Size(848, 44)
+        Me.MenuStrip1.Size = New System.Drawing.Size(756, 44)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'tbBSD
+        '
+        Me.tbBSD.Location = New System.Drawing.Point(800, 251)
+        Me.tbBSD.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBSD.Name = "tbBSD"
+        Me.tbBSD.Size = New System.Drawing.Size(180, 29)
+        Me.tbBSD.TabIndex = 1
+        Me.tbBSD.Text = "latortuga"
+        Me.tbBSD.Visible = False
+        '
+        'tbUsuario
+        '
+        Me.tbUsuario.Location = New System.Drawing.Point(800, 347)
+        Me.tbUsuario.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbUsuario.Name = "tbUsuario"
+        Me.tbUsuario.Size = New System.Drawing.Size(180, 29)
+        Me.tbUsuario.TabIndex = 2
+        Me.tbUsuario.Text = "sa"
+        Me.tbUsuario.Visible = False
+        '
+        'tbClave
+        '
+        Me.tbClave.Location = New System.Drawing.Point(800, 442)
+        Me.tbClave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbClave.Name = "tbClave"
+        Me.tbClave.Size = New System.Drawing.Size(180, 29)
+        Me.tbClave.TabIndex = 3
+        Me.tbClave.Text = "06qiad"
+        Me.tbClave.Visible = False
+        '
+        'tbEquipo
+        '
+        Me.tbEquipo.Location = New System.Drawing.Point(800, 518)
+        Me.tbEquipo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbEquipo.Name = "tbEquipo"
+        Me.tbEquipo.Size = New System.Drawing.Size(221, 29)
+        Me.tbEquipo.TabIndex = 5
+        Me.tbEquipo.Text = "MATI-D"
+        Me.tbEquipo.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SistemaLaTortuga.My.Resources.Resources.la_tortuga_colon
+        Me.PictureBox2.Location = New System.Drawing.Point(1051, 618)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(307, 76)
+        Me.PictureBox2.TabIndex = 6
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox1.Location = New System.Drawing.Point(1892, 1148)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(564, 138)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
         '
         'ClientesToolStripMenuItem
         '
@@ -191,14 +254,45 @@ Partial Class formPrincipal
         Me.LocalidadesToolStripMenuItem.Size = New System.Drawing.Size(219, 38)
         Me.LocalidadesToolStripMenuItem.Text = "Localidades"
         '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(219, 38)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.StockDeVehiculosToolStripMenuItem1, Me.VehiculosVendidosToolStripMenuItem, Me.EstadoDeChequesToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.ReportesToolStripMenuItem.Image = Global.SistemaLaTortuga.My.Resources.Resources.Report
         Me.ReportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(112, 36)
         Me.ReportesToolStripMenuItem.Text = "&Reportes"
+        '
+        'ListadoDeClientesToolStripMenuItem
+        '
+        Me.ListadoDeClientesToolStripMenuItem.Name = "ListadoDeClientesToolStripMenuItem"
+        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.ListadoDeClientesToolStripMenuItem.Text = "Listado de Clientes"
+        '
+        'StockDeVehiculosToolStripMenuItem1
+        '
+        Me.StockDeVehiculosToolStripMenuItem1.Name = "StockDeVehiculosToolStripMenuItem1"
+        Me.StockDeVehiculosToolStripMenuItem1.Size = New System.Drawing.Size(207, 24)
+        Me.StockDeVehiculosToolStripMenuItem1.Text = "Vehiculos en Stock"
+        '
+        'VehiculosVendidosToolStripMenuItem
+        '
+        Me.VehiculosVendidosToolStripMenuItem.Name = "VehiculosVendidosToolStripMenuItem"
+        Me.VehiculosVendidosToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.VehiculosVendidosToolStripMenuItem.Text = "Vehiculos Vendidos"
+        '
+        'EstadoDeChequesToolStripMenuItem
+        '
+        Me.EstadoDeChequesToolStripMenuItem.Name = "EstadoDeChequesToolStripMenuItem"
+        Me.EstadoDeChequesToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.EstadoDeChequesToolStripMenuItem.Text = "Estado de Cheques"
         '
         'SalirToolStripMenuItem
         '
@@ -208,71 +302,6 @@ Partial Class formPrincipal
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(82, 36)
         Me.SalirToolStripMenuItem.Text = "&Salir"
-        '
-        'tbBSD
-        '
-        Me.tbBSD.Location = New System.Drawing.Point(800, 251)
-        Me.tbBSD.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbBSD.Name = "tbBSD"
-        Me.tbBSD.Size = New System.Drawing.Size(180, 29)
-        Me.tbBSD.TabIndex = 1
-        Me.tbBSD.Text = "latortuga"
-        Me.tbBSD.Visible = False
-        '
-        'tbUsuario
-        '
-        Me.tbUsuario.Location = New System.Drawing.Point(800, 347)
-        Me.tbUsuario.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbUsuario.Name = "tbUsuario"
-        Me.tbUsuario.Size = New System.Drawing.Size(180, 29)
-        Me.tbUsuario.TabIndex = 2
-        Me.tbUsuario.Text = "sa"
-        Me.tbUsuario.Visible = False
-        '
-        'tbClave
-        '
-        Me.tbClave.Location = New System.Drawing.Point(800, 442)
-        Me.tbClave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbClave.Name = "tbClave"
-        Me.tbClave.Size = New System.Drawing.Size(180, 29)
-        Me.tbClave.TabIndex = 3
-        Me.tbClave.Text = "Ccp846"
-        Me.tbClave.Visible = False
-        '
-        'tbEquipo
-        '
-        Me.tbEquipo.Location = New System.Drawing.Point(800, 518)
-        Me.tbEquipo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbEquipo.Name = "tbEquipo"
-        Me.tbEquipo.Size = New System.Drawing.Size(221, 29)
-        Me.tbEquipo.TabIndex = 5
-        Me.tbEquipo.Text = "SRVPROD"
-        Me.tbEquipo.Visible = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(1892, 1148)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(564, 138)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SistemaLaTortuga.My.Resources.Resources.la_tortuga_colon
-        Me.PictureBox2.Location = New System.Drawing.Point(1051, 618)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(307, 76)
-        Me.PictureBox2.TabIndex = 6
-        Me.PictureBox2.TabStop = False
-        '
-        'ProveedoresToolStripMenuItem
-        '
-        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(219, 38)
-        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'formPrincipal
         '
@@ -296,8 +325,8 @@ Partial Class formPrincipal
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -329,5 +358,10 @@ Partial Class formPrincipal
     Friend WithEvents NuevaVentaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VentasToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StockDeVehiculosToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VehiculosVendidosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EstadoDeChequesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

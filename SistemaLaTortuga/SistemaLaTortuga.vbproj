@@ -126,6 +126,12 @@
     <Compile Include="FormABMProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormFechasDesdeHasta.Designer.vb">
+      <DependentUpon>FormFechasDesdeHasta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormFechasDesdeHasta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPagodocumentos.Designer.vb">
       <DependentUpon>FormPagodocumentos.vb</DependentUpon>
     </Compile>
@@ -427,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormABMProveedores.resx">
       <DependentUpon>FormABMProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFechasDesdeHasta.resx">
+      <DependentUpon>FormFechasDesdeHasta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPagodocumentos.resx">
       <DependentUpon>FormPagodocumentos.vb</DependentUpon>

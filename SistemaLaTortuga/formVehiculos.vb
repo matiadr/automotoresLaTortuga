@@ -89,10 +89,10 @@ Public Class formVehiculos
         CN.Open()
         Dim cmd As New SqlCommand("select * from Marcas order by NombreMarca", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        cbMarca.DataSource = ds.Tables(0)
+        cbMarca.DataSource = ds
         cbMarca.ValueMember = "IdMarca"
         cbMarca.DisplayMember = "NombreMarca"
     End Sub
@@ -102,10 +102,10 @@ Public Class formVehiculos
         CN.Open()
         Dim cmd As New SqlCommand("select IdModelo,NombreModelo from Modelos where IdMarca='" & id & "' order by NombreModelo", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        cbModelo.DataSource = ds.Tables(0)
+        cbModelo.DataSource = ds
         cbModelo.ValueMember = "IdModelo"
         cbModelo.DisplayMember = "NombreModelo"
     End Sub
