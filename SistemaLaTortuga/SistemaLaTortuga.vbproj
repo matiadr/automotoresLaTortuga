@@ -114,6 +114,18 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPagodocumentos.Designer.vb">
+      <DependentUpon>FormPagodocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagodocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarvehiculog.Designer.vb">
+      <DependentUpon>FormBuscarvehiculog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarvehiculog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formGastosVehiculo.Designer.vb">
       <DependentUpon>formGastosVehiculo.vb</DependentUpon>
     </Compile>
@@ -259,6 +271,11 @@
       <DependentUpon>formPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="latortugaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>latortugaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -278,6 +295,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagodocumentos.resx">
+      <DependentUpon>FormPagodocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarvehiculog.resx">
+      <DependentUpon>FormBuscarvehiculog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formGastosVehiculo.resx">
       <DependentUpon>formGastosVehiculo.vb</DependentUpon>
@@ -356,8 +379,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="latortugaDataSet.xsc">
+      <DependentUpon>latortugaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="latortugaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>latortugaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="latortugaDataSet.xss">
+      <DependentUpon>latortugaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

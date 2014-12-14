@@ -46,6 +46,8 @@ Partial Class formVentas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbNombre = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.textreal = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tbtransferencia = New System.Windows.Forms.TextBox()
         Me.tbidvendedor = New System.Windows.Forms.TextBox()
@@ -119,6 +121,7 @@ Partial Class formVentas
         Me.Label23 = New System.Windows.Forms.Label()
         Me.textsumaentrega = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Button14 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -135,9 +138,6 @@ Partial Class formVentas
         Me.Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.textreal = New System.Windows.Forms.TextBox()
-        Me.Button14 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -403,6 +403,23 @@ Partial Class formVentas
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Vehículo Venta"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(138, 175)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(97, 13)
+        Me.Label36.TabIndex = 33
+        Me.Label36.Text = "Transferencia Real"
+        '
+        'textreal
+        '
+        Me.textreal.Location = New System.Drawing.Point(141, 189)
+        Me.textreal.Name = "textreal"
+        Me.textreal.Size = New System.Drawing.Size(112, 20)
+        Me.textreal.TabIndex = 32
+        Me.textreal.Text = "0"
         '
         'Label20
         '
@@ -1094,6 +1111,18 @@ Partial Class formVentas
         Me.GroupBox6.TabIndex = 4
         Me.GroupBox6.TabStop = False
         '
+        'Button14
+        '
+        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button14.Image = Global.SistemaLaTortuga.My.Resources.Resources.fileprint
+        Me.Button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button14.Location = New System.Drawing.Point(16, 360)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(111, 51)
+        Me.Button14.TabIndex = 4
+        Me.Button14.Text = "Imprimir Negocio"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
         'Button3
         '
         Me.Button3.Enabled = False
@@ -1234,35 +1263,6 @@ Partial Class formVentas
         Me.IdVehiculo.HeaderText = "IdVehiculo"
         Me.IdVehiculo.Name = "IdVehiculo"
         Me.IdVehiculo.Visible = False
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(138, 175)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(97, 13)
-        Me.Label36.TabIndex = 33
-        Me.Label36.Text = "Transferencia Real"
-        '
-        'textreal
-        '
-        Me.textreal.Location = New System.Drawing.Point(141, 189)
-        Me.textreal.Name = "textreal"
-        Me.textreal.Size = New System.Drawing.Size(112, 20)
-        Me.textreal.TabIndex = 32
-        Me.textreal.Text = "0"
-        '
-        'Button14
-        '
-        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.Image = Global.SistemaLaTortuga.My.Resources.Resources.fileprint
-        Me.Button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button14.Location = New System.Drawing.Point(16, 360)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(111, 51)
-        Me.Button14.TabIndex = 4
-        Me.Button14.Text = "Imprimir Negocio"
-        Me.Button14.UseVisualStyleBackColor = True
         '
         'formVentas
         '
