@@ -120,6 +120,24 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormABMProveedores.Designer.vb">
+      <DependentUpon>FormABMProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormABMProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagodocumentos.Designer.vb">
+      <DependentUpon>FormPagodocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagodocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarvehiculog.Designer.vb">
+      <DependentUpon>FormBuscarvehiculog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarvehiculog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formGastosVehiculo.Designer.vb">
       <DependentUpon>formGastosVehiculo.vb</DependentUpon>
     </Compile>
@@ -294,6 +312,12 @@
     <Compile Include="Reportes\DataSet.vb">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FormReporteNegocio.Designer.vb">
+      <DependentUpon>FormReporteNegocio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormReporteNegocio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\FormReporteCaja.Designer.vb">
       <DependentUpon>FormReporteCaja.vb</DependentUpon>
     </Compile>
@@ -372,6 +396,12 @@
       <DependentUpon>reporteGastosXVehiculo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\ReporteNegocio.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteNegocio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteRubros.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -394,6 +424,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormABMProveedores.resx">
+      <DependentUpon>FormABMProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagodocumentos.resx">
+      <DependentUpon>FormPagodocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarvehiculog.resx">
+      <DependentUpon>FormBuscarvehiculog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formGastosVehiculo.resx">
       <DependentUpon>formGastosVehiculo.vb</DependentUpon>
@@ -490,6 +529,9 @@
     <EmbeddedResource Include="Reportes\FormReporteGastosXVehiculo.resx">
       <DependentUpon>FormReporteGastosXVehiculo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReporteNegocio.resx">
+      <DependentUpon>FormReporteNegocio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteRubros.resx">
       <DependentUpon>FormReporteRubros.vb</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +560,10 @@
     <EmbeddedResource Include="Reportes\reporteGastosXVehiculo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporteGastosXVehiculo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteNegocio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteNegocio.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteRubros.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

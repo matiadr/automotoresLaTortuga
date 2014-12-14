@@ -68,5 +68,9 @@ Public Class formPrincipal
     Private Sub CajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CajaToolStripMenuItem.Click
         FormCaja.Show()
     End Sub
+
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        FormABMProveedores.Show()
+    End Sub
 End Class
 

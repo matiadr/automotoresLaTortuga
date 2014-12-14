@@ -49,6 +49,7 @@ Partial Class formPrincipal
         Me.tbEquipo = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,7 +131,7 @@ Partial Class formPrincipal
         '
         'AdministraciónToolStripMenuItem
         '
-        Me.AdministraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CuentasToolStripMenuItem1, Me.RubrosCuentasToolStripMenuItem, Me.BancosToolStripMenuItem, Me.SucursalesToolStripMenuItem, Me.MarcasVehículosToolStripMenuItem, Me.ModelosVehículosToolStripMenuItem, Me.ProvinciasToolStripMenuItem, Me.LocalidadesToolStripMenuItem})
+        Me.AdministraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CuentasToolStripMenuItem1, Me.RubrosCuentasToolStripMenuItem, Me.BancosToolStripMenuItem, Me.SucursalesToolStripMenuItem, Me.MarcasVehículosToolStripMenuItem, Me.ModelosVehículosToolStripMenuItem, Me.ProvinciasToolStripMenuItem, Me.LocalidadesToolStripMenuItem, Me.ProveedoresToolStripMenuItem})
         Me.AdministraciónToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.AdministraciónToolStripMenuItem.Image = Global.SistemaLaTortuga.My.Resources.Resources.Administrar_converted
         Me.AdministraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -267,6 +268,12 @@ Partial Class formPrincipal
         Me.PictureBox2.TabIndex = 6
         Me.PictureBox2.TabStop = False
         '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(219, 38)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
         'formPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -321,5 +328,6 @@ Partial Class formPrincipal
     Friend WithEvents StockDeVehiculosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevaVentaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VentasToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
