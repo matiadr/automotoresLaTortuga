@@ -22,10 +22,10 @@ Public Class formABMSucursales
         CN.Open()
         Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        cbBancos.DataSource = ds.Tables(0)
+        cbBancos.DataSource = ds
         cbBancos.ValueMember = "IdBanco"
         cbBancos.DisplayMember = "NombreBanco"
     End Sub

@@ -25,10 +25,10 @@ Public Class formCuentas
         CN.Open()
         Dim cmd As New SqlCommand("select * from Rubros order by NombreRubro", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        cbRubro.DataSource = ds.Tables(0)
+        cbRubro.DataSource = ds
         cbRubro.ValueMember = "IdRubro"
         cbRubro.DisplayMember = "NombreRubro"
     End Sub

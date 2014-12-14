@@ -27,10 +27,10 @@ Public Class formadministrador
         CN.Open()
         Dim cmd As New SqlCommand("select * from Cuentas order by NombreCuenta", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        ComboCuentas.DataSource = ds.Tables(0)
+        ComboCuentas.DataSource = ds
         ComboCuentas.ValueMember = "IdCuenta"
         ComboCuentas.DisplayMember = "NombreCuenta"
     End Sub

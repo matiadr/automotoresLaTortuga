@@ -5,10 +5,10 @@ Public Class formcreditos
         CN.Open()
         Dim cmd As New SqlCommand("select * from Cuentas order by NombreCuenta", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        ComboCuentas.DataSource = ds.Tables(0)
+        ComboCuentas.DataSource = ds
         ComboCuentas.ValueMember = "IdCuenta"
         ComboCuentas.DisplayMember = "NombreCuenta"
     End Sub
@@ -17,10 +17,10 @@ Public Class formcreditos
         CN.Open()
         Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        combobanco.DataSource = ds.Tables(0)
+        combobanco.DataSource = ds
         combobanco.ValueMember = "IdBanco"
         combobanco.DisplayMember = "NombreBanco"
     End Sub

@@ -80,10 +80,10 @@ Public Class formABMModelos
         CN.Open()
         Dim cmd As New SqlCommand("select * from Marcas order by NombreMarca", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        cbMarca.DataSource = ds.Tables(0)
+        cbMarca.DataSource = ds
         cbMarca.ValueMember = "IdMarca"
         cbMarca.DisplayMember = "NombreMarca"
     End Sub

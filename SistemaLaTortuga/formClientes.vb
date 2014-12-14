@@ -134,10 +134,10 @@ Public Class formClientes
         CN.Open()
         Dim cmd As New SqlCommand("select * from Provincias order by NombreProvincia", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        cbProvincia.DataSource = ds.Tables(0)
+        cbProvincia.DataSource = ds
         cbProvincia.ValueMember = "IdProvincia"
         cbProvincia.DisplayMember = "NombreProvincia"
     End Sub
@@ -147,10 +147,10 @@ Public Class formClientes
         CN.Open()
         Dim cmd As New SqlCommand("select IdLocalidad,NombreLocalidad from Localidades where IdProvincia='" & id & "' order by NombreLocalidad", CN)
         Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataSet
+        Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        cbLocalidad.DataSource = ds.Tables(0)
+        cbLocalidad.DataSource = ds
         cbLocalidad.ValueMember = "IdLocalidad"
         cbLocalidad.DisplayMember = "NombreLocalidad"
     End Sub
