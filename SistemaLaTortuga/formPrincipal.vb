@@ -76,12 +76,13 @@ Public Class formPrincipal
 
     Private Sub StockDeVehiculosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles StockDeVehiculosToolStripMenuItem1.Click
         Dim CN As New SqlConnection("Data Source='" & tbEquipo.Text & "';INITIAL Catalog='" & tbBSD.Text & "' ;Persist Security Info=True;User ID='" & tbUsuario.Text & "';Password='" & tbClave.Text & "'")
-        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
+        Dim daDatos As SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
         Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
         CN.Open()
         Dim seleccion As String = "select NombreMarca,NombreModelo,Dominio,Tipo,TipoMotor,Año from Vehiculos v,Modelos m,Marcas ma where v.IdModelo = m.IdModelo and m.IdMarca = ma.IdMarca order by NombreMarca,NombreModelo,Año"
         daDatos = New SqlDataAdapter(seleccion, CN)
         daDatos.Fill(dtDatos, "StockVehiculo")
+        CN.Close()
         Dim rpt As reporteStockVehiculos = New reporteStockVehiculos
         rpt.SetDataSource(dtDatos)
         FormReporteStockVehiculos.viewerStockVehiculos.ReportSource = rpt
@@ -96,6 +97,7 @@ Public Class formPrincipal
         Dim seleccion As String = "select NombreC as Nombre,Domicilio as Direccion,Telefono,NombreLocalidad as Ciudad,NombreProvincia as Provincia from Clientes c,Localidades l,Provincias p where c.IdLocalidad=l.IdLocalidad and l.IdProvincia=p.IdProvincia order by NombreC"
         daDatos = New SqlDataAdapter(seleccion, CN)
         daDatos.Fill(dtDatos, "Cliente")
+        CN.Close()
         Dim rpt As reporteClientes = New reporteClientes
         rpt.SetDataSource(dtDatos)
         FormReporteClientes.viewerClientes.ReportSource = rpt
@@ -103,6 +105,12 @@ Public Class formPrincipal
     End Sub
 
     Private Sub VehiculosVendidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VehiculosVendidosToolStripMenuItem.Click
+        FormFechasDesdeHasta.tipoListado = "vehVendidos"
+        FormFechasDesdeHasta.ShowDialog()
+    End Sub
+
+    Private Sub EstadoDeChequesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadoDeChequesToolStripMenuItem.Click
+        FormFechasDesdeHasta.tipoListado = "cheques"
         FormFechasDesdeHasta.ShowDialog()
     End Sub
 End Class

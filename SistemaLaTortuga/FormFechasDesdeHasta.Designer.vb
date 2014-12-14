@@ -93,7 +93,12 @@ Partial Class FormFechasDesdeHasta
         Me.Controls.Add(Me.tbFechaDesde)
         Me.Controls.Add(Me.bSalir)
         Me.Controls.Add(Me.bGenerarReporte)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FormFechasDesdeHasta"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccione Fechas"
         Me.ResumeLayout(False)
         Me.PerformLayout()

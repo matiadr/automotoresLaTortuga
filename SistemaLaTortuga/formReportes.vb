@@ -42,35 +42,8 @@ Public Class formReportes
 
     End Sub
 
-    Private Sub ReporteClientes()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
-        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
-        CN.Open()
-        Dim seleccion As String = "select NombreC as Nombre,Domicilio as Direccion,Telefono,NombreLocalidad as Ciudad,NombreProvincia as Provincia from Clientes c,Localidades l,Provincias p where c.IdLocalidad=l.IdLocalidad and l.IdProvincia=p.IdProvincia order by NombreC"
-        daDatos = New SqlDataAdapter(seleccion, CN)
-        daDatos.Fill(dtDatos, "Cliente")
-        Dim rpt As reporteClientes = New reporteClientes
-        rpt.SetDataSource(dtDatos)
-        FormReporteClientes.viewerClientes.ReportSource = rpt
-        FormReporteClientes.Show()
-    End Sub
-
-
     Private Sub ReporteCheques()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
-        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
-        CN.Open()
-        Dim seleccion As String = "select NumeroCheque as numeroCheque,ImporteCheque as importe, NombreC as entregadoPor, FechaCheque as fecha, EstadoCheque as estado from Cheques c,Clientes cl where c.IdComprador = c.IdCliente and FechaCheque >= '" & tbFechaDesde.Text & "' and FechaCheque <= '" & tbFechaHasta.Text & "' order by NumeroCheque"
-        daDatos = New SqlDataAdapter(seleccion, CN)
-        daDatos.Fill(dtDatos, "Cheque")
-        Dim rpt As reporteCheques = New reporteCheques
-        rpt.SetDataSource(dtDatos)
-        rpt.SetParameterValue("fechaDesde", tbFechaDesde.Text)
-        rpt.SetParameterValue("fechaHasta", tbFechaHasta.Text)
-        FormReporteCheques.viewerCheques.ReportSource = rpt
-        FormReporteCheques.Show()
+       
     End Sub
 
     Private Sub ReporteNegocio()
@@ -137,21 +110,5 @@ Public Class formReportes
         FormReporteCuentas.Show()
     End Sub
 
-    Private Sub ReporteStockVehiculos()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
-        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
-        CN.Open()
-        Dim seleccion As String = "select NombreMarca,NombreModelo,Dominio,Tipo,TipoMotor,Año from Vehiculos v,Modelos m,Marcas ma where v.IdModelo = m.IdModelo and m.IdMarca = ma.IdMarca order by NombreMarca,NombreModelo,Año"
-        daDatos = New SqlDataAdapter(seleccion, CN)
-        daDatos.Fill(dtDatos, "StockVehiculo")
-        Dim rpt As reporteStockVehiculos = New reporteStockVehiculos
-        rpt.SetDataSource(dtDatos)
-        FormReporteStockVehiculos.viewerStockVehiculos.ReportSource = rpt
-        FormReporteStockVehiculos.Show()
-    End Sub
-
-    Private Sub ReporteVehiculosVendidos() 
-        
-    End Sub
+   
 End Class
