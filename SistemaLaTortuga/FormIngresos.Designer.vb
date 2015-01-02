@@ -23,6 +23,10 @@ Partial Class FormIngresos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.combocuenta = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ComboCliente = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextDetalle = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -36,10 +40,6 @@ Partial Class FormIngresos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboTipo = New System.Windows.Forms.ComboBox()
         Me.Dtfecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboCliente = New System.Windows.Forms.ComboBox()
-        Me.combocuenta = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -67,6 +67,42 @@ Partial Class FormIngresos
         Me.GroupBox1.Size = New System.Drawing.Size(490, 217)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 109)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(41, 13)
+        Me.Label6.TabIndex = 46
+        Me.Label6.Text = "Cuenta"
+        '
+        'combocuenta
+        '
+        Me.combocuenta.FormattingEnabled = True
+        Me.combocuenta.Location = New System.Drawing.Point(9, 125)
+        Me.combocuenta.Name = "combocuenta"
+        Me.combocuenta.Size = New System.Drawing.Size(138, 21)
+        Me.combocuenta.TabIndex = 45
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 160)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(39, 13)
+        Me.Label8.TabIndex = 44
+        Me.Label8.Text = "Cliente"
+        '
+        'ComboCliente
+        '
+        Me.ComboCliente.DisplayMember = "NombreC"
+        Me.ComboCliente.FormattingEnabled = True
+        Me.ComboCliente.Location = New System.Drawing.Point(6, 176)
+        Me.ComboCliente.Name = "ComboCliente"
+        Me.ComboCliente.Size = New System.Drawing.Size(147, 21)
+        Me.ComboCliente.TabIndex = 43
+        Me.ComboCliente.ValueMember = "idCliente"
         '
         'Label7
         '
@@ -179,49 +215,15 @@ Partial Class FormIngresos
         Me.Dtfecha.Size = New System.Drawing.Size(104, 20)
         Me.Dtfecha.TabIndex = 0
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 160)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 13)
-        Me.Label8.TabIndex = 44
-        Me.Label8.Text = "Cliente"
-        '
-        'ComboCliente
-        '
-        Me.ComboCliente.DisplayMember = "NombreC"
-        Me.ComboCliente.FormattingEnabled = True
-        Me.ComboCliente.Location = New System.Drawing.Point(6, 176)
-        Me.ComboCliente.Name = "ComboCliente"
-        Me.ComboCliente.Size = New System.Drawing.Size(147, 21)
-        Me.ComboCliente.TabIndex = 43
-        Me.ComboCliente.ValueMember = "idCliente"
-        '
-        'combocuenta
-        '
-        Me.combocuenta.FormattingEnabled = True
-        Me.combocuenta.Location = New System.Drawing.Point(9, 125)
-        Me.combocuenta.Name = "combocuenta"
-        Me.combocuenta.Size = New System.Drawing.Size(138, 21)
-        Me.combocuenta.TabIndex = 45
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 109)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(41, 13)
-        Me.Label6.TabIndex = 46
-        Me.Label6.Text = "Cuenta"
-        '
         'FormIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(509, 238)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormIngresos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ingresos Varios"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

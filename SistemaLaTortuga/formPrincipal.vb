@@ -79,7 +79,7 @@ Public Class formPrincipal
         Dim daDatos As SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
         Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
         CN.Open()
-        Dim seleccion As String = "select NombreMarca,NombreModelo,Dominio,Tipo,TipoMotor,Año from Vehiculos v,Modelos m,Marcas ma where v.IdModelo = m.IdModelo and m.IdMarca = ma.IdMarca order by NombreMarca,NombreModelo,Año"
+        Dim seleccion As String = "select NombreMarca,NombreModelo,Dominio,Tipo,TipoMotor,Año from Vehiculos v,Modelos m,Marcas ma where v.IdModelo = m.IdModelo and m.IdMarca = ma.IdMarca  and Vendido='N' order by NombreMarca,NombreModelo,Año"
         daDatos = New SqlDataAdapter(seleccion, CN)
         daDatos.Fill(dtDatos, "StockVehiculo")
         CN.Close()

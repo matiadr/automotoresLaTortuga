@@ -23,6 +23,9 @@ Partial Class FormPagarDocumento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.combocuenta = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Textnumero = New System.Windows.Forms.TextBox()
@@ -34,9 +37,6 @@ Partial Class FormPagarDocumento
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboTipo = New System.Windows.Forms.ComboBox()
         Me.Dtfecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.combocuenta = New System.Windows.Forms.ComboBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,6 +61,36 @@ Partial Class FormPagarDocumento
         Me.GroupBox1.Size = New System.Drawing.Size(490, 168)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(406, 145)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(78, 17)
+        Me.CheckBox1.TabIndex = 41
+        Me.CheckBox1.Text = "Pago Total"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 109)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(41, 13)
+        Me.Label6.TabIndex = 40
+        Me.Label6.Text = "Cuenta"
+        '
+        'combocuenta
+        '
+        Me.combocuenta.DisplayMember = "idcuenta"
+        Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combocuenta.FormattingEnabled = True
+        Me.combocuenta.Location = New System.Drawing.Point(6, 125)
+        Me.combocuenta.Name = "combocuenta"
+        Me.combocuenta.Size = New System.Drawing.Size(147, 21)
+        Me.combocuenta.TabIndex = 39
+        Me.combocuenta.ValueMember = "idcuenta"
         '
         'Button1
         '
@@ -98,6 +128,7 @@ Partial Class FormPagarDocumento
         '
         'ComboBanco
         '
+        Me.ComboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBanco.FormattingEnabled = True
         Me.ComboBanco.Location = New System.Drawing.Point(6, 75)
         Me.ComboBanco.Name = "ComboBanco"
@@ -156,42 +187,15 @@ Partial Class FormPagarDocumento
         Me.Dtfecha.Size = New System.Drawing.Size(104, 20)
         Me.Dtfecha.TabIndex = 0
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 109)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(41, 13)
-        Me.Label6.TabIndex = 40
-        Me.Label6.Text = "Cuenta"
-        '
-        'combocuenta
-        '
-        Me.combocuenta.DisplayMember = "idcuenta"
-        Me.combocuenta.FormattingEnabled = True
-        Me.combocuenta.Location = New System.Drawing.Point(6, 125)
-        Me.combocuenta.Name = "combocuenta"
-        Me.combocuenta.Size = New System.Drawing.Size(147, 21)
-        Me.combocuenta.TabIndex = 39
-        Me.combocuenta.ValueMember = "idcuenta"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(406, 145)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(78, 17)
-        Me.CheckBox1.TabIndex = 41
-        Me.CheckBox1.Text = "Pago Total"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'FormPagarDocumento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(516, 192)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormPagarDocumento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pagar Documento"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

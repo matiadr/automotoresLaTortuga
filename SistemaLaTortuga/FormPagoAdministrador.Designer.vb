@@ -72,6 +72,7 @@ Partial Class FormPagoAdministrador
         'combobanco
         '
         Me.combobanco.DisplayMember = "idbanco"
+        Me.combobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobanco.FormattingEnabled = True
         Me.combobanco.Location = New System.Drawing.Point(322, 72)
         Me.combobanco.Name = "combobanco"
@@ -106,6 +107,7 @@ Partial Class FormPagoAdministrador
         '
         'combotipopago
         '
+        Me.combotipopago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combotipopago.FormattingEnabled = True
         Me.combotipopago.Items.AddRange(New Object() {"Efectivo", "Cheque"})
         Me.combotipopago.Location = New System.Drawing.Point(40, 74)
@@ -160,6 +162,7 @@ Partial Class FormPagoAdministrador
         'combocuenta
         '
         Me.combocuenta.DisplayMember = "idcuenta"
+        Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
         Me.combocuenta.Location = New System.Drawing.Point(117, 33)
         Me.combocuenta.Name = "combocuenta"
@@ -180,7 +183,9 @@ Partial Class FormPagoAdministrador
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(512, 224)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormPagoAdministrador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pago Administrador"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

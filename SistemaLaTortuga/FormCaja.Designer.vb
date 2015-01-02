@@ -72,10 +72,13 @@ Partial Class FormCaja
         '
         'DGcaja
         '
+        Me.DGcaja.AllowUserToAddRows = False
+        Me.DGcaja.AllowUserToDeleteRows = False
         Me.DGcaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGcaja.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.DetalleMovimiento, Me.ImporteMovimientoingreso, Me.ImporteMovimientoegreso})
         Me.DGcaja.Location = New System.Drawing.Point(21, 21)
         Me.DGcaja.Name = "DGcaja"
+        Me.DGcaja.ReadOnly = True
         Me.DGcaja.Size = New System.Drawing.Size(675, 361)
         Me.DGcaja.TabIndex = 0
         '
@@ -356,7 +359,9 @@ Partial Class FormCaja
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormCaja"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Caja"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGcaja, System.ComponentModel.ISupportInitialize).EndInit()

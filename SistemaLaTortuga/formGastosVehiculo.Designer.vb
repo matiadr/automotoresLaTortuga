@@ -87,6 +87,8 @@ Partial Class FormGastosVehiculo
         '
         'Comboproveedor
         '
+        Me.Comboproveedor.DisplayMember = "idproveedor"
+        Me.Comboproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Comboproveedor.FormattingEnabled = True
         Me.Comboproveedor.Location = New System.Drawing.Point(239, 75)
         Me.Comboproveedor.Name = "Comboproveedor"
@@ -114,6 +116,7 @@ Partial Class FormGastosVehiculo
         'combobanco
         '
         Me.combobanco.DisplayMember = "idbanco"
+        Me.combobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobanco.FormattingEnabled = True
         Me.combobanco.Location = New System.Drawing.Point(291, 114)
         Me.combobanco.Name = "combobanco"
@@ -148,6 +151,7 @@ Partial Class FormGastosVehiculo
         '
         'combotipopago
         '
+        Me.combotipopago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combotipopago.FormattingEnabled = True
         Me.combotipopago.Items.AddRange(New Object() {"Efectivo", "Cheque"})
         Me.combotipopago.Location = New System.Drawing.Point(9, 116)
@@ -220,6 +224,7 @@ Partial Class FormGastosVehiculo
         'combocuenta
         '
         Me.combocuenta.DisplayMember = "idcuenta"
+        Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
         Me.combocuenta.Location = New System.Drawing.Point(86, 75)
         Me.combocuenta.Name = "combocuenta"
@@ -265,7 +270,9 @@ Partial Class FormGastosVehiculo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(462, 264)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormGastosVehiculo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gastos Por Vehículos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

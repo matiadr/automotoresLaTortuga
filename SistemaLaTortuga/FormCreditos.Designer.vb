@@ -81,6 +81,7 @@ Partial Class formcreditos
         '
         'ComboCuentas
         '
+        Me.ComboCuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCuentas.FormattingEnabled = True
         Me.ComboCuentas.Location = New System.Drawing.Point(64, 16)
         Me.ComboCuentas.Name = "ComboCuentas"
@@ -149,6 +150,7 @@ Partial Class formcreditos
         'combobanco
         '
         Me.combobanco.DisplayMember = "idbanco"
+        Me.combobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobanco.FormattingEnabled = True
         Me.combobanco.Location = New System.Drawing.Point(131, 24)
         Me.combobanco.Name = "combobanco"
@@ -263,7 +265,9 @@ Partial Class formcreditos
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "formcreditos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Créditos"
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()

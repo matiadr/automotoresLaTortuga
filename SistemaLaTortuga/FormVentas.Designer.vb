@@ -24,12 +24,12 @@ Partial Class formVentas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formVentas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textidclientem = New System.Windows.Forms.TextBox()
         Me.texttipodni = New System.Windows.Forms.TextBox()
         Me.textprovincia = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.dtfecha = New System.Windows.Forms.DateTimePicker()
         Me.textidventa = New System.Windows.Forms.TextBox()
-        Me.bActualizar = New System.Windows.Forms.Button()
         Me.tbIdCliente = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
@@ -86,14 +86,12 @@ Partial Class formVentas
         Me.Label22 = New System.Windows.Forms.Label()
         Me.textcredsolicitado = New System.Windows.Forms.TextBox()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TextPlan = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TextAdministrador = New System.Windows.Forms.TextBox()
         Me.groupBox7 = New System.Windows.Forms.GroupBox()
         Me.textidplan = New System.Windows.Forms.TextBox()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label35 = New System.Windows.Forms.Label()
@@ -122,11 +120,6 @@ Partial Class formVentas
         Me.Label23 = New System.Windows.Forms.Label()
         Me.textsumaentrega = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.bSalir = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.textsumaentregasv = New System.Windows.Forms.TextBox()
@@ -141,8 +134,15 @@ Partial Class formVentas
         Me.IdVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.textesposo = New System.Windows.Forms.TextBox()
         Me.textdniesposo = New System.Windows.Forms.TextBox()
-        Me.textidclientem = New System.Windows.Forms.TextBox()
         Me.textidvehiculoventam = New System.Windows.Forms.TextBox()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.bSalir = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.bActualizar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -184,6 +184,14 @@ Partial Class formVentas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Comprador"
         '
+        'textidclientem
+        '
+        Me.textidclientem.Location = New System.Drawing.Point(372, 89)
+        Me.textidclientem.Name = "textidclientem"
+        Me.textidclientem.Size = New System.Drawing.Size(54, 20)
+        Me.textidclientem.TabIndex = 30
+        Me.textidclientem.Visible = False
+        '
         'texttipodni
         '
         Me.texttipodni.Location = New System.Drawing.Point(270, 5)
@@ -224,16 +232,6 @@ Partial Class formVentas
         Me.textidventa.Size = New System.Drawing.Size(40, 20)
         Me.textidventa.TabIndex = 25
         Me.textidventa.Visible = False
-        '
-        'bActualizar
-        '
-        Me.bActualizar.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
-        Me.bActualizar.Location = New System.Drawing.Point(461, 13)
-        Me.bActualizar.Name = "bActualizar"
-        Me.bActualizar.Size = New System.Drawing.Size(35, 26)
-        Me.bActualizar.TabIndex = 24
-        Me.bActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bActualizar.UseVisualStyleBackColor = True
         '
         'tbIdCliente
         '
@@ -784,16 +782,6 @@ Partial Class formVentas
         Me.Button10.Text = "..."
         Me.Button10.UseVisualStyleBackColor = True
         '
-        'Button11
-        '
-        Me.Button11.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
-        Me.Button11.Location = New System.Drawing.Point(318, 12)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(35, 26)
-        Me.Button11.TabIndex = 25
-        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.UseVisualStyleBackColor = True
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -866,16 +854,6 @@ Partial Class formVentas
         Me.textidplan.Size = New System.Drawing.Size(68, 20)
         Me.textidplan.TabIndex = 27
         Me.textidplan.Visible = False
-        '
-        'Button12
-        '
-        Me.Button12.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
-        Me.Button12.Location = New System.Drawing.Point(113, 90)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(35, 26)
-        Me.Button12.TabIndex = 26
-        Me.Button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button12.UseVisualStyleBackColor = True
         '
         'Button9
         '
@@ -1126,6 +1104,132 @@ Partial Class formVentas
         Me.GroupBox6.TabIndex = 4
         Me.GroupBox6.TabStop = False
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.textsumaentregasv)
+        Me.GroupBox3.Controls.Add(Me.Button1)
+        Me.GroupBox3.Controls.Add(Me.DGentregas)
+        Me.GroupBox3.Location = New System.Drawing.Point(14, 373)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(509, 137)
+        Me.GroupBox3.TabIndex = 5
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Vehículo/s Entrega"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(24, 114)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(71, 13)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "Valor Entrega"
+        '
+        'textsumaentregasv
+        '
+        Me.textsumaentregasv.Enabled = False
+        Me.textsumaentregasv.Location = New System.Drawing.Point(102, 111)
+        Me.textsumaentregasv.Name = "textsumaentregasv"
+        Me.textsumaentregasv.Size = New System.Drawing.Size(82, 20)
+        Me.textsumaentregasv.TabIndex = 2
+        Me.textsumaentregasv.Text = "0"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(455, 43)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(48, 39)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'DGentregas
+        '
+        Me.DGentregas.AllowUserToAddRows = False
+        Me.DGentregas.AllowUserToDeleteRows = False
+        Me.DGentregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGentregas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.vehiculo, Me.marca, Me.modelo, Me.valor, Me.Año, Me.Dominio, Me.IdVehiculo})
+        Me.DGentregas.Location = New System.Drawing.Point(13, 20)
+        Me.DGentregas.Name = "DGentregas"
+        Me.DGentregas.ReadOnly = True
+        Me.DGentregas.Size = New System.Drawing.Size(427, 85)
+        Me.DGentregas.TabIndex = 0
+        '
+        'vehiculo
+        '
+        Me.vehiculo.DataPropertyName = "Tipo"
+        Me.vehiculo.HeaderText = "Vehículo"
+        Me.vehiculo.Name = "vehiculo"
+        Me.vehiculo.ReadOnly = True
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "NombreMarca"
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        Me.marca.ReadOnly = True
+        '
+        'modelo
+        '
+        Me.modelo.DataPropertyName = "NombreModelo"
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        Me.modelo.ReadOnly = True
+        '
+        'valor
+        '
+        Me.valor.DataPropertyName = "precioe"
+        Me.valor.HeaderText = "Valor"
+        Me.valor.Name = "valor"
+        Me.valor.ReadOnly = True
+        '
+        'Año
+        '
+        Me.Año.DataPropertyName = "Año"
+        Me.Año.HeaderText = "Año"
+        Me.Año.Name = "Año"
+        Me.Año.ReadOnly = True
+        '
+        'Dominio
+        '
+        Me.Dominio.DataPropertyName = "Dominio"
+        Me.Dominio.HeaderText = "Dominio"
+        Me.Dominio.Name = "Dominio"
+        Me.Dominio.ReadOnly = True
+        '
+        'IdVehiculo
+        '
+        Me.IdVehiculo.DataPropertyName = "IdVehiculo"
+        Me.IdVehiculo.HeaderText = "IdVehiculo"
+        Me.IdVehiculo.Name = "IdVehiculo"
+        Me.IdVehiculo.ReadOnly = True
+        Me.IdVehiculo.Visible = False
+        '
+        'textesposo
+        '
+        Me.textesposo.Location = New System.Drawing.Point(279, 3)
+        Me.textesposo.Name = "textesposo"
+        Me.textesposo.Size = New System.Drawing.Size(130, 20)
+        Me.textesposo.TabIndex = 6
+        Me.textesposo.Visible = False
+        '
+        'textdniesposo
+        '
+        Me.textdniesposo.Location = New System.Drawing.Point(415, 3)
+        Me.textdniesposo.Name = "textdniesposo"
+        Me.textdniesposo.Size = New System.Drawing.Size(101, 20)
+        Me.textdniesposo.TabIndex = 6
+        Me.textdniesposo.Visible = False
+        '
+        'textidvehiculoventam
+        '
+        Me.textidvehiculoventam.Location = New System.Drawing.Point(379, 154)
+        Me.textidvehiculoventam.Name = "textidvehiculoventam"
+        Me.textidvehiculoventam.Size = New System.Drawing.Size(48, 20)
+        Me.textidvehiculoventam.TabIndex = 7
+        Me.textidvehiculoventam.Visible = False
+        '
         'Button14
         '
         Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1187,129 +1291,35 @@ Partial Class formVentas
         Me.Button7.Text = "Imprimir Boleto"
         Me.Button7.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'Button11
         '
-        Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.textsumaentregasv)
-        Me.GroupBox3.Controls.Add(Me.Button1)
-        Me.GroupBox3.Controls.Add(Me.DGentregas)
-        Me.GroupBox3.Location = New System.Drawing.Point(14, 373)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(509, 137)
-        Me.GroupBox3.TabIndex = 5
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Vehículo/s Entrega"
+        Me.Button11.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
+        Me.Button11.Location = New System.Drawing.Point(318, 12)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(35, 26)
+        Me.Button11.TabIndex = 25
+        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button11.UseVisualStyleBackColor = True
         '
-        'Label16
+        'Button12
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(24, 114)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(71, 13)
-        Me.Label16.TabIndex = 3
-        Me.Label16.Text = "Valor Entrega"
+        Me.Button12.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
+        Me.Button12.Location = New System.Drawing.Point(113, 90)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(35, 26)
+        Me.Button12.TabIndex = 26
+        Me.Button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button12.UseVisualStyleBackColor = True
         '
-        'textsumaentregasv
+        'bActualizar
         '
-        Me.textsumaentregasv.Enabled = False
-        Me.textsumaentregasv.Location = New System.Drawing.Point(102, 111)
-        Me.textsumaentregasv.Name = "textsumaentregasv"
-        Me.textsumaentregasv.Size = New System.Drawing.Size(82, 20)
-        Me.textsumaentregasv.TabIndex = 2
-        Me.textsumaentregasv.Text = "0"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(455, 43)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(48, 39)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'DGentregas
-        '
-        Me.DGentregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGentregas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.vehiculo, Me.marca, Me.modelo, Me.valor, Me.Año, Me.Dominio, Me.IdVehiculo})
-        Me.DGentregas.Location = New System.Drawing.Point(13, 20)
-        Me.DGentregas.Name = "DGentregas"
-        Me.DGentregas.Size = New System.Drawing.Size(427, 85)
-        Me.DGentregas.TabIndex = 0
-        '
-        'vehiculo
-        '
-        Me.vehiculo.DataPropertyName = "Tipo"
-        Me.vehiculo.HeaderText = "Vehículo"
-        Me.vehiculo.Name = "vehiculo"
-        '
-        'marca
-        '
-        Me.marca.DataPropertyName = "NombreMarca"
-        Me.marca.HeaderText = "Marca"
-        Me.marca.Name = "marca"
-        '
-        'modelo
-        '
-        Me.modelo.DataPropertyName = "NombreModelo"
-        Me.modelo.HeaderText = "Modelo"
-        Me.modelo.Name = "modelo"
-        '
-        'valor
-        '
-        Me.valor.DataPropertyName = "precioe"
-        Me.valor.HeaderText = "Valor"
-        Me.valor.Name = "valor"
-        '
-        'Año
-        '
-        Me.Año.DataPropertyName = "Año"
-        Me.Año.HeaderText = "Año"
-        Me.Año.Name = "Año"
-        '
-        'Dominio
-        '
-        Me.Dominio.DataPropertyName = "Dominio"
-        Me.Dominio.HeaderText = "Dominio"
-        Me.Dominio.Name = "Dominio"
-        '
-        'IdVehiculo
-        '
-        Me.IdVehiculo.DataPropertyName = "IdVehiculo"
-        Me.IdVehiculo.HeaderText = "IdVehiculo"
-        Me.IdVehiculo.Name = "IdVehiculo"
-        Me.IdVehiculo.Visible = False
-        '
-        'textesposo
-        '
-        Me.textesposo.Location = New System.Drawing.Point(279, 3)
-        Me.textesposo.Name = "textesposo"
-        Me.textesposo.Size = New System.Drawing.Size(130, 20)
-        Me.textesposo.TabIndex = 6
-        Me.textesposo.Visible = False
-        '
-        'textdniesposo
-        '
-        Me.textdniesposo.Location = New System.Drawing.Point(415, 3)
-        Me.textdniesposo.Name = "textdniesposo"
-        Me.textdniesposo.Size = New System.Drawing.Size(101, 20)
-        Me.textdniesposo.TabIndex = 6
-        Me.textdniesposo.Visible = False
-        '
-        'textidclientem
-        '
-        Me.textidclientem.Location = New System.Drawing.Point(372, 89)
-        Me.textidclientem.Name = "textidclientem"
-        Me.textidclientem.Size = New System.Drawing.Size(54, 20)
-        Me.textidclientem.TabIndex = 30
-        Me.textidclientem.Visible = False
-        '
-        'textidvehiculoventam
-        '
-        Me.textidvehiculoventam.Location = New System.Drawing.Point(379, 154)
-        Me.textidvehiculoventam.Name = "textidvehiculoventam"
-        Me.textidvehiculoventam.Size = New System.Drawing.Size(48, 20)
-        Me.textidvehiculoventam.TabIndex = 7
-        Me.textidvehiculoventam.Visible = False
+        Me.bActualizar.Image = Global.SistemaLaTortuga.My.Resources.Resources.reload3
+        Me.bActualizar.Location = New System.Drawing.Point(461, 13)
+        Me.bActualizar.Name = "bActualizar"
+        Me.bActualizar.Size = New System.Drawing.Size(35, 26)
+        Me.bActualizar.TabIndex = 24
+        Me.bActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bActualizar.UseVisualStyleBackColor = True
         '
         'formVentas
         '

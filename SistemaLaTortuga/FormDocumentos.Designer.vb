@@ -23,6 +23,7 @@ Partial Class FormDocumentos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DGdocumentos = New System.Windows.Forms.DataGridView()
@@ -32,7 +33,6 @@ Partial Class FormDocumentos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DTfechadocumento = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboCuentas = New System.Windows.Forms.ComboBox()
@@ -52,6 +52,15 @@ Partial Class FormDocumentos
         Me.GroupBox3.Size = New System.Drawing.Size(112, 217)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(21, 25)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(73, 55)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Guardar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -135,15 +144,6 @@ Partial Class FormDocumentos
         Me.GroupBox4.TabIndex = 6
         Me.GroupBox4.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(21, 25)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(73, 55)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(236, 19)
@@ -164,6 +164,7 @@ Partial Class FormDocumentos
         '
         'ComboCuentas
         '
+        Me.ComboCuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCuentas.FormattingEnabled = True
         Me.ComboCuentas.Location = New System.Drawing.Point(61, 19)
         Me.ComboCuentas.Name = "ComboCuentas"
@@ -179,7 +180,9 @@ Partial Class FormDocumentos
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormDocumentos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Documentos"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)

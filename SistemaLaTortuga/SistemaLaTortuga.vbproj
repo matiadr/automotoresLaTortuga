@@ -13,7 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Adriana\Desktop\PAQUETE LA TORTUGA\</PublishUrl>
+    <PublishUrl>C:\Users\Administrador\Desktop\Paquete LaTortuga\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,8 +23,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>7</ApplicationRevision>
+    <TargetCulture>es-AR</TargetCulture>
+    <ProductName>Sistema de Gestion La Tortuga</ProductName>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -78,7 +79,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -94,8 +95,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -120,12 +120,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="formListadoVentas.Designer.vb">
       <DependentUpon>formListadoVentas.vb</DependentUpon>
     </Compile>
@@ -256,12 +250,6 @@
       <DependentUpon>FormPagoPlanes.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPagoPlanes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formReportes.Designer.vb">
-      <DependentUpon>formReportes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="formReportes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormVehiculoEntrega.Designer.vb">
@@ -485,9 +473,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="formAdministrador.resx">
+      <DependentUpon>formAdministrador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formListadoVentas.resx">
       <DependentUpon>formListadoVentas.vb</DependentUpon>
@@ -555,9 +542,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPagoPlanes.resx">
       <DependentUpon>FormPagoPlanes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formReportes.resx">
-      <DependentUpon>formReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVehiculoEntrega.resx">
       <DependentUpon>FormVehiculoEntrega.vb</DependentUpon>

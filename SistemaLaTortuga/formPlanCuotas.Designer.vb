@@ -31,10 +31,13 @@ Partial Class FormPlan
         '
         'DGplan
         '
+        Me.DGplan.AllowUserToAddRows = False
+        Me.DGplan.AllowUserToDeleteRows = False
         Me.DGplan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGplan.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
         Me.DGplan.Location = New System.Drawing.Point(10, 12)
         Me.DGplan.Name = "DGplan"
+        Me.DGplan.ReadOnly = True
         Me.DGplan.Size = New System.Drawing.Size(491, 311)
         Me.DGplan.TabIndex = 0
         '
@@ -65,7 +68,9 @@ Partial Class FormPlan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(513, 331)
         Me.Controls.Add(Me.DGplan)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormPlan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Plan - Cuotas"
         CType(Me.DGplan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

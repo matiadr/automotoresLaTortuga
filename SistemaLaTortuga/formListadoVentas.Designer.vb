@@ -54,10 +54,14 @@ Partial Class formlistadoventas
         '
         'DGventas
         '
+        Me.DGventas.AllowUserToAddRows = False
+        Me.DGventas.AllowUserToDeleteRows = False
         Me.DGventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGventas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FechaVenta, Me.Comprador, Me.Vehiculo, Me.Marca, Me.Modelo, Me.Año, Me.Dominio})
         Me.DGventas.Location = New System.Drawing.Point(10, 17)
         Me.DGventas.Name = "DGventas"
+        Me.DGventas.ReadOnly = True
+        Me.DGventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGventas.Size = New System.Drawing.Size(753, 452)
         Me.DGventas.TabIndex = 0
         '
@@ -66,42 +70,49 @@ Partial Class formlistadoventas
         Me.FechaVenta.DataPropertyName = "FechaVenta"
         Me.FechaVenta.HeaderText = "FechaVenta"
         Me.FechaVenta.Name = "FechaVenta"
+        Me.FechaVenta.ReadOnly = True
         '
         'Comprador
         '
         Me.Comprador.DataPropertyName = "NombreC"
         Me.Comprador.HeaderText = "Comprador"
         Me.Comprador.Name = "Comprador"
+        Me.Comprador.ReadOnly = True
         '
         'Vehiculo
         '
         Me.Vehiculo.DataPropertyName = "Tipo"
         Me.Vehiculo.HeaderText = "Vehiculo"
         Me.Vehiculo.Name = "Vehiculo"
+        Me.Vehiculo.ReadOnly = True
         '
         'Marca
         '
         Me.Marca.DataPropertyName = "NombreMarca"
         Me.Marca.HeaderText = "Marca"
         Me.Marca.Name = "Marca"
+        Me.Marca.ReadOnly = True
         '
         'Modelo
         '
         Me.Modelo.DataPropertyName = "NombreModelo"
         Me.Modelo.HeaderText = "Modelo"
         Me.Modelo.Name = "Modelo"
+        Me.Modelo.ReadOnly = True
         '
         'Año
         '
         Me.Año.DataPropertyName = "año"
         Me.Año.HeaderText = "Año"
         Me.Año.Name = "Año"
+        Me.Año.ReadOnly = True
         '
         'Dominio
         '
         Me.Dominio.DataPropertyName = "Dominio"
         Me.Dominio.HeaderText = "Dominio"
         Me.Dominio.Name = "Dominio"
+        Me.Dominio.ReadOnly = True
         '
         'GroupBox2
         '
@@ -165,7 +176,9 @@ Partial Class formlistadoventas
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formlistadoventas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ventas"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGventas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

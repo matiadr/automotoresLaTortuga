@@ -108,9 +108,7 @@ Public Class formlistadoventas
         tabla3 = New DataTable
         da3.Fill(tabla3)
 
-        Try
-
-
+        If tabla3.Rows.Count > 0 Then
             formVentas.TextDetallePlan.Text = tabla3.Rows.Item(0).Item("DetallePlan")
             formVentas.TextCuotas.Text = tabla3.Rows.Item(0).Item("CantidadCuotas")
             formVentas.TextIntereses.Text = tabla3.Rows.Item(0).Item("Intereses")
@@ -124,8 +122,7 @@ Public Class formlistadoventas
                 formVentas.ChkCancelado.Checked = False
             End If
             formVentas.textidplan.Text = tabla3.Rows.Item(0).Item("IdPlan")
-
-
+     
 
 
 
@@ -140,25 +137,20 @@ Public Class formlistadoventas
             formVentas.TextPlan.Text = Conversion.Str(sumap.ExecuteScalar)
             If formVentas.TextPlan.Text = "Null" Then
                 formVentas.TextPlan.Text = 0
-            Else
             End If
+        End If
 
 
 
 
+        'si hubo administrador
+        Dim sumas As New SqlCommand("Select sum(importeadministrador) from Administrador where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
 
-            'si hubo administrador
-            Dim sumas As New SqlCommand("Select sum(importeadministrador) from Administrador where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
-
-            formVentas.TextAdministrador.Text = Conversion.Str(sumas.ExecuteScalar)
-            If formVentas.TextAdministrador.Text = "Null" Then
-                formVentas.TextAdministrador.Text = 0
-            Else
-            End If
-        Catch ex As SqlException
-
-        End Try
-
+        formVentas.TextAdministrador.Text = Conversion.Str(sumas.ExecuteScalar)
+        If formVentas.TextAdministrador.Text = "Null" Then
+            formVentas.TextAdministrador.Text = 0
+        Else
+        End If
     End Sub
 
     Private Sub DGventas_ClientSizeChanged(sender As Object, e As EventArgs) Handles DGventas.ClientSizeChanged

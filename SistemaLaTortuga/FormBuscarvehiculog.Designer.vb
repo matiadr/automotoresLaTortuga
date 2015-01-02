@@ -128,7 +128,9 @@ Partial Class formbuscavehiculoactivo
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.tbBusqueda)
         Me.Controls.Add(Me.dgVehiculos)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "formbuscavehiculoactivo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vehiculos"
         CType(Me.dgVehiculos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

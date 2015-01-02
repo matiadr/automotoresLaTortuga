@@ -71,6 +71,7 @@ Partial Class formadministrador
         'ComboCuentas
         '
         Me.ComboCuentas.DisplayMember = "idcuenta"
+        Me.ComboCuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCuentas.FormattingEnabled = True
         Me.ComboCuentas.Location = New System.Drawing.Point(64, 16)
         Me.ComboCuentas.Name = "ComboCuentas"
@@ -159,7 +160,9 @@ Partial Class formadministrador
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "formadministrador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrador"
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()

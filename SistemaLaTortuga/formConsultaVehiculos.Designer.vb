@@ -24,8 +24,6 @@ Partial Class formConsultaVehiculos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formConsultaVehiculos))
         Me.dgStockVehiculos = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.dueño = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -35,6 +33,8 @@ Partial Class formConsultaVehiculos
         Me.fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.año = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.rbEnStock = New System.Windows.Forms.RadioButton()
         Me.rbVendidos = New System.Windows.Forms.RadioButton()
         CType(Me.dgStockVehiculos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,23 +51,6 @@ Partial Class formConsultaVehiculos
         Me.dgStockVehiculos.ReadOnly = True
         Me.dgStockVehiculos.Size = New System.Drawing.Size(828, 322)
         Me.dgStockVehiculos.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(45, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Buscar"
-        '
-        'tbBusqueda
-        '
-        Me.tbBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbBusqueda.Location = New System.Drawing.Point(91, 24)
-        Me.tbBusqueda.Name = "tbBusqueda"
-        Me.tbBusqueda.Size = New System.Drawing.Size(194, 20)
-        Me.tbBusqueda.TabIndex = 2
         '
         'dueño
         '
@@ -133,6 +116,23 @@ Partial Class formConsultaVehiculos
         Me.año.ReadOnly = True
         Me.año.Visible = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(45, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Buscar"
+        '
+        'tbBusqueda
+        '
+        Me.tbBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbBusqueda.Location = New System.Drawing.Point(91, 24)
+        Me.tbBusqueda.Name = "tbBusqueda"
+        Me.tbBusqueda.Size = New System.Drawing.Size(194, 20)
+        Me.tbBusqueda.TabIndex = 2
+        '
         'rbEnStock
         '
         Me.rbEnStock.AutoSize = True
@@ -165,7 +165,7 @@ Partial Class formConsultaVehiculos
         Me.Controls.Add(Me.tbBusqueda)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgStockVehiculos)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimizeBox = False
         Me.Name = "formConsultaVehiculos"

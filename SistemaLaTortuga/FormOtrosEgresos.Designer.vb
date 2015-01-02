@@ -80,6 +80,7 @@ Partial Class FormOtrosEgresos
         'ComboProveedor
         '
         Me.ComboProveedor.DisplayMember = "NombreProveedor"
+        Me.ComboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboProveedor.FormattingEnabled = True
         Me.ComboProveedor.Location = New System.Drawing.Point(6, 176)
         Me.ComboProveedor.Name = "ComboProveedor"
@@ -116,6 +117,7 @@ Partial Class FormOtrosEgresos
         'combocuenta
         '
         Me.combocuenta.DisplayMember = "nombrecuenta"
+        Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
         Me.combocuenta.Location = New System.Drawing.Point(6, 125)
         Me.combocuenta.Name = "combocuenta"
@@ -159,6 +161,7 @@ Partial Class FormOtrosEgresos
         '
         'ComboBanco
         '
+        Me.ComboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBanco.FormattingEnabled = True
         Me.ComboBanco.Location = New System.Drawing.Point(6, 75)
         Me.ComboBanco.Name = "ComboBanco"
@@ -223,7 +226,9 @@ Partial Class FormOtrosEgresos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(511, 233)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormOtrosEgresos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otros Egresos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

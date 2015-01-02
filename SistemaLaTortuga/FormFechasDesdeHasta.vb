@@ -7,7 +7,7 @@ Public Class FormFechasDesdeHasta
     End Sub
 
     Private Sub bGenerarReporte_Click(sender As Object, e As EventArgs) Handles bGenerarReporte.Click
-        If tbFechaDesde.Text > tbFechaHasta.Text Then
+        If tbFechaDesde.Value > tbFechaHasta.Value Then
             MessageBox.Show("El rango de fechas no es correcto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
@@ -16,7 +16,7 @@ Public Class FormFechasDesdeHasta
             CN.Open()
 
             If tipoListado = "vehVendidos" Then
-                Dim seleccion As String = "select FechaDesde as fecha, NombreC as nombre, NombreMarca as marca , NombreModelo as modelo,Tipo as tipo,Año as año from VehiculosxClientes vxc,Clientes c,Vehiculos v,Modelos m,Marcas ma where vxc.IdVehiculo = v.IdVehiculo and v.IdModelo = m.IdModelo and m.IdMarca = ma.IdMarca and vxc.IdCliente = c.IdCliente and Estado='Pasivo' and FechaDesde >= '" & tbFechaDesde.Text & "' and FechaDesde <= '" & tbFechaHasta.Text & "'"
+                Dim seleccion As String = "select FechaVenta as fecha, vend.NombreC as nombre, NombreMarca as marca , NombreModelo as modelo,Tipo as tipo,Año as año, comp.NombreC as vendidoA from Ventas ve,Clientes comp,Clientes vend,Vehiculos v,Modelos m,Marcas ma where ve.IdVehiculoVenta = v.IdVehiculo and v.IdModelo = m.IdModelo and m.IdMarca = ma.IdMarca and ve.IdVendedor = vend.IdCliente and ve.IdComprador=comp.IdCliente and FechaVenta >= '" & tbFechaDesde.Value & "' and FechaVenta <= '" & tbFechaHasta.Value & "'"
                 daDatos = New SqlDataAdapter(seleccion, CN)
                 daDatos.Fill(dtDatos, "VehiculoVendido")
                 CN.Close()
@@ -28,7 +28,7 @@ Public Class FormFechasDesdeHasta
                 FormReporteVehiculosVendidos.Show()
             Else
                 If tipoListado = "cheques" Then
-                    Dim seleccion As String = "select NumeroCheque as numeroCheque,ImporteCheque as importe, NombreC as entregadoPor, FechaCheque as fecha, EstadoCheque as estado from Cheques c,Clientes cl where c.IdComprador = cl.IdCliente and FechaCheque >= '" & tbFechaDesde.Text & "' and FechaCheque <= '" & tbFechaHasta.Text & "' order by NumeroCheque"
+                    Dim seleccion As String = "select NumeroCheque as numeroCheque,ImporteCheque as importe, NombreC as entregadoPor, FechaCheque as fecha, EstadoCheque as estado from Cheques c,Clientes cl where c.IdComprador = cl.IdCliente and FechaCheque >= '" & tbFechaDesde.Value & "' and FechaCheque <= '" & tbFechaHasta.Value & "' order by NumeroCheque"
                     daDatos = New SqlDataAdapter(seleccion, CN)
                     daDatos.Fill(dtDatos, "Cheque")
                     Dim rpt As reporteCheques = New reporteCheques

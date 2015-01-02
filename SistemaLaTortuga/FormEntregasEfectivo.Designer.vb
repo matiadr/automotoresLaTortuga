@@ -23,6 +23,7 @@ Partial Class FormEntregasEfectivo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textidbanco = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.textnumero = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -42,7 +43,6 @@ Partial Class FormEntregasEfectivo
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboCuentas = New System.Windows.Forms.ComboBox()
-        Me.textidbanco = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Dgentregas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +68,13 @@ Partial Class FormEntregasEfectivo
         Me.GroupBox1.Size = New System.Drawing.Size(490, 112)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'textidbanco
+        '
+        Me.textidbanco.Location = New System.Drawing.Point(418, 43)
+        Me.textidbanco.Name = "textidbanco"
+        Me.textidbanco.Size = New System.Drawing.Size(29, 20)
+        Me.textidbanco.TabIndex = 10
         '
         'Label5
         '
@@ -97,6 +104,7 @@ Partial Class FormEntregasEfectivo
         'combobanco
         '
         Me.combobanco.DisplayMember = "idbanco"
+        Me.combobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobanco.FormattingEnabled = True
         Me.combobanco.Location = New System.Drawing.Point(6, 75)
         Me.combobanco.Name = "combobanco"
@@ -232,18 +240,12 @@ Partial Class FormEntregasEfectivo
         '
         'ComboCuentas
         '
+        Me.ComboCuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCuentas.FormattingEnabled = True
         Me.ComboCuentas.Location = New System.Drawing.Point(64, 16)
         Me.ComboCuentas.Name = "ComboCuentas"
         Me.ComboCuentas.Size = New System.Drawing.Size(164, 21)
         Me.ComboCuentas.TabIndex = 0
-        '
-        'textidbanco
-        '
-        Me.textidbanco.Location = New System.Drawing.Point(418, 43)
-        Me.textidbanco.Name = "textidbanco"
-        Me.textidbanco.Size = New System.Drawing.Size(29, 20)
-        Me.textidbanco.TabIndex = 10
         '
         'FormEntregasEfectivo
         '
@@ -254,7 +256,9 @@ Partial Class FormEntregasEfectivo
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormEntregasEfectivo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Entregas de Efectivo"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

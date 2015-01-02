@@ -93,7 +93,7 @@ Partial Class FormFechasDesdeHasta
         Me.Controls.Add(Me.tbFechaDesde)
         Me.Controls.Add(Me.bSalir)
         Me.Controls.Add(Me.bGenerarReporte)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormFechasDesdeHasta"
         Me.ShowIcon = False
