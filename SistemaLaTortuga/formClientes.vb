@@ -269,4 +269,8 @@ Public Class formClientes
             MessageBox.Show("No se puede eliminar ya que dicho cliente esta siendo usado", "Advertencia")
         End Try
     End Sub
+
+    Private Sub dgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgClientes.CellContentClick
+
+    End Sub
 End Class

@@ -404,4 +404,8 @@ Public Class formVehiculos
     Private Sub tbFechaAlta_ValueChanged(sender As Object, e As EventArgs) Handles tbFechaAlta.ValueChanged
         dtfecha.Value = tbFechaAlta.Value
     End Sub
+
+    Private Sub cbMarca_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMarca.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -51,21 +51,25 @@ Public Class FormEntregasEfectivo
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Bguardar.Click
-        ' Try
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("insert into Entregas (IdVenta,FormaPago,ImporteEntrega,FechaEntrega,NumeroTransaccion,IdSucursal,Idcuenta) values ('" & formVentas.textidventa.Text & "','" & Combotipopago.Text & "','" & textimporte.Text & "','" & DTfechaentrega.Value & "','" & textnumero.Text & "','" & combobanco.SelectedValue & "','" & ComboCuentas.SelectedValue & "')", CN)
-        cmd.ExecuteNonQuery()
-        MessageBox.Show("Entrega Ingresada")
-        CargarDGEntregas()
+        Try
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
+            Dim cmd As New SqlCommand("insert into Entregas (IdVenta,FormaPago,ImporteEntrega,FechaEntrega,NumeroTransaccion,IdSucursal,Idcuenta) values ('" & formVentas.textidventa.Text & "','" & Combotipopago.Text & "','" & textimporte.Text & "','" & DTfechaentrega.Value & "','" & textnumero.Text & "','" & combobanco.SelectedValue & "','" & ComboCuentas.SelectedValue & "')", CN)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Entrega Ingresada")
+            CargarDGEntregas()
 
-        Dim suma As New SqlCommand("Select sum(importeentrega) from Entregas where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
+            Dim suma As New SqlCommand("Select sum(importeentrega) from Entregas where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
 
-        formVentas.textsumaentrega.Text = suma.ExecuteScalar()
+            formVentas.textsumaentrega.Text = suma.ExecuteScalar()
 
-        'Catch ex As SqlException
-        'MessageBox.Show("No se pudo realizar la operacion,intente mas tarde", "Advertencia-Error en la base de datos,")
-        'End Try
+            'debo agregar esto que entrega en efectivo en la CAJA, a la tabla Movimientos
+            Dim ent As New SqlCommand("insert into MovimientosDiarios (IdCuenta,DetalleMovimiento,FechaMovimiento,ImporteMovimientoIngreo,ImporteMovimientoEgreso,IdProveedor, Tipo, Nombre) values ('" & ComboCuentas.SelectedValue & "',  '" & Combotipopago.Text & "','" & formVentas.dtfecha.Value & "','" & textimporte.Text & "','" & 0 & "','" & formVentas.tbIdCliente.Text & "', 'Cliente', '" & formVentas.tbNombre.Text & "')", CN)
+            ent.ExecuteNonQuery()
+
+        Catch ex As SqlException
+            MessageBox.Show("No se pudo realizar la operacion,intente mas tarde", "Advertencia-Error en la base de datos,")
+        End Try
 
 
 

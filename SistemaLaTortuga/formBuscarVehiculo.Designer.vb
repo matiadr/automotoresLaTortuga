@@ -138,6 +138,7 @@ Partial Class formBuscarVehiculo
         Me.texttipoboton.Name = "texttipoboton"
         Me.texttipoboton.Size = New System.Drawing.Size(37, 20)
         Me.texttipoboton.TabIndex = 8
+        Me.texttipoboton.Visible = False
         '
         'formBuscarVehiculo
         '

@@ -20,9 +20,6 @@ Public Class FormDocumentos
         formCuentas.Show()
     End Sub
 
-    Private Sub FormDocumentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarCuentas()
-    End Sub
     Private Sub CargarDGdocumentos()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -33,11 +30,16 @@ Public Class FormDocumentos
         DGdocumentos.DataSource = dt
         CN.Close()
     End Sub
+    Private Sub FormDocumentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CargarCuentas()
+        CargarDGdocumentos()
+    End Sub
+   
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CN.Open()
-            Dim cmd As New SqlCommand("insert into Documentos (IdVenta,ImporteDocumento,FechaDocumento,IdCuenta) values ('" & formVentas.textidventa.Text & "','" & textimported.Text & "','" & DTfechadocumento.Value & "','" & ComboCuentas.SelectedValue & "')", CN)
+            Dim cmd As New SqlCommand("insert into Documentos (IdVenta,ImporteDocumento,FechaDocumento,IdCuenta,Pagado) values ('" & formVentas.textidventa.Text & "','" & textimported.Text & "','" & DTfechadocumento.Value & "','" & ComboCuentas.SelectedValue & "', 'No')", CN)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Entrega Ingresada")
             CargarDGdocumentos()

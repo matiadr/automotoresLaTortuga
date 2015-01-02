@@ -24,7 +24,12 @@ Partial Class FormCaja
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGcaja = New System.Windows.Forms.DataGridView()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DetalleMovimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImporteMovimientoingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImporteMovimientoegreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -32,20 +37,23 @@ Partial Class FormCaja
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextEfectivo = New System.Windows.Forms.TextBox()
+        Me.TextCheques = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.textsaldo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.textanterior = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.textegresos = New System.Windows.Forms.TextBox()
+        Me.textingresos = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DTfecha = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.DetalleMovimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ImporteMovimientoingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ImporteMovimientoegreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGcaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -65,14 +73,39 @@ Partial Class FormCaja
         'DGcaja
         '
         Me.DGcaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGcaja.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetalleMovimiento, Me.ImporteMovimientoingreso, Me.ImporteMovimientoegreso})
+        Me.DGcaja.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.DetalleMovimiento, Me.ImporteMovimientoingreso, Me.ImporteMovimientoegreso})
         Me.DGcaja.Location = New System.Drawing.Point(21, 21)
         Me.DGcaja.Name = "DGcaja"
         Me.DGcaja.Size = New System.Drawing.Size(675, 361)
         Me.DGcaja.TabIndex = 0
         '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'DetalleMovimiento
+        '
+        Me.DetalleMovimiento.DataPropertyName = "DetalleMovimiento"
+        Me.DetalleMovimiento.HeaderText = "Detalle"
+        Me.DetalleMovimiento.Name = "DetalleMovimiento"
+        '
+        'ImporteMovimientoingreso
+        '
+        Me.ImporteMovimientoingreso.DataPropertyName = "ImporteMovimientoingreo"
+        Me.ImporteMovimientoingreso.HeaderText = "Ingresos"
+        Me.ImporteMovimientoingreso.Name = "ImporteMovimientoingreso"
+        '
+        'ImporteMovimientoegreso
+        '
+        Me.ImporteMovimientoegreso.DataPropertyName = "ImporteMovimientoegreso"
+        Me.ImporteMovimientoegreso.HeaderText = "Egresos"
+        Me.ImporteMovimientoegreso.Name = "ImporteMovimientoegreso"
+        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Button4)
@@ -81,9 +114,18 @@ Partial Class FormCaja
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Location = New System.Drawing.Point(738, 52)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(188, 400)
+        Me.GroupBox2.Size = New System.Drawing.Size(188, 483)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(53, 381)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(79, 39)
+        Me.Button7.TabIndex = 6
+        Me.Button7.Text = "Pago Administrador"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'Button5
         '
@@ -141,35 +183,90 @@ Partial Class FormCaja
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label8)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Controls.Add(Me.TextEfectivo)
+        Me.GroupBox3.Controls.Add(Me.TextCheques)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Controls.Add(Me.TextBox1)
         Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Controls.Add(Me.TextBox4)
+        Me.GroupBox3.Controls.Add(Me.textsaldo)
         Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.TextBox3)
+        Me.GroupBox3.Controls.Add(Me.textanterior)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.textegresos)
+        Me.GroupBox3.Controls.Add(Me.textingresos)
         Me.GroupBox3.Location = New System.Drawing.Point(13, 469)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(709, 66)
+        Me.GroupBox3.Size = New System.Drawing.Size(709, 92)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(335, 53)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(46, 13)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = "Efectivo"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(195, 52)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Cheques"
+        '
+        'TextEfectivo
+        '
+        Me.TextEfectivo.Location = New System.Drawing.Point(386, 49)
+        Me.TextEfectivo.Name = "TextEfectivo"
+        Me.TextEfectivo.Size = New System.Drawing.Size(81, 20)
+        Me.TextEfectivo.TabIndex = 11
+        '
+        'TextCheques
+        '
+        Me.TextCheques.Location = New System.Drawing.Point(248, 49)
+        Me.TextCheques.Name = "TextCheques"
+        Me.TextCheques.Size = New System.Drawing.Size(81, 20)
+        Me.TextCheques.TabIndex = 10
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(483, 49)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(61, 13)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "Saldo Total"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(550, 46)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(81, 20)
+        Me.TextBox1.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(479, 16)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 13)
+        Me.Label4.Size = New System.Drawing.Size(64, 13)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Saldo"
+        Me.Label4.Text = "Saldo Diario"
         '
-        'TextBox4
+        'textsaldo
         '
-        Me.TextBox4.Location = New System.Drawing.Point(530, 16)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(81, 20)
-        Me.TextBox4.TabIndex = 6
+        Me.textsaldo.Enabled = False
+        Me.textsaldo.Location = New System.Drawing.Point(550, 13)
+        Me.textsaldo.Name = "textsaldo"
+        Me.textsaldo.Size = New System.Drawing.Size(81, 20)
+        Me.textsaldo.TabIndex = 6
         '
         'Label3
         '
@@ -180,12 +277,13 @@ Partial Class FormCaja
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Saldo Anterior"
         '
-        'TextBox3
+        'textanterior
         '
-        Me.TextBox3.Location = New System.Drawing.Point(99, 16)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(81, 20)
-        Me.TextBox3.TabIndex = 4
+        Me.textanterior.Enabled = False
+        Me.textanterior.Location = New System.Drawing.Point(99, 16)
+        Me.textanterior.Name = "textanterior"
+        Me.textanterior.Size = New System.Drawing.Size(81, 20)
+        Me.textanterior.TabIndex = 4
         '
         'Label2
         '
@@ -205,19 +303,21 @@ Partial Class FormCaja
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Ingresos"
         '
-        'TextBox2
+        'textegresos
         '
-        Me.TextBox2.Location = New System.Drawing.Point(386, 16)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(81, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.textegresos.Enabled = False
+        Me.textegresos.Location = New System.Drawing.Point(386, 16)
+        Me.textegresos.Name = "textegresos"
+        Me.textegresos.Size = New System.Drawing.Size(81, 20)
+        Me.textegresos.TabIndex = 1
         '
-        'TextBox1
+        'textingresos
         '
-        Me.TextBox1.Location = New System.Drawing.Point(248, 16)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(81, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.textingresos.Enabled = False
+        Me.textingresos.Location = New System.Drawing.Point(248, 16)
+        Me.textingresos.Name = "textingresos"
+        Me.textingresos.Size = New System.Drawing.Size(81, 20)
+        Me.textingresos.TabIndex = 0
         '
         'GroupBox4
         '
@@ -247,29 +347,11 @@ Partial Class FormCaja
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "FECHA"
         '
-        'DetalleMovimiento
-        '
-        Me.DetalleMovimiento.DataPropertyName = "DetalleMovimiento"
-        Me.DetalleMovimiento.HeaderText = "Detalle"
-        Me.DetalleMovimiento.Name = "DetalleMovimiento"
-        '
-        'ImporteMovimientoingreso
-        '
-        Me.ImporteMovimientoingreso.DataPropertyName = "ImporteMovimientoingreso"
-        Me.ImporteMovimientoingreso.HeaderText = "Ingresos"
-        Me.ImporteMovimientoingreso.Name = "ImporteMovimientoingreso"
-        '
-        'ImporteMovimientoegreso
-        '
-        Me.ImporteMovimientoegreso.DataPropertyName = "ImporteMovimientoegreso"
-        Me.ImporteMovimientoegreso.HeaderText = "Egresos"
-        Me.ImporteMovimientoegreso.Name = "ImporteMovimientoegreso"
-        '
         'FormCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 547)
+        Me.ClientSize = New System.Drawing.Size(953, 573)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -295,19 +377,27 @@ Partial Class FormCaja
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents textsaldo As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents textanterior As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents textegresos As System.Windows.Forms.TextBox
+    Friend WithEvents textingresos As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents DTfecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DetalleMovimiento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ImporteMovimientoingreso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ImporteMovimientoegreso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents TextEfectivo As System.Windows.Forms.TextBox
+    Friend WithEvents TextCheques As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

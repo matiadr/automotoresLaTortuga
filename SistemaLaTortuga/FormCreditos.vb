@@ -69,7 +69,7 @@ Public Class formcreditos
 
 
 
-                Dim cmd As New SqlCommand("insert into Creditos (Fecha,IdVenta,ImporteSolicitado,IdBanco) values ('" & DTfechacredito.Value & "','" & venta & "','" & Conversion.Val(textsolicitado.Text) & "','" & combobanco.SelectedValue & "')", CN)
+                Dim cmd As New SqlCommand("insert into Creditos (Fecha,IdVenta,ImporteSolicitado,IdBanco,FechaOtorgado,ImporteOtorgado,NumeroCredito) values ('" & DTfechacredito.Value & "','" & venta & "','" & Conversion.Val(textsolicitado.Text) & "','" & combobanco.SelectedValue & "', '" & "" & "', '" & textotorgado.Text & "', '" & textnumerocredito.Text & "')", CN)
                 cmd.ExecuteNonQuery()
 
                 formVentas.textcredsolicitado.Text = textsolicitado.Text
@@ -95,5 +95,9 @@ Public Class formcreditos
         End If
 
         Me.Close()
+    End Sub
+
+    Private Sub textidcredito_TextChanged(sender As Object, e As EventArgs) Handles textidcredito.TextChanged
+
     End Sub
 End Class

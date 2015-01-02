@@ -1,5 +1,17 @@
 ﻿Imports System.Data.SqlClient
-Public Class FormGastosVehiculo
+Public Class FormIngresos
+    Public Sub CargarClientes()
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Dim cmd As New SqlCommand("select * from Clientes order by NombreC", CN)
+        Dim da As New SqlDataAdapter(cmd)
+        Dim ds As New DataTable()
+        da.Fill(ds)
+        CN.Close()
+        ComboCliente.DataSource = ds
+        ComboCliente.ValueMember = "IdClient"
+        ComboCliente.DisplayMember = "NombreC"
+    End Sub
     Public Sub CargarCuentas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -23,20 +35,8 @@ Public Class FormGastosVehiculo
         combobanco.DataSource = ds
         combobanco.ValueMember = "IdBanco"
         combobanco.DisplayMember = "NombreBanco"
-    End Sub
-    Public Sub CargarProveedores()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select * from Proveedores order by NombreProveedor", CN)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataTable()
-        da.Fill(ds)
-        CN.Close()
-        Comboproveedor.DataSource = ds
-        Comboproveedor.ValueMember = "IdProveedor"
-        Comboproveedor.DisplayMember = "NombreProveedor"
-    End Sub
 
+    End Sub
     Private Sub cargarCaja()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -91,48 +91,40 @@ Public Class FormGastosVehiculo
 
         CN.Close()
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
 
+        If TextDetalle.Text = "" Then
+            MsgBox("Debe escribir un detalle", MsgBoxStyle.Exclamation)
+            Exit Sub
+        Else
 
-        'agrego tambien un registro en MOVIMIENTOS DIARIOS
-        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "', '" & 0 & "', '" & Conversion.Val(textimporte.Text) & "','" & Comboproveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & Comboproveedor.Text & "')", CN)
-        cmde.ExecuteNonQuery()
-
-        'busco ahoar el id del movimiento cargado
-        Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
-        Dim id = max.ExecuteScalar()
-
-        Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & Conversion.Val(textimporte.Text) & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
-        cmd.ExecuteNonQuery()
-
-        MessageBox.Show("Gasto Agregado")
+            'agrego tambien un registro en MOVIMIENTOS DIARIOS
+            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & TextDetalle.Text & "', '" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & 0 & "','" & ComboCliente.SelectedValue & "', '  " & "Cliente" & "', '" & ComboCliente.Text & "')", CN)
+            cmde.ExecuteNonQuery()
 
 
+            MessageBox.Show("Ingreso Guardado")
 
-        CN.Close()
+            cargarCaja()
 
+            CN.Close()
 
-        'ACTUALIZO EL FORMCAJA
-        cargarCaja()
-
-
-        Me.Close()
+            Me.Close()
+        End If
     End Sub
 
-    
-    Private Sub FormGastosVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarBancos()
+    Private Sub FormIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarCuentas()
-        cargarProveedores()
+        CargarBancos()
+        CargarClientes()
+
+
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        formbuscavehiculoactivo.Show()
     End Sub
 End Class

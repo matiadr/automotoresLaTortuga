@@ -218,6 +218,7 @@ Partial Class formcreditos
         Me.textnumerocredito.Name = "textnumerocredito"
         Me.textnumerocredito.Size = New System.Drawing.Size(216, 20)
         Me.textnumerocredito.TabIndex = 12
+        Me.textnumerocredito.Text = "0"
         '
         'Label7
         '

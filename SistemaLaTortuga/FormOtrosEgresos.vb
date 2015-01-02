@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class FormGastosVehiculo
+Public Class FormOtrosEgresos
     Public Sub CargarCuentas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -20,9 +20,9 @@ Public Class FormGastosVehiculo
         Dim ds As New DataTable()
         da.Fill(ds)
         CN.Close()
-        combobanco.DataSource = ds
-        combobanco.ValueMember = "IdBanco"
-        combobanco.DisplayMember = "NombreBanco"
+        ComboBanco.DataSource = ds
+        ComboBanco.ValueMember = "IdBanco"
+        ComboBanco.DisplayMember = "NombreBanco"
     End Sub
     Public Sub CargarProveedores()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
@@ -36,7 +36,12 @@ Public Class FormGastosVehiculo
         Comboproveedor.ValueMember = "IdProveedor"
         Comboproveedor.DisplayMember = "NombreProveedor"
     End Sub
+    Private Sub FormOtrosEgresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CargarBancos()
+        CargarCuentas()
+        CargarProveedores()
 
+    End Sub
     Private Sub cargarCaja()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -91,48 +96,29 @@ Public Class FormGastosVehiculo
 
         CN.Close()
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
 
+        If TextDetalle.Text = "" Then
+            MsgBox("Debe escribir un detalle", MsgBoxStyle.Exclamation)
+            Exit Sub
+        Else
 
-        'agrego tambien un registro en MOVIMIENTOS DIARIOS
-        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "', '" & 0 & "', '" & Conversion.Val(textimporte.Text) & "','" & Comboproveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & Comboproveedor.Text & "')", CN)
-        cmde.ExecuteNonQuery()
-
-        'busco ahoar el id del movimiento cargado
-        Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
-        Dim id = max.ExecuteScalar()
-
-        Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & Conversion.Val(textimporte.Text) & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
-        cmd.ExecuteNonQuery()
-
-        MessageBox.Show("Gasto Agregado")
+            'agrego tambien un registro en MOVIMIENTOS DIARIOS
+            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & TextDetalle.Text & "', '" & Dtfecha.Value & "', '" & 0 & "', '" & Conversion.Val(TextImporte.Text) & "','" & ComboProveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & ComboProveedor.Text & "')", CN)
+            cmde.ExecuteNonQuery()
 
 
+            MessageBox.Show("Egreso Guardado")
 
-        CN.Close()
-
-
-        'ACTUALIZO EL FORMCAJA
-        cargarCaja()
+            cargarCaja()
 
 
-        Me.Close()
-    End Sub
+            CN.Close()
 
-    
-    Private Sub FormGastosVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarBancos()
-        CargarCuentas()
-        cargarProveedores()
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        formbuscavehiculoactivo.Show()
+            Me.Close()
+        End If
     End Sub
 End Class

@@ -23,8 +23,12 @@ Partial Class formvehiculoentrega
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.tbidmarca = New System.Windows.Forms.TextBox()
+        Me.combotipo = New System.Windows.Forms.ComboBox()
+        Me.texttipoventrega = New System.Windows.Forms.TextBox()
+        Me.combomodelo = New System.Windows.Forms.ComboBox()
+        Me.combomarca = New System.Windows.Forms.ComboBox()
         Me.textidvehiculo = New System.Windows.Forms.TextBox()
-        Me.tbTipoVehEntrega = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.tbPrecioCostoVehEntrega = New System.Windows.Forms.TextBox()
@@ -42,11 +46,7 @@ Partial Class formvehiculoentrega
         Me.Label18 = New System.Windows.Forms.Label()
         Me.tbMotorVehEntrega = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.tbTipoMotorVehEntrega = New System.Windows.Forms.TextBox()
-        Me.tbModeloVehEntrega = New System.Windows.Forms.TextBox()
-        Me.bVehEntrega = New System.Windows.Forms.Button()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.tbMarcaVehEntrega = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -56,8 +56,12 @@ Partial Class formvehiculoentrega
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.tbidmarca)
+        Me.GroupBox3.Controls.Add(Me.combotipo)
+        Me.GroupBox3.Controls.Add(Me.texttipoventrega)
+        Me.GroupBox3.Controls.Add(Me.combomodelo)
+        Me.GroupBox3.Controls.Add(Me.combomarca)
         Me.GroupBox3.Controls.Add(Me.textidvehiculo)
-        Me.GroupBox3.Controls.Add(Me.tbTipoVehEntrega)
         Me.GroupBox3.Controls.Add(Me.Label34)
         Me.GroupBox3.Controls.Add(Me.Label36)
         Me.GroupBox3.Controls.Add(Me.tbPrecioCostoVehEntrega)
@@ -75,38 +79,65 @@ Partial Class formvehiculoentrega
         Me.GroupBox3.Controls.Add(Me.Label18)
         Me.GroupBox3.Controls.Add(Me.tbMotorVehEntrega)
         Me.GroupBox3.Controls.Add(Me.Label19)
-        Me.GroupBox3.Controls.Add(Me.tbTipoMotorVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.tbModeloVehEntrega)
-        Me.GroupBox3.Controls.Add(Me.bVehEntrega)
         Me.GroupBox3.Controls.Add(Me.Label20)
-        Me.GroupBox3.Controls.Add(Me.tbMarcaVehEntrega)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(515, 174)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         '
+        'tbidmarca
+        '
+        Me.tbidmarca.Location = New System.Drawing.Point(127, 18)
+        Me.tbidmarca.Name = "tbidmarca"
+        Me.tbidmarca.Size = New System.Drawing.Size(29, 20)
+        Me.tbidmarca.TabIndex = 29
+        Me.tbidmarca.Visible = False
+        '
+        'combotipo
+        '
+        Me.combotipo.FormattingEnabled = True
+        Me.combotipo.Location = New System.Drawing.Point(12, 106)
+        Me.combotipo.Name = "combotipo"
+        Me.combotipo.Size = New System.Drawing.Size(91, 21)
+        Me.combotipo.TabIndex = 28
+        '
+        'texttipoventrega
+        '
+        Me.texttipoventrega.Location = New System.Drawing.Point(156, 26)
+        Me.texttipoventrega.Name = "texttipoventrega"
+        Me.texttipoventrega.Size = New System.Drawing.Size(189, 20)
+        Me.texttipoventrega.TabIndex = 27
+        '
+        'combomodelo
+        '
+        Me.combomodelo.FormattingEnabled = True
+        Me.combomodelo.Items.AddRange(New Object() {"NAFTA ", "DIESEL", "GNC"})
+        Me.combomodelo.Location = New System.Drawing.Point(8, 67)
+        Me.combomodelo.Name = "combomodelo"
+        Me.combomodelo.Size = New System.Drawing.Size(115, 21)
+        Me.combomodelo.TabIndex = 26
+        '
+        'combomarca
+        '
+        Me.combomarca.FormattingEnabled = True
+        Me.combomarca.Location = New System.Drawing.Point(8, 26)
+        Me.combomarca.Name = "combomarca"
+        Me.combomarca.Size = New System.Drawing.Size(116, 21)
+        Me.combomarca.TabIndex = 25
+        '
         'textidvehiculo
         '
-        Me.textidvehiculo.Location = New System.Drawing.Point(456, 18)
+        Me.textidvehiculo.Location = New System.Drawing.Point(470, 14)
         Me.textidvehiculo.Name = "textidvehiculo"
         Me.textidvehiculo.Size = New System.Drawing.Size(39, 20)
         Me.textidvehiculo.TabIndex = 24
         Me.textidvehiculo.Visible = False
         '
-        'tbTipoVehEntrega
-        '
-        Me.tbTipoVehEntrega.Enabled = False
-        Me.tbTipoVehEntrega.Location = New System.Drawing.Point(156, 32)
-        Me.tbTipoVehEntrega.Name = "tbTipoVehEntrega"
-        Me.tbTipoVehEntrega.ReadOnly = True
-        Me.tbTipoVehEntrega.Size = New System.Drawing.Size(107, 20)
-        Me.tbTipoVehEntrega.TabIndex = 23
-        '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(290, 14)
+        Me.Label34.Location = New System.Drawing.Point(354, 14)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(77, 13)
         Me.Label34.TabIndex = 20
@@ -115,7 +146,7 @@ Partial Class formvehiculoentrega
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(153, 18)
+        Me.Label36.Location = New System.Drawing.Point(153, 14)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(72, 13)
         Me.Label36.TabIndex = 17
@@ -123,7 +154,7 @@ Partial Class formvehiculoentrega
         '
         'tbPrecioCostoVehEntrega
         '
-        Me.tbPrecioCostoVehEntrega.Location = New System.Drawing.Point(293, 30)
+        Me.tbPrecioCostoVehEntrega.Location = New System.Drawing.Point(357, 27)
         Me.tbPrecioCostoVehEntrega.Name = "tbPrecioCostoVehEntrega"
         Me.tbPrecioCostoVehEntrega.Size = New System.Drawing.Size(94, 20)
         Me.tbPrecioCostoVehEntrega.TabIndex = 19
@@ -165,7 +196,7 @@ Partial Class formvehiculoentrega
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(269, 91)
+        Me.Label14.Location = New System.Drawing.Point(313, 91)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(38, 13)
         Me.Label14.TabIndex = 14
@@ -173,17 +204,15 @@ Partial Class formvehiculoentrega
         '
         'tbChasisVehEntrega
         '
-        Me.tbChasisVehEntrega.Enabled = False
-        Me.tbChasisVehEntrega.Location = New System.Drawing.Point(269, 105)
+        Me.tbChasisVehEntrega.Location = New System.Drawing.Point(313, 107)
         Me.tbChasisVehEntrega.Name = "tbChasisVehEntrega"
-        Me.tbChasisVehEntrega.ReadOnly = True
-        Me.tbChasisVehEntrega.Size = New System.Drawing.Size(227, 20)
+        Me.tbChasisVehEntrega.Size = New System.Drawing.Size(190, 20)
         Me.tbChasisVehEntrega.TabIndex = 13
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(390, 51)
+        Me.Label15.Location = New System.Drawing.Point(269, 49)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(26, 13)
         Me.Label15.TabIndex = 12
@@ -191,17 +220,15 @@ Partial Class formvehiculoentrega
         '
         'tbAñoVehEntrega
         '
-        Me.tbAñoVehEntrega.Enabled = False
-        Me.tbAñoVehEntrega.Location = New System.Drawing.Point(391, 68)
+        Me.tbAñoVehEntrega.Location = New System.Drawing.Point(269, 65)
         Me.tbAñoVehEntrega.Name = "tbAñoVehEntrega"
-        Me.tbAñoVehEntrega.ReadOnly = True
         Me.tbAñoVehEntrega.Size = New System.Drawing.Size(105, 20)
         Me.tbAñoVehEntrega.TabIndex = 11
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(290, 51)
+        Me.Label16.Location = New System.Drawing.Point(153, 49)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(45, 13)
         Me.Label16.TabIndex = 10
@@ -209,17 +236,15 @@ Partial Class formvehiculoentrega
         '
         'tbDominioVehEntrega
         '
-        Me.tbDominioVehEntrega.Enabled = False
-        Me.tbDominioVehEntrega.Location = New System.Drawing.Point(293, 68)
+        Me.tbDominioVehEntrega.Location = New System.Drawing.Point(156, 67)
         Me.tbDominioVehEntrega.Name = "tbDominioVehEntrega"
-        Me.tbDominioVehEntrega.ReadOnly = True
         Me.tbDominioVehEntrega.Size = New System.Drawing.Size(92, 20)
         Me.tbDominioVehEntrega.TabIndex = 9
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(62, 91)
+        Me.Label17.Location = New System.Drawing.Point(110, 91)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(34, 13)
         Me.Label17.TabIndex = 8
@@ -236,10 +261,8 @@ Partial Class formvehiculoentrega
         '
         'tbMotorVehEntrega
         '
-        Me.tbMotorVehEntrega.Enabled = False
-        Me.tbMotorVehEntrega.Location = New System.Drawing.Point(65, 105)
+        Me.tbMotorVehEntrega.Location = New System.Drawing.Point(109, 107)
         Me.tbMotorVehEntrega.Name = "tbMotorVehEntrega"
-        Me.tbMotorVehEntrega.ReadOnly = True
         Me.tbMotorVehEntrega.Size = New System.Drawing.Size(198, 20)
         Me.tbMotorVehEntrega.TabIndex = 6
         '
@@ -252,50 +275,14 @@ Partial Class formvehiculoentrega
         Me.Label19.TabIndex = 5
         Me.Label19.Text = "Modelo"
         '
-        'tbTipoMotorVehEntrega
-        '
-        Me.tbTipoMotorVehEntrega.Enabled = False
-        Me.tbTipoMotorVehEntrega.Location = New System.Drawing.Point(6, 105)
-        Me.tbTipoMotorVehEntrega.Name = "tbTipoMotorVehEntrega"
-        Me.tbTipoMotorVehEntrega.ReadOnly = True
-        Me.tbTipoMotorVehEntrega.Size = New System.Drawing.Size(53, 20)
-        Me.tbTipoMotorVehEntrega.TabIndex = 4
-        '
-        'tbModeloVehEntrega
-        '
-        Me.tbModeloVehEntrega.Enabled = False
-        Me.tbModeloVehEntrega.Location = New System.Drawing.Point(6, 68)
-        Me.tbModeloVehEntrega.Name = "tbModeloVehEntrega"
-        Me.tbModeloVehEntrega.ReadOnly = True
-        Me.tbModeloVehEntrega.Size = New System.Drawing.Size(281, 20)
-        Me.tbModeloVehEntrega.TabIndex = 3
-        '
-        'bVehEntrega
-        '
-        Me.bVehEntrega.Location = New System.Drawing.Point(393, 26)
-        Me.bVehEntrega.Name = "bVehEntrega"
-        Me.bVehEntrega.Size = New System.Drawing.Size(35, 19)
-        Me.bVehEntrega.TabIndex = 2
-        Me.bVehEntrega.Text = "..."
-        Me.bVehEntrega.UseVisualStyleBackColor = True
-        '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(9, 18)
+        Me.Label20.Location = New System.Drawing.Point(9, 14)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(37, 13)
         Me.Label20.TabIndex = 1
         Me.Label20.Text = "Marca"
-        '
-        'tbMarcaVehEntrega
-        '
-        Me.tbMarcaVehEntrega.Enabled = False
-        Me.tbMarcaVehEntrega.Location = New System.Drawing.Point(6, 31)
-        Me.tbMarcaVehEntrega.Name = "tbMarcaVehEntrega"
-        Me.tbMarcaVehEntrega.ReadOnly = True
-        Me.tbMarcaVehEntrega.Size = New System.Drawing.Size(125, 20)
-        Me.tbMarcaVehEntrega.TabIndex = 0
         '
         'GroupBox1
         '
@@ -341,7 +328,6 @@ Partial Class formvehiculoentrega
 
     End Sub
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents tbTipoVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents tbPrecioCostoVehEntrega As System.Windows.Forms.TextBox
@@ -359,13 +345,14 @@ Partial Class formvehiculoentrega
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents tbMotorVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents tbTipoMotorVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents tbModeloVehEntrega As System.Windows.Forms.TextBox
-    Friend WithEvents bVehEntrega As System.Windows.Forms.Button
     Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents tbMarcaVehEntrega As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents textidvehiculo As System.Windows.Forms.TextBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents texttipoventrega As System.Windows.Forms.TextBox
+    Friend WithEvents combomodelo As System.Windows.Forms.ComboBox
+    Friend WithEvents combomarca As System.Windows.Forms.ComboBox
+    Friend WithEvents combotipo As System.Windows.Forms.ComboBox
+    Friend WithEvents tbidmarca As System.Windows.Forms.TextBox
 End Class

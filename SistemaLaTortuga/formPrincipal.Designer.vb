@@ -47,6 +47,7 @@ Partial Class formPrincipal
         Me.StockDeVehiculosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.VehiculosVendidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadoDeChequesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransferenciasCobradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tbBSD = New System.Windows.Forms.TextBox()
         Me.tbUsuario = New System.Windows.Forms.TextBox()
@@ -67,7 +68,7 @@ Partial Class formPrincipal
         Me.MenuStrip1.Location = New System.Drawing.Point(0, -1)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(11, 4, 0, 4)
-        Me.MenuStrip1.Size = New System.Drawing.Size(848, 44)
+        Me.MenuStrip1.Size = New System.Drawing.Size(756, 44)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -203,7 +204,7 @@ Partial Class formPrincipal
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.StockDeVehiculosToolStripMenuItem1, Me.VehiculosVendidosToolStripMenuItem, Me.EstadoDeChequesToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.StockDeVehiculosToolStripMenuItem1, Me.VehiculosVendidosToolStripMenuItem, Me.EstadoDeChequesToolStripMenuItem, Me.TransferenciasCobradasToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.ReportesToolStripMenuItem.Image = Global.SistemaLaTortuga.My.Resources.Resources.Report
         Me.ReportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -214,26 +215,32 @@ Partial Class formPrincipal
         'ListadoDeClientesToolStripMenuItem
         '
         Me.ListadoDeClientesToolStripMenuItem.Name = "ListadoDeClientesToolStripMenuItem"
-        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(239, 24)
         Me.ListadoDeClientesToolStripMenuItem.Text = "Listado de Clientes"
         '
         'StockDeVehiculosToolStripMenuItem1
         '
         Me.StockDeVehiculosToolStripMenuItem1.Name = "StockDeVehiculosToolStripMenuItem1"
-        Me.StockDeVehiculosToolStripMenuItem1.Size = New System.Drawing.Size(207, 24)
+        Me.StockDeVehiculosToolStripMenuItem1.Size = New System.Drawing.Size(239, 24)
         Me.StockDeVehiculosToolStripMenuItem1.Text = "Vehiculos en Stock"
         '
         'VehiculosVendidosToolStripMenuItem
         '
         Me.VehiculosVendidosToolStripMenuItem.Name = "VehiculosVendidosToolStripMenuItem"
-        Me.VehiculosVendidosToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.VehiculosVendidosToolStripMenuItem.Size = New System.Drawing.Size(239, 24)
         Me.VehiculosVendidosToolStripMenuItem.Text = "Vehiculos Vendidos"
         '
         'EstadoDeChequesToolStripMenuItem
         '
         Me.EstadoDeChequesToolStripMenuItem.Name = "EstadoDeChequesToolStripMenuItem"
-        Me.EstadoDeChequesToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.EstadoDeChequesToolStripMenuItem.Size = New System.Drawing.Size(239, 24)
         Me.EstadoDeChequesToolStripMenuItem.Text = "Estado de Cheques"
+        '
+        'TransferenciasCobradasToolStripMenuItem
+        '
+        Me.TransferenciasCobradasToolStripMenuItem.Name = "TransferenciasCobradasToolStripMenuItem"
+        Me.TransferenciasCobradasToolStripMenuItem.Size = New System.Drawing.Size(239, 24)
+        Me.TransferenciasCobradasToolStripMenuItem.Text = "Transferencias Cobradas"
         '
         'SalirToolStripMenuItem
         '
@@ -271,7 +278,7 @@ Partial Class formPrincipal
         Me.tbClave.Name = "tbClave"
         Me.tbClave.Size = New System.Drawing.Size(180, 29)
         Me.tbClave.TabIndex = 3
-        Me.tbClave.Text = "06qiad"
+        Me.tbClave.Text = "latortuga345"
         Me.tbClave.Visible = False
         '
         'tbEquipo
@@ -281,7 +288,7 @@ Partial Class formPrincipal
         Me.tbEquipo.Name = "tbEquipo"
         Me.tbEquipo.Size = New System.Drawing.Size(221, 29)
         Me.tbEquipo.TabIndex = 5
-        Me.tbEquipo.Text = "MATI-D"
+        Me.tbEquipo.Text = "USER-PC"
         Me.tbEquipo.Visible = False
         '
         'PictureBox2
@@ -363,5 +370,6 @@ Partial Class formPrincipal
     Friend WithEvents VehiculosVendidosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EstadoDeChequesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TransferenciasCobradasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

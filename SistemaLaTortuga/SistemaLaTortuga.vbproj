@@ -13,7 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Adriana\Desktop\</PublishUrl>
+    <PublishUrl>C:\Users\Adriana\Desktop\PAQUETE LA TORTUGA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -81,6 +82,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -89,6 +99,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -115,6 +126,42 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formListadoVentas.Designer.vb">
+      <DependentUpon>formListadoVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formListadoVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOtrosEgresos.Designer.vb">
+      <DependentUpon>FormOtrosEgresos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormOtrosEgresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIngresos.Designer.vb">
+      <DependentUpon>FormIngresos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormIngresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagarDocumento.Designer.vb">
+      <DependentUpon>FormPagarDocumento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagarDocumento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoDocumentos.Designer.vb">
+      <DependentUpon>FormPagoDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagoDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoAdministrador.Designer.vb">
+      <DependentUpon>FormPagoAdministrador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagoAdministrador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormABMProveedores.Designer.vb">
       <DependentUpon>FormABMProveedores.vb</DependentUpon>
     </Compile>
@@ -125,12 +172,6 @@
       <DependentUpon>FormFechasDesdeHasta.vb</DependentUpon>
     </Compile>
     <Compile Include="FormFechasDesdeHasta.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPagodocumentos.Designer.vb">
-      <DependentUpon>FormPagodocumentos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormPagodocumentos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBuscarvehiculog.Designer.vb">
@@ -305,13 +346,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Reportes\DataSet.Designer.vb">
+    <Compile Include="Reportes\DataSet1.Designer.vb">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reportes\FormReportePlan.Designer.vb">
+      <DependentUpon>FormReportePlan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormReportePlan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReporteTransferencias.Designer.vb">
+      <DependentUpon>FormReporteTransferencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormReporteTransferencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePlan.vb">
+      <SubType>Component</SubType>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet.xsd</DependentUpon>
+      <DependentUpon>ReportePlan.rpt</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\DataSet.vb">
-      <DependentUpon>DataSet.xsd</DependentUpon>
+    <Compile Include="Reportes\ReporteTransferencias.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteTransferencias.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\FormReporteNegocio.Designer.vb">
       <DependentUpon>FormReporteNegocio.vb</DependentUpon>
@@ -425,15 +487,32 @@
   <ItemGroup>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formListadoVentas.resx">
+      <DependentUpon>formListadoVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOtrosEgresos.resx">
+      <DependentUpon>FormOtrosEgresos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIngresos.resx">
+      <DependentUpon>FormIngresos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagarDocumento.resx">
+      <DependentUpon>FormPagarDocumento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoDocumentos.resx">
+      <DependentUpon>FormPagoDocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoAdministrador.resx">
+      <DependentUpon>FormPagoAdministrador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormABMProveedores.resx">
       <DependentUpon>FormABMProveedores.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFechasDesdeHasta.resx">
       <DependentUpon>FormFechasDesdeHasta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPagodocumentos.resx">
-      <DependentUpon>FormPagodocumentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarvehiculog.resx">
       <DependentUpon>FormBuscarvehiculog.vb</DependentUpon>
@@ -458,12 +537,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formBuscarVehiculo.resx">
       <DependentUpon>formBuscarVehiculo.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCaja.resx">
       <DependentUpon>FormCaja.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formConsultaVehiculos.resx">
       <DependentUpon>formConsultaVehiculos.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDocumentos.resx">
       <DependentUpon>FormDocumentos.vb</DependentUpon>
@@ -485,24 +567,29 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formABMRubros.resx">
       <DependentUpon>formABMRubros.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formClientes.resx">
       <DependentUpon>formClientes.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formCuentas.resx">
       <DependentUpon>formCuentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formABMLocalidad.resx">
       <DependentUpon>formABMLocalidad.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formABMMarca.resx">
       <DependentUpon>formABMMarca.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formABMProvincias.resx">
       <DependentUpon>formABMProvincias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formABMModelos.resx">
       <DependentUpon>formABMModelos.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formPrincipal.resx">
       <DependentUpon>formPrincipal.vb</DependentUpon>
@@ -518,6 +605,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\FormReportePlan.resx">
+      <DependentUpon>FormReportePlan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReporteTransferencias.resx">
+      <DependentUpon>FormReporteTransferencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePlan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportePlan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteTransferencias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteTransferencias.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteCaja.resx">
       <DependentUpon>FormReporteCaja.vb</DependentUpon>
     </EmbeddedResource>
@@ -600,7 +701,7 @@
     <None Include="Reportes\DataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
     </None>
     <None Include="Reportes\DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>

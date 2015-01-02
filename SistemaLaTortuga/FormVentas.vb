@@ -13,7 +13,7 @@ Public Class formVentas
         Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
         Dim miConexion As New SqlConnection(CN)
         miConexion.Open()
-        Dim seleccion As String = "select NombreC,Domicilio,NombreLocalidad,CodigoPostal,TipoDni,NumeroDni,Telefono, NombreProvincia from Clientes c,Localidades l, Provincias p where l.idprovincia = p.idprovincia and c.IdLocalidad=l.IdLocalidad and IdCliente='" & tbIdCliente.Text & "'"
+        Dim seleccion As String = "select NombreC,Domicilio,NombreLocalidad,CodigoPostal,TipoDni,NumeroDni,Telefono, NombreProvincia, NombreCConyuge, DniConyuge, TipoDniConyuge from Clientes c,Localidades l, Provincias p where l.idprovincia = p.idprovincia and c.IdLocalidad=l.IdLocalidad and IdCliente='" & tbIdCliente.Text & "'"
         Dim tabla2 As DataTable
         Dim da As SqlDataAdapter
         da = New SqlDataAdapter(seleccion, CN)
@@ -27,6 +27,9 @@ Public Class formVentas
         tbNroDoc.Text = tabla2.Rows.Item(0).Item("NumeroDni")
         tbTelefono.Text = tabla2.Rows.Item(0).Item("Telefono")
         textprovincia.Text = tabla2.Rows.Item(0).Item("NombreProvincia")
+        textesposo.Text = tabla2.Rows.Item(0).Item("NombreCConyuge")
+        textdniesposo.Text = tabla2.Rows.Item(0).Item("DniConyuge")
+        texttipodni.Text = tabla2.Rows.Item(0).Item("TipoDniConyuge")
     End Sub
     Private Sub tbIdCliente_TextChanged(sender As Object, e As EventArgs) Handles tbIdCliente.TextChanged
         If tbIdCliente.Text.Length > 0 Then
@@ -65,7 +68,13 @@ Public Class formVentas
 
             If formBuscarVehiculo.texttipoboton.Text = 1 Then
                 'escribo en el text el idcliente vendedor del auto que compra el nuevo cliente
-                tbidvendedor.Text = tabla2.Rows.Item(0).Item("idcliente")
+                Try
+                    tbidvendedor.Text = tabla2.Rows.Item(0).Item("idcliente")
+                Catch ex As Exception
+                    MessageBox.Show("No hay cliente asociado para este vehiculo")
+                    Exit Sub
+                End Try
+
             Else
 
             End If
@@ -79,7 +88,7 @@ Public Class formVentas
             tbMotorVehVenta.Text = tabla2.Rows.Item(0).Item("Motor")
             tbPrecioVentaVehVenta.Text = tabla2.Rows.Item(0).Item("PrecioVenta")
         Catch ex As SqlException
-            MessageBox.Show("No se pudo completar la operacion,Error en la base de datos")
+            MessageBox.Show("No hay cliente asociado para este vehiculo")
         End Try
     End Sub
 
@@ -137,39 +146,43 @@ Public Class formVentas
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
 
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("insert into Ventas values ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & TbPrecioCostoVehVenta.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & tbtransferencia.Text & "','" & dtfecha.Value & "',' " & textreal.Text & "')", CN)
-        cmd.ExecuteNonQuery()
+
+        Try
 
 
-        'busco el codigo de esta venta...o sea el maximo de la tabla ventas
-        Dim venta As New SqlCommand("Select max(idventa) from ventas", CN)
-        Dim codigo As String = venta.ExecuteScalar
-        textidventa.Text = codigo
-
-        CN.Close()
-
-        'CAMBIO EL ESTADO VENDIDO al VALOR "S", en la tabla vehículos al vehiculo Vendido
-        Dim CNV As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CNV.Open()
-
-        Dim cmdv As New SqlCommand("update Vehiculos set Vendido='S' where IdVehiculo = '" & tbIdVehVenta.Text & "'", CNV)
-        cmdv.ExecuteNonQuery()
+            'AGREGO LOS DATOS EN LA TABLA VENTAS
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
+            Dim cmd As New SqlCommand("insert into Ventas values ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & TbPrecioCostoVehVenta.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & tbtransferencia.Text & "','" & dtfecha.Value & "',' " & textreal.Text & "', ' " & textesposo.Text & " ', '" & textdniesposo.Text & "', '" & texttipodni.Text & "')", CN)
+            cmd.ExecuteNonQuery()
 
 
-        'CAMBIO EL el campo ESTADO = PASIVO  en la tabla VEHICULOSXCLIENTES al vehiculo Vendido Y CAMBIO LA FECHA HASTA = FECHAVENTA
-        Dim cmda As New SqlCommand("update VehiculosxClientes set Estado='Pasivo',FechaHasta= '" & dtfecha.Value & "' where IdVehiculo = '" & tbIdVehVenta.Text & "' and Estado = 'Activo'", CNV)
-        cmda.ExecuteNonQuery()
+            'busco el codigo de esta venta...o sea el maximo de la tabla ventas
+            Dim venta As New SqlCommand("Select max(idventa) from ventas", CN)
+            Dim codigo As String = venta.ExecuteScalar
+            textidventa.Text = codigo
+
+            CN.Close()
+
+            'CAMBIO EL ESTADO VENDIDO al VALOR "S", en la tabla vehículos al vehiculo Vendido
+            Dim CNV As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CNV.Open()
+            Dim cmdv As New SqlCommand("update Vehiculos set Vendido='S' where IdVehiculo = '" & tbIdVehVenta.Text & "'", CNV)
+            cmdv.ExecuteNonQuery()
+
+
+            'CAMBIO EL el campo ESTADO = PASIVO  en la tabla VEHICULOSXCLIENTES al vehiculo Vendido Y CAMBIO LA FECHA HASTA = FECHAVENTA
+            Dim cmda As New SqlCommand("update VehiculosxClientes set Estado='Pasivo',FechaHasta= '" & dtfecha.Value & "' where IdVehiculo = '" & tbIdVehVenta.Text & "' and Estado = 'Activo'", CNV)
+            cmda.ExecuteNonQuery()
 
 
 
-        CNV.Close()
+            CNV.Close()
 
 
 
 
-        MessageBox.Show("Venta Ingresada")
+            MessageBox.Show("Venta Ingresada")
 
 
 
@@ -178,17 +191,21 @@ Public Class formVentas
 
             'habilito los groupbox para poder cargar los vehiculos entregados, y otros medios de pagos
             GroupBox3.Enabled = True
-        GroupBox4.Enabled = True
+            GroupBox4.Enabled = True
 
-        'habilito boton guardar cambios
-        Button3.Enabled = True
+            'habilito boton guardar cambios
+            Button3.Enabled = True
 
-        'deshabilito paneles de comprador y vehiculo venta
-        GroupBox1.Enabled = False
-        GroupBox2.Enabled = False
+            'deshabilito paneles de comprador y vehiculo venta
+            GroupBox1.Enabled = False
+            GroupBox2.Enabled = False
 
-        'deshabilito el boton guardar
-        Button8.Enabled = False
+            'deshabilito el boton guardar
+            Button8.Enabled = False
+
+        Catch ex As SqlException
+            MsgBox("Debe ingresar datos", MsgBoxStyle.Exclamation)
+        End Try
     End Sub
 
   
@@ -360,13 +377,7 @@ Public Class formVentas
    
 
  
-    Private Sub Button10_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Button10_Enter(sender As Object, e As EventArgs)
-
-    End Sub
+ 
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         Dim entregasv As Decimal = textsumaentregasv.Text
@@ -436,14 +447,18 @@ Public Class formVentas
         Dim domicilio As String = tbDomicilio.Text
         Dim localidad As String = tbLocalidad.Text
         Dim provincia As String = textprovincia.Text
+        Dim conyuge As String = textesposo.Text
+        Dim dnicony As String = textdniesposo.Text
+        Dim tipodnic As String = texttipodni.Text
 
 
         oRng = oDoc.Bookmarks.Item("\endofdoc").Range
         oRng.ParagraphFormat.SpaceAfter = 6
+        oRng.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify
         oRng.InsertAfter("En la ciudad de Colón, a los " & fecha.Day & " días del mes de " & MonthName(fecha.Month) & " de " & fecha.Year & ", entre" & _
        " MULTIMARCAS LA TORTUGA de DED S.A., con domicilio real en San Martín 1147 de la ciudad de Colón, Departamento Colón," & _
         " provincia de Entre Ríos. Actuando como mandatario de " & vendedor & " por parte vendedora " & _
-        "y por la otra, " & comprador & " " & tipodni & " " & dni & ", teléfono " & telefono & ", domiciliado " & _
+        "y por la otra, " & comprador & " " & tipodni & " " & dni & ", Conyuge " & conyuge & " " & tipodnic & " " & dnicony & ", teléfono " & telefono & ", domiciliado/s " & _
         "en " & domicilio & " de la ciudad de " & localidad & ", provincia de " & provincia & " como comprador, convienen en celebrar" & _
         " el presente boleto de compraventa, sujeto a las cláusulas que se exponen:" & _
         "1) El comprador adquiere un vehículo Marca " & tbMarcaVehVenta.Text & ", Modelo " & tbModeloVehVenta.Text & ", Año " & tbAñoVehVenta.Text & ", " & _
@@ -610,7 +625,25 @@ Public Class formVentas
     End Sub
 
     Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
-        FormPlan.Show()
+
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
+        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
+        CN.Open()
+        Dim seleccion As String = "select FechaCuota as Fecha,NumeroCuota as Cuota,ImporteCuota as importe from Cuotas C where c.IdPlan = '" & textidplan.Text & "' order by cuota asc "
+        daDatos = New SqlDataAdapter(seleccion, CN)
+        daDatos.Fill(dtDatos, "Plan")
+        CN.Close()
+        Dim rpt As ReportePlan = New ReportePlan
+        rpt.SetDataSource(dtDatos)
+
+        rpt.SetParameterValue("Cliente", tbNombre.Text)
+        rpt.SetParameterValue("DNI", tbNroDoc.Text)
+
+        FormReportePlan.CrystalReportViewer1.ReportSource = rpt
+
+
+        FormReportePlan.Show()
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
@@ -637,12 +670,85 @@ Public Class formVentas
         CN.Open()
         'Dim seleccion As String = "select nte and FechaCheque >= '" & tbFechaDesde.Text & "' and FechaCheque <= '" & tbFechaHasta.Text & "' order by NumeroCheque"
         'daDatos = New SqlDataAdapter(seleccion, CN)
-        daDatos.Fill(dtDatos, "Negocio") ' aca va el nombre de la tabla del dataset
+        ' daDatos.Fill(dtDatos, "Negocio") ' aca va el nombre de la tabla del dataset
         Dim rpt As ReporteNegocio = New ReporteNegocio
-        rpt.SetDataSource(dtDatos)
+        'rpt.SetDataSource(dtDatos)
         rpt.SetParameterValue("Cliente", tbNombre.Text)
         rpt.SetParameterValue("FechaCompra", dtfecha.Value)
+        rpt.SetParameterValue("Vehiculocompra", tbMarcaVehVenta.Text)
+        rpt.SetParameterValue("TipoVehiculo", tbTipoVehVenta.Text)
+        rpt.SetParameterValue("ModeloVehiculo", tbModeloVehVenta.Text)
+        rpt.SetParameterValue("Dominio", tbDominioVehVenta.Text)
+        rpt.SetParameterValue("Año", tbAñoVehVenta.Text)
+        rpt.SetParameterValue("Tipo", tbTipoMotorVehVenta.Text)
+        rpt.SetParameterValue("Motor", tbMotorVehVenta.Text)
+        rpt.SetParameterValue("Chasis", tbChasisVehVenta.Text)
+        rpt.SetParameterValue("ValorCompra", tbPrecioVentaVehVenta.Text)
+        rpt.SetParameterValue("TotalEntregaV", textsumaentregasv.Text)
+        rpt.SetParameterValue("TotalEntregaE", textsumaentrega.Text)
+        rpt.SetParameterValue("Saldo", TextFinanciado.Text)
+        rpt.SetParameterValue("CreditoSolicitado", textcredsolicitado.Text)
+        rpt.SetParameterValue("DocumentosEspeciales", textsumadocumentos.Text)
+        rpt.SetParameterValue("Plan", TextPlan.Text)
         FormReporteNegocio.ViewerNegocio.ReportSource = rpt
         FormReporteNegocio.Show()
+    End Sub
+
+    Private Sub textidventa_TextChanged(sender As Object, e As EventArgs) Handles textidventa.TextChanged
+
+    End Sub
+
+    Private Sub textidclientem_TextChanged(sender As Object, e As EventArgs) Handles textidclientem.TextChanged
+
+        Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
+        Dim miConexion As New SqlConnection(CN)
+        miConexion.Open()
+        Dim seleccion As String = "select NombreC,Domicilio,NombreLocalidad,CodigoPostal,TipoDni,NumeroDni,Telefono, NombreProvincia, v.NombreConyuge, v.DniConyuge, v.TipoDniConyuge from Ventas v, Clientes c,Localidades l, Provincias p where v.idcomprador = c.idcliente and  l.idprovincia = p.idprovincia and c.IdLocalidad=l.IdLocalidad and IdCliente='" & textidclientem.Text & "'"
+        Dim tabla2 As DataTable
+        Dim da As SqlDataAdapter
+        da = New SqlDataAdapter(seleccion, CN)
+        tabla2 = New DataTable
+        da.Fill(tabla2)
+        tbNombre.Text = tabla2.Rows.Item(0).Item("NombreC")
+        tbDomicilio.Text = tabla2.Rows.Item(0).Item("Domicilio")
+        tbLocalidad.Text = tabla2.Rows.Item(0).Item("NombreLocalidad")
+        tbCodPostal.Text = tabla2.Rows.Item(0).Item("CodigoPostal")
+        tbTipoDoc.Text = tabla2.Rows.Item(0).Item("TipoDni")
+        tbNroDoc.Text = tabla2.Rows.Item(0).Item("NumeroDni")
+        tbTelefono.Text = tabla2.Rows.Item(0).Item("Telefono")
+        textprovincia.Text = tabla2.Rows.Item(0).Item("NombreProvincia")
+        textesposo.Text = tabla2.Rows.Item(0).Item("NombreConyuge")
+        textdniesposo.Text = tabla2.Rows.Item(0).Item("DniConyuge")
+        texttipodni.Text = tabla2.Rows.Item(0).Item("TipoDniConyuge")
+
+    End Sub
+
+    Private Sub textidvehiculoventam_TextChanged(sender As Object, e As EventArgs) Handles textidvehiculoventam.TextChanged
+        Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
+        Dim miConexion As New SqlConnection(CN)
+        miConexion.Open()
+        Dim seleccion As String = "select IdCliente, NombreMarca,NombreModelo,Tipo,Dominio,Año,TipoMotor,Chasis,Motor,Venta, idvendedor,gastos,transferenciareal from Ventas ve, Vehiculos v,Marcas ma,Modelos m, vehiculosxclientes vc where v.IdModelo=m.IdModelo and m.IdMarca=ma.IdMarca and vc.IdVehiculo='" & textidvehiculoventam.Text & "' and v.idvehiculo = vc.idvehiculo and ve.idventa = '" & textidventa.Text & "'  "
+        Dim tabla2 As DataTable
+        Dim da As SqlDataAdapter
+        da = New SqlDataAdapter(seleccion, CN)
+        tabla2 = New DataTable
+        da.Fill(tabla2)
+
+       
+        tbMarcaVehVenta.Text = tabla2.Rows.Item(0).Item("NombreMarca")
+        tbModeloVehVenta.Text = tabla2.Rows.Item(0).Item("NombreModelo")
+        tbTipoVehVenta.Text = tabla2.Rows.Item(0).Item("Tipo")
+        tbDominioVehVenta.Text = tabla2.Rows.Item(0).Item("Dominio")
+        tbAñoVehVenta.Text = tabla2.Rows.Item(0).Item("Año")
+        tbTipoMotorVehVenta.Text = tabla2.Rows.Item(0).Item("TipoMotor")
+        tbChasisVehVenta.Text = tabla2.Rows.Item(0).Item("Chasis")
+        tbMotorVehVenta.Text = tabla2.Rows.Item(0).Item("Motor")
+        tbPrecioVentaVehVenta.Text = tabla2.Rows.Item(0).Item("Venta")
+        tbidvendedor.Text = tabla2.Rows.Item(0).Item("idVendedor")
+        tbtransferencia.Text = tabla2.Rows.Item(0).Item("gastos")
+        textreal.Text = tabla2.Rows.Item(0).Item("TransferenciaReal")
+
+
+
     End Sub
 End Class

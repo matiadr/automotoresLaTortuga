@@ -113,5 +113,29 @@ Public Class formPrincipal
         FormFechasDesdeHasta.tipoListado = "cheques"
         FormFechasDesdeHasta.ShowDialog()
     End Sub
+
+    Private Sub TransferenciasCobradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransferenciasCobradasToolStripMenuItem.Click
+        Dim CN As New SqlConnection("Data Source='" & tbEquipo.Text & "';INITIAL Catalog='" & tbBSD.Text & "' ;Persist Security Info=True;User ID='" & tbUsuario.Text & "';Password='" & tbClave.Text & "'")
+        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
+        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
+        CN.Open()
+        Dim seleccion As String = "select ve.idcomprador, ve.FechaVenta, NombreC as Cliente, NumeroDni as Dni, NombreMarca as Marca, NombreModelo as Modelo, Dominio, ve.Gastos as Cobrada, ve.TransferenciaReal as Real, (Ve.Gastos - ve.TransferenciaReal) as Diferencia from Clientes c,Vehiculos v, Modelos mo, Marcas ma, Ventas ve  where c.idcliente = ve.idComprador and ve.idvehiculoventa = v.idvehiculo and mo.idModelo = V.idModelo and mo.IdMarca = ma.idMarca and (Ve.Gastos - ve.TransferenciaReal) <> 0 order by ve.fechaventa desc"
+        daDatos = New SqlDataAdapter(seleccion, CN)
+        daDatos.Fill(dtDatos, "Transferencia")
+        CN.Close()
+        Dim rpt As ReporteTransferencias = New ReporteTransferencias
+        rpt.SetDataSource(dtDatos)
+        FormReporteTransferencias.CrystalReportViewer1.ReportSource = rpt
+
+        FormReporteTransferencias.Show()
+    End Sub
+
+    Private Sub VentasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem1.Click
+        formlistadoventas.Show()
+    End Sub
+
+    Private Sub tbUsuario_TextChanged(sender As Object, e As EventArgs) Handles tbUsuario.TextChanged
+
+    End Sub
 End Class
 

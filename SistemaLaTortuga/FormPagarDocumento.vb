@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class FormGastosVehiculo
+Public Class FormPagarDocumento
     Public Sub CargarCuentas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -24,17 +24,9 @@ Public Class FormGastosVehiculo
         combobanco.ValueMember = "IdBanco"
         combobanco.DisplayMember = "NombreBanco"
     End Sub
-    Public Sub CargarProveedores()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select * from Proveedores order by NombreProveedor", CN)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataTable()
-        da.Fill(ds)
-        CN.Close()
-        Comboproveedor.DataSource = ds
-        Comboproveedor.ValueMember = "IdProveedor"
-        Comboproveedor.DisplayMember = "NombreProveedor"
+    Private Sub FormPagarDocumento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CargarBancos()
+        CargarCuentas()
     End Sub
 
     Private Sub cargarCaja()
@@ -91,48 +83,68 @@ Public Class FormGastosVehiculo
 
         CN.Close()
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    Private Sub cargarpagos()
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+
+        Dim doc As Integer
+        doc = Conversion.Int(FormPagoDocumentos.textid.Text)
+
+        Dim cmd As New SqlCommand("select IdDocumento,FechaPago, ImportePago, FormaPago, NumeroTransaccion,NombreSucursal,NombreBanco From PagosDocumentos, Sucursales, Bancos where IdDocumento = '" & doc & "' and Sucursales.idbanco = Bancos.IdBanco and PagosDocumentos.IdSucursal = Sucursales.IdSucursal ", CN)
+        Dim lista As SqlDataReader = cmd.ExecuteReader
+        Dim dt As New DataTable()
+        dt.Load(lista)
+        FormPagoDocumentos.DGpagos.DataSource = dt
+
+
+        CN.Close()
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
 
 
         'agrego tambien un registro en MOVIMIENTOS DIARIOS
-        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "', '" & 0 & "', '" & Conversion.Val(textimporte.Text) & "','" & Comboproveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & Comboproveedor.Text & "')", CN)
+        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & "Pago Documento" & "', '" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & 0 & "','" & 0 & "', '  " & "Cliente" & "', '" & FormPagoDocumentos.ComboCliente.Text & "')", CN)
         cmde.ExecuteNonQuery()
 
         'busco ahoar el id del movimiento cargado
         Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
         Dim id = max.ExecuteScalar()
 
-        Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & Conversion.Val(textimporte.Text) & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
+        Dim cmd As New SqlCommand("insert into PagosDocumentos values ('" & FormPagoDocumentos.textid.Text & "','" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & combocuenta.SelectedValue & "', '" & ComboTipo.Text & "', '" & Textnumero.Text & "', '" & ComboBanco.SelectedValue & "', '" & id & "' )", CN)
         cmd.ExecuteNonQuery()
 
-        MessageBox.Show("Gasto Agregado")
+        MessageBox.Show("Pago Ingresado")
+
+        cargarCaja()
+        cargarpagos()
+        CN.Close()
+
+        Me.Close()
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        'lo que hago es modificar el registro del documento y al campo PAGADO le escribo SI
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+
+
+        'modifico el campo pagado
+
+        If CheckBox1.Checked = True Then
+            Dim cmde As New SqlCommand("update documentos set Pagado ='" & "Si" & "' where iddocumento = '" & FormPagoDocumentos.textid.Text & "' ", CN)
+            cmde.ExecuteNonQuery()
+        Else
+            Dim cmde As New SqlCommand("update documentos set Pagado ='" & "No" & "' where iddocumento = '" & FormPagoDocumentos.textid.Text & "' ", CN)
+            cmde.ExecuteNonQuery()
+        End If
 
 
 
         CN.Close()
 
-
-        'ACTUALIZO EL FORMCAJA
-        cargarCaja()
-
-
         Me.Close()
-    End Sub
-
-    
-    Private Sub FormGastosVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarBancos()
-        CargarCuentas()
-        cargarProveedores()
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        formbuscavehiculoactivo.Show()
     End Sub
 End Class

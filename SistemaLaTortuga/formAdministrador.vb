@@ -36,6 +36,17 @@ Public Class formadministrador
     End Sub
     Private Sub formadministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarCuentas()
+
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+       
+
+
+
+
+        Dim suma As New SqlCommand("Select sum(importeadministrador) from Administrador where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
+        textimporte.Text = suma.ExecuteScalar()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
