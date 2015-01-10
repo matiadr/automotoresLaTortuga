@@ -28,7 +28,7 @@ Public Class FormPagoAdministrador
     Private Sub FormPagoAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarBancos()
         CargarCuentas()
-
+        combotipopago.SelectedIndex = 0
     End Sub
 
     Private Sub cargarCaja()

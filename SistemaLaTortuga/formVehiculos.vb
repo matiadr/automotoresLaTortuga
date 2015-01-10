@@ -387,25 +387,8 @@ Public Class formVehiculos
     End Sub
 
 
-
-
-    Private Sub tbIdVehiculo_TextChanged(sender As Object, e As EventArgs) Handles tbIdVehiculo.TextChanged
-
-    End Sub
-
     Private Sub tbFechaAlta_ValueChanged(sender As Object, e As EventArgs) Handles tbFechaAlta.ValueChanged
         dtfecha.Value = tbFechaAlta.Value
     End Sub
 
-    Private Sub cbMarca_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMarca.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
-
-    End Sub
-
-    Private Sub rbTipoVehiculo_CheckedChanged(sender As Object, e As EventArgs) Handles rbTipoVehiculo.CheckedChanged
-
-    End Sub
 End Class

@@ -44,11 +44,13 @@ Partial Class FormGastosVehiculo
         Me.Button1 = New System.Windows.Forms.Button()
         Me.textmodelo = New System.Windows.Forms.TextBox()
         Me.textpatente = New System.Windows.Forms.TextBox()
+        Me.textmarca = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.textmarca)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Comboproveedor)
         Me.GroupBox1.Controls.Add(Me.textidvehiculo)
@@ -98,7 +100,7 @@ Partial Class FormGastosVehiculo
         '
         'textidvehiculo
         '
-        Me.textidvehiculo.Location = New System.Drawing.Point(376, 17)
+        Me.textidvehiculo.Location = New System.Drawing.Point(308, 0)
         Me.textidvehiculo.Name = "textidvehiculo"
         Me.textidvehiculo.Size = New System.Drawing.Size(55, 20)
         Me.textidvehiculo.TabIndex = 18
@@ -189,7 +191,7 @@ Partial Class FormGastosVehiculo
         'te
         '
         Me.te.AutoSize = True
-        Me.te.Location = New System.Drawing.Point(83, 12)
+        Me.te.Location = New System.Drawing.Point(89, 10)
         Me.te.Name = "te"
         Me.te.Size = New System.Drawing.Size(50, 13)
         Me.te.TabIndex = 8
@@ -238,10 +240,12 @@ Partial Class FormGastosVehiculo
         Me.textimporte.Name = "textimporte"
         Me.textimporte.Size = New System.Drawing.Size(70, 20)
         Me.textimporte.TabIndex = 3
+        Me.textimporte.Text = "0"
+        Me.textimporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(308, 27)
+        Me.Button1.Location = New System.Drawing.Point(360, 26)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(30, 21)
         Me.Button1.TabIndex = 2
@@ -251,18 +255,28 @@ Partial Class FormGastosVehiculo
         'textmodelo
         '
         Me.textmodelo.Enabled = False
-        Me.textmodelo.Location = New System.Drawing.Point(82, 28)
+        Me.textmodelo.Location = New System.Drawing.Point(198, 26)
         Me.textmodelo.Name = "textmodelo"
-        Me.textmodelo.Size = New System.Drawing.Size(216, 20)
+        Me.textmodelo.ReadOnly = True
+        Me.textmodelo.Size = New System.Drawing.Size(139, 20)
         Me.textmodelo.TabIndex = 1
         '
         'textpatente
         '
         Me.textpatente.Enabled = False
-        Me.textpatente.Location = New System.Drawing.Point(6, 28)
+        Me.textpatente.Location = New System.Drawing.Point(6, 26)
         Me.textpatente.Name = "textpatente"
-        Me.textpatente.Size = New System.Drawing.Size(70, 20)
+        Me.textpatente.ReadOnly = True
+        Me.textpatente.Size = New System.Drawing.Size(80, 20)
         Me.textpatente.TabIndex = 0
+        '
+        'textmarca
+        '
+        Me.textmarca.Location = New System.Drawing.Point(92, 26)
+        Me.textmarca.Name = "textmarca"
+        Me.textmarca.ReadOnly = True
+        Me.textmarca.Size = New System.Drawing.Size(100, 20)
+        Me.textmarca.TabIndex = 21
         '
         'FormGastosVehiculo
         '
@@ -273,6 +287,7 @@ Partial Class FormGastosVehiculo
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormGastosVehiculo"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gastos Por Vehículos"
         Me.GroupBox1.ResumeLayout(False)
@@ -302,4 +317,5 @@ Partial Class FormGastosVehiculo
     Friend WithEvents textidvehiculo As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Comboproveedor As System.Windows.Forms.ComboBox
+    Friend WithEvents textmarca As System.Windows.Forms.TextBox
 End Class

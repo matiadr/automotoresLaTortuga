@@ -26,19 +26,8 @@ Public Class formbuscavehiculoactivo
         tabla2 = New DataTable
         da.Fill(tabla2)
         dgVehiculos.DataSource = tabla2
-
-
     End Sub
 
-  
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
-    End Sub
 
     Private Sub tbBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
@@ -53,8 +42,17 @@ Public Class formbuscavehiculoactivo
         dgVehiculos.DataSource = tabla2
     End Sub
 
+    Private Sub dgVehiculos_DoubleClick(sender As Object, e As EventArgs) Handles dgVehiculos.DoubleClick
+        If dgVehiculos.RowCount > 0 Then
+            FormGastosVehiculo.textidvehiculo.Text = dgVehiculos.Item("idVxC", dgVehiculos.SelectedRows(0).Index).Value()
+            FormGastosVehiculo.textpatente.Text = dgVehiculos.Item("dominio", dgVehiculos.SelectedRows(0).Index).Value()
+            FormGastosVehiculo.textmodelo.Text = dgVehiculos.Item("modelo", dgVehiculos.SelectedRows(0).Index).Value()
+            FormGastosVehiculo.textmarca.Text = dgVehiculos.Item("marca", dgVehiculos.SelectedRows(0).Index).Value()
+            Me.Close()
+        End If
+    End Sub
 
-    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
-
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
     End Sub
 End Class

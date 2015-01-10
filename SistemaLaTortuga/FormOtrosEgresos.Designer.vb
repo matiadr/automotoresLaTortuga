@@ -229,6 +229,7 @@ Partial Class FormOtrosEgresos
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormOtrosEgresos"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otros Egresos"
         Me.GroupBox1.ResumeLayout(False)

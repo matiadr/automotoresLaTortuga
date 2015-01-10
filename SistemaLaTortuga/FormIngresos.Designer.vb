@@ -79,6 +79,7 @@ Partial Class FormIngresos
         '
         'combocuenta
         '
+        Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
         Me.combocuenta.Location = New System.Drawing.Point(9, 125)
         Me.combocuenta.Name = "combocuenta"
@@ -97,6 +98,7 @@ Partial Class FormIngresos
         'ComboCliente
         '
         Me.ComboCliente.DisplayMember = "NombreC"
+        Me.ComboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCliente.FormattingEnabled = True
         Me.ComboCliente.Location = New System.Drawing.Point(6, 176)
         Me.ComboCliente.Name = "ComboCliente"
@@ -157,6 +159,7 @@ Partial Class FormIngresos
         '
         'ComboBanco
         '
+        Me.ComboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBanco.FormattingEnabled = True
         Me.ComboBanco.Location = New System.Drawing.Point(6, 75)
         Me.ComboBanco.Name = "ComboBanco"
@@ -178,6 +181,8 @@ Partial Class FormIngresos
         Me.TextImporte.Name = "TextImporte"
         Me.TextImporte.Size = New System.Drawing.Size(81, 20)
         Me.TextImporte.TabIndex = 4
+        Me.TextImporte.Text = "0"
+        Me.TextImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label2
         '
@@ -224,6 +229,7 @@ Partial Class FormIngresos
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormIngresos"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ingresos Varios"
         Me.GroupBox1.ResumeLayout(False)

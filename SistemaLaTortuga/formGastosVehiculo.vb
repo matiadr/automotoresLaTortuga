@@ -92,45 +92,64 @@ Public Class FormGastosVehiculo
         CN.Close()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
+
+        If textidvehiculo.Text = "" Then
+            MessageBox.Show("Faltan completar datos obligatorios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
+
+            'agrego tambien un registro en MOVIMIENTOS DIARIOS
+            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "',  '" & 0 & "' , '" & Conversion.Val(textimporte.Text) & "','" & Comboproveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & Comboproveedor.Text & "')", CN)
+            cmde.ExecuteNonQuery()
+
+            'busco ahoar el id del movimiento cargado
+            Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
+            Dim id = max.ExecuteScalar()
+
+            Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & Conversion.Val(textimporte.Text) & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
+            cmd.ExecuteNonQuery()
 
 
-        'agrego tambien un registro en MOVIMIENTOS DIARIOS
-        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "', '" & 0 & "', '" & Conversion.Val(textimporte.Text) & "','" & Comboproveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & Comboproveedor.Text & "')", CN)
-        cmde.ExecuteNonQuery()
 
-        'busco ahoar el id del movimiento cargado
-        Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
-        Dim id = max.ExecuteScalar()
+            'ACTUALIZO EL FORMCAJA
+            cargarCaja()
+            CN.Close()
+            MessageBox.Show("Gasto Agregado")
 
-        Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & Conversion.Val(textimporte.Text) & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
-        cmd.ExecuteNonQuery()
-
-        MessageBox.Show("Gasto Agregado")
-
-
-
-        CN.Close()
-
-
-        'ACTUALIZO EL FORMCAJA
-        cargarCaja()
-
-
-        Me.Close()
+            Me.Close()
+        End If
     End Sub
 
     
     Private Sub FormGastosVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarBancos()
         CargarCuentas()
-        cargarProveedores()
+        CargarProveedores()
+        combotipopago.SelectedIndex = 0
     End Sub
 
  
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         formbuscavehiculoactivo.Show()
+    End Sub
+
+    Private Sub textimporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textimporte.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
     End Sub
 End Class

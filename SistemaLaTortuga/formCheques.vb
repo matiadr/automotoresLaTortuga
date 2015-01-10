@@ -70,6 +70,8 @@ Public Class formCheques
     End Sub
     Private Sub formCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDGcheques()
+        ComboEstado.SelectedIndex = 1
+        Combotipo.SelectedIndex = 1
     End Sub
 
     Private Sub bSalir_Click(sender As Object, e As EventArgs) Handles bSalir.Click

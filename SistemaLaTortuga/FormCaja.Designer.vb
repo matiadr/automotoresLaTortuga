@@ -389,6 +389,7 @@ Partial Class FormCaja
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormCaja"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Caja"
         Me.GroupBox1.ResumeLayout(False)

@@ -27,6 +27,7 @@ Public Class FormPagarDocumento
     Private Sub FormPagarDocumento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarBancos()
         CargarCuentas()
+        ComboTipo.SelectedIndex = 0
     End Sub
 
     Private Sub cargarCaja()

@@ -83,6 +83,7 @@ Partial Class FormPagoPlanes
         'ComboCliente
         '
         Me.ComboCliente.DisplayMember = "NombreC"
+        Me.ComboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCliente.FormattingEnabled = True
         Me.ComboCliente.Location = New System.Drawing.Point(14, 30)
         Me.ComboCliente.Name = "ComboCliente"

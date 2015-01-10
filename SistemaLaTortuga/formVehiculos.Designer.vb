@@ -38,6 +38,23 @@ Partial Class formVehiculos
         Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgVehiculos = New System.Windows.Forms.DataGridView()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precioGastos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoMotor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.año = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.motor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chasis = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbDatosVehiculo = New System.Windows.Forms.GroupBox()
         Me.tbAño = New System.Windows.Forms.MaskedTextBox()
         Me.bLimpiar = New System.Windows.Forms.Button()
@@ -85,23 +102,6 @@ Partial Class formVehiculos
         Me.dtfecha = New System.Windows.Forms.DateTimePicker()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precioCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precioGastos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoMotor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.año = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.motor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chasis = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones.SuspendLayout()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgVehiculos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -286,6 +286,138 @@ Partial Class formVehiculos
         Me.dgVehiculos.Size = New System.Drawing.Size(652, 252)
         Me.dgVehiculos.TabIndex = 0
         Me.dgVehiculos.TabStop = False
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "NombreMarca"
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        Me.marca.ReadOnly = True
+        '
+        'precioVenta
+        '
+        Me.precioVenta.DataPropertyName = "PrecioVenta"
+        Me.precioVenta.HeaderText = "precioVenta"
+        Me.precioVenta.Name = "precioVenta"
+        Me.precioVenta.ReadOnly = True
+        Me.precioVenta.Visible = False
+        '
+        'precioCosto
+        '
+        Me.precioCosto.DataPropertyName = "PrecioCosto"
+        Me.precioCosto.HeaderText = "precioCosto"
+        Me.precioCosto.Name = "precioCosto"
+        Me.precioCosto.ReadOnly = True
+        Me.precioCosto.Visible = False
+        '
+        'precioGastos
+        '
+        Me.precioGastos.DataPropertyName = "PrecioGastos"
+        Me.precioGastos.HeaderText = "precioGastos"
+        Me.precioGastos.Name = "precioGastos"
+        Me.precioGastos.ReadOnly = True
+        Me.precioGastos.Visible = False
+        '
+        'modelo
+        '
+        Me.modelo.DataPropertyName = "NombreModelo"
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        Me.modelo.ReadOnly = True
+        '
+        'tipoVehiculo
+        '
+        Me.tipoVehiculo.DataPropertyName = "Tipo"
+        Me.tipoVehiculo.HeaderText = "Tipo Vehiculo"
+        Me.tipoVehiculo.Name = "tipoVehiculo"
+        Me.tipoVehiculo.ReadOnly = True
+        '
+        'tipoMotor
+        '
+        Me.tipoMotor.DataPropertyName = "TipoMotor"
+        Me.tipoMotor.HeaderText = "Tipo Motor"
+        Me.tipoMotor.Name = "tipoMotor"
+        Me.tipoMotor.ReadOnly = True
+        '
+        'año
+        '
+        Me.año.DataPropertyName = "Año"
+        Me.año.HeaderText = "Año"
+        Me.año.Name = "año"
+        Me.año.ReadOnly = True
+        Me.año.Width = 80
+        '
+        'dominio
+        '
+        Me.dominio.DataPropertyName = "Dominio"
+        Me.dominio.HeaderText = "Dominio"
+        Me.dominio.Name = "dominio"
+        Me.dominio.ReadOnly = True
+        Me.dominio.Width = 80
+        '
+        'idVehiculo
+        '
+        Me.idVehiculo.DataPropertyName = "IdVehiculo"
+        Me.idVehiculo.HeaderText = "idVehiculo"
+        Me.idVehiculo.Name = "idVehiculo"
+        Me.idVehiculo.ReadOnly = True
+        Me.idVehiculo.Visible = False
+        '
+        'idModelo
+        '
+        Me.idModelo.DataPropertyName = "IdModelo"
+        Me.idModelo.HeaderText = "idModelo"
+        Me.idModelo.Name = "idModelo"
+        Me.idModelo.ReadOnly = True
+        Me.idModelo.Visible = False
+        '
+        'idMarca
+        '
+        Me.idMarca.DataPropertyName = "IdMarca"
+        Me.idMarca.HeaderText = "idMarca"
+        Me.idMarca.Name = "idMarca"
+        Me.idMarca.ReadOnly = True
+        Me.idMarca.Visible = False
+        '
+        'observaciones
+        '
+        Me.observaciones.DataPropertyName = "Observaciones"
+        Me.observaciones.HeaderText = "observaciones"
+        Me.observaciones.Name = "observaciones"
+        Me.observaciones.ReadOnly = True
+        Me.observaciones.Visible = False
+        '
+        'motor
+        '
+        Me.motor.DataPropertyName = "Motor"
+        Me.motor.HeaderText = "motor"
+        Me.motor.Name = "motor"
+        Me.motor.ReadOnly = True
+        Me.motor.Visible = False
+        '
+        'chasis
+        '
+        Me.chasis.DataPropertyName = "Chasis"
+        Me.chasis.HeaderText = "chasis"
+        Me.chasis.Name = "chasis"
+        Me.chasis.ReadOnly = True
+        Me.chasis.Visible = False
+        '
+        'color
+        '
+        Me.color.DataPropertyName = "Color"
+        Me.color.HeaderText = "color"
+        Me.color.Name = "color"
+        Me.color.ReadOnly = True
+        Me.color.Visible = False
+        '
+        'fechaAlta
+        '
+        Me.fechaAlta.DataPropertyName = "FechaAlta"
+        Me.fechaAlta.HeaderText = "fechaAlta"
+        Me.fechaAlta.Name = "fechaAlta"
+        Me.fechaAlta.ReadOnly = True
+        Me.fechaAlta.Visible = False
         '
         'gbDatosVehiculo
         '
@@ -737,138 +869,6 @@ Partial Class formVehiculos
         Me.Label21.Size = New System.Drawing.Size(39, 13)
         Me.Label21.TabIndex = 10
         Me.Label21.Text = "Cliente"
-        '
-        'marca
-        '
-        Me.marca.DataPropertyName = "NombreMarca"
-        Me.marca.HeaderText = "Marca"
-        Me.marca.Name = "marca"
-        Me.marca.ReadOnly = True
-        '
-        'precioVenta
-        '
-        Me.precioVenta.DataPropertyName = "PrecioVenta"
-        Me.precioVenta.HeaderText = "precioVenta"
-        Me.precioVenta.Name = "precioVenta"
-        Me.precioVenta.ReadOnly = True
-        Me.precioVenta.Visible = False
-        '
-        'precioCosto
-        '
-        Me.precioCosto.DataPropertyName = "PrecioCosto"
-        Me.precioCosto.HeaderText = "precioCosto"
-        Me.precioCosto.Name = "precioCosto"
-        Me.precioCosto.ReadOnly = True
-        Me.precioCosto.Visible = False
-        '
-        'precioGastos
-        '
-        Me.precioGastos.DataPropertyName = "PrecioGastos"
-        Me.precioGastos.HeaderText = "precioGastos"
-        Me.precioGastos.Name = "precioGastos"
-        Me.precioGastos.ReadOnly = True
-        Me.precioGastos.Visible = False
-        '
-        'modelo
-        '
-        Me.modelo.DataPropertyName = "NombreModelo"
-        Me.modelo.HeaderText = "Modelo"
-        Me.modelo.Name = "modelo"
-        Me.modelo.ReadOnly = True
-        '
-        'tipoVehiculo
-        '
-        Me.tipoVehiculo.DataPropertyName = "Tipo"
-        Me.tipoVehiculo.HeaderText = "Tipo Vehiculo"
-        Me.tipoVehiculo.Name = "tipoVehiculo"
-        Me.tipoVehiculo.ReadOnly = True
-        '
-        'tipoMotor
-        '
-        Me.tipoMotor.DataPropertyName = "TipoMotor"
-        Me.tipoMotor.HeaderText = "Tipo Motor"
-        Me.tipoMotor.Name = "tipoMotor"
-        Me.tipoMotor.ReadOnly = True
-        '
-        'año
-        '
-        Me.año.DataPropertyName = "Año"
-        Me.año.HeaderText = "Año"
-        Me.año.Name = "año"
-        Me.año.ReadOnly = True
-        Me.año.Width = 80
-        '
-        'dominio
-        '
-        Me.dominio.DataPropertyName = "Dominio"
-        Me.dominio.HeaderText = "Dominio"
-        Me.dominio.Name = "dominio"
-        Me.dominio.ReadOnly = True
-        Me.dominio.Width = 80
-        '
-        'idVehiculo
-        '
-        Me.idVehiculo.DataPropertyName = "IdVehiculo"
-        Me.idVehiculo.HeaderText = "idVehiculo"
-        Me.idVehiculo.Name = "idVehiculo"
-        Me.idVehiculo.ReadOnly = True
-        Me.idVehiculo.Visible = False
-        '
-        'idModelo
-        '
-        Me.idModelo.DataPropertyName = "IdModelo"
-        Me.idModelo.HeaderText = "idModelo"
-        Me.idModelo.Name = "idModelo"
-        Me.idModelo.ReadOnly = True
-        Me.idModelo.Visible = False
-        '
-        'idMarca
-        '
-        Me.idMarca.DataPropertyName = "IdMarca"
-        Me.idMarca.HeaderText = "idMarca"
-        Me.idMarca.Name = "idMarca"
-        Me.idMarca.ReadOnly = True
-        Me.idMarca.Visible = False
-        '
-        'observaciones
-        '
-        Me.observaciones.DataPropertyName = "Observaciones"
-        Me.observaciones.HeaderText = "observaciones"
-        Me.observaciones.Name = "observaciones"
-        Me.observaciones.ReadOnly = True
-        Me.observaciones.Visible = False
-        '
-        'motor
-        '
-        Me.motor.DataPropertyName = "Motor"
-        Me.motor.HeaderText = "motor"
-        Me.motor.Name = "motor"
-        Me.motor.ReadOnly = True
-        Me.motor.Visible = False
-        '
-        'chasis
-        '
-        Me.chasis.DataPropertyName = "Chasis"
-        Me.chasis.HeaderText = "chasis"
-        Me.chasis.Name = "chasis"
-        Me.chasis.ReadOnly = True
-        Me.chasis.Visible = False
-        '
-        'color
-        '
-        Me.color.DataPropertyName = "Color"
-        Me.color.HeaderText = "color"
-        Me.color.Name = "color"
-        Me.color.ReadOnly = True
-        Me.color.Visible = False
-        '
-        'fechaAlta
-        '
-        Me.fechaAlta.DataPropertyName = "FechaAlta"
-        Me.fechaAlta.HeaderText = "fechaAlta"
-        Me.fechaAlta.Name = "fechaAlta"
-        Me.fechaAlta.ReadOnly = True
-        Me.fechaAlta.Visible = False
         '
         'formVehiculos
         '

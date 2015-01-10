@@ -59,21 +59,21 @@ Partial Class formCheques
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cheques = New System.Windows.Forms.GroupBox()
         Me.dgcheques = New System.Windows.Forms.DataGridView()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.textbuscar = New System.Windows.Forms.TextBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.bSalir = New System.Windows.Forms.Button()
-        Me.bEliminar = New System.Windows.Forms.Button()
-        Me.bModificar = New System.Windows.Forms.Button()
-        Me.bNuevo = New System.Windows.Forms.Button()
-        Me.textidcheque = New System.Windows.Forms.TextBox()
         Me.NumeroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImporteCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idcheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.textidcheque = New System.Windows.Forms.TextBox()
+        Me.textbuscar = New System.Windows.Forms.TextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.bSalir = New System.Windows.Forms.Button()
+        Me.bEliminar = New System.Windows.Forms.Button()
+        Me.bModificar = New System.Windows.Forms.Button()
+        Me.bNuevo = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.cheques.SuspendLayout()
         CType(Me.dgcheques, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,6 +143,7 @@ Partial Class formCheques
         '
         'Combotipo
         '
+        Me.Combotipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Combotipo.FormattingEnabled = True
         Me.Combotipo.Items.AddRange(New Object() {"Al portador", "A la orden", "No a la orden"})
         Me.Combotipo.Location = New System.Drawing.Point(425, 213)
@@ -161,6 +162,7 @@ Partial Class formCheques
         '
         'ComboEstado
         '
+        Me.ComboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboEstado.FormattingEnabled = True
         Me.ComboEstado.Items.AddRange(New Object() {"En cartera", "Depositado", "Entregado", "Rechazado"})
         Me.ComboEstado.Location = New System.Drawing.Point(78, 178)
@@ -426,6 +428,53 @@ Partial Class formCheques
         Me.dgcheques.Size = New System.Drawing.Size(663, 189)
         Me.dgcheques.TabIndex = 0
         '
+        'NumeroCheque
+        '
+        Me.NumeroCheque.DataPropertyName = "NumeroCheque"
+        Me.NumeroCheque.HeaderText = "Numero"
+        Me.NumeroCheque.Name = "NumeroCheque"
+        Me.NumeroCheque.ReadOnly = True
+        '
+        'ImporteCheque
+        '
+        Me.ImporteCheque.DataPropertyName = "ImporteCheque"
+        Me.ImporteCheque.HeaderText = "Importe"
+        Me.ImporteCheque.Name = "ImporteCheque"
+        Me.ImporteCheque.ReadOnly = True
+        Me.ImporteCheque.Width = 80
+        '
+        'FechaCheque
+        '
+        Me.FechaCheque.DataPropertyName = "FechaCheque"
+        Me.FechaCheque.HeaderText = "Fecha"
+        Me.FechaCheque.Name = "FechaCheque"
+        Me.FechaCheque.ReadOnly = True
+        Me.FechaCheque.Width = 80
+        '
+        'NombreC
+        '
+        Me.NombreC.DataPropertyName = "NombreC"
+        Me.NombreC.HeaderText = "Cliente"
+        Me.NombreC.Name = "NombreC"
+        Me.NombreC.ReadOnly = True
+        Me.NombreC.Width = 200
+        '
+        'NombreBanco
+        '
+        Me.NombreBanco.DataPropertyName = "NombreBanco"
+        Me.NombreBanco.HeaderText = "Banco"
+        Me.NombreBanco.Name = "NombreBanco"
+        Me.NombreBanco.ReadOnly = True
+        Me.NombreBanco.Width = 150
+        '
+        'idcheque
+        '
+        Me.idcheque.DataPropertyName = "IdCheque"
+        Me.idcheque.HeaderText = "idcheque"
+        Me.idcheque.Name = "idcheque"
+        Me.idcheque.ReadOnly = True
+        Me.idcheque.Visible = False
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label15)
@@ -436,6 +485,23 @@ Partial Class formCheques
         Me.GroupBox3.Size = New System.Drawing.Size(675, 57)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(233, 22)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(40, 13)
+        Me.Label15.TabIndex = 5
+        Me.Label15.Text = "Buscar"
+        '
+        'textidcheque
+        '
+        Me.textidcheque.Location = New System.Drawing.Point(621, 30)
+        Me.textidcheque.Name = "textidcheque"
+        Me.textidcheque.Size = New System.Drawing.Size(29, 20)
+        Me.textidcheque.TabIndex = 4
+        Me.textidcheque.Visible = False
         '
         'textbuscar
         '
@@ -511,70 +577,6 @@ Partial Class formCheques
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = False
         '
-        'textidcheque
-        '
-        Me.textidcheque.Location = New System.Drawing.Point(621, 30)
-        Me.textidcheque.Name = "textidcheque"
-        Me.textidcheque.Size = New System.Drawing.Size(29, 20)
-        Me.textidcheque.TabIndex = 4
-        Me.textidcheque.Visible = False
-        '
-        'NumeroCheque
-        '
-        Me.NumeroCheque.DataPropertyName = "NumeroCheque"
-        Me.NumeroCheque.HeaderText = "Numero"
-        Me.NumeroCheque.Name = "NumeroCheque"
-        Me.NumeroCheque.ReadOnly = True
-        '
-        'ImporteCheque
-        '
-        Me.ImporteCheque.DataPropertyName = "ImporteCheque"
-        Me.ImporteCheque.HeaderText = "Importe"
-        Me.ImporteCheque.Name = "ImporteCheque"
-        Me.ImporteCheque.ReadOnly = True
-        Me.ImporteCheque.Width = 80
-        '
-        'FechaCheque
-        '
-        Me.FechaCheque.DataPropertyName = "FechaCheque"
-        Me.FechaCheque.HeaderText = "Fecha"
-        Me.FechaCheque.Name = "FechaCheque"
-        Me.FechaCheque.ReadOnly = True
-        Me.FechaCheque.Width = 80
-        '
-        'NombreC
-        '
-        Me.NombreC.DataPropertyName = "NombreC"
-        Me.NombreC.HeaderText = "Cliente"
-        Me.NombreC.Name = "NombreC"
-        Me.NombreC.ReadOnly = True
-        Me.NombreC.Width = 200
-        '
-        'NombreBanco
-        '
-        Me.NombreBanco.DataPropertyName = "NombreBanco"
-        Me.NombreBanco.HeaderText = "Banco"
-        Me.NombreBanco.Name = "NombreBanco"
-        Me.NombreBanco.ReadOnly = True
-        Me.NombreBanco.Width = 150
-        '
-        'idcheque
-        '
-        Me.idcheque.DataPropertyName = "IdCheque"
-        Me.idcheque.HeaderText = "idcheque"
-        Me.idcheque.Name = "idcheque"
-        Me.idcheque.ReadOnly = True
-        Me.idcheque.Visible = False
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(233, 22)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(40, 13)
-        Me.Label15.TabIndex = 5
-        Me.Label15.Text = "Buscar"
-        '
         'formCheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -584,6 +586,7 @@ Partial Class formCheques
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.cheques)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "formCheques"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

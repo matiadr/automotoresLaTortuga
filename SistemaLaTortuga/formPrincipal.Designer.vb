@@ -48,8 +48,8 @@ Partial Class formPrincipal
         Me.VehiculosVendidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadoDeChequesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransferenciasCobradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChequesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tbBSD = New System.Windows.Forms.TextBox()
         Me.tbUsuario = New System.Windows.Forms.TextBox()
         Me.tbClave = New System.Windows.Forms.TextBox()
@@ -243,6 +243,15 @@ Partial Class formPrincipal
         Me.TransferenciasCobradasToolStripMenuItem.Size = New System.Drawing.Size(239, 24)
         Me.TransferenciasCobradasToolStripMenuItem.Text = "Transferencias Cobradas"
         '
+        'ChequesToolStripMenuItem
+        '
+        Me.ChequesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChequesToolStripMenuItem.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.ChequesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ChequesToolStripMenuItem.Name = "ChequesToolStripMenuItem"
+        Me.ChequesToolStripMenuItem.Size = New System.Drawing.Size(93, 36)
+        Me.ChequesToolStripMenuItem.Text = "Che&ques"
+        '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!)
@@ -251,15 +260,6 @@ Partial Class formPrincipal
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(82, 36)
         Me.SalirToolStripMenuItem.Text = "&Salir"
-        '
-        'ChequesToolStripMenuItem
-        '
-        Me.ChequesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChequesToolStripMenuItem.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
-        Me.ChequesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ChequesToolStripMenuItem.Name = "ChequesToolStripMenuItem"
-        Me.ChequesToolStripMenuItem.Size = New System.Drawing.Size(93, 36)
-        Me.ChequesToolStripMenuItem.Text = "Cheques"
         '
         'tbBSD
         '
@@ -288,7 +288,7 @@ Partial Class formPrincipal
         Me.tbClave.Name = "tbClave"
         Me.tbClave.Size = New System.Drawing.Size(180, 29)
         Me.tbClave.TabIndex = 3
-        Me.tbClave.Text = "Ccp846"
+        Me.tbClave.Text = "06qiad"
         Me.tbClave.Visible = False
         '
         'tbEquipo
@@ -298,7 +298,7 @@ Partial Class formPrincipal
         Me.tbEquipo.Name = "tbEquipo"
         Me.tbEquipo.Size = New System.Drawing.Size(221, 29)
         Me.tbEquipo.TabIndex = 5
-        Me.tbEquipo.Text = "SRVPROD"
+        Me.tbEquipo.Text = "MATI-D"
         Me.tbEquipo.Visible = False
         '
         'PictureBox2
@@ -322,8 +322,8 @@ Partial Class formPrincipal
         '
         'formPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(1362, 715)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tbEquipo)

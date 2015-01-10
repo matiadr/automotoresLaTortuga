@@ -186,6 +186,7 @@ Partial Class FormPagoAdministrador
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormPagoAdministrador"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pago Administrador"
         Me.GroupBox1.ResumeLayout(False)

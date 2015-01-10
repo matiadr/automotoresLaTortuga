@@ -71,6 +71,7 @@ Partial Class FormPlan
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormPlan"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Plan - Cuotas"
         CType(Me.DGplan, System.ComponentModel.ISupportInitialize).EndInit()

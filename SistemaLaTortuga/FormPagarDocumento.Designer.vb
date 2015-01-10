@@ -196,6 +196,7 @@ Partial Class FormPagarDocumento
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FormPagarDocumento"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pagar Documento"
         Me.GroupBox1.ResumeLayout(False)
