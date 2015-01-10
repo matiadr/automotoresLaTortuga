@@ -86,6 +86,11 @@ Public Class FormPagoAdministrador
         CN.Close()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If textimporte.Text = "" Then
+            MessageBox.Show("Debe ingresar un importe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
 
@@ -110,7 +115,4 @@ Public Class FormPagoAdministrador
 
         Me.Close()
     End Sub
-
- 
-  
 End Class

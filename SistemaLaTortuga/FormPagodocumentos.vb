@@ -29,12 +29,6 @@ Public Class FormPagoDocumentos
         CN.Close()
     End Sub
 
-    Private Sub DGdocumentos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGdocumentos.CellContentClick
-        
-
-       
-    End Sub
-
     Private Sub textid_TextChanged(sender As Object, e As EventArgs) Handles textid.TextChanged
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -53,11 +47,9 @@ Public Class FormPagoDocumentos
     End Sub
 
     Private Sub DGdocumentos_DoubleClick(sender As Object, e As EventArgs) Handles DGdocumentos.DoubleClick
-        textid.Text = DGdocumentos.Item("IdDocumento", DGdocumentos.SelectedRows(0).Index).Value()
-        FormPagarDocumento.Show()
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
+        If DGdocumentos.RowCount > 0 Then
+            textid.Text = DGdocumentos.Item("IdDocumento", DGdocumentos.SelectedRows(0).Index).Value()
+            FormPagarDocumento.Show()
+        End If
     End Sub
 End Class

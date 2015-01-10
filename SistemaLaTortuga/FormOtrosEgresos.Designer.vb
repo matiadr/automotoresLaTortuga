@@ -64,7 +64,7 @@ Partial Class FormOtrosEgresos
         Me.GroupBox1.Controls.Add(Me.Dtfecha)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(490, 217)
+        Me.GroupBox1.Size = New System.Drawing.Size(423, 217)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         '
@@ -224,7 +224,7 @@ Partial Class FormOtrosEgresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(511, 233)
+        Me.ClientSize = New System.Drawing.Size(448, 235)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False

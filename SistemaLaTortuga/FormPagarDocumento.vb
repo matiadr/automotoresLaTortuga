@@ -102,50 +102,55 @@ Public Class FormPagarDocumento
         CN.Close()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
+        If TextImporte.Text = "" Then
+            MessageBox.Show("Debe ingresar un importe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
 
 
-        'agrego tambien un registro en MOVIMIENTOS DIARIOS
-        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & "Pago Documento" & "', '" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & 0 & "','" & FormPagoDocumentos.ComboCliente.SelectedValue & "', '  " & "Cliente" & "', '" & FormPagoDocumentos.ComboCliente.Text & "')", CN)
-        cmde.ExecuteNonQuery()
+            'agrego tambien un registro en MOVIMIENTOS DIARIOS
+            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & "Pago Documento" & "', '" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & 0 & "','" & FormPagoDocumentos.ComboCliente.SelectedValue & "', '  " & "Cliente" & "', '" & FormPagoDocumentos.ComboCliente.Text & "')", CN)
+            cmde.ExecuteNonQuery()
 
-        'busco ahoar el id del movimiento cargado
-        Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
-        Dim id = max.ExecuteScalar()
+            'busco ahoar el id del movimiento cargado
+            Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
+            Dim id = max.ExecuteScalar()
 
-        Dim cmd As New SqlCommand("insert into PagosDocumentos values ('" & FormPagoDocumentos.textid.Text & "','" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & combocuenta.SelectedValue & "', '" & ComboTipo.Text & "', '" & Textnumero.Text & "', '" & ComboBanco.SelectedValue & "', '" & id & "' )", CN)
-        cmd.ExecuteNonQuery()
+            Dim cmd As New SqlCommand("insert into PagosDocumentos values ('" & FormPagoDocumentos.textid.Text & "','" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & combocuenta.SelectedValue & "', '" & ComboTipo.Text & "', '" & Textnumero.Text & "', '" & ComboBanco.SelectedValue & "', '" & id & "' )", CN)
+            cmd.ExecuteNonQuery()
 
-        MessageBox.Show("Pago Ingresado")
+            MessageBox.Show("Pago Ingresado", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        cargarCaja()
-        cargarpagos()
-        CN.Close()
+            cargarCaja()
+            cargarpagos()
+            CN.Close()
 
-        Me.Close()
+            Me.Close()
+        End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         'lo que hago es modificar el registro del documento y al campo PAGADO le escribo SI
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
+        Dim res As MsgBoxResult
+        res = MessageBox.Show("¿Está seguro que va a pagar la totalidad del documento?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If res = MsgBoxResult.Yes Then
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
 
 
-        'modifico el campo pagado
+            'modifico el campo pagado
 
-        If CheckBox1.Checked = True Then
-            Dim cmde As New SqlCommand("update documentos set Pagado ='" & "Si" & "' where iddocumento = '" & FormPagoDocumentos.textid.Text & "' ", CN)
-            cmde.ExecuteNonQuery()
-        Else
-            Dim cmde As New SqlCommand("update documentos set Pagado ='" & "No" & "' where iddocumento = '" & FormPagoDocumentos.textid.Text & "' ", CN)
-            cmde.ExecuteNonQuery()
+            If CheckBox1.Checked = True Then
+                Dim cmde As New SqlCommand("update documentos set Pagado ='" & "Si" & "' where iddocumento = '" & FormPagoDocumentos.textid.Text & "' ", CN)
+                cmde.ExecuteNonQuery()
+            Else
+                Dim cmde As New SqlCommand("update documentos set Pagado ='" & "No" & "' where iddocumento = '" & FormPagoDocumentos.textid.Text & "' ", CN)
+                cmde.ExecuteNonQuery()
+            End If
+            CN.Close()
+
+            Me.Close()
         End If
-
-
-
-        CN.Close()
-
-        Me.Close()
     End Sub
 End Class

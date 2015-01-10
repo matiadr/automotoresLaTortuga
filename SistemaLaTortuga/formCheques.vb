@@ -48,10 +48,6 @@ Public Class formCheques
         formsucursalesbancos.Show()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub cargarDGcheques()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -83,15 +79,12 @@ Public Class formCheques
    
 
     Private Sub dgcheques_Click(sender As Object, e As EventArgs) Handles dgcheques.Click
-        textidcheque.Text = dgcheques.Item("IdCheque", dgcheques.SelectedRows(0).Index).Value()
+        If dgcheques.RowCount > 0 Then
+            textidcheque.Text = dgcheques.Item("IdCheque", dgcheques.SelectedRows(0).Index).Value()
 
-        bModificar.Enabled = True
-        bEliminar.Enabled = True
-
-
-
-
-
+            bModificar.Enabled = True
+            bEliminar.Enabled = True
+        End If
     End Sub
 
     Private Sub textidcheque_TextChanged(sender As Object, e As EventArgs) Handles textidcheque.TextChanged
@@ -129,22 +122,8 @@ Public Class formCheques
 
         bModificar.Enabled = True
         bEliminar.Enabled = True
-
-
-
-
-
-
-       
     End Sub
 
-    Private Sub dgcheques_DoubleClick(sender As Object, e As EventArgs) Handles dgcheques.DoubleClick
-
-    End Sub
-
-    Private Sub dgcheques_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgcheques.CellContentClick
-
-    End Sub
 
     Private Sub dgcheques_KeyUp(sender As Object, e As KeyEventArgs) Handles dgcheques.KeyUp
         textidcheque.Text = dgcheques.Item("IdCheque", dgcheques.SelectedRows(0).Index).Value()

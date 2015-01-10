@@ -56,14 +56,14 @@ Partial Class FormPagoAdministrador
         Me.GroupBox1.Controls.Add(Me.textimporte)
         Me.GroupBox1.Location = New System.Drawing.Point(7, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(500, 206)
+        Me.GroupBox1.Size = New System.Drawing.Size(453, 206)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(319, 56)
+        Me.Label8.Location = New System.Drawing.Point(288, 55)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(38, 13)
         Me.Label8.TabIndex = 43
@@ -74,7 +74,7 @@ Partial Class FormPagoAdministrador
         Me.combobanco.DisplayMember = "idbanco"
         Me.combobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobanco.FormattingEnabled = True
-        Me.combobanco.Location = New System.Drawing.Point(322, 72)
+        Me.combobanco.Location = New System.Drawing.Point(291, 71)
         Me.combobanco.Name = "combobanco"
         Me.combobanco.Size = New System.Drawing.Size(141, 21)
         Me.combobanco.TabIndex = 35
@@ -83,7 +83,7 @@ Partial Class FormPagoAdministrador
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(42, 59)
+        Me.Label7.Location = New System.Drawing.Point(11, 58)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 13)
         Me.Label7.TabIndex = 42
@@ -92,7 +92,7 @@ Partial Class FormPagoAdministrador
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(149, 56)
+        Me.Label6.Location = New System.Drawing.Point(118, 55)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(19, 13)
         Me.Label6.TabIndex = 41
@@ -100,7 +100,7 @@ Partial Class FormPagoAdministrador
         '
         'textnumero
         '
-        Me.textnumero.Location = New System.Drawing.Point(152, 72)
+        Me.textnumero.Location = New System.Drawing.Point(121, 71)
         Me.textnumero.Name = "textnumero"
         Me.textnumero.Size = New System.Drawing.Size(164, 20)
         Me.textnumero.TabIndex = 34
@@ -110,7 +110,7 @@ Partial Class FormPagoAdministrador
         Me.combotipopago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combotipopago.FormattingEnabled = True
         Me.combotipopago.Items.AddRange(New Object() {"Efectivo", "Cheque"})
-        Me.combotipopago.Location = New System.Drawing.Point(40, 74)
+        Me.combotipopago.Location = New System.Drawing.Point(9, 73)
         Me.combotipopago.Name = "combotipopago"
         Me.combotipopago.Size = New System.Drawing.Size(106, 21)
         Me.combotipopago.TabIndex = 33
@@ -118,7 +118,7 @@ Partial Class FormPagoAdministrador
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(41, 126)
+        Me.Label5.Location = New System.Drawing.Point(10, 125)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(63, 13)
         Me.Label5.TabIndex = 40
@@ -127,7 +127,7 @@ Partial Class FormPagoAdministrador
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(120, 17)
+        Me.Label4.Location = New System.Drawing.Point(89, 16)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 13)
         Me.Label4.TabIndex = 38
@@ -136,7 +136,7 @@ Partial Class FormPagoAdministrador
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(37, 16)
+        Me.Label3.Location = New System.Drawing.Point(6, 15)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 36
@@ -144,7 +144,7 @@ Partial Class FormPagoAdministrador
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(258, 156)
+        Me.Button2.Location = New System.Drawing.Point(227, 155)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(39, 34)
         Me.Button2.TabIndex = 39
@@ -153,7 +153,7 @@ Partial Class FormPagoAdministrador
         '
         'textdetalle
         '
-        Me.textdetalle.Location = New System.Drawing.Point(40, 142)
+        Me.textdetalle.Location = New System.Drawing.Point(9, 141)
         Me.textdetalle.Multiline = True
         Me.textdetalle.Name = "textdetalle"
         Me.textdetalle.Size = New System.Drawing.Size(212, 48)
@@ -164,7 +164,7 @@ Partial Class FormPagoAdministrador
         Me.combocuenta.DisplayMember = "idcuenta"
         Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
-        Me.combocuenta.Location = New System.Drawing.Point(117, 33)
+        Me.combocuenta.Location = New System.Drawing.Point(86, 32)
         Me.combocuenta.Name = "combocuenta"
         Me.combocuenta.Size = New System.Drawing.Size(147, 21)
         Me.combocuenta.TabIndex = 32
@@ -172,7 +172,7 @@ Partial Class FormPagoAdministrador
         '
         'textimporte
         '
-        Me.textimporte.Location = New System.Drawing.Point(37, 32)
+        Me.textimporte.Location = New System.Drawing.Point(6, 31)
         Me.textimporte.Name = "textimporte"
         Me.textimporte.Size = New System.Drawing.Size(70, 20)
         Me.textimporte.TabIndex = 31
@@ -181,7 +181,7 @@ Partial Class FormPagoAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(512, 224)
+        Me.ClientSize = New System.Drawing.Size(470, 225)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False

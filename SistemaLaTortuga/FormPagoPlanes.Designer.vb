@@ -64,9 +64,13 @@ Partial Class FormPagoPlanes
         '
         'DGcuotas
         '
+        Me.DGcuotas.AllowUserToAddRows = False
+        Me.DGcuotas.AllowUserToDeleteRows = False
         Me.DGcuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGcuotas.Location = New System.Drawing.Point(7, 16)
         Me.DGcuotas.Name = "DGcuotas"
+        Me.DGcuotas.ReadOnly = True
+        Me.DGcuotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGcuotas.Size = New System.Drawing.Size(469, 158)
         Me.DGcuotas.TabIndex = 0
         '

@@ -119,14 +119,14 @@ Partial Class formCheques
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 285)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(677, 317)
+        Me.GroupBox1.Size = New System.Drawing.Size(675, 318)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Cheque"
         '
         'textids
         '
-        Me.textids.Location = New System.Drawing.Point(586, 106)
+        Me.textids.Location = New System.Drawing.Point(579, 105)
         Me.textids.Name = "textids"
         Me.textids.Size = New System.Drawing.Size(55, 20)
         Me.textids.TabIndex = 72
@@ -154,7 +154,7 @@ Partial Class formCheques
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 181)
+        Me.Label6.Location = New System.Drawing.Point(42, 181)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(40, 13)
         Me.Label6.TabIndex = 69
@@ -165,29 +165,29 @@ Partial Class formCheques
         Me.ComboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboEstado.FormattingEnabled = True
         Me.ComboEstado.Items.AddRange(New Object() {"En cartera", "Depositado", "Entregado", "Rechazado"})
-        Me.ComboEstado.Location = New System.Drawing.Point(78, 178)
+        Me.ComboEstado.Location = New System.Drawing.Point(98, 178)
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(113, 21)
         Me.ComboEstado.TabIndex = 16
         '
         'textcomentario
         '
-        Me.textcomentario.Location = New System.Drawing.Point(118, 252)
+        Me.textcomentario.Location = New System.Drawing.Point(98, 252)
         Me.textcomentario.Multiline = True
         Me.textcomentario.Name = "textcomentario"
-        Me.textcomentario.Size = New System.Drawing.Size(477, 58)
+        Me.textcomentario.Size = New System.Drawing.Size(478, 60)
         Me.textcomentario.TabIndex = 20
         '
         'textdepositadoen
         '
-        Me.textdepositadoen.Location = New System.Drawing.Point(118, 213)
+        Me.textdepositadoen.Location = New System.Drawing.Point(98, 213)
         Me.textdepositadoen.Name = "textdepositadoen"
         Me.textdepositadoen.Size = New System.Drawing.Size(249, 20)
         Me.textdepositadoen.TabIndex = 18
         '
         'textengregadoa
         '
-        Me.textengregadoa.Location = New System.Drawing.Point(284, 179)
+        Me.textengregadoa.Location = New System.Drawing.Point(289, 178)
         Me.textengregadoa.Name = "textengregadoa"
         Me.textengregadoa.Size = New System.Drawing.Size(249, 20)
         Me.textengregadoa.TabIndex = 17
@@ -203,14 +203,14 @@ Partial Class formCheques
         '
         'texttitular
         '
-        Me.texttitular.Location = New System.Drawing.Point(77, 146)
+        Me.texttitular.Location = New System.Drawing.Point(98, 146)
         Me.texttitular.Name = "texttitular"
         Me.texttitular.Size = New System.Drawing.Size(249, 20)
         Me.texttitular.TabIndex = 14
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(279, 109)
+        Me.Button3.Location = New System.Drawing.Point(453, 112)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(31, 19)
         Me.Button3.TabIndex = 11
@@ -220,7 +220,7 @@ Partial Class formCheques
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(32, 113)
+        Me.Label12.Location = New System.Drawing.Point(233, 115)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(48, 13)
         Me.Label12.TabIndex = 57
@@ -228,36 +228,40 @@ Partial Class formCheques
         '
         'textnombres
         '
-        Me.textnombres.Location = New System.Drawing.Point(140, 109)
+        Me.textnombres.Location = New System.Drawing.Point(301, 112)
         Me.textnombres.Name = "textnombres"
+        Me.textnombres.ReadOnly = True
         Me.textnombres.Size = New System.Drawing.Size(133, 20)
         Me.textnombres.TabIndex = 10
         '
         'textidsucursal
         '
-        Me.textidsucursal.Location = New System.Drawing.Point(87, 109)
+        Me.textidsucursal.Location = New System.Drawing.Point(593, 143)
         Me.textidsucursal.Name = "textidsucursal"
         Me.textidsucursal.Size = New System.Drawing.Size(48, 20)
         Me.textidsucursal.TabIndex = 9
+        Me.textidsucursal.Visible = False
         '
         'textnombreb
         '
-        Me.textnombreb.Location = New System.Drawing.Point(430, 106)
+        Me.textnombreb.Location = New System.Drawing.Point(98, 112)
         Me.textnombreb.Name = "textnombreb"
+        Me.textnombreb.ReadOnly = True
         Me.textnombreb.Size = New System.Drawing.Size(133, 20)
         Me.textnombreb.TabIndex = 13
         '
         'textidbanco
         '
-        Me.textidbanco.Location = New System.Drawing.Point(376, 106)
+        Me.textidbanco.Location = New System.Drawing.Point(586, 174)
         Me.textidbanco.Name = "textidbanco"
         Me.textidbanco.Size = New System.Drawing.Size(48, 20)
         Me.textidbanco.TabIndex = 12
+        Me.textidbanco.Visible = False
         '
         'dtfecharecibido
         '
         Me.dtfecharecibido.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtfecharecibido.Location = New System.Drawing.Point(564, 71)
+        Me.dtfecharecibido.Location = New System.Drawing.Point(573, 71)
         Me.dtfecharecibido.Name = "dtfecharecibido"
         Me.dtfecharecibido.Size = New System.Drawing.Size(86, 20)
         Me.dtfecharecibido.TabIndex = 8
@@ -283,7 +287,7 @@ Partial Class formCheques
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(167, 74)
+        Me.Label9.Location = New System.Drawing.Point(182, 74)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(42, 13)
         Me.Label9.TabIndex = 48
@@ -298,7 +302,7 @@ Partial Class formCheques
         '
         'textimportech
         '
-        Me.textimportech.Location = New System.Drawing.Point(215, 74)
+        Me.textimportech.Location = New System.Drawing.Point(232, 71)
         Me.textimportech.Name = "textimportech"
         Me.textimportech.Size = New System.Drawing.Size(60, 20)
         Me.textimportech.TabIndex = 6
@@ -306,14 +310,14 @@ Partial Class formCheques
         'dtfechach
         '
         Me.dtfechach.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtfechach.Location = New System.Drawing.Point(77, 71)
+        Me.dtfechach.Location = New System.Drawing.Point(98, 71)
         Me.dtfechach.Name = "dtfechach"
         Me.dtfechach.Size = New System.Drawing.Size(78, 20)
         Me.dtfechach.TabIndex = 5
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(389, 37)
+        Me.Button1.Location = New System.Drawing.Point(353, 34)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(31, 19)
         Me.Button1.TabIndex = 4
@@ -322,22 +326,24 @@ Partial Class formCheques
         '
         'textnombrec
         '
-        Me.textnombrec.Location = New System.Drawing.Point(130, 37)
+        Me.textnombrec.Location = New System.Drawing.Point(98, 34)
         Me.textnombrec.Name = "textnombrec"
+        Me.textnombrec.ReadOnly = True
         Me.textnombrec.Size = New System.Drawing.Size(249, 20)
         Me.textnombrec.TabIndex = 3
         '
         'textcodigoc
         '
-        Me.textcodigoc.Location = New System.Drawing.Point(76, 37)
+        Me.textcodigoc.Location = New System.Drawing.Point(128, 8)
         Me.textcodigoc.Name = "textcodigoc"
         Me.textcodigoc.Size = New System.Drawing.Size(48, 20)
         Me.textcodigoc.TabIndex = 2
+        Me.textcodigoc.Visible = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(34, 255)
+        Me.Label8.Location = New System.Drawing.Point(22, 255)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(60, 13)
         Me.Label8.TabIndex = 41
@@ -346,7 +352,7 @@ Partial Class formCheques
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(210, 182)
+        Me.Label13.Location = New System.Drawing.Point(216, 181)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(65, 13)
         Me.Label13.TabIndex = 39
@@ -355,7 +361,7 @@ Partial Class formCheques
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(36, 216)
+        Me.Label7.Location = New System.Drawing.Point(6, 216)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(76, 13)
         Me.Label7.TabIndex = 40
@@ -373,7 +379,7 @@ Partial Class formCheques
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(31, 146)
+        Me.Label4.Location = New System.Drawing.Point(46, 146)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 13)
         Me.Label4.TabIndex = 37
@@ -382,7 +388,7 @@ Partial Class formCheques
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(332, 109)
+        Me.Label3.Location = New System.Drawing.Point(44, 112)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 36
@@ -391,7 +397,7 @@ Partial Class formCheques
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 74)
+        Me.Label2.Location = New System.Drawing.Point(45, 74)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
         Me.Label2.TabIndex = 35
@@ -400,7 +406,7 @@ Partial Class formCheques
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 37)
+        Me.Label1.Location = New System.Drawing.Point(43, 37)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 34

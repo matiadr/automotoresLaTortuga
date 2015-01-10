@@ -40,7 +40,7 @@ Partial Class FormFechasDesdeHasta
         Me.GroupBox1.Controls.Add(Me.tbFechaDesde)
         Me.GroupBox1.Controls.Add(Me.bSalir)
         Me.GroupBox1.Controls.Add(Me.bGenerarReporte)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 8)
+        Me.GroupBox1.Location = New System.Drawing.Point(-1, -2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(373, 121)
         Me.GroupBox1.TabIndex = 0
@@ -106,7 +106,7 @@ Partial Class FormFechasDesdeHasta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 131)
+        Me.ClientSize = New System.Drawing.Size(378, 128)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False

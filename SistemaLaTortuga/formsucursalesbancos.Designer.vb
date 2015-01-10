@@ -58,6 +58,7 @@ Partial Class formsucursalesbancos
         Me.textform.Name = "textform"
         Me.textform.Size = New System.Drawing.Size(68, 20)
         Me.textform.TabIndex = 13
+        Me.textform.Visible = False
         '
         'Button1
         '
@@ -179,8 +180,11 @@ Partial Class formsucursalesbancos
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "formsucursalesbancos"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sucursales Bancos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

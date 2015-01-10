@@ -81,9 +81,9 @@ Partial Class FormIngresos
         '
         Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
-        Me.combocuenta.Location = New System.Drawing.Point(9, 125)
+        Me.combocuenta.Location = New System.Drawing.Point(6, 125)
         Me.combocuenta.Name = "combocuenta"
-        Me.combocuenta.Size = New System.Drawing.Size(138, 21)
+        Me.combocuenta.Size = New System.Drawing.Size(146, 21)
         Me.combocuenta.TabIndex = 45
         '
         'Label8
@@ -100,7 +100,7 @@ Partial Class FormIngresos
         Me.ComboCliente.DisplayMember = "NombreC"
         Me.ComboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCliente.FormattingEnabled = True
-        Me.ComboCliente.Location = New System.Drawing.Point(6, 176)
+        Me.ComboCliente.Location = New System.Drawing.Point(5, 176)
         Me.ComboCliente.Name = "ComboCliente"
         Me.ComboCliente.Size = New System.Drawing.Size(147, 21)
         Me.ComboCliente.TabIndex = 43
@@ -161,7 +161,7 @@ Partial Class FormIngresos
         '
         Me.ComboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBanco.FormattingEnabled = True
-        Me.ComboBanco.Location = New System.Drawing.Point(6, 75)
+        Me.ComboBanco.Location = New System.Drawing.Point(6, 74)
         Me.ComboBanco.Name = "ComboBanco"
         Me.ComboBanco.Size = New System.Drawing.Size(146, 21)
         Me.ComboBanco.TabIndex = 6
@@ -181,7 +181,6 @@ Partial Class FormIngresos
         Me.TextImporte.Name = "TextImporte"
         Me.TextImporte.Size = New System.Drawing.Size(81, 20)
         Me.TextImporte.TabIndex = 4
-        Me.TextImporte.Text = "0"
         Me.TextImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label2

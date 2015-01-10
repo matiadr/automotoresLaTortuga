@@ -95,9 +95,12 @@ Public Class FormIngresos
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-
+        If TextImporte.Text = "" Then
+            MessageBox.Show("Debe ingresar un importe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
         If TextDetalle.Text = "" Then
-            MsgBox("Debe escribir un detalle", MsgBoxStyle.Exclamation)
+            MessageBox.Show("Debe ingresar un detalle", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         Else
 
@@ -120,11 +123,6 @@ Public Class FormIngresos
         CargarCuentas()
         CargarBancos()
         CargarClientes()
-
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
+        ComboTipo.SelectedIndex = 0
     End Sub
 End Class

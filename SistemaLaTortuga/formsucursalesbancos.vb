@@ -15,12 +15,15 @@ Public Class formsucursalesbancos
         cargarsucursales()
     End Sub
 
-    Private Sub dgsucursalesb_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
     End Sub
 
-    Private Sub dgsucursalesb_DoubleClick(sender As Object, e As EventArgs)
+    Private Sub bNuevoCliente_Click_1(sender As Object, e As EventArgs) Handles bNuevoCliente.Click
+        formABMSucursales.Show()
+    End Sub
 
+    Private Sub dgsucursalesb_DoubleClick1(sender As Object, e As EventArgs) Handles dgsucursalesb.DoubleClick
         formCheques.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
         formCheques.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
         formCheques.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
@@ -30,13 +33,5 @@ Public Class formsucursalesbancos
 
 
         Me.Close()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub bNuevoCliente_Click(sender As Object, e As EventArgs)
-
     End Sub
 End Class
