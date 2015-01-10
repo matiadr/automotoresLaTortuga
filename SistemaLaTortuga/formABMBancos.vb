@@ -5,7 +5,7 @@ Public Class formABMBancos
         Me.Close()
     End Sub
 
-    Private Sub tbBanco_TextChanged(sender As Object, e As EventArgs) Handles tbBanco.TextChanged
+    Private Sub tbBanco_TextChanged(sender As Object, e As EventArgs)
         If tbBanco.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -39,6 +39,10 @@ Public Class formABMBancos
         bEliminar.Enabled = False
         tbBanco.Text = ""
         tbCodigo.Text = ""
+    End Sub
+
+    Private Sub dgBancos_CellLeave(sender As Object, e As DataGridViewCellEventArgs) Handles dgBancos.CellLeave
+
     End Sub
 
 
@@ -91,5 +95,9 @@ Public Class formABMBancos
         Catch ex As SqlException
             MessageBox.Show("No se puede eliminar ya que dicho banco esta siendo usado", "Advertencia")
         End Try
+    End Sub
+
+    Private Sub dgBancos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgBancos.CellContentClick
+
     End Sub
 End Class

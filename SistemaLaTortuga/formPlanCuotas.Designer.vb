@@ -69,6 +69,7 @@ Partial Class FormPlan
         Me.ClientSize = New System.Drawing.Size(513, 331)
         Me.Controls.Add(Me.DGplan)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FormPlan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Plan - Cuotas"

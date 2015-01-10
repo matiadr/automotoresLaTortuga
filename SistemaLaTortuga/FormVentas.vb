@@ -39,7 +39,7 @@ Public Class formVentas
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles bVehVenta.Click
         formBuscarVehiculo.Show()
-        formBuscarVehiculo.texttipoboton.Text = 1
+        formBuscarVehiculo.texttipoboton.Text = "ve"
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
@@ -66,7 +66,7 @@ Public Class formVentas
             tabla2 = New DataTable
             da.Fill(tabla2)
 
-            If formBuscarVehiculo.texttipoboton.Text = 1 Then
+            If formBuscarVehiculo.texttipoboton.Text = "ve" Then
                 'escribo en el text el idcliente vendedor del auto que compra el nuevo cliente
                 Try
                     tbidvendedor.Text = tabla2.Rows.Item(0).Item("idcliente")
@@ -145,15 +145,14 @@ Public Class formVentas
 
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        If Button8.Text = "Guardar" Then
 
-
-        Try
 
 
             'AGREGO LOS DATOS EN LA TABLA VENTAS
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CN.Open()
-            Dim cmd As New SqlCommand("insert into Ventas values ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & TbPrecioCostoVehVenta.Text & "','" & tbPrecioVentaVehVenta.Text & "','" & tbtransferencia.Text & "','" & dtfecha.Value & "',' " & textreal.Text & "', ' " & textesposo.Text & " ', '" & textdniesposo.Text & "', '" & texttipodni.Text & "')", CN)
+            Dim cmd As New SqlCommand("insert into Ventas values ('" & tbidvendedor.Text & "','" & tbIdCliente.Text & "','" & tbIdVehVenta.Text & "','" & Conversion.Val(TbPrecioCostoVehVenta.Text) & "','" & Conversion.Val(tbPrecioVentaVehVenta.Text) & "','" & Conversion.Val(tbtransferencia.Text) & "','" & dtfecha.Value & "',' " & Conversion.Val(textreal.Text) & "', ' " & textesposo.Text & " ', '" & textdniesposo.Text & "', '" & texttipodni.Text & "')", CN)
             cmd.ExecuteNonQuery()
 
 
@@ -203,17 +202,32 @@ Public Class formVentas
             'deshabilito el boton guardar
             Button8.Enabled = False
 
-        Catch ex As SqlException
-            MsgBox("Debe ingresar datos", MsgBoxStyle.Exclamation)
-        End Try
+            'Catch ex As SqlException
+            'MsgBox("Debe ingresar datos", MsgBoxStyle.Exclamation)
+            ' End Try
+
+
+        Else ' modifico el valor del vehiculo...es lo unico que puedo moddificar
+
+            'Modifico LOS DATOS EN LA TABLA VENTAS
+            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+            CN.Open()
+            Dim cmd As New SqlCommand("update Ventas set )", CN)
+            cmd.ExecuteNonQuery()
+
+
+
+
+
+
+
+        End If
+
     End Sub
 
   
 
-    Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    
 
-    End Sub
 
     Private Sub tbidvendedor_TextChanged(sender As Object, e As EventArgs) Handles tbidvendedor.TextChanged
         Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
@@ -306,6 +320,7 @@ Public Class formVentas
 
         If TextPlan.Text = 0 Then
             MsgBox("No hay importes para generar el plan", MsgBoxStyle.Exclamation)
+            Exit Sub
         Else
 
             Dim a As Char = "observacion"
@@ -333,9 +348,17 @@ Public Class formVentas
 
             'Dim cmd As New SqlCommand("insert into Planes(fechaplan, Detalleplan,IdCliente, precioventa) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & tbIdCliente.Text & "','" & Conversion.Val(precio) & "')", CN)
 
-            Dim cmd As New SqlCommand("insert into Planes (fechaplan, Detalleplan,IdCliente, precioventa, IdVenta) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & Conversion.Val(tbIdCliente.Text) & "', '" & Conversion.Val(precio) & "', '" & Conversion.Val(textidventa.Text) & "' )", CN)
+            If tbIdCliente.Text = "" Then
 
-            cmd.ExecuteNonQuery()
+                Dim cmd As New SqlCommand("insert into Planes (fechaplan, Detalleplan,IdCliente,PrecioVenta,ImporteFinanciadoPlan,CantidadCuotas,Intereses,MesesEntreCuotas,FechaPrimerCuota,ValorCuota,ImporteTotal,Cancelado, IdVenta) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & textidclientem.Text & "', '" & Conversion.Val(precio) & "', '" & TextPlan.Text & "','" & TextCuotas.Text & "','" & TextIntereses.Text & "', '" & TextMeses.Text & "','" & DTprimeraCuota.Value & "', '" & Conversion.Val(TextValorCuota.Text) & "','" & Conversion.Val(TextImporteTotal.Text) & "', 'False', '" & Conversion.Val(textidventa.Text) & "' )", CN)
+                cmd.ExecuteNonQuery()
+            Else
+                Dim cmd As New SqlCommand("insert into Planes (fechaplan, Detalleplan,IdCliente,PrecioVenta,ImporteFinanciadoPlan,CantidadCuotas,Intereses,MesesEntreCuotas,FechaPrimerCuota,ValorCuota,ImporteTotal,Cancelado, IdVenta) values ('" & dtfecha.Value & "','" & TextDetallePlan.Text & "','" & tbIdCliente.Text & "', '" & Conversion.Val(precio) & "', '" & TextPlan.Text & "','" & TextCuotas.Text & "','" & TextIntereses.Text & "', '" & TextMeses.Text & "','" & DTprimeraCuota.Value & "', '" & Conversion.Val(TextValorCuota.Text) & "','" & Conversion.Val(TextImporteTotal.Text) & "', 'False', '" & Conversion.Val(textidventa.Text) & "' )", CN)
+                cmd.ExecuteNonQuery()
+            End If
+
+
+
             'obtengo el numero de plan....
 
             'busco el codigo de esta venta...o sea el maximo de la tabla ventas
@@ -613,11 +636,12 @@ Public Class formVentas
         'oRng.InsertAfter("THE END.")
 
         'All done. Close this form.
-        Me.Close()
+
     End Sub
 
     Private Sub bBuscarCliente_Click(sender As Object, e As EventArgs) Handles bBuscarCliente.Click
         formBuscarCliente.Show()
+        formBuscarCliente.textform.Text = "ve"
     End Sub
 
     Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
@@ -749,6 +773,102 @@ Public Class formVentas
         textreal.Text = tabla2.Rows.Item(0).Item("TransferenciaReal")
 
 
+
+    End Sub
+
+    Private Sub buttontransferencia_Click(sender As Object, e As EventArgs) Handles buttontransferencia.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Dim cmd As New SqlCommand("update Ventas set Gastos ='" & Conversion.Val(tbtransferencia.Text) & "',TransferenciaReal='" & Conversion.Val(textreal.Text) & "' where idventa = '" & textidventa.Text & "'", CN)
+        cmd.ExecuteNonQuery()
+        MessageBox.Show("Modificacion Efectuada")
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+
+
+        Dim res As MsgBoxResult
+        res = MessageBox.Show("¿Esta seguro que desea eliminar?", "Atencion", MessageBoxButtons.YesNo)
+        If res = MsgBoxResult.Yes Then
+
+            '1) Modifico en Vehiculos Al vehiculo que habia vendido le pongo el estado VENDIDO = N
+            Dim cmdE As New SqlCommand("Update vehiculos set vendido = 'N' where idvehiculo ='" & tbIdVehVenta.Text & "' ", CN)
+            cmdE.ExecuteNonQuery()
+
+            '2) a este mismo vehiculo en VEHICULOSXCLIENTES le tengo que cambiar el estado = Activo
+            Dim cmvc As New SqlCommand("Update vehiculosxclientes set estado = 'Activo', fechahasta = fechadesde where idvehiculo ='" & tbIdVehVenta.Text & "' and estado = 'Pasivo' and fechahasta = '" & dtfecha.Value & "' ", CN)
+            cmvc.ExecuteNonQuery()
+
+            '3) ahora debo borrar de vehiculosxclientes los vehiculos que entrego
+            Dim cmv As New SqlCommand("delete vehiculosxclientes where exists (Select * from VehiculosEntregas where idventa = '" & textidvehiculoventam.Text & "')", CN)
+            cmv.ExecuteNonQuery()
+
+
+
+            '4) elimino los registros, si los hay de la TABLA VEHICULOS ENTREGAS
+            Dim cmd As New SqlCommand("delete VehiculosEntregas where IdVenta ='" & textidventa.Text & "' ", CN)
+            cmd.ExecuteNonQuery()
+
+
+
+
+
+
+
+            '5) elimino de creditos
+            Dim cmdcr As New SqlCommand("delete  creditos where idventa ='" & textidventa.Text & "' ", CN)
+            cmdcr.ExecuteNonQuery()
+
+
+            '6)Elimino de Planres - cuotas
+            'primero elimino las cuotas asociadas
+            Dim cmdc As New SqlCommand("delete Cuotas where idplan ='" & textidplan.Text & "' ", CN)
+            cmdc.ExecuteNonQuery()
+
+            'ahora elimino el plan para esa venta
+            Dim cmdp As New SqlCommand("delete Planes where idventa ='" & textidventa.Text & "' ", CN)
+            cmdp.ExecuteNonQuery()
+
+
+            ' 7)Elimino documentos - pagos
+            'para cada id de documento borrar los pagos
+            Dim cmdpa As New SqlCommand("delete PagosDocumentos where  exists (Select * from Documentos where idventa = '" & textidventa.Text & "') ", CN)
+            cmdpa.ExecuteNonQuery()
+
+            'elimino ahora todos los documentos para esa venta
+            Dim cmdd As New SqlCommand("delete documentos where idventa = '" & textidventa.Text & "' ", CN)
+            cmdd.ExecuteNonQuery()
+
+
+            '8)Elimino Entregas en efectivo
+            Dim cmdef As New SqlCommand("delete entregas where idventa = '" & textidventa.Text & "' ", CN)
+            cmdef.ExecuteNonQuery()
+
+
+            '9) Elimino Administrador, y pagos administrador
+            'los pagos no se necesario eliminarlos, porque el les hace pagos en general no para una venta especifica
+            'asi que solo elimino lo que quedaba financiado de la venta el administrador
+            Dim cmda As New SqlCommand("delete administrador where idventa = '" & textidventa.Text & "' ", CN)
+            cmda.ExecuteNonQuery()
+
+
+
+            '10) Elimino VENTAS....
+            Dim cmdv As New SqlCommand("delete ventas where idventa = '" & textidventa.Text & "' ", CN)
+            cmdv.ExecuteNonQuery()
+
+
+
+            MessageBox.Show("Eliminacion Efectuada")
+            CN.Close()
+
+        End If
+    End Sub
+
+    Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

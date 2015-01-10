@@ -5,14 +5,14 @@ Public Class formlistadoventas
         Me.Close()
     End Sub
 
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
 
-    End Sub
 
     Private Sub cargarventas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
+        'Dim cmd As New SqlCommand("select IdCliente,IdVenta,FechaVenta,NombreC,Tipo,NombreMarca,NombreModelo,Año,Dominio from Ventas v, Clientes c, Vehiculos ve, Marcas ma, Modelos mo  where v.idvehiculoventa = ve.idvehiculo and v.idcomprador = c.idcliente and ve.idmodelo = mo.idmodelo and mo.idmarca = ma.idmarca order by FechaVenta desc", CN)
         Dim cmd As New SqlCommand("select * from Ventas v, Clientes c, Vehiculos ve, Marcas ma, Modelos mo  where v.idvehiculoventa = ve.idvehiculo and v.idcomprador = c.idcliente and ve.idmodelo = mo.idmodelo and mo.idmarca = ma.idmarca order by FechaVenta desc", CN)
+
         Dim lista As SqlDataReader = cmd.ExecuteReader
         Dim dt As New DataTable()
         dt.Load(lista)
@@ -26,9 +26,7 @@ Public Class formlistadoventas
 
 
     Private Sub DGventas_Click(sender As Object, e As EventArgs) Handles DGventas.Click
-        textidventa.Text = DGventas.Item("idVenta", DGventas.SelectedRows(0).Index).Value()
-
-        formVentas.Show()
+      
     End Sub
 
     Public Sub cargarentregas()
@@ -39,12 +37,24 @@ Public Class formlistadoventas
         Dim dt As New DataTable()
         dt.Load(lista)
         formVentas.DGentregas.DataSource = dt
+
+
+   
+        Dim suma As New SqlCommand("Select sum(PrecioE) from VehiculosEntregas where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
+
+        If dt.Rows.Count > 0 Then
+
+
+            formVentas.textsumaentregasv.Text = suma.ExecuteScalar()
+        End If
+
         CN.Close()
     End Sub
     Private Sub textidventa_TextChanged(sender As Object, e As EventArgs) Handles textidventa.TextChanged
         'cargo el id de cliente para que muestre los datos personales
         formVentas.textidclientem.Text = DGventas.Item("idCliente", DGventas.SelectedRows(0).Index).Value()
         formVentas.textidventa.Text = textidventa.Text
+        formVentas.dtfecha.Value = DGventas.Item("FechaVenta", DGventas.SelectedRows(0).Index).Value()
         'que muestre los datos de la esposa/o si lo tuviese en ese momento de la tabla ventas y no de clientes, ya
         'que pudo haber cambiado
 
@@ -72,13 +82,13 @@ Public Class formlistadoventas
         tabla2 = New DataTable
         da.Fill(tabla2)
      
+        If tabla2.Rows.Count > 0 Then
 
+            formVentas.textcredsolicitado.Text = tabla2.Rows.Item(0).Item("ImporteSolicitado")
 
-        formVentas.textcredsolicitado.Text = tabla2.Rows.Item(0).Item("ImporteSolicitado")
+            formVentas.textcredotorgado.Text = tabla2.Rows.Item(0).Item("ImporteOtorgado")
 
-        formVentas.textcredotorgado.Text = tabla2.Rows.Item(0).Item("ImporteOtorgado")
-
-
+        End If
 
 
 
@@ -95,7 +105,7 @@ Public Class formlistadoventas
         formVentas.textsumadocumentos.Text = Conversion.Str(sumad.ExecuteScalar)
         If formVentas.textsumadocumentos.Text = "Null" Then
             formVentas.textsumadocumentos.Text = 0
-        Else
+
         End If
 
         'si hubo plan
@@ -122,7 +132,7 @@ Public Class formlistadoventas
                 formVentas.ChkCancelado.Checked = False
             End If
             formVentas.textidplan.Text = tabla3.Rows.Item(0).Item("IdPlan")
-     
+
 
 
 
@@ -153,7 +163,25 @@ Public Class formlistadoventas
         End If
     End Sub
 
-    Private Sub DGventas_ClientSizeChanged(sender As Object, e As EventArgs) Handles DGventas.ClientSizeChanged
+
+    Private Sub DGventas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGventas.CellContentClick
+
+    End Sub
+
+    Private Sub DGventas_DoubleClick(sender As Object, e As EventArgs) Handles DGventas.DoubleClick
+        textidventa.Text = DGventas.Item("idVenta", DGventas.SelectedRows(0).Index).Value()
+
+        formVentas.Show()
+        formVentas.Button8.Text = "Guardar Cambios"
+        formVentas.buttontransferencia.Visible = True
+        formVentas.Button3.Enabled = False
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
 
     End Sub
 End Class

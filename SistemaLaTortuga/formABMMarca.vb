@@ -5,7 +5,7 @@ Public Class formABMMarca
         Me.Close()
     End Sub
 
-    Private Sub tbMarca_TextChanged(sender As Object, e As EventArgs) Handles tbMarca.TextChanged
+    Private Sub tbMarca_TextChanged(sender As Object, e As EventArgs)
         If tbMarca.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else

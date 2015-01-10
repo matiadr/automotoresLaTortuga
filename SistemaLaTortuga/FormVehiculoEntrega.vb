@@ -38,7 +38,7 @@ Public Class formvehiculoentrega
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        formBuscarVehiculo.texttipoboton.Text = 2 'asigno el numero 2 a la variable para saber que tengo que cargar los datos en el form de entrega
+        formBuscarVehiculo.texttipoboton.Text = "ven" 'asigno el numero 2 a la variable para saber que tengo que cargar los datos en el form de entrega
         formBuscarVehiculo.Show()
     End Sub
     Public Sub cargarentregas()
@@ -63,7 +63,7 @@ Public Class formvehiculoentrega
 
             Dim CNV As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CNV.Open()
-            Dim cmdv As New SqlCommand("insert into Vehiculos values ('" & combomodelo.SelectedValue & "','" & tbAñoVehEntrega.Text & "','" & texttipoventrega.Text & "','" & tbMotorVehEntrega.Text & "','" & tbChasisVehEntrega.Text & "', '" & tbDominioVehEntrega.Text & "', '" & " " & "', '" & " " & "', '" & "N" & "', '" & formVentas.dtfecha.Value & "', '" & combotipo.Text & "', '" & "0" & "'. '" & tbPrecioCostoVehEntrega.Text & "', '" & "0" & "' )", CNV)
+            Dim cmdv As New SqlCommand("insert into Vehiculos values ('" & combomodelo.SelectedValue & "','" & tbAñoVehEntrega.Text & "','" & texttipoventrega.Text & "','" & tbMotorVehEntrega.Text & "','" & tbChasisVehEntrega.Text & "', '" & tbDominioVehEntrega.Text & "', '" & " " & "', '" & " " & "', '" & "N" & "', '" & formVentas.dtfecha.Value & "', '" & combotipo.Text & "', '" & "0" & "', '" & tbPrecioCostoVehEntrega.Text & "', '" & "0" & "' )", CNV)
             cmdv.ExecuteNonQuery()
 
 
@@ -170,13 +170,7 @@ Public Class formvehiculoentrega
 
     End Sub
 
-    Private Sub GroupBox3_Enter(sender As Object, e As EventArgs) Handles GroupBox3.Enter
-
-    End Sub
-
-    Private Sub combomarca_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combomarca.SelectedIndexChanged
-
-    End Sub
+   
 
     Private Sub combomarca_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles combomarca.SelectionChangeCommitted
         tbidmarca.Text = combomarca.SelectedValue.ToString

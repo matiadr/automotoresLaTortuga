@@ -271,6 +271,7 @@ Partial Class FormGastosVehiculo
         Me.ClientSize = New System.Drawing.Size(462, 264)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FormGastosVehiculo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gastos Por Vehículos"

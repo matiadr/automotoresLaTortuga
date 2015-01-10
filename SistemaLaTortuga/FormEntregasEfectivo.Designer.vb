@@ -175,9 +175,12 @@ Partial Class FormEntregasEfectivo
         '
         'Dgentregas
         '
+        Me.Dgentregas.AllowUserToAddRows = False
+        Me.Dgentregas.AllowUserToDeleteRows = False
         Me.Dgentregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgentregas.Location = New System.Drawing.Point(7, 16)
         Me.Dgentregas.Name = "Dgentregas"
+        Me.Dgentregas.ReadOnly = True
         Me.Dgentregas.Size = New System.Drawing.Size(469, 116)
         Me.Dgentregas.TabIndex = 0
         '
@@ -193,18 +196,22 @@ Partial Class FormEntregasEfectivo
         '
         'Bguardar
         '
+        Me.Bguardar.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Bguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Bguardar.Location = New System.Drawing.Point(20, 55)
         Me.Bguardar.Name = "Bguardar"
-        Me.Bguardar.Size = New System.Drawing.Size(73, 57)
+        Me.Bguardar.Size = New System.Drawing.Size(73, 40)
         Me.Bguardar.TabIndex = 12
         Me.Bguardar.Text = "Guardar"
         Me.Bguardar.UseVisualStyleBackColor = True
         '
         'Button2
         '
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(20, 166)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(73, 57)
+        Me.Button2.Size = New System.Drawing.Size(73, 36)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Salir"
         Me.Button2.UseVisualStyleBackColor = True

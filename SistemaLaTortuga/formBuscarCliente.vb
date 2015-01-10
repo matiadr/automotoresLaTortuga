@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class formBuscarCliente
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -20,7 +20,7 @@ Public Class formBuscarCliente
         CN.Close()
     End Sub
 
-    Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
+    Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs)
         Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
         Dim miConexion As New SqlConnection(CN)
         Dim seleccion As String = "select IdCliente,NombreC,NumeroDni from Clientes where NombreC like '" & tbBusqueda.Text & "%' or NumeroDni like '" & tbBusqueda.Text & "%' order by NombreC" 'Busco por Nombre
@@ -36,28 +36,48 @@ Public Class formBuscarCliente
 
    
 
+  
+    Private Sub bNuevoCliente_Click(sender As Object, e As EventArgs)
+        formClientes.Show()
+    End Sub
+
+    
+   
+    Private Sub tbBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Dim cmd As New SqlCommand("select IdCliente,NombreC,NumeroDni from Clientes where NombreC like '" & tbBusqueda.Text & "%' order by NombreC", CN)
+        Dim lista As SqlDataReader = cmd.ExecuteReader
+        Dim dt As New DataTable()
+        dt.Load(lista)
+        dgClientes.DataSource = dt
+        CN.Close()
+
+    End Sub
+
+   
+
+    Private Sub dgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgClientes.CellContentClick
+
+    End Sub
+
     Private Sub dgClientes_DoubleClick(sender As Object, e As EventArgs) Handles dgClientes.DoubleClick
         If textform.Text = "v" Then
             formVehiculos.textidcliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
             formVehiculos.textnombre.Text = dgClientes.Item("Nombre", dgClientes.SelectedRows(0).Index).Value()
             formVehiculos.Button2.Enabled = True
         Else
-            formVentas.tbIdCliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
+            If textform.Text = "ch" Then
+                formCheques.textcodigoc.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
+                formCheques.textnombrec.Text = dgClientes.Item("Nombre", dgClientes.SelectedRows(0).Index).Value()
+            Else
+                If textform.Text = "ve" Then
+                    formVentas.tbIdCliente.Text = dgClientes.Item("idCliente", dgClientes.SelectedRows(0).Index).Value()
 
+                End If
+            End If
         End If
         Me.Close()
-
-
-
-
-    End Sub
-
-    Private Sub bNuevoCliente_Click(sender As Object, e As EventArgs) Handles bNuevoCliente.Click
-        formClientes.Show()
-    End Sub
-
-    
-    Private Sub dgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgClientes.CellContentClick
 
     End Sub
 End Class

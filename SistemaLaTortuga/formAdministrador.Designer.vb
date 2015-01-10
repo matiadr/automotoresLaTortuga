@@ -46,7 +46,7 @@ Partial Class formadministrador
         Me.GroupBox4.Controls.Add(Me.ComboCuentas)
         Me.GroupBox4.Location = New System.Drawing.Point(14, 86)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(488, 52)
+        Me.GroupBox4.Size = New System.Drawing.Size(368, 65)
         Me.GroupBox4.TabIndex = 7
         Me.GroupBox4.TabStop = False
         '
@@ -83,23 +83,27 @@ Partial Class formadministrador
         '
         Me.GroupBox3.Controls.Add(Me.Bguardar)
         Me.GroupBox3.Controls.Add(Me.Button2)
-        Me.GroupBox3.Location = New System.Drawing.Point(510, 12)
+        Me.GroupBox3.Location = New System.Drawing.Point(388, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(112, 126)
+        Me.GroupBox3.Size = New System.Drawing.Size(112, 139)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
         '
         'Bguardar
         '
+        Me.Bguardar.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Bguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Bguardar.Location = New System.Drawing.Point(20, 19)
         Me.Bguardar.Name = "Bguardar"
         Me.Bguardar.Size = New System.Drawing.Size(73, 35)
         Me.Bguardar.TabIndex = 12
-        Me.Bguardar.Text = "Guardar"
+        Me.Bguardar.Text = "  Guardar"
         Me.Bguardar.UseVisualStyleBackColor = True
         '
         'Button2
         '
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(20, 72)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(73, 34)
@@ -115,7 +119,7 @@ Partial Class formadministrador
         Me.GroupBox1.Controls.Add(Me.DTfecha)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(490, 68)
+        Me.GroupBox1.Size = New System.Drawing.Size(370, 68)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
@@ -156,11 +160,12 @@ Partial Class formadministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(628, 152)
+        Me.ClientSize = New System.Drawing.Size(511, 163)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "formadministrador"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrador"

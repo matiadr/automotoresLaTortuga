@@ -24,19 +24,21 @@ Partial Class formABMRubros
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgRubro = New System.Windows.Forms.DataGridView()
-        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
+        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.tbIdRubro = New System.Windows.Forms.TextBox()
         Me.tbRubro = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.tbIdRubro = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgRubro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -44,7 +46,7 @@ Partial Class formABMRubros
         Me.GroupBox1.Controls.Add(Me.dgRubro)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(228, 167)
+        Me.GroupBox1.Size = New System.Drawing.Size(228, 186)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Rubros"
@@ -60,24 +62,9 @@ Partial Class formABMRubros
         Me.dgRubro.Name = "dgRubro"
         Me.dgRubro.ReadOnly = True
         Me.dgRubro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgRubro.Size = New System.Drawing.Size(204, 111)
+        Me.dgRubro.Size = New System.Drawing.Size(216, 144)
         Me.dgRubro.TabIndex = 4
         Me.dgRubro.TabStop = False
-        '
-        'idRubro
-        '
-        Me.idRubro.DataPropertyName = "IdRubro"
-        Me.idRubro.HeaderText = "idRubro"
-        Me.idRubro.Name = "idRubro"
-        Me.idRubro.ReadOnly = True
-        Me.idRubro.Visible = False
-        '
-        'rubro
-        '
-        Me.rubro.DataPropertyName = "NombreRubro"
-        Me.rubro.HeaderText = "Rubro"
-        Me.rubro.Name = "rubro"
-        Me.rubro.ReadOnly = True
         '
         'gbAcciones
         '
@@ -85,9 +72,9 @@ Partial Class formABMRubros
         Me.gbAcciones.Controls.Add(Me.bEliminar)
         Me.gbAcciones.Controls.Add(Me.bModificar)
         Me.gbAcciones.Controls.Add(Me.bNuevo)
-        Me.gbAcciones.Location = New System.Drawing.Point(271, 12)
+        Me.gbAcciones.Location = New System.Drawing.Point(245, 12)
         Me.gbAcciones.Name = "gbAcciones"
-        Me.gbAcciones.Size = New System.Drawing.Size(133, 262)
+        Me.gbAcciones.Size = New System.Drawing.Size(117, 262)
         Me.gbAcciones.TabIndex = 9
         Me.gbAcciones.TabStop = False
         Me.gbAcciones.Text = "Acciones"
@@ -139,41 +126,66 @@ Partial Class formABMRubros
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
         '
+        'idRubro
+        '
+        Me.idRubro.DataPropertyName = "IdRubro"
+        Me.idRubro.HeaderText = "idRubro"
+        Me.idRubro.Name = "idRubro"
+        Me.idRubro.ReadOnly = True
+        Me.idRubro.Visible = False
+        '
+        'rubro
+        '
+        Me.rubro.DataPropertyName = "NombreRubro"
+        Me.rubro.HeaderText = "Rubro"
+        Me.rubro.Name = "rubro"
+        Me.rubro.ReadOnly = True
+        Me.rubro.Width = 150
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.tbIdRubro)
+        Me.GroupBox2.Controls.Add(Me.tbRubro)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 202)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(226, 72)
+        Me.GroupBox2.TabIndex = 11
+        Me.GroupBox2.TabStop = False
+        '
+        'tbIdRubro
+        '
+        Me.tbIdRubro.Location = New System.Drawing.Point(65, 46)
+        Me.tbIdRubro.Name = "tbIdRubro"
+        Me.tbIdRubro.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdRubro.TabIndex = 14
+        Me.tbIdRubro.Visible = False
+        '
         'tbRubro
         '
         Me.tbRubro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbRubro.Location = New System.Drawing.Point(57, 208)
+        Me.tbRubro.Location = New System.Drawing.Point(65, 19)
         Me.tbRubro.Name = "tbRubro"
         Me.tbRubro.Size = New System.Drawing.Size(134, 20)
-        Me.tbRubro.TabIndex = 8
+        Me.tbRubro.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 211)
+        Me.Label1.Location = New System.Drawing.Point(23, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(36, 13)
-        Me.Label1.TabIndex = 7
+        Me.Label1.TabIndex = 12
         Me.Label1.Text = "Rubro"
-        '
-        'tbIdRubro
-        '
-        Me.tbIdRubro.Location = New System.Drawing.Point(57, 235)
-        Me.tbIdRubro.Name = "tbIdRubro"
-        Me.tbIdRubro.Size = New System.Drawing.Size(100, 20)
-        Me.tbIdRubro.TabIndex = 11
-        Me.tbIdRubro.Visible = False
         '
         'formABMRubros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(426, 294)
-        Me.Controls.Add(Me.tbIdRubro)
+        Me.ClientSize = New System.Drawing.Size(370, 278)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbAcciones)
-        Me.Controls.Add(Me.tbRubro)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "formABMRubros"
@@ -182,8 +194,9 @@ Partial Class formABMRubros
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgRubro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbAcciones.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -193,9 +206,10 @@ Partial Class formABMRubros
     Friend WithEvents bEliminar As System.Windows.Forms.Button
     Friend WithEvents bModificar As System.Windows.Forms.Button
     Friend WithEvents bNuevo As System.Windows.Forms.Button
-    Friend WithEvents tbRubro As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents tbIdRubro As System.Windows.Forms.TextBox
     Friend WithEvents idRubro As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents rubro As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents tbIdRubro As System.Windows.Forms.TextBox
+    Friend WithEvents tbRubro As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

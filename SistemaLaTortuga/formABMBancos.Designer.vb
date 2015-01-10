@@ -23,7 +23,6 @@ Partial Class formABMBancos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formABMBancos))
-        Me.tbIdBanco = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgBancos = New System.Windows.Forms.DataGridView()
         Me.idBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,29 +33,24 @@ Partial Class formABMBancos
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.tbCodigo = New System.Windows.Forms.TextBox()
+        Me.Codigo = New System.Windows.Forms.Label()
+        Me.tbIdBanco = New System.Windows.Forms.TextBox()
         Me.tbBanco = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Codigo = New System.Windows.Forms.Label()
-        Me.tbCodigo = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgBancos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'tbIdBanco
-        '
-        Me.tbIdBanco.Location = New System.Drawing.Point(140, 185)
-        Me.tbIdBanco.Name = "tbIdBanco"
-        Me.tbIdBanco.Size = New System.Drawing.Size(37, 20)
-        Me.tbIdBanco.TabIndex = 12
-        Me.tbIdBanco.Visible = False
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dgBancos)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(291, 167)
+        Me.GroupBox1.Size = New System.Drawing.Size(414, 167)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bancos"
@@ -68,11 +62,11 @@ Partial Class formABMBancos
         Me.dgBancos.AllowUserToResizeRows = False
         Me.dgBancos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgBancos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idBanco, Me.codigoBanco, Me.banco})
-        Me.dgBancos.Location = New System.Drawing.Point(6, 36)
+        Me.dgBancos.Location = New System.Drawing.Point(16, 20)
         Me.dgBancos.Name = "dgBancos"
         Me.dgBancos.ReadOnly = True
         Me.dgBancos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgBancos.Size = New System.Drawing.Size(266, 110)
+        Me.dgBancos.Size = New System.Drawing.Size(376, 141)
         Me.dgBancos.TabIndex = 4
         Me.dgBancos.TabStop = False
         '
@@ -97,6 +91,7 @@ Partial Class formABMBancos
         Me.banco.HeaderText = "Banco"
         Me.banco.Name = "banco"
         Me.banco.ReadOnly = True
+        Me.banco.Width = 200
         '
         'gbAcciones
         '
@@ -104,9 +99,9 @@ Partial Class formABMBancos
         Me.gbAcciones.Controls.Add(Me.bEliminar)
         Me.gbAcciones.Controls.Add(Me.bModificar)
         Me.gbAcciones.Controls.Add(Me.bNuevo)
-        Me.gbAcciones.Location = New System.Drawing.Point(309, 12)
+        Me.gbAcciones.Location = New System.Drawing.Point(432, 12)
         Me.gbAcciones.Name = "gbAcciones"
-        Me.gbAcciones.Size = New System.Drawing.Size(133, 262)
+        Me.gbAcciones.Size = New System.Drawing.Size(115, 269)
         Me.gbAcciones.TabIndex = 10
         Me.gbAcciones.TabStop = False
         Me.gbAcciones.Text = "Acciones"
@@ -158,51 +153,68 @@ Partial Class formABMBancos
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
         '
-        'tbBanco
+        'GroupBox2
         '
-        Me.tbBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbBanco.Location = New System.Drawing.Point(59, 209)
-        Me.tbBanco.Name = "tbBanco"
-        Me.tbBanco.Size = New System.Drawing.Size(118, 20)
-        Me.tbBanco.TabIndex = 9
+        Me.GroupBox2.Controls.Add(Me.tbCodigo)
+        Me.GroupBox2.Controls.Add(Me.Codigo)
+        Me.GroupBox2.Controls.Add(Me.tbIdBanco)
+        Me.GroupBox2.Controls.Add(Me.tbBanco)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 185)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(414, 96)
+        Me.GroupBox2.TabIndex = 12
+        Me.GroupBox2.TabStop = False
         '
-        'Label1
+        'tbCodigo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 211)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Banco"
+        Me.tbCodigo.Location = New System.Drawing.Point(81, 53)
+        Me.tbCodigo.Name = "tbCodigo"
+        Me.tbCodigo.Size = New System.Drawing.Size(221, 20)
+        Me.tbCodigo.TabIndex = 19
         '
         'Codigo
         '
         Me.Codigo.AutoSize = True
-        Me.Codigo.Location = New System.Drawing.Point(13, 242)
+        Me.Codigo.Location = New System.Drawing.Point(35, 56)
         Me.Codigo.Name = "Codigo"
         Me.Codigo.Size = New System.Drawing.Size(40, 13)
-        Me.Codigo.TabIndex = 13
+        Me.Codigo.TabIndex = 18
         Me.Codigo.Text = "Codigo"
         '
-        'tbCodigo
+        'tbIdBanco
         '
-        Me.tbCodigo.Location = New System.Drawing.Point(59, 239)
-        Me.tbCodigo.Name = "tbCodigo"
-        Me.tbCodigo.Size = New System.Drawing.Size(118, 20)
-        Me.tbCodigo.TabIndex = 14
+        Me.tbIdBanco.Location = New System.Drawing.Point(336, 25)
+        Me.tbIdBanco.Name = "tbIdBanco"
+        Me.tbIdBanco.Size = New System.Drawing.Size(37, 20)
+        Me.tbIdBanco.TabIndex = 17
+        Me.tbIdBanco.Visible = False
+        '
+        'tbBanco
+        '
+        Me.tbBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbBanco.Location = New System.Drawing.Point(81, 23)
+        Me.tbBanco.Name = "tbBanco"
+        Me.tbBanco.Size = New System.Drawing.Size(221, 20)
+        Me.tbBanco.TabIndex = 16
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(37, 25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Banco"
         '
         'formABMBancos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 297)
-        Me.Controls.Add(Me.tbCodigo)
-        Me.Controls.Add(Me.Codigo)
-        Me.Controls.Add(Me.tbIdBanco)
+        Me.ClientSize = New System.Drawing.Size(556, 286)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbAcciones)
-        Me.Controls.Add(Me.tbBanco)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -212,23 +224,25 @@ Partial Class formABMBancos
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgBancos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbAcciones.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents tbIdBanco As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgBancos As System.Windows.Forms.DataGridView
-    Friend WithEvents idBanco As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents codigoBanco As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents banco As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents gbAcciones As System.Windows.Forms.GroupBox
     Friend WithEvents bSalir As System.Windows.Forms.Button
     Friend WithEvents bEliminar As System.Windows.Forms.Button
     Friend WithEvents bModificar As System.Windows.Forms.Button
     Friend WithEvents bNuevo As System.Windows.Forms.Button
+    Friend WithEvents idBanco As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents codigoBanco As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents banco As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents tbCodigo As System.Windows.Forms.TextBox
+    Friend WithEvents Codigo As System.Windows.Forms.Label
+    Friend WithEvents tbIdBanco As System.Windows.Forms.TextBox
     Friend WithEvents tbBanco As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Codigo As System.Windows.Forms.Label
-    Friend WithEvents tbCodigo As System.Windows.Forms.TextBox
 End Class

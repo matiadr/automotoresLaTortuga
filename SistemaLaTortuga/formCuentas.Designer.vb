@@ -29,13 +29,6 @@ Partial Class formCuentas
         Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgCuentas = New System.Windows.Forms.DataGridView()
-        Me.idCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.saldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detalleCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
@@ -57,6 +50,13 @@ Partial Class formCuentas
         Me.tbNombre = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.idCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.saldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.detalleCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbCuentas.SuspendLayout()
         CType(Me.dgCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
@@ -141,69 +141,15 @@ Partial Class formCuentas
         Me.dgCuentas.TabIndex = 0
         Me.dgCuentas.TabStop = False
         '
-        'idCuenta
-        '
-        Me.idCuenta.DataPropertyName = "IdCuenta"
-        Me.idCuenta.HeaderText = "idCuenta"
-        Me.idCuenta.Name = "idCuenta"
-        Me.idCuenta.ReadOnly = True
-        Me.idCuenta.Visible = False
-        '
-        'nombre
-        '
-        Me.nombre.DataPropertyName = "NombreCuenta"
-        Me.nombre.HeaderText = "Nombre Cuenta"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        Me.nombre.Width = 120
-        '
-        'tipoCuenta
-        '
-        Me.tipoCuenta.DataPropertyName = "TipoCuenta"
-        Me.tipoCuenta.HeaderText = "Tipo Cuenta"
-        Me.tipoCuenta.Name = "tipoCuenta"
-        Me.tipoCuenta.ReadOnly = True
-        Me.tipoCuenta.Width = 50
-        '
-        'rubro
-        '
-        Me.rubro.DataPropertyName = "NombreRubro"
-        Me.rubro.HeaderText = "Rubro"
-        Me.rubro.Name = "rubro"
-        Me.rubro.ReadOnly = True
-        '
-        'saldo
-        '
-        Me.saldo.DataPropertyName = "SaldoCuenta"
-        Me.saldo.HeaderText = "Saldo"
-        Me.saldo.Name = "saldo"
-        Me.saldo.ReadOnly = True
-        '
-        'idRubro
-        '
-        Me.idRubro.DataPropertyName = "IdRubro"
-        Me.idRubro.HeaderText = "idRubro"
-        Me.idRubro.Name = "idRubro"
-        Me.idRubro.ReadOnly = True
-        Me.idRubro.Visible = False
-        '
-        'detalleCuenta
-        '
-        Me.detalleCuenta.DataPropertyName = "DetalleCuenta"
-        Me.detalleCuenta.HeaderText = "detalleCuenta"
-        Me.detalleCuenta.Name = "detalleCuenta"
-        Me.detalleCuenta.ReadOnly = True
-        Me.detalleCuenta.Visible = False
-        '
         'gbAcciones
         '
         Me.gbAcciones.Controls.Add(Me.bSalir)
         Me.gbAcciones.Controls.Add(Me.bEliminar)
         Me.gbAcciones.Controls.Add(Me.bModificar)
         Me.gbAcciones.Controls.Add(Me.bNuevo)
-        Me.gbAcciones.Location = New System.Drawing.Point(592, 12)
+        Me.gbAcciones.Location = New System.Drawing.Point(612, 12)
         Me.gbAcciones.Name = "gbAcciones"
-        Me.gbAcciones.Size = New System.Drawing.Size(162, 386)
+        Me.gbAcciones.Size = New System.Drawing.Size(140, 579)
         Me.gbAcciones.TabIndex = 4
         Me.gbAcciones.TabStop = False
         Me.gbAcciones.Text = "Acciones"
@@ -213,7 +159,7 @@ Partial Class formCuentas
         Me.bSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
         Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bSalir.Location = New System.Drawing.Point(17, 253)
+        Me.bSalir.Location = New System.Drawing.Point(15, 367)
         Me.bSalir.Name = "bSalir"
         Me.bSalir.Size = New System.Drawing.Size(110, 50)
         Me.bSalir.TabIndex = 11
@@ -226,7 +172,7 @@ Partial Class formCuentas
         Me.bEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bEliminar.Image = Global.SistemaLaTortuga.My.Resources.Resources.cancel
         Me.bEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bEliminar.Location = New System.Drawing.Point(17, 183)
+        Me.bEliminar.Location = New System.Drawing.Point(15, 273)
         Me.bEliminar.Name = "bEliminar"
         Me.bEliminar.Size = New System.Drawing.Size(110, 50)
         Me.bEliminar.TabIndex = 10
@@ -239,7 +185,7 @@ Partial Class formCuentas
         Me.bModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bModificar.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
         Me.bModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bModificar.Location = New System.Drawing.Point(17, 113)
+        Me.bModificar.Location = New System.Drawing.Point(15, 181)
         Me.bModificar.Name = "bModificar"
         Me.bModificar.Size = New System.Drawing.Size(110, 54)
         Me.bModificar.TabIndex = 9
@@ -252,7 +198,7 @@ Partial Class formCuentas
         Me.bNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bNuevo.Location = New System.Drawing.Point(17, 36)
+        Me.bNuevo.Location = New System.Drawing.Point(15, 82)
         Me.bNuevo.Name = "bNuevo"
         Me.bNuevo.Size = New System.Drawing.Size(110, 54)
         Me.bNuevo.TabIndex = 8
@@ -420,6 +366,60 @@ Partial Class formCuentas
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Rubro *"
         '
+        'idCuenta
+        '
+        Me.idCuenta.DataPropertyName = "IdCuenta"
+        Me.idCuenta.HeaderText = "idCuenta"
+        Me.idCuenta.Name = "idCuenta"
+        Me.idCuenta.ReadOnly = True
+        Me.idCuenta.Visible = False
+        '
+        'nombre
+        '
+        Me.nombre.DataPropertyName = "NombreCuenta"
+        Me.nombre.HeaderText = "Nombre Cuenta"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        Me.nombre.Width = 120
+        '
+        'tipoCuenta
+        '
+        Me.tipoCuenta.DataPropertyName = "TipoCuenta"
+        Me.tipoCuenta.HeaderText = "Tipo Cuenta"
+        Me.tipoCuenta.Name = "tipoCuenta"
+        Me.tipoCuenta.ReadOnly = True
+        '
+        'rubro
+        '
+        Me.rubro.DataPropertyName = "NombreRubro"
+        Me.rubro.HeaderText = "Rubro"
+        Me.rubro.Name = "rubro"
+        Me.rubro.ReadOnly = True
+        Me.rubro.Width = 150
+        '
+        'saldo
+        '
+        Me.saldo.DataPropertyName = "SaldoCuenta"
+        Me.saldo.HeaderText = "Saldo"
+        Me.saldo.Name = "saldo"
+        Me.saldo.ReadOnly = True
+        '
+        'idRubro
+        '
+        Me.idRubro.DataPropertyName = "IdRubro"
+        Me.idRubro.HeaderText = "idRubro"
+        Me.idRubro.Name = "idRubro"
+        Me.idRubro.ReadOnly = True
+        Me.idRubro.Visible = False
+        '
+        'detalleCuenta
+        '
+        Me.detalleCuenta.DataPropertyName = "DetalleCuenta"
+        Me.detalleCuenta.HeaderText = "detalleCuenta"
+        Me.detalleCuenta.Name = "detalleCuenta"
+        Me.detalleCuenta.ReadOnly = True
+        Me.detalleCuenta.Visible = False
+        '
         'formCuentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -429,6 +429,7 @@ Partial Class formCuentas
         Me.Controls.Add(Me.gbCuentas)
         Me.Controls.Add(Me.gbCuenta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "formCuentas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrar Cuentas"
@@ -464,6 +465,11 @@ Partial Class formCuentas
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents rbNombreCuenta As System.Windows.Forms.RadioButton
     Friend WithEvents rbRubro As System.Windows.Forms.RadioButton
+    Friend WithEvents tbDetalleCuenta As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents tbIdCuenta As System.Windows.Forms.TextBox
+    Friend WithEvents bLimpiar As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents idCuenta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipoCuenta As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -471,9 +477,4 @@ Partial Class formCuentas
     Friend WithEvents saldo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idRubro As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents detalleCuenta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tbDetalleCuenta As System.Windows.Forms.RichTextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents tbIdCuenta As System.Windows.Forms.TextBox
-    Friend WithEvents bLimpiar As System.Windows.Forms.Button
-    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

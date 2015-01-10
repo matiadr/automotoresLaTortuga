@@ -100,18 +100,22 @@ Partial Class formcreditos
         '
         'Bguardar
         '
-        Me.Bguardar.Location = New System.Drawing.Point(20, 24)
+        Me.Bguardar.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Bguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Bguardar.Location = New System.Drawing.Point(20, 30)
         Me.Bguardar.Name = "Bguardar"
-        Me.Bguardar.Size = New System.Drawing.Size(73, 57)
+        Me.Bguardar.Size = New System.Drawing.Size(73, 37)
         Me.Bguardar.TabIndex = 12
         Me.Bguardar.Text = "Guardar"
         Me.Bguardar.UseVisualStyleBackColor = True
         '
         'Button2
         '
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(20, 124)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(73, 57)
+        Me.Button2.Size = New System.Drawing.Size(73, 37)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Salir"
         Me.Button2.UseVisualStyleBackColor = True
@@ -266,6 +270,7 @@ Partial Class formcreditos
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "formcreditos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Créditos"

@@ -120,6 +120,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formsucursalesbancos.Designer.vb">
+      <DependentUpon>formsucursalesbancos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formsucursalesbancos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCheques.Designer.vb">
+      <DependentUpon>formCheques.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formCheques.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formListadoVentas.Designer.vb">
       <DependentUpon>formListadoVentas.vb</DependentUpon>
     </Compile>
@@ -473,6 +485,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="formsucursalesbancos.resx">
+      <DependentUpon>formsucursalesbancos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCheques.resx">
+      <DependentUpon>formCheques.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formAdministrador.resx">
       <DependentUpon>formAdministrador.vb</DependentUpon>
     </EmbeddedResource>

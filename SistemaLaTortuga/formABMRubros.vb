@@ -5,7 +5,7 @@ Public Class formABMRubros
         Me.Close()
     End Sub
 
-    Private Sub tbRubro_TextChanged(sender As Object, e As EventArgs) Handles tbRubro.TextChanged
+    Private Sub tbRubro_TextChanged(sender As Object, e As EventArgs)
         If tbRubro.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else

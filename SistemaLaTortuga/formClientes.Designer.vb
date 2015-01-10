@@ -27,27 +27,6 @@ Partial Class formClientes
         Me.tbBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgClientes = New System.Windows.Forms.DataGridView()
-        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreConyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dniConyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idLocalidad1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idProvincia1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoDniConyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idProvincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoDni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estadoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ocupacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.tbDocumentoConyuge = New System.Windows.Forms.MaskedTextBox()
         Me.tbDocumento = New System.Windows.Forms.MaskedTextBox()
@@ -93,6 +72,27 @@ Partial Class formClientes
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
+        Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreConyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dniConyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idLocalidad1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idProvincia1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoDniConyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idProvincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoDni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estadoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ocupacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbClientes.SuspendLayout()
         CType(Me.dgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupBox1.SuspendLayout()
@@ -106,7 +106,7 @@ Partial Class formClientes
         Me.gbClientes.Controls.Add(Me.dgClientes)
         Me.gbClientes.Location = New System.Drawing.Point(13, 12)
         Me.gbClientes.Name = "gbClientes"
-        Me.gbClientes.Size = New System.Drawing.Size(684, 325)
+        Me.gbClientes.Size = New System.Drawing.Size(921, 325)
         Me.gbClientes.TabIndex = 0
         Me.gbClientes.TabStop = False
         Me.gbClientes.Text = "Clientes"
@@ -118,7 +118,7 @@ Partial Class formClientes
         Me.tbBusqueda.ForeColor = System.Drawing.Color.Black
         Me.tbBusqueda.Location = New System.Drawing.Point(73, 26)
         Me.tbBusqueda.Name = "tbBusqueda"
-        Me.tbBusqueda.Size = New System.Drawing.Size(141, 20)
+        Me.tbBusqueda.Size = New System.Drawing.Size(233, 20)
         Me.tbBusqueda.TabIndex = 1
         '
         'Label1
@@ -142,171 +142,9 @@ Partial Class formClientes
         Me.dgClientes.Name = "dgClientes"
         Me.dgClientes.ReadOnly = True
         Me.dgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgClientes.Size = New System.Drawing.Size(652, 252)
+        Me.dgClientes.Size = New System.Drawing.Size(898, 252)
         Me.dgClientes.TabIndex = 0
         Me.dgClientes.TabStop = False
-        '
-        'idCliente
-        '
-        Me.idCliente.DataPropertyName = "IdCliente"
-        Me.idCliente.HeaderText = "idCliente"
-        Me.idCliente.Name = "idCliente"
-        Me.idCliente.ReadOnly = True
-        Me.idCliente.Visible = False
-        '
-        'nombreConyuge
-        '
-        Me.nombreConyuge.DataPropertyName = "NombreCConyuge"
-        Me.nombreConyuge.HeaderText = "nombreConyuge"
-        Me.nombreConyuge.Name = "nombreConyuge"
-        Me.nombreConyuge.ReadOnly = True
-        Me.nombreConyuge.Visible = False
-        '
-        'dniConyuge
-        '
-        Me.dniConyuge.DataPropertyName = "DniConyuge"
-        Me.dniConyuge.HeaderText = "dniConyuge"
-        Me.dniConyuge.Name = "dniConyuge"
-        Me.dniConyuge.ReadOnly = True
-        Me.dniConyuge.Visible = False
-        '
-        'idLocalidad1
-        '
-        Me.idLocalidad1.DataPropertyName = "idLocalidad1"
-        Me.idLocalidad1.HeaderText = "idLocalidad1"
-        Me.idLocalidad1.Name = "idLocalidad1"
-        Me.idLocalidad1.ReadOnly = True
-        Me.idLocalidad1.Visible = False
-        '
-        'idProvincia1
-        '
-        Me.idProvincia1.DataPropertyName = "idProvincia1"
-        Me.idProvincia1.HeaderText = "idProvincia1"
-        Me.idProvincia1.Name = "idProvincia1"
-        Me.idProvincia1.ReadOnly = True
-        Me.idProvincia1.Visible = False
-        '
-        'fechaNacimiento
-        '
-        Me.fechaNacimiento.DataPropertyName = "FechaNacimiento"
-        Me.fechaNacimiento.HeaderText = "fechaNacimiento"
-        Me.fechaNacimiento.Name = "fechaNacimiento"
-        Me.fechaNacimiento.ReadOnly = True
-        Me.fechaNacimiento.Visible = False
-        '
-        'tipoDniConyuge
-        '
-        Me.tipoDniConyuge.DataPropertyName = "TipoDniConyuge"
-        Me.tipoDniConyuge.HeaderText = "tipoDniConyuge"
-        Me.tipoDniConyuge.Name = "tipoDniConyuge"
-        Me.tipoDniConyuge.ReadOnly = True
-        Me.tipoDniConyuge.Visible = False
-        '
-        'idProvincia
-        '
-        Me.idProvincia.DataPropertyName = "IdProvincia"
-        Me.idProvincia.HeaderText = "idProvincia"
-        Me.idProvincia.Name = "idProvincia"
-        Me.idProvincia.ReadOnly = True
-        Me.idProvincia.Visible = False
-        '
-        'idLocalidad
-        '
-        Me.idLocalidad.DataPropertyName = "IdLocalidad"
-        Me.idLocalidad.HeaderText = "idLocalidad"
-        Me.idLocalidad.Name = "idLocalidad"
-        Me.idLocalidad.ReadOnly = True
-        Me.idLocalidad.Visible = False
-        '
-        'Nombre
-        '
-        Me.Nombre.DataPropertyName = "NombreC"
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'tipoDni
-        '
-        Me.tipoDni.DataPropertyName = "TipoDni"
-        Me.tipoDni.HeaderText = "tipoDni"
-        Me.tipoDni.Name = "tipoDni"
-        Me.tipoDni.ReadOnly = True
-        Me.tipoDni.Visible = False
-        '
-        'Documento
-        '
-        Me.Documento.DataPropertyName = "NumeroDni"
-        Me.Documento.HeaderText = "Documento"
-        Me.Documento.Name = "Documento"
-        Me.Documento.ReadOnly = True
-        '
-        'estadoCivil
-        '
-        Me.estadoCivil.DataPropertyName = "EstadoCivil"
-        Me.estadoCivil.HeaderText = "estadoCivil"
-        Me.estadoCivil.Name = "estadoCivil"
-        Me.estadoCivil.ReadOnly = True
-        Me.estadoCivil.Visible = False
-        '
-        'telefono
-        '
-        Me.telefono.DataPropertyName = "Telefono"
-        Me.telefono.HeaderText = "Telefono"
-        Me.telefono.Name = "telefono"
-        Me.telefono.ReadOnly = True
-        '
-        'Domicilio
-        '
-        Me.Domicilio.DataPropertyName = "Domicilio"
-        Me.Domicilio.HeaderText = "Domicilio"
-        Me.Domicilio.Name = "Domicilio"
-        Me.Domicilio.ReadOnly = True
-        '
-        'Localidad
-        '
-        Me.Localidad.DataPropertyName = "NombreLocalidad"
-        Me.Localidad.HeaderText = "Localidad"
-        Me.Localidad.Name = "Localidad"
-        Me.Localidad.ReadOnly = True
-        '
-        'Provincia
-        '
-        Me.Provincia.DataPropertyName = "NombreProvincia"
-        Me.Provincia.HeaderText = "Provincia"
-        Me.Provincia.Name = "Provincia"
-        Me.Provincia.ReadOnly = True
-        '
-        'ocupacion
-        '
-        Me.ocupacion.DataPropertyName = "Ocupacion"
-        Me.ocupacion.HeaderText = "ocupacion"
-        Me.ocupacion.Name = "ocupacion"
-        Me.ocupacion.ReadOnly = True
-        Me.ocupacion.Visible = False
-        '
-        'tipoIva
-        '
-        Me.tipoIva.DataPropertyName = "TipoIva"
-        Me.tipoIva.HeaderText = "tipoIva"
-        Me.tipoIva.Name = "tipoIva"
-        Me.tipoIva.ReadOnly = True
-        Me.tipoIva.Visible = False
-        '
-        'cuit
-        '
-        Me.cuit.DataPropertyName = "Cuit"
-        Me.cuit.HeaderText = "cuit"
-        Me.cuit.Name = "cuit"
-        Me.cuit.ReadOnly = True
-        Me.cuit.Visible = False
-        '
-        'email
-        '
-        Me.email.DataPropertyName = "Email"
-        Me.email.HeaderText = "email"
-        Me.email.Name = "email"
-        Me.email.ReadOnly = True
-        Me.email.Visible = False
         '
         'groupBox1
         '
@@ -351,7 +189,7 @@ Partial Class formClientes
         Me.groupBox1.Controls.Add(Me.Label2)
         Me.groupBox1.Location = New System.Drawing.Point(13, 338)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(684, 343)
+        Me.groupBox1.Size = New System.Drawing.Size(921, 343)
         Me.groupBox1.TabIndex = 1
         Me.groupBox1.TabStop = False
         '
@@ -710,9 +548,9 @@ Partial Class formClientes
         Me.gbAcciones.Controls.Add(Me.bEliminar)
         Me.gbAcciones.Controls.Add(Me.bModificar)
         Me.gbAcciones.Controls.Add(Me.bNuevo)
-        Me.gbAcciones.Location = New System.Drawing.Point(726, 12)
+        Me.gbAcciones.Location = New System.Drawing.Point(940, 16)
         Me.gbAcciones.Name = "gbAcciones"
-        Me.gbAcciones.Size = New System.Drawing.Size(184, 336)
+        Me.gbAcciones.Size = New System.Drawing.Size(134, 665)
         Me.gbAcciones.TabIndex = 2
         Me.gbAcciones.TabStop = False
         Me.gbAcciones.Text = "Acciones"
@@ -722,7 +560,7 @@ Partial Class formClientes
         Me.bSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
         Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bSalir.Location = New System.Drawing.Point(17, 253)
+        Me.bSalir.Location = New System.Drawing.Point(17, 395)
         Me.bSalir.Name = "bSalir"
         Me.bSalir.Size = New System.Drawing.Size(110, 50)
         Me.bSalir.TabIndex = 21
@@ -735,7 +573,7 @@ Partial Class formClientes
         Me.bEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bEliminar.Image = Global.SistemaLaTortuga.My.Resources.Resources.cancel
         Me.bEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bEliminar.Location = New System.Drawing.Point(17, 183)
+        Me.bEliminar.Location = New System.Drawing.Point(17, 291)
         Me.bEliminar.Name = "bEliminar"
         Me.bEliminar.Size = New System.Drawing.Size(110, 50)
         Me.bEliminar.TabIndex = 20
@@ -748,7 +586,7 @@ Partial Class formClientes
         Me.bModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bModificar.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
         Me.bModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bModificar.Location = New System.Drawing.Point(17, 113)
+        Me.bModificar.Location = New System.Drawing.Point(17, 173)
         Me.bModificar.Name = "bModificar"
         Me.bModificar.Size = New System.Drawing.Size(110, 54)
         Me.bModificar.TabIndex = 19
@@ -761,23 +599,190 @@ Partial Class formClientes
         Me.bNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bNuevo.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
         Me.bNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bNuevo.Location = New System.Drawing.Point(17, 36)
+        Me.bNuevo.Location = New System.Drawing.Point(17, 63)
         Me.bNuevo.Name = "bNuevo"
         Me.bNuevo.Size = New System.Drawing.Size(110, 54)
         Me.bNuevo.TabIndex = 18
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
         '
+        'idCliente
+        '
+        Me.idCliente.DataPropertyName = "IdCliente"
+        Me.idCliente.HeaderText = "idCliente"
+        Me.idCliente.Name = "idCliente"
+        Me.idCliente.ReadOnly = True
+        Me.idCliente.Visible = False
+        '
+        'nombreConyuge
+        '
+        Me.nombreConyuge.DataPropertyName = "NombreCConyuge"
+        Me.nombreConyuge.HeaderText = "nombreConyuge"
+        Me.nombreConyuge.Name = "nombreConyuge"
+        Me.nombreConyuge.ReadOnly = True
+        Me.nombreConyuge.Visible = False
+        '
+        'dniConyuge
+        '
+        Me.dniConyuge.DataPropertyName = "DniConyuge"
+        Me.dniConyuge.HeaderText = "dniConyuge"
+        Me.dniConyuge.Name = "dniConyuge"
+        Me.dniConyuge.ReadOnly = True
+        Me.dniConyuge.Visible = False
+        '
+        'idLocalidad1
+        '
+        Me.idLocalidad1.DataPropertyName = "idLocalidad1"
+        Me.idLocalidad1.HeaderText = "idLocalidad1"
+        Me.idLocalidad1.Name = "idLocalidad1"
+        Me.idLocalidad1.ReadOnly = True
+        Me.idLocalidad1.Visible = False
+        '
+        'idProvincia1
+        '
+        Me.idProvincia1.DataPropertyName = "idProvincia1"
+        Me.idProvincia1.HeaderText = "idProvincia1"
+        Me.idProvincia1.Name = "idProvincia1"
+        Me.idProvincia1.ReadOnly = True
+        Me.idProvincia1.Visible = False
+        '
+        'fechaNacimiento
+        '
+        Me.fechaNacimiento.DataPropertyName = "FechaNacimiento"
+        Me.fechaNacimiento.HeaderText = "fechaNacimiento"
+        Me.fechaNacimiento.Name = "fechaNacimiento"
+        Me.fechaNacimiento.ReadOnly = True
+        Me.fechaNacimiento.Visible = False
+        '
+        'tipoDniConyuge
+        '
+        Me.tipoDniConyuge.DataPropertyName = "TipoDniConyuge"
+        Me.tipoDniConyuge.HeaderText = "tipoDniConyuge"
+        Me.tipoDniConyuge.Name = "tipoDniConyuge"
+        Me.tipoDniConyuge.ReadOnly = True
+        Me.tipoDniConyuge.Visible = False
+        '
+        'idProvincia
+        '
+        Me.idProvincia.DataPropertyName = "IdProvincia"
+        Me.idProvincia.HeaderText = "idProvincia"
+        Me.idProvincia.Name = "idProvincia"
+        Me.idProvincia.ReadOnly = True
+        Me.idProvincia.Visible = False
+        '
+        'idLocalidad
+        '
+        Me.idLocalidad.DataPropertyName = "IdLocalidad"
+        Me.idLocalidad.HeaderText = "idLocalidad"
+        Me.idLocalidad.Name = "idLocalidad"
+        Me.idLocalidad.ReadOnly = True
+        Me.idLocalidad.Visible = False
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "NombreC"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 200
+        '
+        'tipoDni
+        '
+        Me.tipoDni.DataPropertyName = "TipoDni"
+        Me.tipoDni.HeaderText = "tipoDni"
+        Me.tipoDni.Name = "tipoDni"
+        Me.tipoDni.ReadOnly = True
+        Me.tipoDni.Visible = False
+        '
+        'Documento
+        '
+        Me.Documento.DataPropertyName = "NumeroDni"
+        Me.Documento.HeaderText = "Documento"
+        Me.Documento.Name = "Documento"
+        Me.Documento.ReadOnly = True
+        '
+        'estadoCivil
+        '
+        Me.estadoCivil.DataPropertyName = "EstadoCivil"
+        Me.estadoCivil.HeaderText = "estadoCivil"
+        Me.estadoCivil.Name = "estadoCivil"
+        Me.estadoCivil.ReadOnly = True
+        Me.estadoCivil.Visible = False
+        '
+        'telefono
+        '
+        Me.telefono.DataPropertyName = "Telefono"
+        Me.telefono.HeaderText = "Telefono"
+        Me.telefono.Name = "telefono"
+        Me.telefono.ReadOnly = True
+        '
+        'Domicilio
+        '
+        Me.Domicilio.DataPropertyName = "Domicilio"
+        Me.Domicilio.HeaderText = "Domicilio"
+        Me.Domicilio.Name = "Domicilio"
+        Me.Domicilio.ReadOnly = True
+        Me.Domicilio.Width = 150
+        '
+        'Localidad
+        '
+        Me.Localidad.DataPropertyName = "NombreLocalidad"
+        Me.Localidad.HeaderText = "Localidad"
+        Me.Localidad.Name = "Localidad"
+        Me.Localidad.ReadOnly = True
+        Me.Localidad.Width = 150
+        '
+        'Provincia
+        '
+        Me.Provincia.DataPropertyName = "NombreProvincia"
+        Me.Provincia.HeaderText = "Provincia"
+        Me.Provincia.Name = "Provincia"
+        Me.Provincia.ReadOnly = True
+        Me.Provincia.Width = 150
+        '
+        'ocupacion
+        '
+        Me.ocupacion.DataPropertyName = "Ocupacion"
+        Me.ocupacion.HeaderText = "ocupacion"
+        Me.ocupacion.Name = "ocupacion"
+        Me.ocupacion.ReadOnly = True
+        Me.ocupacion.Visible = False
+        '
+        'tipoIva
+        '
+        Me.tipoIva.DataPropertyName = "TipoIva"
+        Me.tipoIva.HeaderText = "tipoIva"
+        Me.tipoIva.Name = "tipoIva"
+        Me.tipoIva.ReadOnly = True
+        Me.tipoIva.Visible = False
+        '
+        'cuit
+        '
+        Me.cuit.DataPropertyName = "Cuit"
+        Me.cuit.HeaderText = "cuit"
+        Me.cuit.Name = "cuit"
+        Me.cuit.ReadOnly = True
+        Me.cuit.Visible = False
+        '
+        'email
+        '
+        Me.email.DataPropertyName = "Email"
+        Me.email.HeaderText = "email"
+        Me.email.Name = "email"
+        Me.email.ReadOnly = True
+        Me.email.Visible = False
+        '
         'formClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(944, 689)
+        Me.ClientSize = New System.Drawing.Size(1095, 689)
         Me.Controls.Add(Me.gbAcciones)
         Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.gbClientes)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "formClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrar Clientes"
@@ -837,6 +842,8 @@ Partial Class formClientes
     Friend WithEvents lNroDocConyuge As System.Windows.Forms.Label
     Friend WithEvents cbTipoDocConyuge As System.Windows.Forms.ComboBox
     Friend WithEvents tbNombreConyuge As System.Windows.Forms.TextBox
+    Friend WithEvents tbDocumento As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents tbDocumentoConyuge As System.Windows.Forms.MaskedTextBox
     Friend WithEvents idCliente As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombreConyuge As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dniConyuge As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -858,6 +865,4 @@ Partial Class formClientes
     Friend WithEvents tipoIva As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cuit As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents email As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tbDocumento As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents tbDocumentoConyuge As System.Windows.Forms.MaskedTextBox
 End Class

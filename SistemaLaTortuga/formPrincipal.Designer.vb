@@ -49,6 +49,7 @@ Partial Class formPrincipal
         Me.EstadoDeChequesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransferenciasCobradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChequesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tbBSD = New System.Windows.Forms.TextBox()
         Me.tbUsuario = New System.Windows.Forms.TextBox()
         Me.tbClave = New System.Windows.Forms.TextBox()
@@ -64,11 +65,11 @@ Partial Class formPrincipal
         '
         Me.MenuStrip1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.VehiculosToolStripMenuItem, Me.VentasToolStripMenuItem, Me.CajaToolStripMenuItem, Me.AdministraciónToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.VehiculosToolStripMenuItem, Me.VentasToolStripMenuItem, Me.CajaToolStripMenuItem, Me.AdministraciónToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.ChequesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, -1)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(11, 4, 0, 4)
-        Me.MenuStrip1.Size = New System.Drawing.Size(756, 44)
+        Me.MenuStrip1.Size = New System.Drawing.Size(849, 44)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -251,6 +252,15 @@ Partial Class formPrincipal
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(82, 36)
         Me.SalirToolStripMenuItem.Text = "&Salir"
         '
+        'ChequesToolStripMenuItem
+        '
+        Me.ChequesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChequesToolStripMenuItem.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.ChequesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ChequesToolStripMenuItem.Name = "ChequesToolStripMenuItem"
+        Me.ChequesToolStripMenuItem.Size = New System.Drawing.Size(93, 36)
+        Me.ChequesToolStripMenuItem.Text = "Cheques"
+        '
         'tbBSD
         '
         Me.tbBSD.Location = New System.Drawing.Point(800, 251)
@@ -288,7 +298,7 @@ Partial Class formPrincipal
         Me.tbEquipo.Name = "tbEquipo"
         Me.tbEquipo.Size = New System.Drawing.Size(221, 29)
         Me.tbEquipo.TabIndex = 5
-        Me.tbEquipo.Text = "SVRPROD"
+        Me.tbEquipo.Text = "SRVPROD"
         Me.tbEquipo.Visible = False
         '
         'PictureBox2
@@ -371,5 +381,6 @@ Partial Class formPrincipal
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EstadoDeChequesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransferenciasCobradasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ChequesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

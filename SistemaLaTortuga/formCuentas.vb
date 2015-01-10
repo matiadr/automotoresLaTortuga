@@ -151,4 +151,8 @@ Public Class formCuentas
             bNuevo.Enabled = False
         End If
     End Sub
+
+    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
+
+    End Sub
 End Class

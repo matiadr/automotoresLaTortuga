@@ -126,6 +126,10 @@ Public Class formVehiculos
         cargarCBModelos(tbIdMarca.Text)
     End Sub
 
+    Private Sub dgVehiculos_CellStyleContentChanged(sender As Object, e As DataGridViewCellStyleContentChangedEventArgs) Handles dgVehiculos.CellStyleContentChanged
+
+    End Sub
+
     Private Sub dgVehiculos_Click(sender As Object, e As EventArgs) Handles dgVehiculos.Click, dgVehiculos.KeyDown, dgVehiculos.KeyUp
 
         textnombre.Text = ""
@@ -382,19 +386,7 @@ Public Class formVehiculos
         Button2.Enabled = False
     End Sub
 
-    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
 
-    End Sub
-
-    Private Sub textidcliente_TextChanged(sender As Object, e As EventArgs) Handles textidcliente.TextChanged
-
-
-
-   
-
-
-
-    End Sub
 
 
     Private Sub tbIdVehiculo_TextChanged(sender As Object, e As EventArgs) Handles tbIdVehiculo.TextChanged
@@ -406,6 +398,14 @@ Public Class formVehiculos
     End Sub
 
     Private Sub cbMarca_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMarca.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
+
+    End Sub
+
+    Private Sub rbTipoVehiculo_CheckedChanged(sender As Object, e As EventArgs) Handles rbTipoVehiculo.CheckedChanged
 
     End Sub
 End Class

@@ -134,8 +134,9 @@ Public Class formPrincipal
         formlistadoventas.Show()
     End Sub
 
-    Private Sub tbUsuario_TextChanged(sender As Object, e As EventArgs) Handles tbUsuario.TextChanged
 
+    Private Sub ChequesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChequesToolStripMenuItem.Click
+        formCheques.Show()
     End Sub
 End Class
 

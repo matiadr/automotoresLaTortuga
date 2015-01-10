@@ -29,10 +29,10 @@ Partial Class FormCaja
         Me.ImporteMovimientoingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImporteMovimientoegreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -87,101 +87,122 @@ Partial Class FormCaja
         Me.Nombre.DataPropertyName = "Nombre"
         Me.Nombre.HeaderText = "Nombre"
         Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 200
         '
         'DetalleMovimiento
         '
         Me.DetalleMovimiento.DataPropertyName = "DetalleMovimiento"
         Me.DetalleMovimiento.HeaderText = "Detalle"
         Me.DetalleMovimiento.Name = "DetalleMovimiento"
+        Me.DetalleMovimiento.ReadOnly = True
+        Me.DetalleMovimiento.Width = 200
         '
         'ImporteMovimientoingreso
         '
         Me.ImporteMovimientoingreso.DataPropertyName = "ImporteMovimientoingreo"
         Me.ImporteMovimientoingreso.HeaderText = "Ingresos"
         Me.ImporteMovimientoingreso.Name = "ImporteMovimientoingreso"
+        Me.ImporteMovimientoingreso.ReadOnly = True
         '
         'ImporteMovimientoegreso
         '
         Me.ImporteMovimientoegreso.DataPropertyName = "ImporteMovimientoegreso"
         Me.ImporteMovimientoegreso.HeaderText = "Egresos"
         Me.ImporteMovimientoegreso.Name = "ImporteMovimientoegreso"
+        Me.ImporteMovimientoegreso.ReadOnly = True
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button6)
-        Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Location = New System.Drawing.Point(738, 52)
+        Me.GroupBox2.Location = New System.Drawing.Point(738, 8)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(188, 483)
+        Me.GroupBox2.Size = New System.Drawing.Size(188, 553)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         '
+        'Button4
+        '
+        Me.Button4.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(28, 434)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(140, 39)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "Salir"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(53, 381)
+        Me.Button7.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
+        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.Location = New System.Drawing.Point(28, 365)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(79, 39)
+        Me.Button7.Size = New System.Drawing.Size(140, 39)
         Me.Button7.TabIndex = 6
         Me.Button7.Text = "Pago Administrador"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(53, 326)
+        Me.Button5.Image = Global.SistemaLaTortuga.My.Resources.Resources.Report
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(28, 290)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(79, 39)
+        Me.Button5.Size = New System.Drawing.Size(140, 39)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "Otros Egresos"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(52, 266)
+        Me.Button6.Image = Global.SistemaLaTortuga.My.Resources.Resources.Ventas
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(28, 226)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(80, 39)
+        Me.Button6.Size = New System.Drawing.Size(140, 39)
         Me.Button6.TabIndex = 4
         Me.Button6.Text = "Otros Ingresos"
         Me.Button6.UseVisualStyleBackColor = True
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(53, 210)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(79, 39)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Financiación"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(52, 150)
+        Me.Button3.Image = Global.SistemaLaTortuga.My.Resources.Resources.Money_Calculator
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(28, 157)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(80, 39)
+        Me.Button3.Size = New System.Drawing.Size(140, 39)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Doc. Esp."
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(53, 93)
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(28, 91)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(79, 39)
+        Me.Button2.Size = New System.Drawing.Size(140, 39)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Cuotas Plan"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(53, 38)
+        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.cars
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(28, 21)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(79, 39)
+        Me.Button1.Size = New System.Drawing.Size(140, 37)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Gastos Vehículos"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox3
@@ -214,6 +235,7 @@ Partial Class FormCaja
         Me.Label8.Size = New System.Drawing.Size(46, 13)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Efectivo"
+        Me.Label8.Visible = False
         '
         'Label7
         '
@@ -223,6 +245,7 @@ Partial Class FormCaja
         Me.Label7.Size = New System.Drawing.Size(49, 13)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Cheques"
+        Me.Label7.Visible = False
         '
         'TextEfectivo
         '
@@ -230,6 +253,7 @@ Partial Class FormCaja
         Me.TextEfectivo.Name = "TextEfectivo"
         Me.TextEfectivo.Size = New System.Drawing.Size(81, 20)
         Me.TextEfectivo.TabIndex = 11
+        Me.TextEfectivo.Visible = False
         '
         'TextCheques
         '
@@ -237,6 +261,7 @@ Partial Class FormCaja
         Me.TextCheques.Name = "TextCheques"
         Me.TextCheques.Size = New System.Drawing.Size(81, 20)
         Me.TextCheques.TabIndex = 10
+        Me.TextCheques.Visible = False
         '
         'Label6
         '
@@ -246,6 +271,7 @@ Partial Class FormCaja
         Me.Label6.Size = New System.Drawing.Size(61, 13)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Saldo Total"
+        Me.Label6.Visible = False
         '
         'TextBox1
         '
@@ -253,6 +279,7 @@ Partial Class FormCaja
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(81, 20)
         Me.TextBox1.TabIndex = 8
+        Me.TextBox1.Visible = False
         '
         'Label4
         '
@@ -335,16 +362,16 @@ Partial Class FormCaja
         'DTfecha
         '
         Me.DTfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTfecha.Location = New System.Drawing.Point(299, 25)
+        Me.DTfecha.Location = New System.Drawing.Point(312, 25)
         Me.DTfecha.Name = "DTfecha"
-        Me.DTfecha.Size = New System.Drawing.Size(102, 20)
+        Me.DTfecha.Size = New System.Drawing.Size(108, 20)
         Me.DTfecha.TabIndex = 1
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(174, 16)
+        Me.Label5.Location = New System.Drawing.Point(199, 16)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(107, 31)
         Me.Label5.TabIndex = 0
@@ -360,6 +387,7 @@ Partial Class FormCaja
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FormCaja"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Caja"
@@ -376,7 +404,6 @@ Partial Class FormCaja
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents DGcaja As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -394,10 +421,6 @@ Partial Class FormCaja
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents DTfecha As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DetalleMovimiento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ImporteMovimientoingreso As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ImporteMovimientoegreso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents TextEfectivo As System.Windows.Forms.TextBox
@@ -405,4 +428,9 @@ Partial Class FormCaja
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DetalleMovimiento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ImporteMovimientoingreso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ImporteMovimientoegreso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

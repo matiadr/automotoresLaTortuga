@@ -184,6 +184,7 @@ Partial Class FormPagoAdministrador
         Me.ClientSize = New System.Drawing.Size(512, 224)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FormPagoAdministrador"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pago Administrador"

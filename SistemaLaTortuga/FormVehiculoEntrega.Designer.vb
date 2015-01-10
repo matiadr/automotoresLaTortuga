@@ -97,6 +97,7 @@ Partial Class formvehiculoentrega
         'combotipo
         '
         Me.combotipo.FormattingEnabled = True
+        Me.combotipo.Items.AddRange(New Object() {"NAFTA ", "DIESEL", "GNC"})
         Me.combotipo.Location = New System.Drawing.Point(12, 106)
         Me.combotipo.Name = "combotipo"
         Me.combotipo.Size = New System.Drawing.Size(91, 21)
@@ -290,24 +291,28 @@ Partial Class formvehiculoentrega
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Location = New System.Drawing.Point(534, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(109, 173)
+        Me.GroupBox1.Size = New System.Drawing.Size(124, 173)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
         'Button2
         '
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(22, 97)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(67, 45)
+        Me.Button2.Size = New System.Drawing.Size(81, 30)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Guardar"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(22, 17)
+        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.search
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(22, 26)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(67, 45)
+        Me.Button1.Size = New System.Drawing.Size(81, 30)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
@@ -316,9 +321,10 @@ Partial Class formvehiculoentrega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(653, 203)
+        Me.ClientSize = New System.Drawing.Size(660, 203)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
+        Me.MaximizeBox = False
         Me.Name = "formvehiculoentrega"
         Me.Text = "Vehículo entrega"
         Me.GroupBox3.ResumeLayout(False)

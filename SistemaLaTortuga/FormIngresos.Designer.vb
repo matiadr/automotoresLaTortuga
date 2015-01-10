@@ -222,6 +222,7 @@ Partial Class FormIngresos
         Me.ClientSize = New System.Drawing.Size(509, 238)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FormIngresos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ingresos Varios"

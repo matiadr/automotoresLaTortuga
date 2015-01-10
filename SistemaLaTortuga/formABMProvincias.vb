@@ -5,7 +5,7 @@ Public Class formABMProvincia
         Me.Close()
     End Sub
 
-    Private Sub tbProvincia_TextChanged(sender As Object, e As EventArgs) Handles tbProvincia.TextChanged
+    Private Sub tbProvincia_TextChanged(sender As Object, e As EventArgs)
         If tbProvincia.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else

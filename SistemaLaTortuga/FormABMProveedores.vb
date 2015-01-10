@@ -88,7 +88,7 @@ Public Class FormABMProveedores
         Me.Close()
     End Sub
 
-    Private Sub tbProveedor_TextChanged(sender As Object, e As EventArgs) Handles tbProveedor.TextChanged
+    Private Sub tbProveedor_TextChanged(sender As Object, e As EventArgs)
         If tbProveedor.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else

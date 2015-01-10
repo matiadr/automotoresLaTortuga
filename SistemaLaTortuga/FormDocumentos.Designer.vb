@@ -49,24 +49,28 @@ Partial Class FormDocumentos
         Me.GroupBox3.Controls.Add(Me.Button2)
         Me.GroupBox3.Location = New System.Drawing.Point(510, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(112, 217)
+        Me.GroupBox3.Size = New System.Drawing.Size(112, 279)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(21, 25)
+        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(21, 53)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(73, 55)
+        Me.Button1.Size = New System.Drawing.Size(73, 35)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Guardar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(21, 121)
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(21, 139)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(73, 57)
+        Me.Button2.Size = New System.Drawing.Size(73, 37)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Salir"
         Me.Button2.UseVisualStyleBackColor = True
@@ -82,9 +86,12 @@ Partial Class FormDocumentos
         '
         'DGdocumentos
         '
+        Me.DGdocumentos.AllowUserToAddRows = False
+        Me.DGdocumentos.AllowUserToDeleteRows = False
         Me.DGdocumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGdocumentos.Location = New System.Drawing.Point(7, 16)
         Me.DGdocumentos.Name = "DGdocumentos"
+        Me.DGdocumentos.ReadOnly = True
         Me.DGdocumentos.Size = New System.Drawing.Size(469, 116)
         Me.DGdocumentos.TabIndex = 0
         '
@@ -181,6 +188,7 @@ Partial Class FormDocumentos
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FormDocumentos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Documentos"

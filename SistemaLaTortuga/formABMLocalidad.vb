@@ -5,7 +5,7 @@ Public Class formABMLocalidad
         Me.Close()
     End Sub
 
-    Private Sub tbLocalidad_TextChanged(sender As Object, e As EventArgs) Handles tbLocalidad.TextChanged
+    Private Sub tbLocalidad_TextChanged(sender As Object, e As EventArgs)
         If tbLocalidad.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -42,7 +42,7 @@ Public Class formABMLocalidad
         cargarCBProvincias()
     End Sub
 
-    Private Sub cbProvincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProvincia.SelectedIndexChanged
+    Private Sub cbProvincia_SelectedIndexChanged(sender As Object, e As EventArgs)
         tbIdProvincia.Text = cbProvincia.SelectedValue.ToString
     End Sub
 

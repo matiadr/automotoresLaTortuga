@@ -227,6 +227,7 @@ Partial Class FormOtrosEgresos
         Me.ClientSize = New System.Drawing.Size(511, 233)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FormOtrosEgresos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otros Egresos"
