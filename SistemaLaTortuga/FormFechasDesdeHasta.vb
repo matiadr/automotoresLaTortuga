@@ -3,7 +3,7 @@ Public Class FormFechasDesdeHasta
 
     Public tipoListado As String
 
-    Private Sub bGenerarReporte_Click(sender As Object, e As EventArgs)
+    Private Sub bGenerarReporte_Click(sender As Object, e As EventArgs) Handles bGenerarReporte.Click
         If tbFechaDesde.Value > tbFechaHasta.Value Then
             MessageBox.Show("El rango de fechas no es correcto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
