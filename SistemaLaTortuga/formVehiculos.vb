@@ -391,4 +391,7 @@ Public Class formVehiculos
         dtfecha.Value = tbFechaAlta.Value
     End Sub
 
+    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
+
+    End Sub
 End Class
