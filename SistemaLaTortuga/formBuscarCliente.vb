@@ -1,9 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class formBuscarCliente
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
 
     Private Sub formBuscarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDGClientes()
@@ -34,15 +31,7 @@ Public Class formBuscarCliente
         miConexion.Close()
     End Sub
 
-   
 
-  
-    Private Sub bNuevoCliente_Click(sender As Object, e As EventArgs)
-        formClientes.Show()
-    End Sub
-
-    
-   
     Private Sub tbBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -56,10 +45,6 @@ Public Class formBuscarCliente
     End Sub
 
    
-
-    Private Sub dgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgClientes.CellContentClick
-
-    End Sub
 
     Private Sub dgClientes_DoubleClick(sender As Object, e As EventArgs) Handles dgClientes.DoubleClick
         If textform.Text = "v" Then
@@ -79,5 +64,9 @@ Public Class formBuscarCliente
         End If
         Me.Close()
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
     End Sub
 End Class

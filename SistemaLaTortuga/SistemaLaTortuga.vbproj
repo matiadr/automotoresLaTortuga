@@ -89,6 +89,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -340,6 +341,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Reportes\FormReporteMovDiario.Designer.vb">
+      <DependentUpon>FormReporteMovDiario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormReporteMovDiario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\FormReportePlan.Designer.vb">
       <DependentUpon>FormReportePlan.vb</DependentUpon>
     </Compile>
@@ -351,6 +358,12 @@
     </Compile>
     <Compile Include="Reportes\FormReporteTransferencias.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteMovDiario.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteMovDiario.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\ReportePlan.vb">
       <SubType>Component</SubType>
@@ -596,11 +609,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\FormReporteMovDiario.resx">
+      <DependentUpon>FormReporteMovDiario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReportePlan.resx">
       <DependentUpon>FormReportePlan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteTransferencias.resx">
       <DependentUpon>FormReporteTransferencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteMovDiario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteMovDiario.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportePlan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

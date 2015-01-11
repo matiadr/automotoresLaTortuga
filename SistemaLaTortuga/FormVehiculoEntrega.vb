@@ -1,12 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class formvehiculoentrega
 
-
-
-    Private Sub bVehEntrega_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub BuscarAutoVenta(id As String)
         Try
             Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
@@ -166,8 +160,7 @@ Public Class formvehiculoentrega
         cargarCBMarcas()
         tbidmarca.Text = combomarca.SelectedValue.ToString
         cargarCBModelos(tbidmarca.Text)
-
-
+        combotipo.SelectedIndex = 0
     End Sub
 
    
