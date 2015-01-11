@@ -95,4 +95,20 @@ Public Class FormCaja
     Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
         Me.Close()
     End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
+        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
+        CN.Open()
+        Dim seleccion As String = "select DetalleMovimiento as Detalle,Nombre,ImporteMovimientoingreo as Ingreso,ImporteMovimientoegreso as Egreso from MovimientosDiarios where FechaMovimiento = '" & DTfecha.Value & "'"
+        daDatos = New SqlDataAdapter(seleccion, CN)
+        daDatos.Fill(dtDatos, "MovimientoDiario")
+        CN.Close()
+        Dim rpt As reporteMovDiario = New reporteMovDiario
+        rpt.SetDataSource(dtDatos)
+        rpt.SetParameterValue("fecha", DTfecha.Value)
+        FormReporteMovDiario.viewerReporteMovDiario.ReportSource = rpt
+        FormReporteMovDiario.Show()
+    End Sub
 End Class

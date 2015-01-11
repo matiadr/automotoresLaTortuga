@@ -3,11 +3,11 @@ Imports System.Data.SqlClient
 Public Class formPrincipal
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
-        formClientes.Show()
+        formClientes.ShowDialog()
     End Sub
 
     Private Sub CuentasToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        formCuentas.Show()
+        formCuentas.ShowDialog()
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -15,63 +15,60 @@ Public Class formPrincipal
     End Sub
 
     Private Sub MarcasVehículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MarcasVehículosToolStripMenuItem.Click
-        formABMMarca.Show()
+        formABMMarca.ShowDialog()
     End Sub
 
     Private Sub ModelosVehículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModelosVehículosToolStripMenuItem.Click
-        formABMModelos.Show()
+        formABMModelos.ShowDialog()
     End Sub
 
     Private Sub ProvinciasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProvinciasToolStripMenuItem.Click
-        formABMProvincia.Show()
+        formABMProvincia.ShowDialog()
     End Sub
 
     Private Sub LocalidadesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LocalidadesToolStripMenuItem.Click
-        formABMLocalidad.Show()
+        formABMLocalidad.ShowDialog()
     End Sub
 
 
     Private Sub RubrosCuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RubrosCuentasToolStripMenuItem.Click
-        formABMRubros.Show()
+        formABMRubros.ShowDialog()
     End Sub
 
     Private Sub BancosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BancosToolStripMenuItem.Click
-        formABMBancos.Show()
+        formABMBancos.ShowDialog()
     End Sub
 
     Private Sub CuentasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CuentasToolStripMenuItem1.Click
-        formCuentas.Show()
+        formCuentas.ShowDialog()
     End Sub
 
     Private Sub SucursalesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SucursalesToolStripMenuItem.Click
-        formABMSucursales.Show()
+        formABMSucursales.ShowDialog()
     End Sub
 
-    Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
-
-    End Sub
 
     Private Sub AdministrarVehiculosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarVehiculosToolStripMenuItem.Click
-        formVehiculos.Show()
+        formVehiculos.ShowDialog()
     End Sub
 
     Private Sub StockDeVehiculosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockDeVehiculosToolStripMenuItem.Click
-        formConsultaVehiculos.Show()
+        formConsultaVehiculos.ShowDialog()
     End Sub
 
     Private Sub NuevaVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaVentaToolStripMenuItem.Click
-        formVentas.Show()
+        formVentas.ShowDialog()
         formVentas.GroupBox3.Enabled = False
         formVentas.GroupBox4.Enabled = False
     End Sub
 
 
     Private Sub CajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CajaToolStripMenuItem.Click
-        FormCaja.Show()
+        FormCaja.ShowDialog()
     End Sub
 
     Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
-        FormABMProveedores.Show()
+        FormABMProveedores.ShowDialog()
     End Sub
 
     Private Sub StockDeVehiculosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles StockDeVehiculosToolStripMenuItem1.Click
@@ -86,7 +83,7 @@ Public Class formPrincipal
         Dim rpt As reporteStockVehiculos = New reporteStockVehiculos
         rpt.SetDataSource(dtDatos)
         FormReporteStockVehiculos.viewerStockVehiculos.ReportSource = rpt
-        FormReporteStockVehiculos.Show()
+        FormReporteStockVehiculos.ShowDialog()
     End Sub
 
     Private Sub ListadoDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeClientesToolStripMenuItem.Click
@@ -101,7 +98,7 @@ Public Class formPrincipal
         Dim rpt As reporteClientes = New reporteClientes
         rpt.SetDataSource(dtDatos)
         FormReporteClientes.viewerClientes.ReportSource = rpt
-        FormReporteClientes.Show()
+        FormReporteClientes.ShowDialog()
     End Sub
 
     Private Sub VehiculosVendidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VehiculosVendidosToolStripMenuItem.Click
@@ -127,16 +124,16 @@ Public Class formPrincipal
         rpt.SetDataSource(dtDatos)
         FormReporteTransferencias.CrystalReportViewer1.ReportSource = rpt
 
-        FormReporteTransferencias.Show()
+        FormReporteTransferencias.ShowDialog()
     End Sub
 
     Private Sub VentasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem1.Click
-        formlistadoventas.Show()
+        formlistadoventas.ShowDialog()
     End Sub
 
 
     Private Sub ChequesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChequesToolStripMenuItem.Click
-        formCheques.Show()
+        formCheques.ShowDialog()
     End Sub
 End Class
 

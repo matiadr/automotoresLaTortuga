@@ -96,6 +96,7 @@ Partial Class formvehiculoentrega
         '
         'combotipo
         '
+        Me.combotipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combotipo.FormattingEnabled = True
         Me.combotipo.Items.AddRange(New Object() {"NAFTA ", "DIESEL", "GNC"})
         Me.combotipo.Location = New System.Drawing.Point(12, 106)
@@ -112,19 +113,21 @@ Partial Class formvehiculoentrega
         '
         'combomodelo
         '
+        Me.combomodelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combomodelo.FormattingEnabled = True
         Me.combomodelo.Items.AddRange(New Object() {"NAFTA ", "DIESEL", "GNC"})
-        Me.combomodelo.Location = New System.Drawing.Point(8, 67)
+        Me.combomodelo.Location = New System.Drawing.Point(13, 66)
         Me.combomodelo.Name = "combomodelo"
         Me.combomodelo.Size = New System.Drawing.Size(115, 21)
         Me.combomodelo.TabIndex = 26
         '
         'combomarca
         '
+        Me.combomarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combomarca.FormattingEnabled = True
-        Me.combomarca.Location = New System.Drawing.Point(8, 26)
+        Me.combomarca.Location = New System.Drawing.Point(13, 27)
         Me.combomarca.Name = "combomarca"
-        Me.combomarca.Size = New System.Drawing.Size(116, 21)
+        Me.combomarca.Size = New System.Drawing.Size(115, 21)
         Me.combomarca.TabIndex = 25
         '
         'textidvehiculo
@@ -324,8 +327,11 @@ Partial Class formvehiculoentrega
         Me.ClientSize = New System.Drawing.Size(660, 203)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "formvehiculoentrega"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vehículo entrega"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()

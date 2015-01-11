@@ -51,32 +51,22 @@ Public Class formCheques
     Private Sub cargarDGcheques()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("select idcheque,NumeroCheque,ImporteCheque,FechaCheque,NombreC,NombreBanco from Cheques ch,Sucursales s, Bancos b,Clientes c where ch.idcliente = c.idcliente and ch.idsucursal = S.idsucursal and S.idbanco = b.idbanco order by fechacheque asc", CN)
+        Dim cmd As New SqlCommand("select Idcheque,NumeroCheque,ImporteCheque,FechaCheque,NombreC,NombreBanco from Cheques ch,Sucursales s, Bancos b,Clientes c where ch.IdCliente = c.IdCliente and ch.IdSucursal = S.IdSucursal and S.IdBanco = b.IdBanco order by FechaCheque asc", CN)
         Dim lista As SqlDataReader = cmd.ExecuteReader
         Dim dt As New DataTable()
         dt.Load(lista)
         dgcheques.DataSource = dt
-
-
-
-
-
         CN.Close()
-
     End Sub
     Private Sub formCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDGcheques()
-        ComboEstado.SelectedIndex = 1
-        Combotipo.SelectedIndex = 1
+        ComboEstado.SelectedIndex = 0
+        Combotipo.SelectedIndex = 0
     End Sub
 
     Private Sub bSalir_Click(sender As Object, e As EventArgs) Handles bSalir.Click
         Me.Close()
     End Sub
-
-  
-
-   
 
     Private Sub dgcheques_Click(sender As Object, e As EventArgs) Handles dgcheques.Click
         If dgcheques.RowCount > 0 Then

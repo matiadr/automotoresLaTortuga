@@ -29,13 +29,6 @@ Partial Class FormCaja
         Me.ImporteMovimientoingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImporteMovimientoegreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -54,6 +47,14 @@ Partial Class FormCaja
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DTfecha = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGcaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -114,6 +115,7 @@ Partial Class FormCaja
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button8)
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.Button5)
@@ -126,84 +128,6 @@ Partial Class FormCaja
         Me.GroupBox2.Size = New System.Drawing.Size(188, 553)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        '
-        'Button4
-        '
-        Me.Button4.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(28, 434)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(140, 39)
-        Me.Button4.TabIndex = 7
-        Me.Button4.Text = "Salir"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
-        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(28, 365)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(140, 39)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "Pago Administrador"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Image = Global.SistemaLaTortuga.My.Resources.Resources.Report
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(28, 290)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(140, 39)
-        Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Otros Egresos"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Image = Global.SistemaLaTortuga.My.Resources.Resources.Ventas
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(28, 226)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(140, 39)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = "Otros Ingresos"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Image = Global.SistemaLaTortuga.My.Resources.Resources.Money_Calculator
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(28, 157)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(140, 39)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Doc. Esp."
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(28, 91)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(140, 39)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Cuotas Plan"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.cars
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(28, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(140, 37)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Gastos Vehículos"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -293,7 +217,7 @@ Partial Class FormCaja
         'textsaldo
         '
         Me.textsaldo.Enabled = False
-        Me.textsaldo.Location = New System.Drawing.Point(550, 13)
+        Me.textsaldo.Location = New System.Drawing.Point(550, 16)
         Me.textsaldo.Name = "textsaldo"
         Me.textsaldo.Size = New System.Drawing.Size(81, 20)
         Me.textsaldo.TabIndex = 6
@@ -353,7 +277,7 @@ Partial Class FormCaja
         '
         Me.GroupBox4.Controls.Add(Me.DTfecha)
         Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Location = New System.Drawing.Point(13, 8)
+        Me.GroupBox4.Location = New System.Drawing.Point(13, 1)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(712, 62)
         Me.GroupBox4.TabIndex = 3
@@ -362,7 +286,7 @@ Partial Class FormCaja
         'DTfecha
         '
         Me.DTfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTfecha.Location = New System.Drawing.Point(312, 25)
+        Me.DTfecha.Location = New System.Drawing.Point(291, 22)
         Me.DTfecha.Name = "DTfecha"
         Me.DTfecha.Size = New System.Drawing.Size(108, 20)
         Me.DTfecha.TabIndex = 1
@@ -370,12 +294,101 @@ Partial Class FormCaja
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(199, 16)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(213, 19)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(107, 31)
+        Me.Label5.Size = New System.Drawing.Size(72, 26)
         Me.Label5.TabIndex = 0
-        Me.Label5.Text = "FECHA"
+        Me.Label5.Text = "Fecha"
+        '
+        'Button8
+        '
+        Me.Button8.Image = Global.SistemaLaTortuga.My.Resources.Resources.fileprint
+        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button8.Location = New System.Drawing.Point(28, 421)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(140, 39)
+        Me.Button8.TabIndex = 8
+        Me.Button8.Text = "Imprimir"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(28, 488)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(140, 39)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "Salir"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Image = Global.SistemaLaTortuga.My.Resources.Resources.edit
+        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.Location = New System.Drawing.Point(28, 354)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(140, 39)
+        Me.Button7.TabIndex = 6
+        Me.Button7.Text = "Pago Administrador"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Image = Global.SistemaLaTortuga.My.Resources.Resources.Report
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(28, 287)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(140, 39)
+        Me.Button5.TabIndex = 5
+        Me.Button5.Text = "Otros Egresos"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Image = Global.SistemaLaTortuga.My.Resources.Resources.Ventas
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(28, 220)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(140, 39)
+        Me.Button6.TabIndex = 4
+        Me.Button6.Text = "Otros Ingresos"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Image = Global.SistemaLaTortuga.My.Resources.Resources.Money_Calculator
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(28, 153)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(140, 39)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "Doc. Esp."
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.filenew
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(28, 86)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(140, 39)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Cuotas Plan"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.cars
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(28, 21)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(140, 37)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Gastos Vehículos"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'FormCaja
         '
@@ -434,4 +447,5 @@ Partial Class FormCaja
     Friend WithEvents ImporteMovimientoingreso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ImporteMovimientoegreso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button8 As System.Windows.Forms.Button
 End Class
