@@ -110,14 +110,14 @@ Public Class FormPagarDocumento
 
 
             'agrego tambien un registro en MOVIMIENTOS DIARIOS
-            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & "Pago Documento" & "', '" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & 0 & "','" & FormPagoDocumentos.ComboCliente.SelectedValue & "', '  " & "Cliente" & "', '" & FormPagoDocumentos.ComboCliente.Text & "')", CN)
+            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & "Pago Documento" & "', '" & Dtfecha.Value & "', '" & TextImporte.Text & "', '" & 0 & "','" & FormPagoDocumentos.ComboCliente.SelectedValue & "', '  " & "Cliente" & "', '" & FormPagoDocumentos.ComboCliente.Text & "')", CN)
             cmde.ExecuteNonQuery()
 
             'busco ahoar el id del movimiento cargado
             Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
             Dim id = max.ExecuteScalar()
 
-            Dim cmd As New SqlCommand("insert into PagosDocumentos values ('" & FormPagoDocumentos.textid.Text & "','" & Dtfecha.Value & "', '" & Conversion.Val(TextImporte.Text) & "', '" & combocuenta.SelectedValue & "', '" & ComboTipo.Text & "', '" & Textnumero.Text & "', '" & ComboBanco.SelectedValue & "', '" & id & "' )", CN)
+            Dim cmd As New SqlCommand("insert into PagosDocumentos values ('" & FormPagoDocumentos.textid.Text & "','" & Dtfecha.Value & "', '" & TextImporte.Text & "', '" & combocuenta.SelectedValue & "', '" & ComboTipo.Text & "', '" & Textnumero.Text & "', '" & ComboBanco.SelectedValue & "', '" & id & "' )", CN)
             cmd.ExecuteNonQuery()
 
             MessageBox.Show("Pago Ingresado", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -152,5 +152,27 @@ Public Class FormPagarDocumento
 
             Me.Close()
         End If
+    End Sub
+
+    Private Sub TextImporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextImporte.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub TextImporte_TextChanged(sender As Object, e As EventArgs) Handles TextImporte.TextChanged
+
     End Sub
 End Class

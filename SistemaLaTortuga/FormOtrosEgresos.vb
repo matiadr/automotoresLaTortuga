@@ -110,7 +110,7 @@ Public Class FormOtrosEgresos
         Else
 
             'agrego tambien un registro en MOVIMIENTOS DIARIOS
-            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & TextDetalle.Text & "', '" & Dtfecha.Value & "', '" & 0 & "', '" & Conversion.Val(TextImporte.Text) & "','" & ComboProveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & ComboProveedor.Text & "')", CN)
+            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & TextDetalle.Text & "', '" & Dtfecha.Value & "', '" & 0 & "', '" & TextImporte.Text & "','" & ComboProveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & ComboProveedor.Text & "')", CN)
             cmde.ExecuteNonQuery()
 
 
@@ -123,5 +123,27 @@ Public Class FormOtrosEgresos
 
             Me.Close()
         End If
+    End Sub
+
+    Private Sub TextImporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextImporte.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub TextImporte_TextChanged(sender As Object, e As EventArgs) Handles TextImporte.TextChanged
+
     End Sub
 End Class

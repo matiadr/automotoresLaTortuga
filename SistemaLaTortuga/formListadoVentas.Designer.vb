@@ -30,11 +30,14 @@ Partial Class formlistadoventas
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.idventa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idcliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idvehiculoventa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Comprador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Vehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
@@ -57,7 +60,7 @@ Partial Class formlistadoventas
         Me.DGventas.AllowUserToAddRows = False
         Me.DGventas.AllowUserToDeleteRows = False
         Me.DGventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGventas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FechaVenta, Me.Comprador, Me.Vehiculo, Me.Marca, Me.Modelo, Me.Año, Me.Dominio})
+        Me.DGventas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idventa, Me.idcliente, Me.idvehiculoventa, Me.FechaVenta, Me.NombreC, Me.Tipo, Me.NombreMarca, Me.NombreModelo, Me.Año, Me.Dominio})
         Me.DGventas.Location = New System.Drawing.Point(10, 17)
         Me.DGventas.Name = "DGventas"
         Me.DGventas.ReadOnly = True
@@ -120,6 +123,30 @@ Partial Class formlistadoventas
         Me.Button2.Text = "Salir"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'idventa
+        '
+        Me.idventa.DataPropertyName = "idventa"
+        Me.idventa.HeaderText = "idventa"
+        Me.idventa.Name = "idventa"
+        Me.idventa.ReadOnly = True
+        Me.idventa.Visible = False
+        '
+        'idcliente
+        '
+        Me.idcliente.DataPropertyName = "idcliente"
+        Me.idcliente.HeaderText = "idcliente"
+        Me.idcliente.Name = "idcliente"
+        Me.idcliente.ReadOnly = True
+        Me.idcliente.Visible = False
+        '
+        'idvehiculoventa
+        '
+        Me.idvehiculoventa.DataPropertyName = "idvehiculoventa"
+        Me.idvehiculoventa.HeaderText = "idvehiculoventa"
+        Me.idvehiculoventa.Name = "idvehiculoventa"
+        Me.idvehiculoventa.ReadOnly = True
+        Me.idvehiculoventa.Visible = False
+        '
         'FechaVenta
         '
         Me.FechaVenta.DataPropertyName = "FechaVenta"
@@ -127,35 +154,35 @@ Partial Class formlistadoventas
         Me.FechaVenta.Name = "FechaVenta"
         Me.FechaVenta.ReadOnly = True
         '
-        'Comprador
+        'NombreC
         '
-        Me.Comprador.DataPropertyName = "NombreC"
-        Me.Comprador.HeaderText = "Comprador"
-        Me.Comprador.Name = "Comprador"
-        Me.Comprador.ReadOnly = True
-        Me.Comprador.Width = 200
+        Me.NombreC.DataPropertyName = "NombreC"
+        Me.NombreC.HeaderText = "Comprador"
+        Me.NombreC.Name = "NombreC"
+        Me.NombreC.ReadOnly = True
+        Me.NombreC.Width = 200
         '
-        'Vehiculo
+        'Tipo
         '
-        Me.Vehiculo.DataPropertyName = "Tipo"
-        Me.Vehiculo.HeaderText = "Vehiculo"
-        Me.Vehiculo.Name = "Vehiculo"
-        Me.Vehiculo.ReadOnly = True
+        Me.Tipo.DataPropertyName = "Tipo"
+        Me.Tipo.HeaderText = "Vehiculo"
+        Me.Tipo.Name = "Tipo"
+        Me.Tipo.ReadOnly = True
         '
-        'Marca
+        'NombreMarca
         '
-        Me.Marca.DataPropertyName = "NombreMarca"
-        Me.Marca.HeaderText = "Marca"
-        Me.Marca.Name = "Marca"
-        Me.Marca.ReadOnly = True
-        Me.Marca.Width = 150
+        Me.NombreMarca.DataPropertyName = "NombreMarca"
+        Me.NombreMarca.HeaderText = "Marca"
+        Me.NombreMarca.Name = "NombreMarca"
+        Me.NombreMarca.ReadOnly = True
+        Me.NombreMarca.Width = 150
         '
-        'Modelo
+        'NombreModelo
         '
-        Me.Modelo.DataPropertyName = "NombreModelo"
-        Me.Modelo.HeaderText = "Modelo"
-        Me.Modelo.Name = "Modelo"
-        Me.Modelo.ReadOnly = True
+        Me.NombreModelo.DataPropertyName = "NombreModelo"
+        Me.NombreModelo.HeaderText = "Modelo"
+        Me.NombreModelo.Name = "NombreModelo"
+        Me.NombreModelo.ReadOnly = True
         '
         'Año
         '
@@ -201,11 +228,14 @@ Partial Class formlistadoventas
     Friend WithEvents textidventa As System.Windows.Forms.TextBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents idventa As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idcliente As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idvehiculoventa As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaVenta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Comprador As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Vehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Marca As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Modelo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NombreC As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Tipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NombreMarca As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NombreModelo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Año As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Dominio As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

@@ -100,14 +100,14 @@ Public Class FormGastosVehiculo
             CN.Open()
 
             'agrego tambien un registro en MOVIMIENTOS DIARIOS
-            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "',  '" & 0 & "' , '" & Conversion.Val(textimporte.Text) & "','" & Comboproveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & Comboproveedor.Text & "')", CN)
+            Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "',  '" & 0 & "' , '" & textimporte.Text & "','" & Comboproveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & Comboproveedor.Text & "')", CN)
             cmde.ExecuteNonQuery()
 
             'busco ahoar el id del movimiento cargado
             Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
             Dim id = max.ExecuteScalar()
 
-            Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & Conversion.Val(textimporte.Text) & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
+            Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & textimporte.Text & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
             cmd.ExecuteNonQuery()
 
 
@@ -151,5 +151,9 @@ Public Class FormGastosVehiculo
             e.Handled = True
             SendKeys.Send(".")
         End If
+    End Sub
+
+    Private Sub textimporte_TextChanged(sender As Object, e As EventArgs) Handles textimporte.TextChanged
+
     End Sub
 End Class

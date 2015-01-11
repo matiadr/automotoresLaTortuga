@@ -27,21 +27,21 @@ Partial Class FormPagoDocumentos
         Me.ComboCliente = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DGdocumentos = New System.Windows.Forms.DataGridView()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.DGpagos = New System.Windows.Forms.DataGridView()
-        Me.textid = New System.Windows.Forms.TextBox()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Importe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DGpagos = New System.Windows.Forms.DataGridView()
         Me.FechaPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImportePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FormaPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.textid = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGdocumentos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,37 +101,6 @@ Partial Class FormPagoDocumentos
         Me.DGdocumentos.Size = New System.Drawing.Size(651, 136)
         Me.DGdocumentos.TabIndex = 0
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.DGpagos)
-        Me.GroupBox3.Location = New System.Drawing.Point(17, 260)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(662, 163)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Pagos"
-        '
-        'DGpagos
-        '
-        Me.DGpagos.AllowUserToAddRows = False
-        Me.DGpagos.AllowUserToDeleteRows = False
-        Me.DGpagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGpagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FechaPago, Me.ImportePago, Me.FormaPago, Me.Numero, Me.Banco, Me.id})
-        Me.DGpagos.Location = New System.Drawing.Point(12, 21)
-        Me.DGpagos.Name = "DGpagos"
-        Me.DGpagos.ReadOnly = True
-        Me.DGpagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGpagos.Size = New System.Drawing.Size(635, 141)
-        Me.DGpagos.TabIndex = 0
-        '
-        'textid
-        '
-        Me.textid.Location = New System.Drawing.Point(564, 28)
-        Me.textid.Name = "textid"
-        Me.textid.Size = New System.Drawing.Size(64, 20)
-        Me.textid.TabIndex = 3
-        Me.textid.Visible = False
-        '
         'Fecha
         '
         Me.Fecha.DataPropertyName = "Fecha"
@@ -175,6 +144,29 @@ Partial Class FormPagoDocumentos
         Me.Dominio.Name = "Dominio"
         Me.Dominio.ReadOnly = True
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.DGpagos)
+        Me.GroupBox3.Location = New System.Drawing.Point(17, 260)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(662, 163)
+        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Pagos"
+        '
+        'DGpagos
+        '
+        Me.DGpagos.AllowUserToAddRows = False
+        Me.DGpagos.AllowUserToDeleteRows = False
+        Me.DGpagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGpagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FechaPago, Me.ImportePago, Me.FormaPago, Me.Numero, Me.Banco, Me.id})
+        Me.DGpagos.Location = New System.Drawing.Point(12, 21)
+        Me.DGpagos.Name = "DGpagos"
+        Me.DGpagos.ReadOnly = True
+        Me.DGpagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGpagos.Size = New System.Drawing.Size(635, 141)
+        Me.DGpagos.TabIndex = 0
+        '
         'FechaPago
         '
         Me.FechaPago.DataPropertyName = "FechaPago"
@@ -217,6 +209,14 @@ Partial Class FormPagoDocumentos
         Me.id.Name = "id"
         Me.id.ReadOnly = True
         Me.id.Visible = False
+        '
+        'textid
+        '
+        Me.textid.Location = New System.Drawing.Point(564, 28)
+        Me.textid.Name = "textid"
+        Me.textid.Size = New System.Drawing.Size(64, 20)
+        Me.textid.TabIndex = 3
+        Me.textid.Visible = False
         '
         'FormPagoDocumentos
         '

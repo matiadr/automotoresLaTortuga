@@ -21,22 +21,22 @@ Public Class formCheques
         textcomentario.Text = ""
     End Sub
     Private Sub bNuevo_Click(sender As Object, e As EventArgs) Handles bNuevo.Click
-        Try
-            Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-            CN.Open()
+        'Try
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
 
 
 
 
-            Dim cmd As New SqlCommand("insert into Cheques (IdCliente,ImporteCheque,FechaCheque,IdSucursal,NumeroCheque,FechaRecibido,TitularCheque,EstadoCheque,Cuit,TipoCheque,Entregadoa,DepositadoEn,Comentario) values ('" & textcodigoc.Text & "','" & textimportech.Text & "','" & dtfechach.Value & "','" & textids.Text & "','" & textnumeroch.Text & "','" & dtfecharecibido.Value & "','" & texttitular.Text & "','" & ComboEstado.Text & "','" & mecuit.Text & "','" & Combotipo.Text & "','" & textengregadoa.Text & "','" & textdepositadoen.Text & "','" & textcomentario.Text & "')", CN)
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Cheque Agregado")
-            cargarDGcheques()
-            CN.Close()
-            LimpiarPantalla()
-        Catch ex As SqlException
-            MessageBox.Show("No se pudo realizar la operacion,intente mas tarde", "Advertencia-Error en la base de datos,")
-        End Try
+        Dim cmd As New SqlCommand("insert into Cheques (IdCliente,ImporteCheque,FechaCheque,IdSucursal,NumeroCheque,FechaRecibido,TitularCheque,EstadoCheque,Cuit,TipoCheque,Entregadoa,DepositadoEn,Comentario) values ('" & textcodigoc.Text & "','" & textimportech.Text & "','" & dtfechach.Value & "','" & textids.Text & "','" & textnumeroch.Text & "','" & dtfecharecibido.Value & "','" & texttitular.Text & "','" & ComboEstado.Text & "','" & mecuit.Text & "','" & Combotipo.Text & "','" & textengregadoa.Text & "','" & textdepositadoen.Text & "','" & textcomentario.Text & "')", CN)
+        cmd.ExecuteNonQuery()
+        MessageBox.Show("Cheque Agregado")
+        cargarDGcheques()
+        CN.Close()
+        LimpiarPantalla()
+        'Catch ex As SqlException
+        'MessageBox.Show("No se pudo realizar la operacion,intente mas tarde", "Advertencia-Error en la base de datos,")
+        'End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -74,6 +74,7 @@ Public Class formCheques
 
             bModificar.Enabled = True
             bEliminar.Enabled = True
+            bNuevo.Enabled = False
         End If
     End Sub
 
@@ -94,7 +95,10 @@ Public Class formCheques
         textcodigoc.Text = tabla2.Rows.Item(0).Item("idcliente")
         textnombrec.Text = tabla2.Rows.Item(0).Item("NombreC")
         dtfechach.Value = tabla2.Rows.Item(0).Item("fechacheque")
-        textimportech.Text = tabla2.Rows.Item(0).Item("ImporteCheque")
+
+
+        'cuando  leo el importe en la bd esta con coma, pero tengo que mostrarlo con punto ya que no puedo volver a guardarlo con coma, porque me daria error
+        textimportech.Text = Replace(tabla2.Rows.Item(0).Item("ImporteCheque"), ",", ".")
         textnumeroch.Text = tabla2.Rows.Item(0).Item("numerocheque")
         dtfecharecibido.Value = tabla2.Rows.Item(0).Item("fecharecibido")
         textidsucursal.Text = tabla2.Rows.Item(0).Item("CodigoSucursal")
@@ -128,7 +132,7 @@ Public Class formCheques
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CN.Open()
             'Dim cmd As New SqlCommand("update Vehiculos set Año= '" & tbAño.Text & "',Tipo='" & tbTipoVehiculo.Text & "',Motor='" & tbNroMotor.Text & "',Chasis='" & tbNroChasis.Text & "',Dominio='" & tbDominio.Text & "',IdModelo='" & tbIdModelo.Text & "',Color='" & tbColor.Text & "',Observaciones='" & tbObservacion.Text & "',FechaAlta='" & tbFechaAlta.Text & "',TipoMotor='" & cbTipoMotor.SelectedValue & "',PrecioVenta='" & tbVenta.Text & "',PrecioCosto='" & tbCosto.Text & "',PrecioGastos= '" & tbGastos.Text & "' where IdVehiculo= '" & tbIdVehiculo.Text & "'", CN)
-            Dim cmd As New SqlCommand("update Cheques set IdCliente='" & textcodigoc.Text & "',ImporteCheque='" & Conversion.Val(textimportech.Text) & "',FechaCheque='" & dtfechach.Value & "',IdSucursal='" & textids.Text & "',NumeroCheque='" & textnumeroch.Text & "',FechaRecibido='" & dtfecharecibido.Value & "',TitularCheque='" & texttitular.Text & "',EstadoCheque='" & ComboEstado.Text & "',Cuit='" & mecuit.Text & "',TipoCheque='" & Combotipo.Text & "',Entregadoa='" & textengregadoa.Text & "',DepositadoEn='" & textdepositadoen.Text & "',Comentario='" & textcomentario.Text & "'  where IdCheque = '" & textidcheque.Text & "'", CN)
+            Dim cmd As New SqlCommand("update Cheques set IdCliente='" & textcodigoc.Text & "',ImporteCheque='" & textimportech.Text & "',FechaCheque='" & dtfechach.Value & "',IdSucursal='" & textids.Text & "',NumeroCheque='" & textnumeroch.Text & "',FechaRecibido='" & dtfecharecibido.Value & "',TitularCheque='" & texttitular.Text & "',EstadoCheque='" & ComboEstado.Text & "',Cuit='" & mecuit.Text & "',TipoCheque='" & Combotipo.Text & "',Entregadoa='" & textengregadoa.Text & "',DepositadoEn='" & textdepositadoen.Text & "',Comentario='" & textcomentario.Text & "'  where IdCheque = '" & textidcheque.Text & "'", CN)
 
 
             cmd.ExecuteNonQuery()
@@ -202,7 +206,12 @@ Public Class formCheques
         End If
     End Sub
 
-    Private Sub textimportech_TextChanged(sender As Object, e As EventArgs) Handles textimportech.TextChanged
-       
+
+    Private Sub dgcheques_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgcheques.CellContentClick
+
+    End Sub
+
+    Private Sub dgcheques_DoubleClick(sender As Object, e As EventArgs) Handles dgcheques.DoubleClick
+
     End Sub
 End Class

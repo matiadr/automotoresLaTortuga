@@ -100,4 +100,26 @@ Public Class formcreditos
     Private Sub textidcredito_TextChanged(sender As Object, e As EventArgs) Handles textidcredito.TextChanged
 
     End Sub
+
+    Private Sub textsolicitado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textsolicitado.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub textsolicitado_TextChanged(sender As Object, e As EventArgs) Handles textsolicitado.TextChanged
+
+    End Sub
 End Class

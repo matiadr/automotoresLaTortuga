@@ -23,6 +23,7 @@ Partial Class FormGastosVehiculo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textmarca = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Comboproveedor = New System.Windows.Forms.ComboBox()
         Me.textidvehiculo = New System.Windows.Forms.TextBox()
@@ -44,7 +45,6 @@ Partial Class FormGastosVehiculo
         Me.Button1 = New System.Windows.Forms.Button()
         Me.textmodelo = New System.Windows.Forms.TextBox()
         Me.textpatente = New System.Windows.Forms.TextBox()
-        Me.textmarca = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -77,6 +77,14 @@ Partial Class FormGastosVehiculo
         Me.GroupBox1.Size = New System.Drawing.Size(438, 248)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'textmarca
+        '
+        Me.textmarca.Location = New System.Drawing.Point(92, 26)
+        Me.textmarca.Name = "textmarca"
+        Me.textmarca.ReadOnly = True
+        Me.textmarca.Size = New System.Drawing.Size(100, 20)
+        Me.textmarca.TabIndex = 21
         '
         'Label2
         '
@@ -269,14 +277,6 @@ Partial Class FormGastosVehiculo
         Me.textpatente.ReadOnly = True
         Me.textpatente.Size = New System.Drawing.Size(80, 20)
         Me.textpatente.TabIndex = 0
-        '
-        'textmarca
-        '
-        Me.textmarca.Location = New System.Drawing.Point(92, 26)
-        Me.textmarca.Name = "textmarca"
-        Me.textmarca.ReadOnly = True
-        Me.textmarca.Size = New System.Drawing.Size(100, 20)
-        Me.textmarca.TabIndex = 21
         '
         'FormGastosVehiculo
         '

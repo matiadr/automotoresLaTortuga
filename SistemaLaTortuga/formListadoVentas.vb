@@ -11,7 +11,7 @@ Public Class formlistadoventas
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
         'Dim cmd As New SqlCommand("select IdCliente,IdVenta,FechaVenta,NombreC,Tipo,NombreMarca,NombreModelo,Año,Dominio from Ventas v, Clientes c, Vehiculos ve, Marcas ma, Modelos mo  where v.idvehiculoventa = ve.idvehiculo and v.idcomprador = c.idcliente and ve.idmodelo = mo.idmodelo and mo.idmarca = ma.idmarca order by FechaVenta desc", CN)
-        Dim cmd As New SqlCommand("select * from Ventas v, Clientes c, Vehiculos ve, Marcas ma, Modelos mo  where v.idvehiculoventa = ve.idvehiculo and v.idcomprador = c.idcliente and ve.idmodelo = mo.idmodelo and mo.idmarca = ma.idmarca order by FechaVenta desc", CN)
+        Dim cmd As New SqlCommand("select idventa,idcliente,idvehiculoventa,FechaVenta, NombreC, Tipo, NombreMarca, NombreModelo, Año, Dominio from Ventas v, Clientes c, Vehiculos ve, Marcas ma, Modelos mo  where v.idvehiculoventa = ve.idvehiculo and v.idcomprador = c.idcliente and ve.idmodelo = mo.idmodelo and mo.idmarca = ma.idmarca order by FechaVenta desc", CN)
 
         Dim lista As SqlDataReader = cmd.ExecuteReader
         Dim dt As New DataTable()
@@ -67,9 +67,29 @@ Public Class formlistadoventas
         'si hubo entregas en efectivo
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim suma As New SqlCommand("Select sum(importeentrega) from Entregas where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
 
-        formVentas.textsumaentrega.Text = suma.ExecuteScalar()
+        'si hubo entregas
+      
+
+        Dim seleccione As String = "select * from Entregas where idventa ='" & formVentas.textidventa.Text & "' "
+        Dim tabla2e As DataTable
+        Dim dae As SqlDataAdapter
+        dae = New SqlDataAdapter(seleccione, CN)
+        tabla2e = New DataTable
+        dae.Fill(tabla2e)
+
+        If tabla2e.Rows.Count > 0 Then
+            Dim suma As New SqlCommand("Select sum(importeentrega) from Entregas where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
+
+
+            formVentas.textsumaentrega.Text = suma.ExecuteScalar()
+            
+
+        End If
+
+
+
+        
 
         'si hubo credito
         Dim CNa As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
@@ -164,9 +184,7 @@ Public Class formlistadoventas
     End Sub
 
 
-    Private Sub DGventas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGventas.CellContentClick
-
-    End Sub
+   
 
     Private Sub DGventas_DoubleClick(sender As Object, e As EventArgs) Handles DGventas.DoubleClick
         textidventa.Text = DGventas.Item("idVenta", DGventas.SelectedRows(0).Index).Value()
@@ -175,6 +193,10 @@ Public Class formlistadoventas
         formVentas.Button8.Text = "Guardar Cambios"
         formVentas.buttontransferencia.Visible = True
         formVentas.Button3.Enabled = False
+
+        GroupBox1.Enabled = False
+        GroupBox2.Enabled = False
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)

@@ -144,6 +144,10 @@ Public Class formCuentas
         End If
     End Sub
 
+    Private Sub tbNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbNombre.KeyPress
+      
+    End Sub
+
     Private Sub tbNombre_TextChanged(sender As Object, e As EventArgs) Handles tbNombre.TextChanged, tbSaldo.TextChanged
         If tbNombre.Text.Length > 0 And tbSaldo.Text.Length > 0 And tbIdCuenta.Text = "" Then
             bNuevo.Enabled = True

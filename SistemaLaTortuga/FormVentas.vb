@@ -767,19 +767,19 @@ Public Class formVentas
         tbTipoMotorVehVenta.Text = tabla2.Rows.Item(0).Item("TipoMotor")
         tbChasisVehVenta.Text = tabla2.Rows.Item(0).Item("Chasis")
         tbMotorVehVenta.Text = tabla2.Rows.Item(0).Item("Motor")
-        tbPrecioVentaVehVenta.Text = tabla2.Rows.Item(0).Item("Venta")
+        tbPrecioVentaVehVenta.Text = Replace(tabla2.Rows.Item(0).Item("Venta"), ",", ".")
         tbidvendedor.Text = tabla2.Rows.Item(0).Item("idVendedor")
-        tbtransferencia.Text = tabla2.Rows.Item(0).Item("gastos")
-        textreal.Text = tabla2.Rows.Item(0).Item("TransferenciaReal")
+        tbtransferencia.Text = Replace(tabla2.Rows.Item(0).Item("gastos"), ",", ".")
+        textreal.Text = Replace(tabla2.Rows.Item(0).Item("TransferenciaReal"), ",", ".")
 
 
 
     End Sub
 
-    Private Sub buttontransferencia_Click(sender As Object, e As EventArgs) Handles buttontransferencia.Click
+    Private Sub buttontransferencia_Click(sender As Object, e As EventArgs)
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("update Ventas set Gastos ='" & Conversion.Val(tbtransferencia.Text) & "',TransferenciaReal='" & Conversion.Val(textreal.Text) & "' where idventa = '" & textidventa.Text & "'", CN)
+        Dim cmd As New SqlCommand("update Ventas set Gastos ='" & tbtransferencia.Text & "',TransferenciaReal='" & textreal.Text & "' where idventa = '" & textidventa.Text & "'", CN)
         cmd.ExecuteNonQuery()
         MessageBox.Show("Modificacion Efectuada")
     End Sub
@@ -869,6 +869,58 @@ Public Class formVentas
     End Sub
 
     Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub tbtransferencia_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub tbtransferencia_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub textreal_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+        If e.KeyChar = (",") Then
+            e.Handled = True
+            SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub textreal_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label36_Click(sender As Object, e As EventArgs) Handles Label36.Click
+
+    End Sub
+
+    Private Sub buttontransferencia_Click_1(sender As Object, e As EventArgs) Handles buttontransferencia.Click
 
     End Sub
 End Class

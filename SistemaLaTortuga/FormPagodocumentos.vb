@@ -52,4 +52,8 @@ Public Class FormPagoDocumentos
             FormPagarDocumento.Show()
         End If
     End Sub
+
+    Private Sub DGdocumentos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGdocumentos.CellContentClick
+
+    End Sub
 End Class

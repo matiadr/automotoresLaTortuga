@@ -96,7 +96,7 @@ Public Class FormPagoAdministrador
 
 
         'agrego tambien un registro en MOVIMIENTOS DIARIOS
-        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Val(textimporte.Text) & "', '" & 0 & "','" & 0 & "', '  " & "Administrador" & "', '" & "Administrador" & "')", CN)
+        Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & textdetalle.Text & "', '" & FormCaja.DTfecha.Value & "', '" & textimporte.Text & "', '" & 0 & "','" & 0 & "', '  " & "Administrador" & "', '" & "Administrador" & "')", CN)
         cmde.ExecuteNonQuery()
 
         'busco ahoar el id del movimiento cargado
