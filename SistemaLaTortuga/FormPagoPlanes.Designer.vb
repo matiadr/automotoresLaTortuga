@@ -26,6 +26,10 @@ Partial Class FormPagoPlanes
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DGcuotas = New System.Windows.Forms.DataGridView()
+        Me.fechacuota = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numerocuota = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.importecuota = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.importepago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ComboCliente = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -67,12 +71,41 @@ Partial Class FormPagoPlanes
         Me.DGcuotas.AllowUserToAddRows = False
         Me.DGcuotas.AllowUserToDeleteRows = False
         Me.DGcuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGcuotas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fechacuota, Me.numerocuota, Me.importecuota, Me.importepago})
         Me.DGcuotas.Location = New System.Drawing.Point(7, 16)
         Me.DGcuotas.Name = "DGcuotas"
         Me.DGcuotas.ReadOnly = True
         Me.DGcuotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGcuotas.Size = New System.Drawing.Size(469, 158)
         Me.DGcuotas.TabIndex = 0
+        '
+        'fechacuota
+        '
+        Me.fechacuota.DataPropertyName = "fechacuota"
+        Me.fechacuota.HeaderText = "fechacuota"
+        Me.fechacuota.Name = "fechacuota"
+        Me.fechacuota.ReadOnly = True
+        '
+        'numerocuota
+        '
+        Me.numerocuota.DataPropertyName = "numerocuota"
+        Me.numerocuota.HeaderText = "numerocuota"
+        Me.numerocuota.Name = "numerocuota"
+        Me.numerocuota.ReadOnly = True
+        '
+        'importecuota
+        '
+        Me.importecuota.DataPropertyName = "importecuota"
+        Me.importecuota.HeaderText = "importecuota"
+        Me.importecuota.Name = "importecuota"
+        Me.importecuota.ReadOnly = True
+        '
+        'importepago
+        '
+        Me.importepago.DataPropertyName = "importepago"
+        Me.importepago.HeaderText = "importepago"
+        Me.importepago.Name = "importepago"
+        Me.importepago.ReadOnly = True
         '
         'GroupBox1
         '
@@ -132,4 +165,8 @@ Partial Class FormPagoPlanes
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ComboCliente As System.Windows.Forms.ComboBox
+    Friend WithEvents fechacuota As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents numerocuota As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents importecuota As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents importepago As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

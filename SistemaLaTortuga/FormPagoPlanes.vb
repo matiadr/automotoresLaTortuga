@@ -26,7 +26,7 @@ Public Class FormPagoPlanes
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
 
-        Dim cmd As New SqlCommand("select NumeroCuota,FechaCuota,ImporteCuota,FechaPago,ImportePago From Cuotas c, Planes p where p.idplan = c.idplan and idcliente = '" & ComboCliente.SelectedValue & "' order by numerocuota asc", CN)
+        Dim cmd As New SqlCommand("select NumeroCuota,FechaCuota,ImporteCuota From Cuotas c, Planes p where p.idplan = c.idplan and idcliente = '" & ComboCliente.SelectedValue & "' order by numerocuota asc", CN)
         Dim lista As SqlDataReader = cmd.ExecuteReader
         Dim dt As New DataTable()
         dt.Load(lista)
@@ -37,5 +37,13 @@ Public Class FormPagoPlanes
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
+    End Sub
+
+
+
+    Private Sub DGcuotas_DoubleClick(sender As Object, e As EventArgs) Handles DGcuotas.DoubleClick
+        FormPagoCuotas.Show()
+        FormPagoCuotas.textimporte.Text = DGcuotas.Item("ImporteCuota", DGcuotas.SelectedRows(0).Index).Value()
+
     End Sub
 End Class

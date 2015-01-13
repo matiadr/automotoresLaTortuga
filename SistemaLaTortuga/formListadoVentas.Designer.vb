@@ -24,12 +24,6 @@ Partial Class formlistadoventas
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGventas = New System.Windows.Forms.DataGridView()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.textidventa = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.idventa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idcliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idvehiculoventa = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +34,12 @@ Partial Class formlistadoventas
         Me.NombreModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dominio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.textidventa = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGventas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -67,61 +67,6 @@ Partial Class formlistadoventas
         Me.DGventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGventas.Size = New System.Drawing.Size(865, 452)
         Me.DGventas.TabIndex = 0
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.textidventa)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 5)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(890, 48)
-        Me.GroupBox2.TabIndex = 1
-        Me.GroupBox2.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(315, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Buscar"
-        '
-        'textidventa
-        '
-        Me.textidventa.Location = New System.Drawing.Point(17, 16)
-        Me.textidventa.Name = "textidventa"
-        Me.textidventa.Size = New System.Drawing.Size(46, 20)
-        Me.textidventa.TabIndex = 1
-        Me.textidventa.Visible = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(370, 16)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(202, 20)
-        Me.TextBox1.TabIndex = 0
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Button2)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 541)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(891, 63)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(411, 19)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(84, 32)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Salir"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'idventa
         '
@@ -199,6 +144,61 @@ Partial Class formlistadoventas
         Me.Dominio.Name = "Dominio"
         Me.Dominio.ReadOnly = True
         Me.Dominio.Width = 90
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.textidventa)
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 5)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(890, 48)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(315, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Buscar"
+        '
+        'textidventa
+        '
+        Me.textidventa.Location = New System.Drawing.Point(17, 16)
+        Me.textidventa.Name = "textidventa"
+        Me.textidventa.Size = New System.Drawing.Size(46, 20)
+        Me.textidventa.TabIndex = 1
+        Me.textidventa.Visible = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(370, 16)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(202, 20)
+        Me.TextBox1.TabIndex = 0
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Button2)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 541)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(891, 63)
+        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(411, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(84, 32)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'formlistadoventas
         '

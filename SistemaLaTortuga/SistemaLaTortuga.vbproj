@@ -110,6 +110,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormPagoCuota.Designer.vb">
+      <DependentUpon>FormPagoCuota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagoCuota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formsucursalesbancos.Designer.vb">
       <DependentUpon>formsucursalesbancos.vb</DependentUpon>
     </Compile>
@@ -487,6 +493,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormPagoCuota.resx">
+      <DependentUpon>FormPagoCuota.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formsucursalesbancos.resx">
       <DependentUpon>formsucursalesbancos.vb</DependentUpon>
     </EmbeddedResource>

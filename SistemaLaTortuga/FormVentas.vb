@@ -776,13 +776,7 @@ Public Class formVentas
 
     End Sub
 
-    Private Sub buttontransferencia_Click(sender As Object, e As EventArgs)
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("update Ventas set Gastos ='" & tbtransferencia.Text & "',TransferenciaReal='" & textreal.Text & "' where idventa = '" & textidventa.Text & "'", CN)
-        cmd.ExecuteNonQuery()
-        MessageBox.Show("Modificacion Efectuada")
-    End Sub
+   
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
 
@@ -868,9 +862,6 @@ Public Class formVentas
         End If
     End Sub
 
-    Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub tbtransferencia_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
@@ -890,9 +881,7 @@ Public Class formVentas
         End If
     End Sub
 
-    Private Sub tbtransferencia_TextChanged(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub textreal_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
@@ -912,15 +901,14 @@ Public Class formVentas
         End If
     End Sub
 
-    Private Sub textreal_TextChanged(sender As Object, e As EventArgs)
 
-    End Sub
 
-    Private Sub Label36_Click(sender As Object, e As EventArgs) Handles Label36.Click
 
-    End Sub
-
-    Private Sub buttontransferencia_Click_1(sender As Object, e As EventArgs) Handles buttontransferencia.Click
-
+    Private Sub buttontransferencia_Click(sender As Object, e As EventArgs) Handles buttontransferencia.Click
+        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
+        CN.Open()
+        Dim cmd As New SqlCommand("update Ventas set Gastos ='" & tbtransferencia.Text & "',TransferenciaReal='" & textreal.Text & "' where idventa = '" & textidventa.Text & "'", CN)
+        cmd.ExecuteNonQuery()
+        MessageBox.Show("Modificacion Efectuada")
     End Sub
 End Class
