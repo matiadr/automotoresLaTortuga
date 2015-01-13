@@ -17,7 +17,7 @@ Public Class formBuscarCliente
         CN.Close()
     End Sub
 
-    Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
         Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
         Dim miConexion As New SqlConnection(CN)
         Dim seleccion As String = "select IdCliente,NombreC,NumeroDni from Clientes where NombreC like '" & tbBusqueda.Text & "%' or NumeroDni like '" & tbBusqueda.Text & "%' order by NombreC" 'Busco por Nombre
@@ -30,21 +30,6 @@ Public Class formBuscarCliente
         dgClientes.DataSource = tabla2
         miConexion.Close()
     End Sub
-
-
-    Private Sub tbBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select IdCliente,NombreC,NumeroDni from Clientes where NombreC like '" & tbBusqueda.Text & "%' order by NombreC", CN)
-        Dim lista As SqlDataReader = cmd.ExecuteReader
-        Dim dt As New DataTable()
-        dt.Load(lista)
-        dgClientes.DataSource = dt
-        CN.Close()
-
-    End Sub
-
-   
 
     Private Sub dgClientes_DoubleClick(sender As Object, e As EventArgs) Handles dgClientes.DoubleClick
         If textform.Text = "v" Then

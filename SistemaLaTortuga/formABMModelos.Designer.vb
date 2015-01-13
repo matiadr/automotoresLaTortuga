@@ -24,6 +24,10 @@ Partial Class formABMModelos
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgModelos = New System.Windows.Forms.DataGridView()
+        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
@@ -36,10 +40,6 @@ Partial Class formABMModelos
         Me.cbMarca = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgModelos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbAcciones.SuspendLayout()
@@ -70,6 +70,38 @@ Partial Class formABMModelos
         Me.dgModelos.Size = New System.Drawing.Size(360, 176)
         Me.dgModelos.TabIndex = 7
         Me.dgModelos.TabStop = False
+        '
+        'idMarca
+        '
+        Me.idMarca.DataPropertyName = "IdMarca"
+        Me.idMarca.HeaderText = "idMarca"
+        Me.idMarca.Name = "idMarca"
+        Me.idMarca.ReadOnly = True
+        Me.idMarca.Visible = False
+        '
+        'idModelo
+        '
+        Me.idModelo.DataPropertyName = "IdModelo"
+        Me.idModelo.HeaderText = "idModelo"
+        Me.idModelo.Name = "idModelo"
+        Me.idModelo.ReadOnly = True
+        Me.idModelo.Visible = False
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "NombreMarca"
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        Me.marca.ReadOnly = True
+        Me.marca.Width = 150
+        '
+        'modelo
+        '
+        Me.modelo.DataPropertyName = "NombreModelo"
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        Me.modelo.ReadOnly = True
+        Me.modelo.Width = 150
         '
         'gbAcciones
         '
@@ -195,38 +227,6 @@ Partial Class formABMModelos
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Marca"
-        '
-        'idMarca
-        '
-        Me.idMarca.DataPropertyName = "IdMarca"
-        Me.idMarca.HeaderText = "idMarca"
-        Me.idMarca.Name = "idMarca"
-        Me.idMarca.ReadOnly = True
-        Me.idMarca.Visible = False
-        '
-        'idModelo
-        '
-        Me.idModelo.DataPropertyName = "IdModelo"
-        Me.idModelo.HeaderText = "idModelo"
-        Me.idModelo.Name = "idModelo"
-        Me.idModelo.ReadOnly = True
-        Me.idModelo.Visible = False
-        '
-        'marca
-        '
-        Me.marca.DataPropertyName = "NombreMarca"
-        Me.marca.HeaderText = "Marca"
-        Me.marca.Name = "marca"
-        Me.marca.ReadOnly = True
-        Me.marca.Width = 150
-        '
-        'modelo
-        '
-        Me.modelo.DataPropertyName = "NombreModelo"
-        Me.modelo.HeaderText = "Modelo"
-        Me.modelo.Name = "modelo"
-        Me.modelo.ReadOnly = True
-        Me.modelo.Width = 150
         '
         'formABMModelos
         '

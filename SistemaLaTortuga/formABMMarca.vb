@@ -5,7 +5,7 @@ Public Class formABMMarca
         Me.Close()
     End Sub
 
-    Private Sub tbMarca_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbMarca_TextChanged(sender As Object, e As EventArgs) Handles tbMarca.TextChanged
         If tbMarca.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -85,6 +85,7 @@ Public Class formABMMarca
                 bEliminar.Enabled = False
                 tbMarca.Text = ""
                 tbIdMarca.Text = ""
+                formVehiculos.cargarCBMarcas()
             End If
         Catch ex As SqlException
             MessageBox.Show("No se puede eliminar ya que dicha Marca esta siendo usada", "Advertencia")

@@ -9,7 +9,7 @@ Public Class FormIngresos
         da.Fill(ds)
         CN.Close()
         ComboCliente.DataSource = ds
-        ComboCliente.ValueMember = "IdClient"
+        ComboCliente.ValueMember = "IdCliente"
         ComboCliente.DisplayMember = "NombreC"
     End Sub
     Public Sub CargarCuentas()
@@ -120,10 +120,10 @@ Public Class FormIngresos
     End Sub
 
     Private Sub FormIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ComboTipo.SelectedIndex = 0
         CargarCuentas()
         CargarBancos()
         CargarClientes()
-        ComboTipo.SelectedIndex = 0
     End Sub
 
     Private Sub TextImporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextImporte.KeyPress
@@ -142,9 +142,5 @@ Public Class FormIngresos
             e.Handled = True
             SendKeys.Send(".")
         End If
-    End Sub
-
-    Private Sub TextImporte_TextChanged(sender As Object, e As EventArgs) Handles TextImporte.TextChanged
-
     End Sub
 End Class

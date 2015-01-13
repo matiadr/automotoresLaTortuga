@@ -58,6 +58,7 @@ Public Class formCheques
         dgcheques.DataSource = dt
         CN.Close()
     End Sub
+
     Private Sub formCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDGcheques()
         ComboEstado.SelectedIndex = 0
@@ -204,14 +205,5 @@ Public Class formCheques
             e.Handled = True
             SendKeys.Send(".")
         End If
-    End Sub
-
-
-    Private Sub dgcheques_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgcheques.CellContentClick
-
-    End Sub
-
-    Private Sub dgcheques_DoubleClick(sender As Object, e As EventArgs) Handles dgcheques.DoubleClick
-
     End Sub
 End Class

@@ -5,7 +5,7 @@ Public Class formABMRubros
         Me.Close()
     End Sub
 
-    Private Sub tbRubro_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbRubro_TextChanged(sender As Object, e As EventArgs) Handles tbRubro.TextChanged
         If tbRubro.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -93,6 +93,7 @@ Public Class formABMRubros
                 bEliminar.Enabled = False
                 tbRubro.Text = ""
                 tbIdRubro.Text = ""
+                formCuentas.cargarCBRubros()
             End If
         Catch ex As SqlException
             MessageBox.Show("No se puede eliminar ya que dicho rubro esta siendo usado", "Advertencia")

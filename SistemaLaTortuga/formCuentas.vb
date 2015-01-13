@@ -2,7 +2,7 @@
 Public Class formCuentas
 
     Private Sub bNuevoRubro_Click(sender As Object, e As EventArgs) Handles bNuevoRubro.Click
-        formABMRubros.Show()
+        formABMRubros.ShowDialog()
     End Sub
 
     Private Sub bSalir_Click(sender As Object, e As EventArgs) Handles bSalir.Click
@@ -53,6 +53,7 @@ Public Class formCuentas
             MessageBox.Show("Cuenta Agregada")
             cargarDGCuentas()
             limpiarPantalla()
+            formadministrador.CargarCuentas()
         Catch ex As SqlException
             MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
         End Try
@@ -101,6 +102,7 @@ Public Class formCuentas
             cargarDGCuentas()
             limpiarPantalla()
             bModificar.Enabled = False
+            formadministrador.CargarCuentas()
         Catch ex As SqlException
             MessageBox.Show("Ocurrio un error en la base de datos,intente mas tarde")
         End Try
@@ -144,19 +146,11 @@ Public Class formCuentas
         End If
     End Sub
 
-    Private Sub tbNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbNombre.KeyPress
-      
-    End Sub
-
     Private Sub tbNombre_TextChanged(sender As Object, e As EventArgs) Handles tbNombre.TextChanged, tbSaldo.TextChanged
         If tbNombre.Text.Length > 0 And tbSaldo.Text.Length > 0 And tbIdCuenta.Text = "" Then
             bNuevo.Enabled = True
         Else
             bNuevo.Enabled = False
         End If
-    End Sub
-
-    Private Sub bEliminar_Click(sender As Object, e As EventArgs) Handles bEliminar.Click
-
     End Sub
 End Class

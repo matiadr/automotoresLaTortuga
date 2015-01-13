@@ -8,11 +8,11 @@ Public Class formVehiculos
     End Sub
 
     Private Sub bNuevaMarca_Click(sender As Object, e As EventArgs) Handles bNuevaMarca.Click
-        formABMMarca.Show()
+        formABMMarca.ShowDialog()
     End Sub
 
     Private Sub bNuevoModelo_Click(sender As Object, e As EventArgs) Handles bNuevoModelo.Click
-        formABMModelos.Show()
+        formABMModelos.ShowDialog()
     End Sub
 
 
@@ -95,6 +95,7 @@ Public Class formVehiculos
         cbMarca.DataSource = ds
         cbMarca.ValueMember = "IdMarca"
         cbMarca.DisplayMember = "NombreMarca"
+        cargarCBModelos(cbMarca.SelectedValue.ToString)
     End Sub
 
     Public Sub cargarCBModelos(id As String)
@@ -389,9 +390,5 @@ Public Class formVehiculos
 
     Private Sub tbFechaAlta_ValueChanged(sender As Object, e As EventArgs) Handles tbFechaAlta.ValueChanged
         dtfecha.Value = tbFechaAlta.Value
-    End Sub
-
-    Private Sub dgVehiculos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVehiculos.CellContentClick
-
     End Sub
 End Class

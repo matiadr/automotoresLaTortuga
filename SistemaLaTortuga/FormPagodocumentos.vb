@@ -9,7 +9,7 @@ Public Class FormPagoDocumentos
         da.Fill(ds)
         CN.Close()
         ComboCliente.DataSource = ds
-        ComboCliente.ValueMember = "IdClient"
+        ComboCliente.ValueMember = "IdCliente"
         ComboCliente.DisplayMember = "NombreC"
     End Sub
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -51,9 +51,5 @@ Public Class FormPagoDocumentos
             textid.Text = DGdocumentos.Item("IdDocumento", DGdocumentos.SelectedRows(0).Index).Value()
             FormPagarDocumento.Show()
         End If
-    End Sub
-
-    Private Sub DGdocumentos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGdocumentos.CellContentClick
-
     End Sub
 End Class

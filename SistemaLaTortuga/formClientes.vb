@@ -8,7 +8,7 @@ Public Class formClientes
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles bABMProvincia.Click
-        formABMProvincia.Show()
+        formABMProvincia.ShowDialog()
     End Sub
 
 
@@ -21,7 +21,7 @@ Public Class formClientes
     End Sub
 
     Private Sub bNuevaLocalidad_Click(sender As Object, e As EventArgs) Handles bNuevaLocalidad.Click
-        formABMLocalidad.Show()
+        formABMLocalidad.ShowDialog()
     End Sub
 
     Private Sub cargarDGClientes()
@@ -140,6 +140,7 @@ Public Class formClientes
         cbProvincia.DataSource = ds
         cbProvincia.ValueMember = "IdProvincia"
         cbProvincia.DisplayMember = "NombreProvincia"
+        cargarCBLocalidades(cbProvincia.SelectedValue.ToString)
     End Sub
 
     Public Sub cargarCBLocalidades(id As String)

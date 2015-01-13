@@ -23,12 +23,6 @@ Public Class formlistadoventas
         cargarventas()
     End Sub
 
-
-
-    Private Sub DGventas_Click(sender As Object, e As EventArgs) Handles DGventas.Click
-      
-    End Sub
-
     Public Sub cargarentregas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -196,14 +190,6 @@ Public Class formlistadoventas
 
         GroupBox1.Enabled = False
         GroupBox2.Enabled = False
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
 
     End Sub
 End Class

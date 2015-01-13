@@ -46,7 +46,7 @@ Public Class formadministrador
 
         Dim suma As New SqlCommand("Select sum(importeadministrador) from Administrador where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
         textimporte.Text = suma.ExecuteScalar()
-
+        CN.Close()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -71,7 +71,9 @@ Public Class formadministrador
         End If
     End Sub
 
-    Private Sub textimporte_TextChanged(sender As Object, e As EventArgs) Handles textimporte.TextChanged
 
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        formCuentas.ShowDialog()
     End Sub
 End Class

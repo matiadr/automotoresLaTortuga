@@ -24,13 +24,13 @@ Partial Class formABMMarca
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgMarcas = New System.Windows.Forms.DataGridView()
+        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
-        Me.idMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbIdMarca = New System.Windows.Forms.TextBox()
         Me.tbMarca = New System.Windows.Forms.TextBox()
@@ -46,7 +46,7 @@ Partial Class formABMMarca
         Me.GroupBox1.Controls.Add(Me.dgMarcas)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(253, 167)
+        Me.GroupBox1.Size = New System.Drawing.Size(300, 167)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Marcas"
@@ -62,9 +62,25 @@ Partial Class formABMMarca
         Me.dgMarcas.Name = "dgMarcas"
         Me.dgMarcas.ReadOnly = True
         Me.dgMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgMarcas.Size = New System.Drawing.Size(228, 111)
+        Me.dgMarcas.Size = New System.Drawing.Size(288, 111)
         Me.dgMarcas.TabIndex = 4
         Me.dgMarcas.TabStop = False
+        '
+        'idMarca
+        '
+        Me.idMarca.DataPropertyName = "IdMarca"
+        Me.idMarca.HeaderText = "idMarca"
+        Me.idMarca.Name = "idMarca"
+        Me.idMarca.ReadOnly = True
+        Me.idMarca.Visible = False
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "NombreMarca"
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        Me.marca.ReadOnly = True
+        Me.marca.Width = 180
         '
         'gbAcciones
         '
@@ -72,7 +88,7 @@ Partial Class formABMMarca
         Me.gbAcciones.Controls.Add(Me.bEliminar)
         Me.gbAcciones.Controls.Add(Me.bModificar)
         Me.gbAcciones.Controls.Add(Me.bNuevo)
-        Me.gbAcciones.Location = New System.Drawing.Point(271, 12)
+        Me.gbAcciones.Location = New System.Drawing.Point(318, 12)
         Me.gbAcciones.Name = "gbAcciones"
         Me.gbAcciones.Size = New System.Drawing.Size(120, 262)
         Me.gbAcciones.TabIndex = 9
@@ -126,22 +142,6 @@ Partial Class formABMMarca
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
         '
-        'idMarca
-        '
-        Me.idMarca.DataPropertyName = "IdMarca"
-        Me.idMarca.HeaderText = "idMarca"
-        Me.idMarca.Name = "idMarca"
-        Me.idMarca.ReadOnly = True
-        Me.idMarca.Visible = False
-        '
-        'marca
-        '
-        Me.marca.DataPropertyName = "NombreMarca"
-        Me.marca.HeaderText = "Marca"
-        Me.marca.Name = "marca"
-        Me.marca.ReadOnly = True
-        Me.marca.Width = 180
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.tbIdMarca)
@@ -182,7 +182,7 @@ Partial Class formABMMarca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(403, 282)
+        Me.ClientSize = New System.Drawing.Size(450, 282)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbAcciones)

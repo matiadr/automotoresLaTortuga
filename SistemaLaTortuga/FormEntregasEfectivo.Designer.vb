@@ -75,6 +75,7 @@ Partial Class FormEntregasEfectivo
         Me.textidbanco.Name = "textidbanco"
         Me.textidbanco.Size = New System.Drawing.Size(29, 20)
         Me.textidbanco.TabIndex = 10
+        Me.textidbanco.Visible = False
         '
         'Label5
         '

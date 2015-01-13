@@ -30,7 +30,7 @@ Public Class formABMSucursales
         cbBancos.DisplayMember = "NombreBanco"
     End Sub
 
-    Private Sub tbSucursal_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbSucursal_TextChanged(sender As Object, e As EventArgs) Handles tbSucursal.TextChanged
         If tbSucursal.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -38,7 +38,7 @@ Public Class formABMSucursales
         End If
     End Sub
 
-    Private Sub cbBancos_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cbBancos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBancos.SelectedIndexChanged
         tbIdBanco.Text = cbBancos.SelectedValue.ToString
     End Sub
 
@@ -73,7 +73,7 @@ Public Class formABMSucursales
         tbCodigoSucursal.Text = ""
     End Sub
 
-    Private Sub bLimpiar_Click(sender As Object, e As EventArgs)
+    Private Sub bLimpiar_Click(sender As Object, e As EventArgs) Handles bLimpiar.Click
         LimpiarPantalla()
     End Sub
 
@@ -114,41 +114,5 @@ Public Class formABMSucursales
         Catch ex As SqlException
             MessageBox.Show("No se puede eliminar ya que dicha sucursal esta siendo usada", "Advertencia")
         End Try
-    End Sub
-
-    Private Sub bLimpiar_Click_1(sender As Object, e As EventArgs) Handles bLimpiar.Click
-
-    End Sub
-
-    Private Sub tbIdBanco_TextChanged(sender As Object, e As EventArgs) Handles tbIdBanco.TextChanged
-
-    End Sub
-
-    Private Sub tbIdSucursal_TextChanged(sender As Object, e As EventArgs) Handles tbIdSucursal.TextChanged
-
-    End Sub
-
-    Private Sub tbSucursal_TextChanged_1(sender As Object, e As EventArgs) Handles tbSucursal.TextChanged
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub tbCodigoSucursal_TextChanged(sender As Object, e As EventArgs) Handles tbCodigoSucursal.TextChanged
-
-    End Sub
-
-    Private Sub cbBancos_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbBancos.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
     End Sub
 End Class

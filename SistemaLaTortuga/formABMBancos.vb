@@ -5,7 +5,7 @@ Public Class formABMBancos
         Me.Close()
     End Sub
 
-    Private Sub tbBanco_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbBanco_TextChanged(sender As Object, e As EventArgs) Handles tbBanco.TextChanged
         If tbBanco.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -40,11 +40,6 @@ Public Class formABMBancos
         tbBanco.Text = ""
         tbCodigo.Text = ""
     End Sub
-
-    Private Sub dgBancos_CellLeave(sender As Object, e As DataGridViewCellEventArgs) Handles dgBancos.CellLeave
-
-    End Sub
-
 
     Private Sub dgBancos_Click(sender As Object, e As EventArgs) Handles dgBancos.Click, dgBancos.KeyUp
         If dgBancos.RowCount > 0 Then

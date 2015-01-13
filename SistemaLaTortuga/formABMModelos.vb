@@ -5,7 +5,7 @@ Public Class formABMModelos
         Me.Close()
     End Sub
 
-    Private Sub tbModelo_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbModelo_TextChanged(sender As Object, e As EventArgs) Handles tbModelo.TextChanged
         If tbModelo.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -71,7 +71,7 @@ Public Class formABMModelos
         formVehiculos.cargarCBModelos(formVehiculos.tbIdMarca.Text)
     End Sub
 
-    Private Sub cbMarca_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cbMarca_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMarca.SelectedIndexChanged
         tbIdMarca.Text = cbMarca.SelectedValue.ToString
     End Sub
 
@@ -104,6 +104,7 @@ Public Class formABMModelos
                 bEliminar.Enabled = False
                 tbModelo.Text = ""
                 tbIdModelo.Text = ""
+                formVehiculos.cargarCBModelos(formVehiculos.tbIdMarca.Text)
             End If
         Catch ex As SqlException
             MessageBox.Show("No se puede eliminar ya que dicho Modelo esta siendo usado", "Advertencia")

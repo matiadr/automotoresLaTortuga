@@ -2,9 +2,6 @@
 
 Public Class FormPagoPlanes
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
     Public Sub CargarClientes()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -14,7 +11,7 @@ Public Class FormPagoPlanes
         da.Fill(ds)
         CN.Close()
         ComboCliente.DataSource = ds
-        ComboCliente.ValueMember = "IdClient"
+        ComboCliente.ValueMember = "IdCliente"
         ComboCliente.DisplayMember = "NombreC"
     End Sub
     Private Sub FormPagoPlanes_Load(sender As Object, e As EventArgs) Handles MyBase.Load

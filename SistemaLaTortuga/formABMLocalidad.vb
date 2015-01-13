@@ -5,7 +5,7 @@ Public Class formABMLocalidad
         Me.Close()
     End Sub
 
-    Private Sub tbLocalidad_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbLocalidad_TextChanged(sender As Object, e As EventArgs) Handles tbLocalidad.TextChanged
         If tbLocalidad.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -42,7 +42,7 @@ Public Class formABMLocalidad
         cargarCBProvincias()
     End Sub
 
-    Private Sub cbProvincia_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cbProvincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProvincia.SelectedIndexChanged
         tbIdProvincia.Text = cbProvincia.SelectedValue.ToString
     End Sub
 
@@ -109,5 +109,4 @@ Public Class formABMLocalidad
             MessageBox.Show("No se puede eliminar ya que dicha localidad esta siendo usada", "Advertencia")
         End Try
     End Sub
-
 End Class

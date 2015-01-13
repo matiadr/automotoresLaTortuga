@@ -28,6 +28,11 @@ Partial Class formABMLocalidad
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
         Me.dgLocalidades = New System.Windows.Forms.DataGridView()
+        Me.idProvincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codPostal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbIdLocalidad = New System.Windows.Forms.TextBox()
@@ -38,11 +43,6 @@ Partial Class formABMLocalidad
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbLocalidad = New System.Windows.Forms.TextBox()
-        Me.idProvincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codPostal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones.SuspendLayout()
         CType(Me.dgLocalidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -55,7 +55,7 @@ Partial Class formABMLocalidad
         Me.gbAcciones.Controls.Add(Me.bEliminar)
         Me.gbAcciones.Controls.Add(Me.bModificar)
         Me.gbAcciones.Controls.Add(Me.bNuevo)
-        Me.gbAcciones.Location = New System.Drawing.Point(489, 21)
+        Me.gbAcciones.Location = New System.Drawing.Point(520, 21)
         Me.gbAcciones.Name = "gbAcciones"
         Me.gbAcciones.Size = New System.Drawing.Size(121, 323)
         Me.gbAcciones.TabIndex = 6
@@ -120,16 +120,55 @@ Partial Class formABMLocalidad
         Me.dgLocalidades.Name = "dgLocalidades"
         Me.dgLocalidades.ReadOnly = True
         Me.dgLocalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgLocalidades.Size = New System.Drawing.Size(446, 159)
+        Me.dgLocalidades.Size = New System.Drawing.Size(490, 159)
         Me.dgLocalidades.TabIndex = 7
         Me.dgLocalidades.TabStop = False
+        '
+        'idProvincia
+        '
+        Me.idProvincia.DataPropertyName = "IdProvincia"
+        Me.idProvincia.HeaderText = "idProvincia"
+        Me.idProvincia.Name = "idProvincia"
+        Me.idProvincia.ReadOnly = True
+        Me.idProvincia.Visible = False
+        '
+        'idLocalidad
+        '
+        Me.idLocalidad.DataPropertyName = "IdLocalidad"
+        Me.idLocalidad.HeaderText = "idLocalidad"
+        Me.idLocalidad.Name = "idLocalidad"
+        Me.idLocalidad.ReadOnly = True
+        Me.idLocalidad.Visible = False
+        '
+        'codPostal
+        '
+        Me.codPostal.DataPropertyName = "CodigoPostal"
+        Me.codPostal.HeaderText = "Cod Postal"
+        Me.codPostal.Name = "codPostal"
+        Me.codPostal.ReadOnly = True
+        '
+        'Localidad
+        '
+        Me.Localidad.DataPropertyName = "NombreLocalidad"
+        Me.Localidad.HeaderText = "Localidad"
+        Me.Localidad.Name = "Localidad"
+        Me.Localidad.ReadOnly = True
+        Me.Localidad.Width = 150
+        '
+        'Provincia
+        '
+        Me.Provincia.DataPropertyName = "NombreProvincia"
+        Me.Provincia.HeaderText = "Provincia"
+        Me.Provincia.Name = "Provincia"
+        Me.Provincia.ReadOnly = True
+        Me.Provincia.Width = 150
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dgLocalidades)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 21)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(460, 209)
+        Me.GroupBox1.Size = New System.Drawing.Size(502, 209)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Localidades"
@@ -217,50 +256,11 @@ Partial Class formABMLocalidad
         Me.tbLocalidad.Size = New System.Drawing.Size(147, 20)
         Me.tbLocalidad.TabIndex = 15
         '
-        'idProvincia
-        '
-        Me.idProvincia.DataPropertyName = "IdProvincia"
-        Me.idProvincia.HeaderText = "idProvincia"
-        Me.idProvincia.Name = "idProvincia"
-        Me.idProvincia.ReadOnly = True
-        Me.idProvincia.Visible = False
-        '
-        'idLocalidad
-        '
-        Me.idLocalidad.DataPropertyName = "IdLocalidad"
-        Me.idLocalidad.HeaderText = "idLocalidad"
-        Me.idLocalidad.Name = "idLocalidad"
-        Me.idLocalidad.ReadOnly = True
-        Me.idLocalidad.Visible = False
-        '
-        'codPostal
-        '
-        Me.codPostal.DataPropertyName = "CodigoPostal"
-        Me.codPostal.HeaderText = "Cod Postal"
-        Me.codPostal.Name = "codPostal"
-        Me.codPostal.ReadOnly = True
-        '
-        'Localidad
-        '
-        Me.Localidad.DataPropertyName = "NombreLocalidad"
-        Me.Localidad.HeaderText = "Localidad"
-        Me.Localidad.Name = "Localidad"
-        Me.Localidad.ReadOnly = True
-        Me.Localidad.Width = 150
-        '
-        'Provincia
-        '
-        Me.Provincia.DataPropertyName = "NombreProvincia"
-        Me.Provincia.HeaderText = "Provincia"
-        Me.Provincia.Name = "Provincia"
-        Me.Provincia.ReadOnly = True
-        Me.Provincia.Width = 150
-        '
         'formABMLocalidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(615, 354)
+        Me.ClientSize = New System.Drawing.Size(653, 354)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbAcciones)

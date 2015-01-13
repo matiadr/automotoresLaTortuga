@@ -33,7 +33,7 @@ Public Class formvehiculoentrega
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         formBuscarVehiculo.texttipoboton.Text = "ven" 'asigno el numero 2 a la variable para saber que tengo que cargar los datos en el form de entrega
-        formBuscarVehiculo.Show()
+        formBuscarVehiculo.ShowDialog()
     End Sub
     Public Sub cargarentregas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
@@ -47,7 +47,11 @@ Public Class formvehiculoentrega
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-       
+        If tbPrecioCostoVehEntrega.Text = "" Then
+            MessageBox.Show("Debe ingresar un importe 'Precio de entrega'", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
 
 
         'tambien debo agregarlo a LA TABLA VEHICULOS. hay dos casos, pudo haber estado y le cambio el estado vendido a N con otros datos, o no, y tengo que agregarlo
@@ -92,7 +96,7 @@ Public Class formvehiculoentrega
 
         Else ' significa que ya existe y solo le cambio el estado y tengo el id tambien
 
-           
+
 
             'debo crear registro en la tabla VEHICULOSENTREGAS
 
@@ -123,7 +127,7 @@ Public Class formvehiculoentrega
 
         End If
 
-       
+
 
 
 

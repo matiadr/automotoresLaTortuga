@@ -162,7 +162,6 @@ Partial Class formvehiculoentrega
         Me.tbPrecioCostoVehEntrega.Name = "tbPrecioCostoVehEntrega"
         Me.tbPrecioCostoVehEntrega.Size = New System.Drawing.Size(94, 20)
         Me.tbPrecioCostoVehEntrega.TabIndex = 19
-        Me.tbPrecioCostoVehEntrega.Text = "0"
         '
         'Label22
         '

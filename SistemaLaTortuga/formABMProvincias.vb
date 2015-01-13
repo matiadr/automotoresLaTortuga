@@ -5,7 +5,7 @@ Public Class formABMProvincia
         Me.Close()
     End Sub
 
-    Private Sub tbProvincia_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbProvincia_TextChanged(sender As Object, e As EventArgs) Handles tbProvincia.TextChanged
         If tbProvincia.Text.Length > 0 Then
             bNuevo.Enabled = True
         Else
@@ -84,6 +84,7 @@ Public Class formABMProvincia
                 bEliminar.Enabled = False
                 tbProvincia.Text = ""
                 tbIdProvincia.Text = ""
+                formClientes.cargarCBProvincias()
             End If
         Catch ex As SqlException
             MessageBox.Show("No se puede eliminar ya que dicha provincia esta siendo usada", "Advertencia")

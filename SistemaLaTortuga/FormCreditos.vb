@@ -97,10 +97,6 @@ Public Class formcreditos
         Me.Close()
     End Sub
 
-    Private Sub textidcredito_TextChanged(sender As Object, e As EventArgs) Handles textidcredito.TextChanged
-
-    End Sub
-
     Private Sub textsolicitado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textsolicitado.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
@@ -117,9 +113,5 @@ Public Class formcreditos
             e.Handled = True
             SendKeys.Send(".")
         End If
-    End Sub
-
-    Private Sub textsolicitado_TextChanged(sender As Object, e As EventArgs) Handles textsolicitado.TextChanged
-
     End Sub
 End Class

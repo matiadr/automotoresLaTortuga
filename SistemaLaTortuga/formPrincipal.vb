@@ -57,7 +57,7 @@ Public Class formPrincipal
     End Sub
 
     Private Sub NuevaVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaVentaToolStripMenuItem.Click
-        formVentas.ShowDialog()
+        formVentas.Show()
         formVentas.GroupBox3.Enabled = False
         formVentas.GroupBox4.Enabled = False
     End Sub

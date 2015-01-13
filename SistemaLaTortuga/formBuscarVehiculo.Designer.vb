@@ -80,7 +80,7 @@ Partial Class formBuscarVehiculo
         Me.dgVehiculos.AllowUserToResizeRows = False
         Me.dgVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgVehiculos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idVehiculo, Me.marca, Me.modelo, Me.tipoVehiculo, Me.año, Me.dominio, Me.idcliente})
-        Me.dgVehiculos.Location = New System.Drawing.Point(6, 19)
+        Me.dgVehiculos.Location = New System.Drawing.Point(2, 6)
         Me.dgVehiculos.Name = "dgVehiculos"
         Me.dgVehiculos.ReadOnly = True
         Me.dgVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

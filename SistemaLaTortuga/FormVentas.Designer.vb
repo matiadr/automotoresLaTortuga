@@ -1001,7 +1001,7 @@ Partial Class formVentas
         Me.TextCuotas.Name = "TextCuotas"
         Me.TextCuotas.Size = New System.Drawing.Size(37, 20)
         Me.TextCuotas.TabIndex = 8
-        Me.TextCuotas.Text = "0"
+        Me.TextCuotas.Text = "1"
         '
         'Label26
         '
@@ -1112,7 +1112,7 @@ Partial Class formVentas
         Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button14.Image = Global.SistemaLaTortuga.My.Resources.Resources.fileprint
         Me.Button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button14.Location = New System.Drawing.Point(16, 360)
+        Me.Button14.Location = New System.Drawing.Point(17, 177)
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(111, 51)
         Me.Button14.TabIndex = 4
@@ -1125,7 +1125,7 @@ Partial Class formVentas
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.SistemaLaTortuga.My.Resources.Resources.filesave
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(16, 278)
+        Me.Button3.Location = New System.Drawing.Point(17, 252)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(111, 51)
         Me.Button3.TabIndex = 3
@@ -1137,7 +1137,7 @@ Partial Class formVentas
         Me.bSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bSalir.Image = Global.SistemaLaTortuga.My.Resources.Resources._exit
         Me.bSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bSalir.Location = New System.Drawing.Point(17, 194)
+        Me.bSalir.Location = New System.Drawing.Point(17, 327)
         Me.bSalir.Name = "bSalir"
         Me.bSalir.Size = New System.Drawing.Size(111, 51)
         Me.bSalir.TabIndex = 2
@@ -1161,7 +1161,7 @@ Partial Class formVentas
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.Image = Global.SistemaLaTortuga.My.Resources.Resources.fileprint
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(17, 112)
+        Me.Button7.Location = New System.Drawing.Point(17, 102)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(111, 51)
         Me.Button7.TabIndex = 0

@@ -142,8 +142,4 @@ Public Class FormOtrosEgresos
             SendKeys.Send(".")
         End If
     End Sub
-
-    Private Sub TextImporte_TextChanged(sender As Object, e As EventArgs) Handles TextImporte.TextChanged
-
-    End Sub
 End Class

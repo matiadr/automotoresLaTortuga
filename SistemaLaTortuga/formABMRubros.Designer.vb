@@ -24,13 +24,13 @@ Partial Class formABMRubros
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgRubro = New System.Windows.Forms.DataGridView()
+        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbAcciones = New System.Windows.Forms.GroupBox()
         Me.bSalir = New System.Windows.Forms.Button()
         Me.bEliminar = New System.Windows.Forms.Button()
         Me.bModificar = New System.Windows.Forms.Button()
         Me.bNuevo = New System.Windows.Forms.Button()
-        Me.idRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbIdRubro = New System.Windows.Forms.TextBox()
         Me.tbRubro = New System.Windows.Forms.TextBox()
@@ -46,7 +46,7 @@ Partial Class formABMRubros
         Me.GroupBox1.Controls.Add(Me.dgRubro)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(228, 186)
+        Me.GroupBox1.Size = New System.Drawing.Size(269, 186)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Rubros"
@@ -58,13 +58,29 @@ Partial Class formABMRubros
         Me.dgRubro.AllowUserToResizeRows = False
         Me.dgRubro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgRubro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRubro, Me.rubro})
-        Me.dgRubro.Location = New System.Drawing.Point(6, 36)
+        Me.dgRubro.Location = New System.Drawing.Point(6, 19)
         Me.dgRubro.Name = "dgRubro"
         Me.dgRubro.ReadOnly = True
         Me.dgRubro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgRubro.Size = New System.Drawing.Size(216, 144)
+        Me.dgRubro.Size = New System.Drawing.Size(257, 161)
         Me.dgRubro.TabIndex = 4
         Me.dgRubro.TabStop = False
+        '
+        'idRubro
+        '
+        Me.idRubro.DataPropertyName = "IdRubro"
+        Me.idRubro.HeaderText = "idRubro"
+        Me.idRubro.Name = "idRubro"
+        Me.idRubro.ReadOnly = True
+        Me.idRubro.Visible = False
+        '
+        'rubro
+        '
+        Me.rubro.DataPropertyName = "NombreRubro"
+        Me.rubro.HeaderText = "Rubro"
+        Me.rubro.Name = "rubro"
+        Me.rubro.ReadOnly = True
+        Me.rubro.Width = 150
         '
         'gbAcciones
         '
@@ -72,7 +88,7 @@ Partial Class formABMRubros
         Me.gbAcciones.Controls.Add(Me.bEliminar)
         Me.gbAcciones.Controls.Add(Me.bModificar)
         Me.gbAcciones.Controls.Add(Me.bNuevo)
-        Me.gbAcciones.Location = New System.Drawing.Point(245, 12)
+        Me.gbAcciones.Location = New System.Drawing.Point(287, 12)
         Me.gbAcciones.Name = "gbAcciones"
         Me.gbAcciones.Size = New System.Drawing.Size(117, 262)
         Me.gbAcciones.TabIndex = 9
@@ -126,22 +142,6 @@ Partial Class formABMRubros
         Me.bNuevo.Text = "Nuevo"
         Me.bNuevo.UseVisualStyleBackColor = True
         '
-        'idRubro
-        '
-        Me.idRubro.DataPropertyName = "IdRubro"
-        Me.idRubro.HeaderText = "idRubro"
-        Me.idRubro.Name = "idRubro"
-        Me.idRubro.ReadOnly = True
-        Me.idRubro.Visible = False
-        '
-        'rubro
-        '
-        Me.rubro.DataPropertyName = "NombreRubro"
-        Me.rubro.HeaderText = "Rubro"
-        Me.rubro.Name = "rubro"
-        Me.rubro.ReadOnly = True
-        Me.rubro.Width = 150
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.tbIdRubro)
@@ -182,7 +182,7 @@ Partial Class formABMRubros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(370, 278)
+        Me.ClientSize = New System.Drawing.Size(416, 278)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbAcciones)

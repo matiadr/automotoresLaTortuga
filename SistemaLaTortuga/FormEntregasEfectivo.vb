@@ -96,8 +96,4 @@ Public Class FormEntregasEfectivo
             SendKeys.Send(".")
         End If
     End Sub
-
-    Private Sub textimporte_TextChanged(sender As Object, e As EventArgs) Handles textimporte.TextChanged
-
-    End Sub
 End Class

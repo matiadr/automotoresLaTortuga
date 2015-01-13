@@ -2,7 +2,7 @@
 Public Class formBuscarVehiculo
 
 
-    Public tipoBoton As Integer
+    Public tipoBoton As String
 
     Private Sub formBuscarVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDGVehiculos()
@@ -11,7 +11,12 @@ Public Class formBuscarVehiculo
     Private Sub cargarDGVehiculos()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
-        Dim cmd As New SqlCommand("select IdVehiculo,NombreMarca,NombreModelo,Tipo,Año,Dominio from Vehiculos v,Modelos m,Marcas ma where v.IdModelo=m.IdModelo and m.IdMarca=ma.IdMarca and Vendido = 'N' order by NombreMarca,NombreModelo", CN)
+        Dim cmd As SqlCommand
+        If texttipoboton.Text = "ven" Then
+            cmd = New SqlCommand("select IdVehiculo,NombreMarca,NombreModelo,Tipo,Año,Dominio from Vehiculos v,Modelos m,Marcas ma where v.IdModelo=m.IdModelo and m.IdMarca=ma.IdMarca and Vendido = 'S' and IdVehiculo <> '" & formVentas.tbIdVehVenta.Text & "' order by NombreMarca,NombreModelo", CN)
+        Else
+            cmd = New SqlCommand("select IdVehiculo,NombreMarca,NombreModelo,Tipo,Año,Dominio from Vehiculos v,Modelos m,Marcas ma where v.IdModelo=m.IdModelo and m.IdMarca=ma.IdMarca and Vendido = 'N' order by NombreMarca,NombreModelo", CN)
+        End If
         Dim lista As SqlDataReader = cmd.ExecuteReader
         Dim dt As New DataTable()
         dt.Load(lista)
@@ -28,11 +33,11 @@ Public Class formBuscarVehiculo
         dgVehiculos.DataSource = dt
         CN.Close()
     End Sub
-    Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbBusqueda_TextChanged(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
         Dim CN As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
         Dim miConexion As New SqlConnection(CN)
 
-        If texttipoboton.Text = 1 Then
+        If texttipoboton.Text = "ve" Then
             Dim seleccion As String = "select IdVehiculo,NombreMarca,NombreModelo,Tipo,Año,Dominio from Vehiculos v,Modelos m,Marcas ma where v.IdModelo=m.IdModelo and m.IdMarca=ma.IdMarca and (NombreMarca like '" & tbBusqueda.Text & "%' or NombreModelo like '" & tbBusqueda.Text & "%' or Dominio like '" & tbBusqueda.Text & "%') and vendido = 'N' order by NombreMarca,NombreModelo"
             miConexion.Open()
             Dim tabla2 As DataTable
@@ -69,20 +74,6 @@ Public Class formBuscarVehiculo
 
 
         End If
-    End Sub
-
-   
-
-
-    Private Sub tbBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles tbBusqueda.TextChanged
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select IdVehiculo,NombreMarca,NombreModelo,Tipo,Año,Dominio from Vehiculos v,Modelos m,Marcas ma where v.IdModelo=m.IdModelo and m.IdMarca=ma.IdMarca and Vendido = 'N' and (dominio like '" & tbBusqueda.Text & "%' or NombreMarca like '" & tbBusqueda.Text & "%') order by NombreMarca,NombreModelo", CN)
-        Dim lista As SqlDataReader = cmd.ExecuteReader
-        Dim dt As New DataTable()
-        dt.Load(lista)
-        dgVehiculos.DataSource = dt
-        CN.Close()
     End Sub
 
     Private Sub dgVehiculos_DoubleClick(sender As Object, e As EventArgs) Handles dgVehiculos.DoubleClick
