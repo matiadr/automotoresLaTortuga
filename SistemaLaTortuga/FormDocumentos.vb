@@ -72,4 +72,8 @@ Public Class FormDocumentos
             SendKeys.Send(".")
         End If
     End Sub
+
+    Private Sub textimported_TextChanged(sender As Object, e As EventArgs) Handles textimported.TextChanged
+
+    End Sub
 End Class

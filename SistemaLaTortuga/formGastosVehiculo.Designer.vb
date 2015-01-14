@@ -23,14 +23,19 @@ Partial Class FormGastosVehiculo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.textidsucursal = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.textnombres = New System.Windows.Forms.TextBox()
+        Me.textnombreb = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.textmarca = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Comboproveedor = New System.Windows.Forms.ComboBox()
         Me.textidvehiculo = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.combobanco = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.textnumero = New System.Windows.Forms.TextBox()
         Me.combotipopago = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -50,14 +55,19 @@ Partial Class FormGastosVehiculo
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.textidsucursal)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.textnombres)
+        Me.GroupBox1.Controls.Add(Me.textnombreb)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.textmarca)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Comboproveedor)
         Me.GroupBox1.Controls.Add(Me.textidvehiculo)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.combobanco)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.textnumero)
         Me.GroupBox1.Controls.Add(Me.combotipopago)
         Me.GroupBox1.Controls.Add(Me.Label5)
@@ -74,9 +84,78 @@ Partial Class FormGastosVehiculo
         Me.GroupBox1.Controls.Add(Me.textpatente)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(438, 248)
+        Me.GroupBox1.Size = New System.Drawing.Size(438, 290)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(187, 177)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(31, 19)
+        Me.Button4.TabIndex = 70
+        Me.Button4.Text = "+"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'textidsucursal
+        '
+        Me.textidsucursal.Location = New System.Drawing.Point(388, 129)
+        Me.textidsucursal.Name = "textidsucursal"
+        Me.textidsucursal.Size = New System.Drawing.Size(34, 20)
+        Me.textidsucursal.TabIndex = 69
+        Me.textidsucursal.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(293, 130)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(31, 19)
+        Me.Button3.TabIndex = 65
+        Me.Button3.Text = "..."
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(151, 113)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(48, 13)
+        Me.Label12.TabIndex = 68
+        Me.Label12.Text = "Sucursal"
+        '
+        'textnombres
+        '
+        Me.textnombres.Location = New System.Drawing.Point(154, 129)
+        Me.textnombres.Name = "textnombres"
+        Me.textnombres.ReadOnly = True
+        Me.textnombres.Size = New System.Drawing.Size(133, 20)
+        Me.textnombres.TabIndex = 64
+        '
+        'textnombreb
+        '
+        Me.textnombreb.Location = New System.Drawing.Point(9, 129)
+        Me.textnombreb.Name = "textnombreb"
+        Me.textnombreb.ReadOnly = True
+        Me.textnombreb.Size = New System.Drawing.Size(133, 20)
+        Me.textnombreb.TabIndex = 66
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 113)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(38, 13)
+        Me.Label8.TabIndex = 67
+        Me.Label8.Text = "Banco"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(119, 63)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(218, 13)
+        Me.Label6.TabIndex = 22
+        Me.Label6.Text = "N° Transferencia / N° Cheque / N° Depósito"
         '
         'textmarca
         '
@@ -89,7 +168,7 @@ Partial Class FormGastosVehiculo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(240, 58)
+        Me.Label2.Location = New System.Drawing.Point(232, 160)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 13)
         Me.Label2.TabIndex = 20
@@ -100,7 +179,7 @@ Partial Class FormGastosVehiculo
         Me.Comboproveedor.DisplayMember = "idproveedor"
         Me.Comboproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Comboproveedor.FormattingEnabled = True
-        Me.Comboproveedor.Location = New System.Drawing.Point(239, 75)
+        Me.Comboproveedor.Location = New System.Drawing.Point(231, 177)
         Me.Comboproveedor.Name = "Comboproveedor"
         Me.Comboproveedor.Size = New System.Drawing.Size(192, 21)
         Me.Comboproveedor.TabIndex = 5
@@ -114,57 +193,28 @@ Partial Class FormGastosVehiculo
         Me.textidvehiculo.TabIndex = 18
         Me.textidvehiculo.Visible = False
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(288, 98)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(38, 13)
-        Me.Label8.TabIndex = 17
-        Me.Label8.Text = "Banco"
-        '
-        'combobanco
-        '
-        Me.combobanco.DisplayMember = "idbanco"
-        Me.combobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combobanco.FormattingEnabled = True
-        Me.combobanco.Location = New System.Drawing.Point(291, 114)
-        Me.combobanco.Name = "combobanco"
-        Me.combobanco.Size = New System.Drawing.Size(141, 21)
-        Me.combobanco.TabIndex = 8
-        Me.combobanco.ValueMember = "idbanco"
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(11, 101)
+        Me.Label7.Location = New System.Drawing.Point(13, 63)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 13)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Tipo Pago"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(118, 98)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(19, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "N°"
-        '
         'textnumero
         '
-        Me.textnumero.Location = New System.Drawing.Point(121, 114)
+        Me.textnumero.Location = New System.Drawing.Point(119, 79)
         Me.textnumero.Name = "textnumero"
-        Me.textnumero.Size = New System.Drawing.Size(164, 20)
+        Me.textnumero.Size = New System.Drawing.Size(218, 20)
         Me.textnumero.TabIndex = 7
         '
         'combotipopago
         '
         Me.combotipopago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combotipopago.FormattingEnabled = True
-        Me.combotipopago.Items.AddRange(New Object() {"Efectivo", "Cheque"})
-        Me.combotipopago.Location = New System.Drawing.Point(9, 116)
+        Me.combotipopago.Items.AddRange(New Object() {"Efectivo", "Cheque", "Transferencia", "Depósito"})
+        Me.combotipopago.Location = New System.Drawing.Point(7, 79)
         Me.combotipopago.Name = "combotipopago"
         Me.combotipopago.Size = New System.Drawing.Size(106, 21)
         Me.combotipopago.TabIndex = 6
@@ -172,7 +222,7 @@ Partial Class FormGastosVehiculo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(10, 168)
+        Me.Label5.Location = New System.Drawing.Point(6, 219)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(63, 13)
         Me.Label5.TabIndex = 11
@@ -181,7 +231,7 @@ Partial Class FormGastosVehiculo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(89, 59)
+        Me.Label4.Location = New System.Drawing.Point(12, 161)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 13)
         Me.Label4.TabIndex = 10
@@ -190,7 +240,7 @@ Partial Class FormGastosVehiculo
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 58)
+        Me.Label3.Location = New System.Drawing.Point(353, 63)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 9
@@ -216,16 +266,16 @@ Partial Class FormGastosVehiculo
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(227, 198)
+        Me.Button2.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Button2.Location = New System.Drawing.Point(224, 250)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(39, 34)
         Me.Button2.TabIndex = 10
-        Me.Button2.Text = "+"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'textdetalle
         '
-        Me.textdetalle.Location = New System.Drawing.Point(9, 184)
+        Me.textdetalle.Location = New System.Drawing.Point(6, 236)
         Me.textdetalle.Multiline = True
         Me.textdetalle.Name = "textdetalle"
         Me.textdetalle.Size = New System.Drawing.Size(212, 48)
@@ -236,15 +286,15 @@ Partial Class FormGastosVehiculo
         Me.combocuenta.DisplayMember = "idcuenta"
         Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
-        Me.combocuenta.Location = New System.Drawing.Point(86, 75)
+        Me.combocuenta.Location = New System.Drawing.Point(9, 177)
         Me.combocuenta.Name = "combocuenta"
-        Me.combocuenta.Size = New System.Drawing.Size(147, 21)
+        Me.combocuenta.Size = New System.Drawing.Size(172, 21)
         Me.combocuenta.TabIndex = 4
         Me.combocuenta.ValueMember = "idcuenta"
         '
         'textimporte
         '
-        Me.textimporte.Location = New System.Drawing.Point(6, 74)
+        Me.textimporte.Location = New System.Drawing.Point(353, 79)
         Me.textimporte.Name = "textimporte"
         Me.textimporte.Size = New System.Drawing.Size(70, 20)
         Me.textimporte.TabIndex = 3
@@ -282,7 +332,7 @@ Partial Class FormGastosVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(462, 264)
+        Me.ClientSize = New System.Drawing.Size(462, 306)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -309,13 +359,18 @@ Partial Class FormGastosVehiculo
     Friend WithEvents textmodelo As System.Windows.Forms.TextBox
     Friend WithEvents textpatente As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents textnumero As System.Windows.Forms.TextBox
     Friend WithEvents combotipopago As System.Windows.Forms.ComboBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents combobanco As System.Windows.Forms.ComboBox
     Friend WithEvents textidvehiculo As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Comboproveedor As System.Windows.Forms.ComboBox
     Friend WithEvents textmarca As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents textidsucursal As System.Windows.Forms.TextBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents textnombres As System.Windows.Forms.TextBox
+    Friend WithEvents textnombreb As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

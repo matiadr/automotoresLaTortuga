@@ -12,18 +12,7 @@ Public Class FormGastosVehiculo
         combocuenta.ValueMember = "IdCuenta"
         combocuenta.DisplayMember = "NombreCuenta"
     End Sub
-    Public Sub CargarBancos()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataTable()
-        da.Fill(ds)
-        CN.Close()
-        combobanco.DataSource = ds
-        combobanco.ValueMember = "IdBanco"
-        combobanco.DisplayMember = "NombreBanco"
-    End Sub
+
     Public Sub CargarProveedores()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -107,7 +96,7 @@ Public Class FormGastosVehiculo
             Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
             Dim id = max.ExecuteScalar()
 
-            Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & textimporte.Text & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & Conversion.Int(combobanco.SelectedValue) & "', '" & id & "')", CN)
+            Dim cmd As New SqlCommand("insert into GastosVehiculos values ('" & Conversion.Int(textidvehiculo.Text) & "','" & Conversion.Int(combocuenta.SelectedValue) & "', '" & textdetalle.Text & "', '" & textimporte.Text & "', '" & FormCaja.DTfecha.Value & "', '" & Conversion.Int(Comboproveedor.SelectedValue) & "', '" & combotipopago.Text & "', '" & Conversion.Val(textnumero.Text) & "', '" & textidsucursal.Text & "', '" & id & "')", CN)
             cmd.ExecuteNonQuery()
 
 
@@ -121,15 +110,15 @@ Public Class FormGastosVehiculo
         End If
     End Sub
 
-    
+
     Private Sub FormGastosVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarBancos()
+
         CargarCuentas()
         CargarProveedores()
         combotipopago.SelectedIndex = 0
     End Sub
 
- 
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         formbuscavehiculoactivo.Show()
@@ -150,6 +139,36 @@ Public Class FormGastosVehiculo
         If e.KeyChar = (",") Then
             e.Handled = True
             SendKeys.Send(".")
+        End If
+    End Sub
+
+
+
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        formsucursalesbancos.textform.Text = "gv"
+        formsucursalesbancos.Show()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        formCuentas.Show()
+    End Sub
+
+    Private Sub combotipopago_Click(sender As Object, e As EventArgs) Handles combotipopago.Click
+        If combotipopago.Text = "Efectivo" Then
+            Button3.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button3.Enabled = True
+        End If
+    End Sub
+
+    Private Sub combotipopago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combotipopago.SelectedIndexChanged
+        If combotipopago.Text = "Efectivo" Then
+            Button3.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button3.Enabled = True
         End If
     End Sub
 End Class

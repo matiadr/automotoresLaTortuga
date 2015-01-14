@@ -23,6 +23,12 @@ Public Class formlistadoventas
         cargarventas()
     End Sub
 
+
+
+    Private Sub DGventas_Click(sender As Object, e As EventArgs) Handles DGventas.Click
+
+    End Sub
+
     Public Sub cargarentregas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -33,7 +39,7 @@ Public Class formlistadoventas
         formVentas.DGentregas.DataSource = dt
 
 
-   
+
         Dim suma As New SqlCommand("Select sum(PrecioE) from VehiculosEntregas where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
 
         If dt.Rows.Count > 0 Then
@@ -63,7 +69,7 @@ Public Class formlistadoventas
         CN.Open()
 
         'si hubo entregas
-      
+
 
         Dim seleccione As String = "select * from Entregas where idventa ='" & formVentas.textidventa.Text & "' "
         Dim tabla2e As DataTable
@@ -77,13 +83,13 @@ Public Class formlistadoventas
 
 
             formVentas.textsumaentrega.Text = suma.ExecuteScalar()
-            
+
 
         End If
 
 
 
-        
+
 
         'si hubo credito
         Dim CNa As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
@@ -95,7 +101,7 @@ Public Class formlistadoventas
         da = New SqlDataAdapter(seleccion, CNa)
         tabla2 = New DataTable
         da.Fill(tabla2)
-     
+
         If tabla2.Rows.Count > 0 Then
 
             formVentas.textcredsolicitado.Text = tabla2.Rows.Item(0).Item("ImporteSolicitado")
@@ -180,7 +186,7 @@ Public Class formlistadoventas
 
 
 
-   
+
 
     Private Sub DGventas_DoubleClick(sender As Object, e As EventArgs) Handles DGventas.DoubleClick
         textidventa.Text = DGventas.Item("idVenta", DGventas.SelectedRows(0).Index).Value()
@@ -190,23 +196,10 @@ Public Class formlistadoventas
         formVentas.buttontransferencia.Visible = True
         formVentas.Button3.Enabled = False
 
-        formVentas.GroupBox1.Enabled = False
-        formVentas.GroupBox2.Enabled = False
+        GroupBox1.Enabled = False
+        GroupBox2.Enabled = False
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
 
-        Dim cmd As New SqlCommand("select idventa,idcliente,idvehiculoventa,FechaVenta, NombreC, Tipo, NombreMarca, NombreModelo, Año, Dominio from Ventas v, Clientes c, Vehiculos ve, Marcas ma, Modelos mo  where v.idvehiculoventa = ve.idvehiculo and v.idcomprador = c.idcliente and ve.idmodelo = mo.idmodelo and mo.idmarca = ma.idmarca and (nombrec like '" & TextBox1.Text & "%' or dominio like '" & TextBox1.Text & "%') order by FechaVenta desc", CN)
-
-        Dim lista As SqlDataReader = cmd.ExecuteReader
-        Dim dt As New DataTable()
-        dt.Load(lista)
-        DGventas.DataSource = dt
-        CN.Close()
-    End Sub
-
-   
 End Class

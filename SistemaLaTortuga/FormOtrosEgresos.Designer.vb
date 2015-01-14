@@ -23,6 +23,13 @@ Partial Class FormOtrosEgresos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textidsucursal = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.textnombres = New System.Windows.Forms.TextBox()
+        Me.textnombreb = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ComboProveedor = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -32,8 +39,6 @@ Partial Class FormOtrosEgresos
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Textnumero = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBanco = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextImporte = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -45,6 +50,13 @@ Partial Class FormOtrosEgresos
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.textidsucursal)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.textnombres)
+        Me.GroupBox1.Controls.Add(Me.textnombreb)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.ComboProveedor)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -54,8 +66,6 @@ Partial Class FormOtrosEgresos
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Textnumero)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.ComboBanco)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.TextImporte)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -64,14 +74,74 @@ Partial Class FormOtrosEgresos
         Me.GroupBox1.Controls.Add(Me.Dtfecha)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(423, 217)
+        Me.GroupBox1.Size = New System.Drawing.Size(423, 250)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
+        '
+        'textidsucursal
+        '
+        Me.textidsucursal.Location = New System.Drawing.Point(354, 67)
+        Me.textidsucursal.Name = "textidsucursal"
+        Me.textidsucursal.Size = New System.Drawing.Size(34, 20)
+        Me.textidsucursal.TabIndex = 69
+        Me.textidsucursal.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(290, 68)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(31, 19)
+        Me.Button3.TabIndex = 65
+        Me.Button3.Text = "..."
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(148, 51)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(48, 13)
+        Me.Label12.TabIndex = 68
+        Me.Label12.Text = "Sucursal"
+        '
+        'textnombres
+        '
+        Me.textnombres.Location = New System.Drawing.Point(151, 67)
+        Me.textnombres.Name = "textnombres"
+        Me.textnombres.ReadOnly = True
+        Me.textnombres.Size = New System.Drawing.Size(133, 20)
+        Me.textnombres.TabIndex = 64
+        '
+        'textnombreb
+        '
+        Me.textnombreb.Location = New System.Drawing.Point(6, 67)
+        Me.textnombreb.Name = "textnombreb"
+        Me.textnombreb.ReadOnly = True
+        Me.textnombreb.Size = New System.Drawing.Size(133, 20)
+        Me.textnombreb.TabIndex = 66
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 51)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(38, 13)
+        Me.Label4.TabIndex = 67
+        Me.Label4.Text = "Banco"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(174, 153)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(28, 20)
+        Me.Button2.TabIndex = 45
+        Me.Button2.Text = "+"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 160)
+        Me.Label8.Location = New System.Drawing.Point(223, 138)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(56, 13)
         Me.Label8.TabIndex = 44
@@ -82,16 +152,16 @@ Partial Class FormOtrosEgresos
         Me.ComboProveedor.DisplayMember = "NombreProveedor"
         Me.ComboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboProveedor.FormattingEnabled = True
-        Me.ComboProveedor.Location = New System.Drawing.Point(6, 176)
+        Me.ComboProveedor.Location = New System.Drawing.Point(221, 154)
         Me.ComboProveedor.Name = "ComboProveedor"
-        Me.ComboProveedor.Size = New System.Drawing.Size(147, 21)
+        Me.ComboProveedor.Size = New System.Drawing.Size(196, 21)
         Me.ComboProveedor.TabIndex = 43
         Me.ComboProveedor.ValueMember = "IdProveedor"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(168, 109)
+        Me.Label7.Location = New System.Drawing.Point(24, 181)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 42
@@ -99,16 +169,16 @@ Partial Class FormOtrosEgresos
         '
         'TextDetalle
         '
-        Me.TextDetalle.Location = New System.Drawing.Point(171, 125)
+        Me.TextDetalle.Location = New System.Drawing.Point(9, 197)
         Me.TextDetalle.Multiline = True
         Me.TextDetalle.Name = "TextDetalle"
-        Me.TextDetalle.Size = New System.Drawing.Size(211, 26)
+        Me.TextDetalle.Size = New System.Drawing.Size(211, 41)
         Me.TextDetalle.TabIndex = 41
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 109)
+        Me.Label6.Location = New System.Drawing.Point(6, 138)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 13)
         Me.Label6.TabIndex = 40
@@ -119,25 +189,25 @@ Partial Class FormOtrosEgresos
         Me.combocuenta.DisplayMember = "nombrecuenta"
         Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
-        Me.combocuenta.Location = New System.Drawing.Point(6, 125)
+        Me.combocuenta.Location = New System.Drawing.Point(5, 154)
         Me.combocuenta.Name = "combocuenta"
-        Me.combocuenta.Size = New System.Drawing.Size(147, 21)
+        Me.combocuenta.Size = New System.Drawing.Size(163, 21)
         Me.combocuenta.TabIndex = 39
         Me.combocuenta.ValueMember = "idcuenta"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(171, 174)
+        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Button1.Location = New System.Drawing.Point(226, 217)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(57, 23)
+        Me.Button1.Size = New System.Drawing.Size(45, 21)
         Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Guardar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(168, 59)
+        Me.Label5.Location = New System.Drawing.Point(3, 99)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(218, 13)
         Me.Label5.TabIndex = 9
@@ -145,28 +215,10 @@ Partial Class FormOtrosEgresos
         '
         'Textnumero
         '
-        Me.Textnumero.Location = New System.Drawing.Point(171, 75)
+        Me.Textnumero.Location = New System.Drawing.Point(6, 115)
         Me.Textnumero.Name = "Textnumero"
         Me.Textnumero.Size = New System.Drawing.Size(216, 20)
         Me.Textnumero.TabIndex = 8
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 59)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(38, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Banco"
-        '
-        'ComboBanco
-        '
-        Me.ComboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBanco.FormattingEnabled = True
-        Me.ComboBanco.Location = New System.Drawing.Point(6, 75)
-        Me.ComboBanco.Name = "ComboBanco"
-        Me.ComboBanco.Size = New System.Drawing.Size(146, 21)
-        Me.ComboBanco.TabIndex = 6
         '
         'Label3
         '
@@ -224,7 +276,7 @@ Partial Class FormOtrosEgresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(448, 235)
+        Me.ClientSize = New System.Drawing.Size(448, 274)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -247,12 +299,17 @@ Partial Class FormOtrosEgresos
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Textnumero As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents ComboBanco As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextImporte As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ComboTipo As System.Windows.Forms.ComboBox
     Friend WithEvents Dtfecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents textidsucursal As System.Windows.Forms.TextBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents textnombres As System.Windows.Forms.TextBox
+    Friend WithEvents textnombreb As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class
