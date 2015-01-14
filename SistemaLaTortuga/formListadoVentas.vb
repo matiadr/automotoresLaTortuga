@@ -23,6 +23,12 @@ Public Class formlistadoventas
         cargarventas()
     End Sub
 
+
+
+    Private Sub DGventas_Click(sender As Object, e As EventArgs) Handles DGventas.Click
+
+    End Sub
+
     Public Sub cargarentregas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -33,7 +39,7 @@ Public Class formlistadoventas
         formVentas.DGentregas.DataSource = dt
 
 
-   
+
         Dim suma As New SqlCommand("Select sum(PrecioE) from VehiculosEntregas where Idventa = '" & formVentas.textidventa.Text & "' ", CN)
 
         If dt.Rows.Count > 0 Then
@@ -63,7 +69,7 @@ Public Class formlistadoventas
         CN.Open()
 
         'si hubo entregas
-      
+
 
         Dim seleccione As String = "select * from Entregas where idventa ='" & formVentas.textidventa.Text & "' "
         Dim tabla2e As DataTable
@@ -77,13 +83,13 @@ Public Class formlistadoventas
 
 
             formVentas.textsumaentrega.Text = suma.ExecuteScalar()
-            
+
 
         End If
 
 
 
-        
+
 
         'si hubo credito
         Dim CNa As String = "Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'"
@@ -95,7 +101,7 @@ Public Class formlistadoventas
         da = New SqlDataAdapter(seleccion, CNa)
         tabla2 = New DataTable
         da.Fill(tabla2)
-     
+
         If tabla2.Rows.Count > 0 Then
 
             formVentas.textcredsolicitado.Text = tabla2.Rows.Item(0).Item("ImporteSolicitado")
@@ -180,7 +186,7 @@ Public Class formlistadoventas
 
 
 
-   
+
 
     Private Sub DGventas_DoubleClick(sender As Object, e As EventArgs) Handles DGventas.DoubleClick
         textidventa.Text = DGventas.Item("idVenta", DGventas.SelectedRows(0).Index).Value()
@@ -208,5 +214,5 @@ Public Class formlistadoventas
         CN.Close()
     End Sub
 
-   
+
 End Class

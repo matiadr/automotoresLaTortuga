@@ -23,14 +23,19 @@ Partial Class FormPagarDocumento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textidsucursal = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.textnombres = New System.Windows.Forms.TextBox()
+        Me.textnombreb = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.combocuenta = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Textnumero = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBanco = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextImporte = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -42,14 +47,19 @@ Partial Class FormPagarDocumento
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.textidsucursal)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.textnombres)
+        Me.GroupBox1.Controls.Add(Me.textnombreb)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.CheckBox1)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.combocuenta)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Textnumero)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.ComboBanco)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.TextImporte)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -58,14 +68,75 @@ Partial Class FormPagarDocumento
         Me.GroupBox1.Controls.Add(Me.Dtfecha)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(490, 168)
+        Me.GroupBox1.Size = New System.Drawing.Size(490, 220)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
+        '
+        'textidsucursal
+        '
+        Me.textidsucursal.Location = New System.Drawing.Point(354, 75)
+        Me.textidsucursal.Name = "textidsucursal"
+        Me.textidsucursal.Size = New System.Drawing.Size(34, 20)
+        Me.textidsucursal.TabIndex = 75
+        Me.textidsucursal.Text = "0"
+        Me.textidsucursal.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(290, 76)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(31, 19)
+        Me.Button3.TabIndex = 71
+        Me.Button3.Text = "..."
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(148, 59)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(48, 13)
+        Me.Label12.TabIndex = 74
+        Me.Label12.Text = "Sucursal"
+        '
+        'textnombres
+        '
+        Me.textnombres.Location = New System.Drawing.Point(151, 75)
+        Me.textnombres.Name = "textnombres"
+        Me.textnombres.ReadOnly = True
+        Me.textnombres.Size = New System.Drawing.Size(133, 20)
+        Me.textnombres.TabIndex = 70
+        '
+        'textnombreb
+        '
+        Me.textnombreb.Location = New System.Drawing.Point(6, 75)
+        Me.textnombreb.Name = "textnombreb"
+        Me.textnombreb.ReadOnly = True
+        Me.textnombreb.Size = New System.Drawing.Size(133, 20)
+        Me.textnombreb.TabIndex = 72
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 59)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(38, 13)
+        Me.Label4.TabIndex = 73
+        Me.Label4.Text = "Banco"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(210, 121)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(30, 18)
+        Me.Button2.TabIndex = 42
+        Me.Button2.Text = "+"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(406, 145)
+        Me.CheckBox1.Location = New System.Drawing.Point(406, 197)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(78, 17)
         Me.CheckBox1.TabIndex = 41
@@ -75,7 +146,7 @@ Partial Class FormPagarDocumento
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 109)
+        Me.Label6.Location = New System.Drawing.Point(6, 103)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 13)
         Me.Label6.TabIndex = 40
@@ -86,25 +157,25 @@ Partial Class FormPagarDocumento
         Me.combocuenta.DisplayMember = "idcuenta"
         Me.combocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combocuenta.FormattingEnabled = True
-        Me.combocuenta.Location = New System.Drawing.Point(6, 125)
+        Me.combocuenta.Location = New System.Drawing.Point(6, 119)
         Me.combocuenta.Name = "combocuenta"
-        Me.combocuenta.Size = New System.Drawing.Size(147, 21)
+        Me.combocuenta.Size = New System.Drawing.Size(197, 21)
         Me.combocuenta.TabIndex = 39
         Me.combocuenta.ValueMember = "idcuenta"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(180, 125)
+        Me.Button1.Image = Global.SistemaLaTortuga.My.Resources.Resources.apply
+        Me.Button1.Location = New System.Drawing.Point(240, 171)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(57, 23)
+        Me.Button1.Size = New System.Drawing.Size(57, 30)
         Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Guardar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(168, 59)
+        Me.Label5.Location = New System.Drawing.Point(6, 161)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(218, 13)
         Me.Label5.TabIndex = 9
@@ -112,28 +183,10 @@ Partial Class FormPagarDocumento
         '
         'Textnumero
         '
-        Me.Textnumero.Location = New System.Drawing.Point(171, 75)
+        Me.Textnumero.Location = New System.Drawing.Point(5, 177)
         Me.Textnumero.Name = "Textnumero"
         Me.Textnumero.Size = New System.Drawing.Size(216, 20)
         Me.Textnumero.TabIndex = 8
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 59)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(38, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Banco"
-        '
-        'ComboBanco
-        '
-        Me.ComboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBanco.FormattingEnabled = True
-        Me.ComboBanco.Location = New System.Drawing.Point(6, 75)
-        Me.ComboBanco.Name = "ComboBanco"
-        Me.ComboBanco.Size = New System.Drawing.Size(146, 21)
-        Me.ComboBanco.TabIndex = 6
         '
         'Label3
         '
@@ -191,7 +244,7 @@ Partial Class FormPagarDocumento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(516, 192)
+        Me.ClientSize = New System.Drawing.Size(516, 244)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -208,8 +261,6 @@ Partial Class FormPagarDocumento
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Textnumero As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents ComboBanco As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextImporte As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -219,4 +270,11 @@ Partial Class FormPagarDocumento
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents combocuenta As System.Windows.Forms.ComboBox
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents textidsucursal As System.Windows.Forms.TextBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents textnombres As System.Windows.Forms.TextBox
+    Friend WithEvents textnombreb As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

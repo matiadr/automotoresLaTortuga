@@ -1,4 +1,7 @@
-﻿Imports System.Data.SqlClient
+﻿
+
+
+Imports System.Data.SqlClient
 Public Class FormEntregasEfectivo
     Public Sub CargarCuentas()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
@@ -12,21 +15,10 @@ Public Class FormEntregasEfectivo
         ComboCuentas.ValueMember = "IdCuenta"
         ComboCuentas.DisplayMember = "NombreCuenta"
     End Sub
-    Public Sub CargarBancos()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataTable()
-        da.Fill(ds)
-        CN.Close()
-        combobanco.DataSource = ds
-        combobanco.ValueMember = "IdBanco"
-        combobanco.DisplayMember = "NombreBanco"
-    End Sub
-    
+
+
     Private Sub FormEntregasEfectivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarBancos()
+
         CargarCuentas()
         CargarDGEntregas()
     End Sub
@@ -40,7 +32,7 @@ Public Class FormEntregasEfectivo
         Dgentregas.DataSource = dt
         CN.Close()
     End Sub
-   
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
@@ -54,7 +46,7 @@ Public Class FormEntregasEfectivo
         Try
             Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
             CN.Open()
-            Dim cmd As New SqlCommand("insert into Entregas (IdVenta,FormaPago,ImporteEntrega,FechaEntrega,NumeroTransaccion,IdSucursal,Idcuenta) values ('" & formVentas.textidventa.Text & "','" & Combotipopago.Text & "','" & textimporte.Text & "','" & DTfechaentrega.Value & "','" & textnumero.Text & "','" & combobanco.SelectedValue & "','" & ComboCuentas.SelectedValue & "')", CN)
+            Dim cmd As New SqlCommand("insert into Entregas (IdVenta,FormaPago,ImporteEntrega,FechaEntrega,NumeroTransaccion,IdSucursal,Idcuenta) values ('" & formVentas.textidventa.Text & "','" & Combotipopago.Text & "','" & textimporte.Text & "','" & DTfechaentrega.Value & "','" & textnumero.Text & "','" & textidsucursal.Text & "','" & ComboCuentas.SelectedValue & "')", CN)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Entrega Ingresada")
             CargarDGEntregas()
@@ -75,9 +67,7 @@ Public Class FormEntregasEfectivo
 
     End Sub
 
-    Private Sub combobanco_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobanco.SelectedIndexChanged
-        textidbanco.Text = combobanco.SelectedValue
-    End Sub
+
 
     Private Sub textimporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textimporte.KeyPress
         If Char.IsDigit(e.KeyChar) Then
@@ -94,6 +84,29 @@ Public Class FormEntregasEfectivo
         If e.KeyChar = (",") Then
             e.Handled = True
             SendKeys.Send(".")
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        formsucursalesbancos.textform.Text = "ee"
+        formsucursalesbancos.Show()
+    End Sub
+
+    Private Sub Combotipopago_Click(sender As Object, e As EventArgs) Handles Combotipopago.Click
+        If Combotipopago.Text = "Efectivo" Then
+            Button1.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button1.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Combotipopago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Combotipopago.SelectedIndexChanged
+        If Combotipopago.Text = "Efectivo" Then
+            Button1.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button1.Enabled = True
         End If
     End Sub
 End Class

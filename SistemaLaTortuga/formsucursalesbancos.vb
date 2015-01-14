@@ -23,15 +23,70 @@ Public Class formsucursalesbancos
         formABMSucursales.Show()
     End Sub
 
-    Private Sub dgsucursalesb_DoubleClick1(sender As Object, e As EventArgs) Handles dgsucursalesb.DoubleClick
-        formCheques.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
-        formCheques.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
-        formCheques.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
-        formCheques.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
-        formCheques.textids.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
-        formVehiculos.Button2.Enabled = True
+  
 
+    Private Sub dgsucursalesb_DoubleClick(sender As Object, e As EventArgs) Handles dgsucursalesb.DoubleClick
+        If textform.Text = "ch" Then
+            formCheques.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+            formCheques.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+            formCheques.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+            formCheques.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+            formCheques.textids.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+        Else
+            If textform.Text = "ee" Then
+                ' FormEntregasEfectivo.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                FormEntregasEfectivo.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                ' FormEntregasEfectivo.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                FormEntregasEfectivo.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                FormEntregasEfectivo.textidsucursal.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+            End If
+            If textform.Text = "gv" Then
+                ' FormEntregasEfectivo.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                FormGastosVehiculo.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                ' FormEntregasEfectivo.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                FormGastosVehiculo.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                FormGastosVehiculo.textidsucursal.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
 
+            Else
+                If textform.Text = "oe" Then
+                    ' FormEntregasEfectivo.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                    FormOtrosEgresos.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                    ' FormEntregasEfectivo.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                    FormOtrosEgresos.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                    FormOtrosEgresos.textidsucursal.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                Else
+                    If textform.Text = "pd" Then
+                        ' FormEntregasEfectivo.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                        FormPagarDocumento.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                        ' FormEntregasEfectivo.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                        FormPagarDocumento.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                        FormPagarDocumento.textidsucursal.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                    Else
+                        If textform.Text = "pa" Then
+                            ' FormEntregasEfectivo.textidsucursal.Text = dgsucursalesb.Item("CodigoSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                            FormPagoAdministrador.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                            ' FormEntregasEfectivo.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                            FormPagoAdministrador.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                            FormPagoAdministrador.textidsucursal.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                        Else
+                            If textform.Text = "pcu" Then
+                                FormPagoCuotas.textnombres.Text = dgsucursalesb.Item("NombreSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                                ' FormEntregasEfectivo.textidbanco.Text = dgsucursalesb.Item("CodigoBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                                FormPagoCuotas.textnombreb.Text = dgsucursalesb.Item("NombreBanco", dgsucursalesb.SelectedRows(0).Index).Value()
+                                FormPagoCuotas.textidsucursal.Text = dgsucursalesb.Item("IdSucursal", dgsucursalesb.SelectedRows(0).Index).Value()
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+
+        End If
         Me.Close()
+    End Sub
+
+   
+ 
+    Private Sub dgsucursalesb_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgsucursalesb.CellContentClick
+
     End Sub
 End Class

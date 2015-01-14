@@ -6,7 +6,7 @@ Public Class FormCaja
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        FormGastosVehiculo.ShowDialog()
+        FormGastosVehiculo.Show()
     End Sub
 
     Private Sub cargarCaja()
@@ -22,7 +22,7 @@ Public Class FormCaja
 
         'calculo la suma de ingresos de esa fecha
         Dim cmdi As New SqlCommand("select sum(ImporteMovimientoIngreo) from MovimientosDiarios  where fechamovimiento = '" & DTfecha.Value & "'  ", CN)
-      
+
         textingresos.Text = Conversion.Str(cmdi.ExecuteScalar)
         If textingresos.Text = "Null" Then
             textingresos.Text = 0
@@ -69,7 +69,7 @@ Public Class FormCaja
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        FormIngresos.ShowDialog()
+        FormIngresos.Show()
     End Sub
 
     Private Sub DTfecha_ValueChanged(sender As Object, e As EventArgs) Handles DTfecha.ValueChanged
@@ -77,19 +77,19 @@ Public Class FormCaja
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        FormPagoDocumentos.ShowDialog()
+        FormPagoDocumentos.Show()
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        FormPagoAdministrador.ShowDialog()
+        FormPagoAdministrador.Show()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        FormOtrosEgresos.ShowDialog()
+        FormOtrosEgresos.Show()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        FormPagoPlanes.ShowDialog()
+        FormPagoPlanes.Show()
     End Sub
 
     Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click

@@ -22,29 +22,29 @@ Partial Class FormReporteAdministrador
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.viewerAdministrador = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.reporteAdministrador1 = New SistemaLaTortuga.reporteAdministrador()
         Me.SuspendLayout()
         '
-        'CrystalReportViewer1
+        'viewerAdministrador
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = 0
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.CachedPageNumberPerDoc = 10
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.reporteAdministrador1
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(692, 392)
-        Me.CrystalReportViewer1.TabIndex = 0
+        Me.viewerAdministrador.ActiveViewIndex = 0
+        Me.viewerAdministrador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.viewerAdministrador.CachedPageNumberPerDoc = 10
+        Me.viewerAdministrador.Cursor = System.Windows.Forms.Cursors.Default
+        Me.viewerAdministrador.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.viewerAdministrador.Location = New System.Drawing.Point(0, 0)
+        Me.viewerAdministrador.Name = "viewerAdministrador"
+        Me.viewerAdministrador.ReportSource = Me.reporteAdministrador1
+        Me.viewerAdministrador.Size = New System.Drawing.Size(692, 392)
+        Me.viewerAdministrador.TabIndex = 0
         '
         'FormReporteAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(692, 392)
-        Me.Controls.Add(Me.CrystalReportViewer1)
+        Me.Controls.Add(Me.viewerAdministrador)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FormReporteAdministrador"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -53,6 +53,6 @@ Partial Class FormReporteAdministrador
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents viewerAdministrador As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents reporteAdministrador1 As SistemaLaTortuga.reporteAdministrador
 End Class

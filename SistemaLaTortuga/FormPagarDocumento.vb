@@ -12,20 +12,9 @@ Public Class FormPagarDocumento
         combocuenta.ValueMember = "IdCuenta"
         combocuenta.DisplayMember = "NombreCuenta"
     End Sub
-    Public Sub CargarBancos()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataTable()
-        da.Fill(ds)
-        CN.Close()
-        combobanco.DataSource = ds
-        combobanco.ValueMember = "IdBanco"
-        combobanco.DisplayMember = "NombreBanco"
-    End Sub
+
     Private Sub FormPagarDocumento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarBancos()
+
         CargarCuentas()
         ComboTipo.SelectedIndex = 0
     End Sub
@@ -117,7 +106,7 @@ Public Class FormPagarDocumento
             Dim max As New SqlCommand("select max(idMovimientoDiario) from MovimientosDiarios", CN)
             Dim id = max.ExecuteScalar()
 
-            Dim cmd As New SqlCommand("insert into PagosDocumentos values ('" & FormPagoDocumentos.textid.Text & "','" & Dtfecha.Value & "', '" & TextImporte.Text & "', '" & combocuenta.SelectedValue & "', '" & ComboTipo.Text & "', '" & Textnumero.Text & "', '" & ComboBanco.SelectedValue & "', '" & id & "' )", CN)
+            Dim cmd As New SqlCommand("insert into PagosDocumentos values ('" & FormPagoDocumentos.textid.Text & "','" & Dtfecha.Value & "', '" & TextImporte.Text & "', '" & combocuenta.SelectedValue & "', '" & ComboTipo.Text & "', '" & Textnumero.Text & "', '" & textidsucursal.Text & "', '" & id & "' )", CN)
             cmd.ExecuteNonQuery()
 
             MessageBox.Show("Pago Ingresado", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -169,6 +158,40 @@ Public Class FormPagarDocumento
         If e.KeyChar = (",") Then
             e.Handled = True
             SendKeys.Send(".")
+        End If
+    End Sub
+
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        formCuentas.Show()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        formsucursalesbancos.textform.Text = "pd"
+        formsucursalesbancos.Show()
+    End Sub
+
+    Private Sub ComboTipo_Click(sender As Object, e As EventArgs) Handles ComboTipo.Click
+        If ComboTipo.Text = "Efectivo" Then
+            Button3.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button3.Enabled = True
+
+        End If
+    End Sub
+
+    Private Sub ComboTipo_Invalidated(sender As Object, e As InvalidateEventArgs) Handles ComboTipo.Invalidated
+
+    End Sub
+
+    Private Sub ComboTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboTipo.SelectedIndexChanged
+        If ComboTipo.Text = "Efectivo" Then
+            Button3.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button3.Enabled = True
         End If
     End Sub
 End Class
