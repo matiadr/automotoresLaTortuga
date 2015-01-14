@@ -252,10 +252,6 @@ Public Class formVentas
         
     End Sub
 
-    Private Sub textsumaentregas_TextChanged(sender As Object, e As EventArgs) Handles textsumaentregasv.TextChanged
-        
-       
-    End Sub
 
     Private Sub textsumaentrega_TextChanged(sender As Object, e As EventArgs) Handles textsumaentrega.TextChanged
         'Dim entregasv As Decimal = textsumaentregasv.Text
@@ -432,13 +428,13 @@ Public Class formVentas
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
         Dim oWord As Word.Application
         Dim oDoc As Word.Document
-        Dim oTable As Word.Table
+        ' Dim oTable As Word.Table
         Dim oPara1 As Word.Paragraph, oPara2 As Word.Paragraph
-        Dim oPara3 As Word.Paragraph, oPara4 As Word.Paragraph
+        '  Dim oPara3 As Word.Paragraph, oPara4 As Word.Paragraph
         Dim oRng As Word.Range
-        Dim oShape As Word.InlineShape
-        Dim oChart As Object
-        Dim Pos As Double
+        ' Dim oShape As Word.InlineShape
+        'Dim oChart As Object
+        '   Dim Pos As Double
 
 
         ' Dim Word As Word.Application
@@ -446,7 +442,7 @@ Public Class formVentas
         Dim Tabli As Word.Table
         Dim Rng As Word.Range
         Dim NCol As Integer = DGentregas.ColumnCount
-        Dim NRow As Integer = DGentregas.RowCount
+        Dim NRow As Integer = DGentregas.RowCount + 1
 
         'Start Word and open the document template.
         oWord = CreateObject("Word.Application")
@@ -454,11 +450,17 @@ Public Class formVentas
         oDoc = oWord.Documents.Add
 
         'Insert a paragraph at the beginning of the document.
+
+
         oPara1 = oDoc.Content.Paragraphs.Add
+
+        oPara1.Range.Font.Name = "Time New Roman"
         oPara1.Range.Text = "BOLETO DE COMPRAVENTA POR MANDATO"
         oPara1.Range.Font.Bold = False
-        oPara1.Format.SpaceAfter = 24    '24 pt spacing after paragraph.
+        oPara1.Format.SpaceAfter = 20    '24 pt spacing after paragraph.
         oPara1.Range.InsertParagraphAfter()
+        oPara1.Range.Font.Size = 9
+        oPara1.Range.Font.Name = "Time New Roman"
 
 
         Dim fecha As Date = dtfecha.Value
@@ -481,7 +483,7 @@ Public Class formVentas
         oRng.InsertAfter("En la ciudad de Colón, a los " & fecha.Day & " días del mes de " & MonthName(fecha.Month) & " de " & fecha.Year & ", entre" & _
        " MULTIMARCAS LA TORTUGA de DED S.A., con domicilio real en San Martín 1147 de la ciudad de Colón, Departamento Colón," & _
         " provincia de Entre Ríos. Actuando como mandatario de " & vendedor & " por parte vendedora " & _
-        "y por la otra, " & comprador & " " & tipodni & " " & dni & ", Conyuge " & conyuge & " " & tipodnic & " " & dnicony & ", teléfono " & telefono & ", domiciliado/s " & _
+        "y por la otra, " & comprador & " " & tipodni & " " & dni & ", Cónyuge " & conyuge & " " & tipodnic & " " & dnicony & ", teléfono " & telefono & ", domiciliado/s " & _
         "en " & domicilio & " de la ciudad de " & localidad & ", provincia de " & provincia & " como comprador, convienen en celebrar" & _
         " el presente boleto de compraventa, sujeto a las cláusulas que se exponen:" & _
         "1) El comprador adquiere un vehículo Marca " & tbMarcaVehVenta.Text & ", Modelo " & tbModeloVehVenta.Text & ", Año " & tbAñoVehVenta.Text & ", " & _
@@ -491,11 +493,10 @@ Public Class formVentas
         "2) La venta se realiza por la suma total de " & tbPrecioVentaVehVenta.Text & ", pagaderos de la siguiente forma: " & _
         "Entrega el/los siguiente/s auto/s:")
         oRng.InsertParagraphAfter()
+        oPara1.Range.Font.Name = "Time New Roman"
 
+        Tabli = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, NRow, NCol)
 
-
-
-        Tabli = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, DGentregas.RowCount, DGentregas.ColumnCount)
         'Agregando Los Campos De La Grilla
         For i As Integer = 1 To NCol
             Tabli.Cell(1, i).Range.Text = DGentregas.Columns(i - 1).Name.ToString
@@ -523,120 +524,41 @@ Public Class formVentas
 
         'Insert a paragraph at the end of the document.
         '** \endofdoc is a predefined bookmark.
+
         oPara2 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
         oPara2 = oDoc.Content.Paragraphs.Add
+        oPara2.Range.Font.Name = "Time New Roman"
         oPara2.Range.Text = ("Contra entrega de la unidad pesos " & textsumaentrega.Text & " y el saldo de pesos pagaderos de la siguiente forma:................" & _
         "3) La transferencia de dominio deberá realizarse dentro de los 30 días a partir de la fecha. Los gastos de transferencia son a cargo " & _
         "del comprador. 4) La falta de pago de dos (2) cuotas hará exigible la cancelación del total de la deuda como de plazo vencido, debiendo abonar el total adeudado con más los intereses " & _
         "moratorios y punitorios adeudados dentro de los cinco (5) días de que fuere intimado, quedando expresamente pactada para la percepción de tales acreencias la vía ejecutiva, sirviendo el presente de título " & _
         "ejecutivo hábil y suficiente. 5) Para el caso de mora en el pago de las sumas pactadas, el comprador deberá abonar junto con el capital adeudado y en concepto de interés punitorio el equivalente al tres " & _
-        "porciento mensual de los importes adeudados. 6) Si transcurridos los 30 días de la fecha no se hubiese realizado la transferencia de la unidad adquirida a favor del comprador, la documentación será remitida al titular," & _
+        "porciento mensual de los importes adeudados. 6) Si transcurridos los 30 días de la fecha no se hubiese realizado la transferencia de la unidad adquirida a favor del comprador, la documentación será remitida al titular, " & _
         "quien podrá retenerla hasta que se realice la transferencia y/o denunciar la venta en el Registro Nacional de la Propiedad del Automotor, quedando el mandante exonerado de toda responsabilidad " & _
         "por cualquier embargo y/o gravamen que pudiera afectar a ese bien y/o inhibición que pudiera recaer sobre el titular registral. 7) A opción del vendedor se podrá transferir el dominio a favor del " & _
         "comprador, antes del pago total del precio. En este caso el vendedor y/o el mandatario podrán retener la documentación del rodado hasta la cancelación definitiva de la deuda y el comprador no podrá transferir a " & _
-        "tercera persona el dominio hasta el cumplimiento total de su obligación. 8) Hasta tanto se transfiera el dominio a favor del comprador, éste se obliga a contratar un seguro de responsabilidad civil por cualquier daño que puediera " & _
+        "tercera persona el dominio hasta el cumplimiento total de su obligación. 8) Hasta tanto se transfiera el dominio a favor del comprador, éste se obliga a contratar un seguro de responsabilidad civil por cualquier daño que pudiera " & _
         "causar el rodado aquí vendido; pudiendo el vendedor y/o el mandatario contratarlo a costa del primero para el supuesto de que aquel no lo hiciere. 9) Para el caso de arrepentimiento del comprador, quedara a opción del vendedor la facultad " & _
         "de rescindir o no la compra venta; para el caso de que se aceptare la rescisión de la operación y la devolución del rodado, quedarán a favor del vendedor en concepto de reparación de daños por la  rescisión y sin compensación alguna para el comprador, el equivalente " & _
         "al treinta (30) por ciento de las sumas que el comprador hubiese dado en pago; para el supuesto de que el comprador no hubiera abonado sumas por un monto superior al diez (10) por ciento del valor total de la operación, dichos importes quedarán en su totalidad a favor del " & _
         "vendedor, sin compensación alguna para el comprador de acuerdo con lo antes expuesto. 10) A efectos del presente boleto de Compra-Venta, las partes renuncian expresamente al fuero federal y se someten a los Tribunales Ordinarios de Colón. 11) Las partes " & _
         "constituyen domicilio legal a todos los efectos del presente contrato en los denunciados ut supra. 12) El comprador se declara único responsable civil y criminalmente de la conducción del vehículo adquirido, como así también de cualquier tipo de accidente que pudiera ocasionar, " & _
         "además de las infracciones de tránsito a partir del día y hora  " & Date.Now & ". Se firman dos ejemplares de un mismo tenor y a un solo efecto en el lugar y fechas arriba indicados.")
-        oPara2.Format.SpaceAfter = 6
+        oPara2.Format.SpaceAfter = 20
         oPara2.Range.InsertParagraphAfter()
 
 
 
+        oPara2 = oDoc.Content.Paragraphs.Add
 
-        
+        oPara2.Range.Text = ("                   COMPRADOR                                                                 VENDEDOR ")
 
-        'Insert a paragraph at the end of the document.
-        '** \endofdoc is a predefined bookmark.
-        ' oPara2 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
-        ' oPara2 = oDoc.Content.Paragraphs.Add
-        ' oPara2.Range.Text = "En la ciudad de Colón, a los " & fecha.Day & " días del mes de " & fecha.Month & " de " & fecha.Year & ", entre" & _
-        '" MULTIMARCAS LA TORTUGA de DED S.A., con domicilio real en San Martín 1147 de la ciudad de Colón, Departamento Colón," & _
-        ' " provincia de Entre Ríos. Actuando como mandatario de " & vendedor & " por parte vendedora " & _
-        ' "y por la otra," & comprador & " " & tipodni & " " & dni & ", teléfono " & telefono & ", domiciliado" & _
-        ' "en " & domicilio & " de la ciudad de " & localidad & ", provincia de " & provincia &
-        ' oPara2.Format.SpaceAfter = 6
-        ' oPara2.Range.InsertParagraphAfter()
 
-        'Insert another paragraph.
-        'oPara3 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
-        'oPara3.Range.Text = "This is a sentence of normal text. Now here is a table:"
-        'oPara3.Range.Font.Bold = False
-        'oPara3.Format.SpaceAfter = 24
-        'oPara3.Range.InsertParagraphAfter()
 
-        'Insert a 3 x 5 table, fill it with data, and make the first row
-        'bold and italic.
-        '     Dim r As Integer, c As Integer
-        '    oTable = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, 3, 5)
-        '    oTable.Range.ParagraphFormat.SpaceAfter = 6
-        '   For r = 1 To 3
-        'For c = 1 To 5
-        'oTable.Cell(r, c).Range.Text = "r" & r & "c" & c
-        '  Next
-        ' Next
-        'oTable.Rows.Item(1).Range.Font.Bold = True
-        'oTable.Rows.Item(1).Range.Font.Italic = True
 
-        'Add some text after the table.
-        'oTable.Range.InsertParagraphAfter()
-        'oPara4 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
-        'oPara4.Range.InsertParagraphBefore()
-        'oPara4.Range.Text = "And here's another table:"
-        'oPara4.Format.SpaceAfter = 24
-        'oPara4.Range.InsertParagraphAfter()
 
-        'Insert a 5 x 2 table, fill it with data, and change the column widths.
-        'oTable = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, 5, 2)
-        'oTable.Range.ParagraphFormat.SpaceAfter = 6
-        'For r = 1 To 5
-        '   For c = 1 To 2
-        'oTable.Cell(r, c).Range.Text = "r" & r & "c" & c
-        '   Next
-        'Next
-        'oTable.Columns.Item(1).Width = oWord.InchesToPoints(2)   'Change width of columns 1 & 2
-        'oTable.Columns.Item(2).Width = oWord.InchesToPoints(3)
 
-        'Keep inserting text. When you get to 7 inches from top of the
-        'document, insert a hard page break.
-        'Pos = oWord.InchesToPoints(7)
-        'oDoc.Bookmarks.Item("\endofdoc").Range.InsertParagraphAfter()
-        'Do
-        'oRng = oDoc.Bookmarks.Item("\endofdoc").Range
-        'oRng.ParagraphFormat.SpaceAfter = 6
-        'oRng.InsertAfter("A line of text")
-        'oRng.InsertParagraphAfter()
-        'Loop While Pos >= oRng.Information(Word.WdInformation.wdVerticalPositionRelativeToPage)
-        'oRng.Collapse(Word.WdCollapseDirection.wdCollapseEnd)
-        'oRng.InsertBreak(Word.WdBreakType.wdPageBreak)
-        'oRng.Collapse(Word.WdCollapseDirection.wdCollapseEnd)
-        'oRng.InsertAfter("We're now on page 2. Here's my chart:")
-        'oRng.InsertParagraphAfter()
-
-        'Insert a chart and change the chart.
-        'oShape = oDoc.Bookmarks.Item("\endofdoc").Range.InlineShapes.AddOLEObject( _
-        '    ClassType:="MSGraph.Chart.8", FileName _
-        '    :="", LinkToFile:=False, DisplayAsIcon:=False)
-        'oChart = oShape.OLEFormat.Object
-        'oChart.charttype = 4 'xlLine = 4
-        'oChart.Application.Update()
-        'oChart.Application.Quit()
-        'If desired, you can proceed from here using the Microsoft Graph 
-        'Object model on the oChart object to make additional changes to the
-        'chart.
-        'oShape.Width = oWord.InchesToPoints(6.25)
-        'oShape.Height = oWord.InchesToPoints(3.57)
-
-        'Add text after the chart.
         oRng = oDoc.Bookmarks.Item("\endofdoc").Range
-        'oRng.InsertParagraphAfter()
-        'oRng.InsertAfter("THE END.")
-
-        'All done. Close this form.
-
     End Sub
 
     Private Sub bBuscarCliente_Click(sender As Object, e As EventArgs) Handles bBuscarCliente.Click
@@ -869,9 +791,6 @@ Public Class formVentas
         End If
     End Sub
 
-    Private Sub formVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub tbtransferencia_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
@@ -913,15 +832,7 @@ Public Class formVentas
         End If
     End Sub
 
-    Private Sub textreal_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label36_Click(sender As Object, e As EventArgs) Handles Label36.Click
-
-    End Sub
-
-    Private Sub buttontransferencia_Click_1(sender As Object, e As EventArgs) Handles buttontransferencia.Click
-
+    Private Sub formVentas_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        textidventa.Text = ""
     End Sub
 End Class

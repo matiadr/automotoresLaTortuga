@@ -45,6 +45,7 @@ Public Class formCheques
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        formsucursalesbancos.textform.Text = "ch"
         formsucursalesbancos.Show()
     End Sub
 
@@ -58,7 +59,6 @@ Public Class formCheques
         dgcheques.DataSource = dt
         CN.Close()
     End Sub
-
     Private Sub formCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDGcheques()
         ComboEstado.SelectedIndex = 0
@@ -148,7 +148,7 @@ Public Class formCheques
     End Sub
 
     Private Sub textbuscar_TextChanged(sender As Object, e As EventArgs) Handles textbuscar.TextChanged
-  
+
 
 
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
@@ -169,7 +169,7 @@ Public Class formCheques
         CN.Open()
         Try
 
-          
+
 
 
             Dim res As MsgBoxResult
@@ -205,5 +205,14 @@ Public Class formCheques
             e.Handled = True
             SendKeys.Send(".")
         End If
+    End Sub
+
+
+    Private Sub dgcheques_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgcheques.CellContentClick
+
+    End Sub
+
+    Private Sub dgcheques_DoubleClick(sender As Object, e As EventArgs) Handles dgcheques.DoubleClick
+
     End Sub
 End Class

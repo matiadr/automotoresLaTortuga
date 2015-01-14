@@ -9,7 +9,7 @@ Public Class FormIngresos
         da.Fill(ds)
         CN.Close()
         ComboCliente.DataSource = ds
-        ComboCliente.ValueMember = "IdCliente"
+        ComboCliente.ValueMember = "IdClient"
         ComboCliente.DisplayMember = "NombreC"
     End Sub
     Public Sub CargarCuentas()
@@ -24,19 +24,7 @@ Public Class FormIngresos
         combocuenta.ValueMember = "IdCuenta"
         combocuenta.DisplayMember = "NombreCuenta"
     End Sub
-    Public Sub CargarBancos()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataTable()
-        da.Fill(ds)
-        CN.Close()
-        combobanco.DataSource = ds
-        combobanco.ValueMember = "IdBanco"
-        combobanco.DisplayMember = "NombreBanco"
 
-    End Sub
     Private Sub cargarCaja()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -95,6 +83,7 @@ Public Class FormIngresos
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
+
         If TextImporte.Text = "" Then
             MessageBox.Show("Debe ingresar un importe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -104,7 +93,7 @@ Public Class FormIngresos
             Exit Sub
         Else
 
-            'agrego tambien un registro en MOVIMIENTOS DIARIOS
+            'agrego  un registro en MOVIMIENTOS DIARIOS
             Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & TextDetalle.Text & "', '" & Dtfecha.Value & "', '" & TextImporte.Text & "', '" & 0 & "','" & ComboCliente.SelectedValue & "', '  " & "Cliente" & "', '" & ComboCliente.Text & "')", CN)
             cmde.ExecuteNonQuery()
 
@@ -120,10 +109,10 @@ Public Class FormIngresos
     End Sub
 
     Private Sub FormIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboTipo.SelectedIndex = 0
         CargarCuentas()
-        CargarBancos()
+
         CargarClientes()
+
     End Sub
 
     Private Sub TextImporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextImporte.KeyPress
@@ -143,4 +132,11 @@ Public Class FormIngresos
             SendKeys.Send(".")
         End If
     End Sub
+
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        formCuentas.Show()
+    End Sub
+
+
 End Class

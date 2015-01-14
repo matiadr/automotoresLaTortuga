@@ -12,18 +12,7 @@ Public Class FormOtrosEgresos
         combocuenta.ValueMember = "IdCuenta"
         combocuenta.DisplayMember = "NombreCuenta"
     End Sub
-    Public Sub CargarBancos()
-        Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
-        CN.Open()
-        Dim cmd As New SqlCommand("select * from Bancos order by NombreBanco", CN)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim ds As New DataTable()
-        da.Fill(ds)
-        CN.Close()
-        ComboBanco.DataSource = ds
-        ComboBanco.ValueMember = "IdBanco"
-        ComboBanco.DisplayMember = "NombreBanco"
-    End Sub
+
     Public Sub CargarProveedores()
         Dim CN As New SqlConnection("Data Source='" & formPrincipal.tbEquipo.Text & "';INITIAL Catalog='" & formPrincipal.tbBSD.Text & "' ;Persist Security Info=True;User ID='" & formPrincipal.tbUsuario.Text & "';Password='" & formPrincipal.tbClave.Text & "'")
         CN.Open()
@@ -37,7 +26,7 @@ Public Class FormOtrosEgresos
         Comboproveedor.DisplayMember = "NombreProveedor"
     End Sub
     Private Sub FormOtrosEgresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarBancos()
+
         CargarCuentas()
         CargarProveedores()
         ComboTipo.SelectedIndex = 0
@@ -109,6 +98,12 @@ Public Class FormOtrosEgresos
             Exit Sub
         Else
 
+
+            'agrego un registro en EGRESOS
+            Dim cmdee As New SqlCommand("insert into Egresos values ('" & Dtfecha.Value & "','" & ComboTipo.Text & "', '" & TextImporte.Text & "', '" & textidsucursal.text & "', '" & combocuenta.SelectedValue & "','" & ComboProveedor.SelectedValue & "', '  " & TextDetalle.Text & "', '" & Textnumero.Text & "')", CN)
+            cmdee.ExecuteNonQuery()
+
+
             'agrego tambien un registro en MOVIMIENTOS DIARIOS
             Dim cmde As New SqlCommand("insert into MovimientosDiarios values ('" & combocuenta.SelectedValue & "','" & TextDetalle.Text & "', '" & Dtfecha.Value & "', '" & 0 & "', '" & TextImporte.Text & "','" & ComboProveedor.SelectedValue & "', '  " & "Proveedor" & "', '" & ComboProveedor.Text & "')", CN)
             cmde.ExecuteNonQuery()
@@ -140,6 +135,38 @@ Public Class FormOtrosEgresos
         If e.KeyChar = (",") Then
             e.Handled = True
             SendKeys.Send(".")
+        End If
+    End Sub
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        formCuentas.Show()
+    End Sub
+
+    Private Sub ComboBanco_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        formsucursalesbancos.textform.Text = "oe"
+        formsucursalesbancos.Show()
+    End Sub
+
+    Private Sub ComboTipo_Click(sender As Object, e As EventArgs) Handles ComboTipo.Click
+        If ComboTipo.Text = "Efectivo" Then
+            Button3.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button3.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ComboTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboTipo.SelectedIndexChanged
+        If ComboTipo.Text = "Efectivo" Then
+            Button3.Enabled = False
+            textidsucursal.Text = "0"
+        Else
+            Button3.Enabled = True
         End If
     End Sub
 End Class
