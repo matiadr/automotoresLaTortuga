@@ -186,6 +186,8 @@ Public Class formlistadoventas
 
 
 
+
+
     Private Sub DGventas_DoubleClick(sender As Object, e As EventArgs) Handles DGventas.DoubleClick
         textidventa.Text = DGventas.Item("idVenta", DGventas.SelectedRows(0).Index).Value()
 
@@ -194,8 +196,10 @@ Public Class formlistadoventas
         formVentas.buttontransferencia.Visible = True
         formVentas.Button3.Enabled = False
 
-        formVentas.GroupBox1.Enabled = False
-        formVentas.GroupBox2.Enabled = False
+        GroupBox1.Enabled = False
+        GroupBox2.Enabled = False
 
     End Sub
+
+
 End Class
