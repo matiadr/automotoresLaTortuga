@@ -156,7 +156,7 @@ Partial Class formBuscarVehiculo
         '
         'texttipoboton
         '
-        Me.texttipoboton.Location = New System.Drawing.Point(638, 16)
+        Me.texttipoboton.Location = New System.Drawing.Point(555, 12)
         Me.texttipoboton.Name = "texttipoboton"
         Me.texttipoboton.Size = New System.Drawing.Size(37, 20)
         Me.texttipoboton.TabIndex = 11

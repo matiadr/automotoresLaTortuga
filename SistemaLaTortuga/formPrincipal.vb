@@ -139,7 +139,7 @@ Public Class formPrincipal
     Private Sub AdministradorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministradorToolStripMenuItem.Click
         Dim CN As New SqlConnection("Data Source='" & tbEquipo.Text & "';INITIAL Catalog='" & tbBSD.Text & "' ;Persist Security Info=True;User ID='" & tbUsuario.Text & "';Password='" & tbClave.Text & "'")
         Dim daDatos As New SqlDataAdapter  ' Objeto Adaptador para leer datos de la Base de datos
-        Dim dtDatos As New DataSet  ' datatable para recibir los datos de la base de datos
+        Dim dtDatos As New DataSet ' datatable para recibir los datos de la base de datos
         CN.Open()
         Dim seleccion As String = "select fecha,'Venta' as detalle, ImporteAdministrador as importe, '0' as pago from Administrador UNION (select FechaPago as fecha,'Pago' as detalle, '0' as importe, ImportePago as pago from PagosAdministrador)"
         daDatos = New SqlDataAdapter(seleccion, CN)
@@ -150,6 +150,10 @@ Public Class formPrincipal
         FormReporteAdministrador.viewerAdministrador.ReportSource = rpt
 
         FormReporteAdministrador.ShowDialog()
+    End Sub
+
+    Private Sub GastosPorVehiculoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GastosPorVehiculoToolStripMenuItem.Click
+        formReporteGastoVehiculo.ShowDialog()
     End Sub
 End Class
 
